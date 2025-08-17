@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>劉筑 Vanessa Liu｜產品經理・專案管理・AI 整合</title>
+    <meta name="description" content="產品經理 Vanessa Liu｜專案管理、AI 工具應用與系統整合，2年多大型專案準時交付，跨域經驗：金融/FinTech/數位轉型。">
+    <meta name="keywords" content="product manager, AI integration, project management, fintech, digital transformation, system architecture">
+    <meta property="og:title" content="Vanessa Liu | Product Manager ・ Project Management ・ AI Integration">
+    <meta property="og:description" content="Product Manager Vanessa Liu | Project management, AI tool application and system integration, 2+ years of large-scale projects delivered on time, cross-domain experience: Finance/FinTech/Digital Transformation.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vanessa Liu | Product Manager ・ Project Management ・ AI Integration">
+    <meta name="twitter:description" content="Product Manager Vanessa Liu | Project management, AI tool application and system integration, 2+ years of large-scale projects delivered on time, cross-domain experience: Finance/FinTech/Digital Transformation.">
+    <link rel="canonical" href="/">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            /* Sophisticated slate-based light theme */
+            --bg-primary: rgb(248, 250, 252);
+            --bg-secondary: rgb(241, 245, 249);
+            --bg-tertiary: rgb(226, 232, 240);
+            --card-bg: rgb(255, 255, 255);
+            --text-primary: rgb(30, 41, 59);
+            --text-secondary: rgb(100, 116, 139);
+            --text-light: rgb(148, 163, 184);
+            --primary-color: rgb(71, 85, 105);
+            --primary-dark: rgb(30, 41, 59);
+            --secondary-color: rgb(241, 245, 249);
+            --accent-color: rgb(226, 232, 240);
+            --accent-warm: rgb(241, 245, 249);
+            --border: rgb(226, 232, 240);
+            --ring: rgb(71, 85, 105);
+            --destructive: rgb(239, 68, 68);
+            --muted: rgb(241, 245, 249);
+            --muted-foreground: rgb(100, 116, 139);
+            
+            /* Derived colors */
+            --minimal-gradient: linear-gradient(135deg, rgb(71, 85, 105) 0%, rgb(100, 116, 139) 100%);
+            --subtle-gradient: linear-gradient(135deg, rgb(248, 250, 252) 0%, rgb(241, 245, 249) 100%);
+            --card-shadow: 0 1px 3px rgba(30, 41, 59, 0.08), 0 1px 2px rgba(30, 41, 59, 0.04);
+            --subtle-shadow: 0 1px 2px rgba(30, 41, 59, 0.03);
+            --hover-shadow: 0 4px 12px rgba(71, 85, 105, 0.12);
+        }
+
+        .theme-dark {
+            /* Sophisticated slate-based dark theme */
+            --bg-primary: rgb(2, 6, 23);
+            --bg-secondary: rgb(15, 23, 42);
+            --bg-tertiary: rgb(30, 41, 59);
+            --card-bg: rgb(15, 23, 42);
+            --text-primary: rgb(248, 250, 252);
+            --text-secondary: rgb(148, 163, 184);
+            --text-light: rgb(100, 116, 139);
+            --primary-color: rgb(148, 163, 184);
+            --primary-dark: rgb(100, 116, 139);
+            --secondary-color: rgb(30, 41, 59);
+            --accent-color: rgb(51, 65, 85);
+            --accent-warm: rgb(64, 75, 96);
+            --border: rgb(51, 65, 85);
+            --ring: rgb(148, 163, 184);
+            --destructive: rgb(248, 113, 113);
+            --muted: rgb(30, 41, 59);
+            --muted-foreground: rgb(100, 116, 139);
+            
+            /* Derived colors */
+            --minimal-gradient: linear-gradient(135deg, rgb(148, 163, 184) 0%, rgb(100, 116, 139) 100%);
+            --subtle-gradient: linear-gradient(135deg, rgb(2, 6, 23) 0%, rgb(15, 23, 42) 100%);
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15);
+            --subtle-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            --hover-shadow: 0 8px 25px rgba(148, 163, 184, 0.20);
+        }
+    }
+
+    @layer base {
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            @apply font-sans text-[var(--text-primary)] overflow-x-hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            @apply font-bold;
+        }
+
+        .serif-heading {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+        }
+
+        .inter-font {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .floating-element {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-delayed {
+            animation: float 8s ease-in-out infinite 2s;
+        }
+
+        .floating-slow {
+            animation: float 12s ease-in-out infinite 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            25% { 
+                transform: translateY(-30px) rotate(5deg);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(-3deg);
+                opacity: 1;
+            }
+            75% { 
+                transform: translateY(-40px) rotate(2deg);
+                opacity: 0.7;
+            }
+        }
+
+        .wave-animation {
+            animation: wave 15s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { 
+                transform: translateX(-50%) translateY(0px) scaleX(1);
+            }
+            25% { 
+                transform: translateX(-50%) translateY(-10px) scaleX(1.1);
+            }
+            50% { 
+                transform: translateX(-50%) translateY(5px) scaleX(0.9);
+            }
+            75% { 
+                transform: translateX(-50%) translateY(-5px) scaleX(1.05);
+            }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0; 
+                transform: translateX(-80px) scale(0.9);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            from { 
+                opacity: 0; 
+                transform: translateX(80px) scale(0.9);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(60px) scale(0.95);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(71, 85, 105, 0.1), 0 0 40px rgba(71, 85, 105, 0.05);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(71, 85, 105, 0.15), 0 0 60px rgba(71, 85, 105, 0.08);
+                transform: scale(1.02);
+            }
+        }
+
+        .surf-gradient-bg {
+            background: var(--surf-gradient);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .bubble-float {
+            animation: bubbleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes bubbleFloat {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                opacity: 0.7;
+            }
+            50% { 
+                transform: translateY(-100px) scale(1.1);
+                opacity: 0.3;
+            }
+        }
+
+        .parallax-slow {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply px-8 py-4 bg-[var(--primary-color)] text-white rounded-xl font-semibold transition-all duration-300;
+            background: var(--minimal-gradient);
+            box-shadow: var(--card-shadow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(71, 85, 105, 0.15);
+        }
+        
+        .btn-secondary {
+            @apply px-8 py-4 border-2 rounded-xl font-semibold transition-all duration-300;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .glass-card {
+            @apply rounded-xl border;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: var(--minimal-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-padding {
+            @apply py-20 px-6 lg:px-8;
+        }
+
+        .hover-lift {
+            @apply transition-all duration-300 cursor-pointer;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .interactive-card {
+            @apply glass-card p-8 hover-lift;
+        }
+
+        .minimal-card {
+            @apply glass-card p-8 hover-lift;
+        }
+
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 120%;
+            height: 100px;
+            background: var(--wave-gradient);
+            border-radius: 50%;
+            transform: translateX(-50%) translateY(50%);
+            opacity: 0.1;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="utils/themeManager.js"></script>
+    <script src="utils/simpleLanguage.js"></script>
+    <script type="text/babel" src="components/LanguageToggle.js"></script>
+    <script type="text/babel" src="components/ThemeToggle.js"></script>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/About.js"></script>
+    <script type="text/babel" src="components/Featured.js"></script>
+    <script type="text/babel" src="components/Education.js"></script>
+    <script type="text/babel" src="components/Experience.js"></script>
+    <script type="text/babel" src="components/Skills.js"></script>
+    <script type="text/babel" src="components/Projects.js"></script>
+    <script type="text/babel" src="components/Contact.js"></script>
+    <script type="text/babel" src="utils/animations.js"></script>
+    <script type="text/babel" src="utils/charts.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>

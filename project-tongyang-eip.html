@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東陽實業 EIP 入口網站開發案 | Vanessa Liu Portfolio</title>
+    <meta name="description" content="東陽實業跨國企業級EIP入口網站系統專案詳情，214工作天準時交付">
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js" rel="preload" as="script">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+        }
+    }
+
+    @layer components {
+        .glass-card {
+            @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-padding {
+            @apply py-16 px-6 lg:px-8;
+        }
+
+        .timeline-item {
+            @apply flex items-start gap-6 mb-8;
+        }
+        
+        .timeline-dot {
+            @apply w-4 h-4 bg-slate-600 rounded-full mt-2 flex-shrink-0;
+        }
+        
+        .timeline-line {
+            @apply absolute left-2 top-6 w-0.5 h-full bg-slate-300;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="project-pages/TongYangEIPProject.js"></script>
+</body>
+</html>

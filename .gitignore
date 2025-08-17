@@ -1,0 +1,20 @@
+# Server files
+server.js
+start-server.command
+test-server.py
+
+# Test files
+test.html
+README-TEST.md
+
+# Admin files
+admin.html
+admin/
+
+# Development notes
+trickle/notes/
+
+# System files
+.DS_Store
+.vscode/
+*.log
