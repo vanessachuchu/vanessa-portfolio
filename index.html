@@ -3,354 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>劉筑 Vanessa Liu｜產品經理・專案管理・AI 整合</title>
-    <meta name="description" content="產品經理 Vanessa Liu｜專案管理、AI 工具應用與系統整合，2年多大型專案準時交付，跨域經驗：金融/FinTech/數位轉型。">
-    <meta name="keywords" content="product manager, AI integration, project management, fintech, digital transformation, system architecture">
-    <meta property="og:title" content="Vanessa Liu | Product Manager ・ Project Management ・ AI Integration">
-    <meta property="og:description" content="Product Manager Vanessa Liu | Project management, AI tool application and system integration, 2+ years of large-scale projects delivered on time, cross-domain experience: Finance/FinTech/Digital Transformation.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Vanessa Liu | Product Manager ・ Project Management ・ AI Integration">
-    <meta name="twitter:description" content="Product Manager Vanessa Liu | Project management, AI tool application and system integration, 2+ years of large-scale projects delivered on time, cross-domain experience: Finance/FinTech/Digital Transformation.">
-    <link rel="canonical" href="/">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
-    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
-
-    <style type="text/tailwindcss">
-    @layer theme {
-        :root {
-            /* Warm beige elegant theme */
-            --bg-primary: #f8f6f3;
-            --bg-secondary: #f4f2ef;
-            --bg-tertiary: #faf8f5;
-            --card-bg: #fdfcfa;
-            --text-primary: #4a4a4a;
-            --text-secondary: #7a7a7a;
-            --text-light: #8a8a8a;
-            --primary-color: #c4a484;
-            --primary-dark: #b8967a;
-            --secondary-color: #d4b896;
-            --accent-color: #f0ede8;
-            --accent-warm: #f9f7f4;
-            --border: #ebe7e2;
-            --ring: #c4a484;
-            --destructive: #d4756b;
-            --muted: #f4f2ef;
-            --muted-foreground: #7a7a7a;
-            
-            /* Derived colors */
-            --minimal-gradient: linear-gradient(135deg, #c4a484 0%, #d4b896 100%);
-            --subtle-gradient: linear-gradient(135deg, #f8f6f3 0%, #f4f2ef 100%);
-            --card-shadow: 0 2px 8px rgba(74, 74, 74, 0.06), 0 1px 3px rgba(74, 74, 74, 0.04);
-            --subtle-shadow: 0 1px 3px rgba(74, 74, 74, 0.03);
-            --hover-shadow: 0 6px 20px rgba(196, 164, 132, 0.15);
-        }
-
-        .theme-dark {
-            /* Warm dark elegant theme */
-            --bg-primary: #2a251f;
-            --bg-secondary: #342e26;
-            --bg-tertiary: #3e362c;
-            --card-bg: #342e26;
-            --text-primary: #f8f6f3;
-            --text-secondary: #d0c8bb;
-            --text-light: #b8aea0;
-            --primary-color: #d4b896;
-            --primary-dark: #c4a484;
-            --secondary-color: #e6d3b8;
-            --accent-color: #4a453e;
-            --accent-warm: #55524b;
-            --border: #4a453e;
-            --ring: #d4b896;
-            --destructive: #e89085;
-            --muted: #342e26;
-            --muted-foreground: #b8aea0;
-            
-            /* Derived colors */
-            --minimal-gradient: linear-gradient(135deg, #d4b896 0%, #e6d3b8 100%);
-            --subtle-gradient: linear-gradient(135deg, #2a251f 0%, #342e26 100%);
-            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15);
-            --subtle-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-            --hover-shadow: 0 8px 25px rgba(212, 184, 150, 0.20);
-        }
-    }
-
-    @layer base {
-        html {
-            scroll-behavior: smooth;
+    <title>劉筑 Vanessa Liu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            @apply font-sans text-[var(--text-primary)] overflow-x-hidden;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft YaHei", sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg-primary);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Noto+Sans+TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f3f0;
+            color: #3c3835;
+            line-height: 1.7;
+            min-height: 100vh;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            @apply font-bold;
+        /* 導航列 */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 243, 240, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(60, 56, 53, 0.1);
+            z-index: 100;
+            padding: 20px 0;
         }
-
-        .serif-heading {
-            font-family: 'Playfair Display', 'Times New Roman', serif;
+        
+        .nav-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        .inter-font {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        
+        .logo {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #3c3835;
+            text-decoration: none;
+            letter-spacing: 1px;
         }
-
-        .floating-element {
-            animation: float 8s ease-in-out infinite;
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
         }
-
-        .floating-delayed {
-            animation: float 8s ease-in-out infinite 2s;
+        
+        .nav-links a {
+            color: #6b6660;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
         }
-
-        .floating-slow {
-            animation: float 12s ease-in-out infinite 4s;
+        
+        .nav-links a:hover {
+            color: #3c3835;
         }
-
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.6;
-            }
-            25% { 
-                transform: translateY(-30px) rotate(5deg);
-                opacity: 0.8;
-            }
-            50% { 
-                transform: translateY(-20px) rotate(-3deg);
-                opacity: 1;
-            }
-            75% { 
-                transform: translateY(-40px) rotate(2deg);
-                opacity: 0.7;
-            }
+        
+        /* 主要內容 */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 120px 30px 80px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
         }
-
-        .wave-animation {
-            animation: wave 15s ease-in-out infinite;
-        }
-
-        @keyframes wave {
-            0%, 100% { 
-                transform: translateX(-50%) translateY(0px) scaleX(1);
-            }
-            25% { 
-                transform: translateX(-50%) translateY(-10px) scaleX(1.1);
-            }
-            50% { 
-                transform: translateX(-50%) translateY(5px) scaleX(0.9);
-            }
-            75% { 
-                transform: translateX(-50%) translateY(-5px) scaleX(1.05);
-            }
-        }
-
-        .slide-in-left {
-            animation: slideInLeft 1s ease-out forwards;
-        }
-
-        @keyframes slideInLeft {
-            from { 
-                opacity: 0; 
-                transform: translateX(-80px) scale(0.9);
-            }
-            to { 
-                opacity: 1; 
-                transform: translateX(0) scale(1);
-            }
-        }
-
-        .slide-in-right {
-            animation: slideInRight 1s ease-out forwards;
-        }
-
-        @keyframes slideInRight {
-            from { 
-                opacity: 0; 
-                transform: translateX(80px) scale(0.9);
-            }
-            to { 
-                opacity: 1; 
-                transform: translateX(0) scale(1);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 1.2s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(60px) scale(0.95);
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .pulse-glow {
-            animation: pulseGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { 
-                box-shadow: 0 0 20px rgba(196, 164, 132, 0.12), 0 0 40px rgba(196, 164, 132, 0.06);
-                transform: scale(1);
-            }
-            50% { 
-                box-shadow: 0 0 40px rgba(196, 164, 132, 0.18), 0 0 60px rgba(196, 164, 132, 0.10);
-                transform: scale(1.02);
-            }
-        }
-
-        .surf-gradient-bg {
-            background: var(--surf-gradient);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .bubble-float {
-            animation: bubbleFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes bubbleFloat {
-            0%, 100% { 
-                transform: translateY(0px) scale(1);
-                opacity: 0.7;
-            }
-            50% { 
-                transform: translateY(-100px) scale(1.1);
-                opacity: 0.3;
-            }
-        }
-
-        .parallax-slow {
-            transform: translateZ(0);
-            will-change: transform;
-        }
-    }
-
-    @layer components {
-        .btn-primary {
-            @apply px-8 py-4 text-white rounded-xl font-semibold transition-all duration-300;
-            background: var(--minimal-gradient);
-            box-shadow: var(--card-shadow);
+        
+        /* 問候語 */
+        .greeting {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 16px;
+            color: #8b8680;
+            margin-bottom: 40px;
             letter-spacing: 0.5px;
+        }
+        
+        /* 主標題 */
+        .main-title {
+            font-family: 'Noto Serif TC', serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 400;
+            color: #3c3835;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .main-title .accent {
+            color: #a0956b;
+            font-weight: 500;
+        }
+        
+        /* 副標題 */
+        .subtitle {
+            font-size: 15px;
+            color: #8b8680;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+        
+        .subtitle .dot {
+            margin: 0 8px;
+            color: #a0956b;
+        }
+        
+        /* 描述文字 */
+        .description {
+            font-size: 16px;
+            color: #6b6660;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 3px solid #a0956b;
+        }
+        
+        .description .quote {
+            font-style: italic;
+            color: #8b8680;
+            margin-bottom: 15px;
+        }
+        
+        .description .signature {
+            text-align: right;
+            font-size: 14px;
+            color: #a0956b;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+        /* 按鈕 */
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+        }
+        
+        .btn-primary {
+            background: #3c3835;
+            color: #f5f3f0;
+            border-color: #3c3835;
         }
         
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--hover-shadow);
-            background: linear-gradient(135deg, #b8967a 0%, #c4a484 100%);
+            background: #2a2622;
+            border-color: #2a2622;
+            transform: translateY(-1px);
         }
         
         .btn-secondary {
-            @apply px-8 py-4 border-2 rounded-xl font-semibold transition-all duration-300;
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            background: var(--card-bg);
-            letter-spacing: 0.5px;
+            background: transparent;
+            color: #3c3835;
+            border-color: #3c3835;
         }
         
         .btn-secondary:hover {
-            background: var(--primary-color);
-            color: var(--card-bg);
-            transform: translateY(-2px);
-            box-shadow: var(--hover-shadow);
+            background: #3c3835;
+            color: #f5f3f0;
+            transform: translateY(-1px);
         }
         
-        .glass-card {
-            @apply rounded-xl border;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            box-shadow: var(--card-shadow);
+        /* 技能標籤 */
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .skill-item {
+            background: rgba(255, 255, 255, 0.8);
+            color: #6b6660;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(160, 149, 107, 0.2);
             transition: all 0.3s ease;
         }
         
-        .gradient-text {
-            background: var(--minimal-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .skill-item:hover {
+            background: rgba(160, 149, 107, 0.1);
+            border-color: #a0956b;
+            color: #3c3835;
         }
         
-        .section-padding {
-            @apply py-20 px-6 lg:px-8;
+        /* 成就數據 */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto 40px;
         }
-
-        .hover-lift {
-            @apply transition-all duration-300 cursor-pointer;
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px 10px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+            border: 1px solid rgba(160, 149, 107, 0.1);
         }
-
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
+        
+        .stat-number {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #a0956b;
+            margin-bottom: 5px;
         }
-
-        .interactive-card {
-            @apply glass-card p-8 hover-lift;
+        
+        .stat-label {
+            font-size: 12px;
+            color: #8b8680;
+            letter-spacing: 0.5px;
         }
-
-        .minimal-card {
-            @apply glass-card p-8 hover-lift;
+        
+        /* 底部引言 */
+        .footer-quote {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 14px;
+            color: #8b8680;
+            font-style: italic;
+            text-align: center;
+            margin-top: 40px;
         }
-
-        .wave-divider {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 120%;
+        
+        /* 動畫效果 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .fade-in-1 { animation-delay: 0.2s; }
+        .fade-in-2 { animation-delay: 0.4s; }
+        .fade-in-3 { animation-delay: 0.6s; }
+        .fade-in-4 { animation-delay: 0.8s; }
+        .fade-in-5 { animation-delay: 1s; }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 100px 20px 60px;
+                max-width: 100%;
+            }
+            
+            .nav-content {
+                padding: 0 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .skills {
+                gap: 10px;
+            }
+            
+            .skill-item {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .description {
+                padding: 20px;
+                text-align: center;
+            }
+        }
+        
+        /* 裝飾元素 */
+        .decoration {
+            position: fixed;
+            top: 20%;
+            right: 10%;
+            width: 100px;
             height: 100px;
-            background: var(--wave-gradient);
             border-radius: 50%;
-            transform: translateX(-50%) translateY(50%);
-            opacity: 0.1;
+            background: radial-gradient(circle, rgba(160, 149, 107, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
         }
-    }
+        
+        .decoration::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(160, 149, 107, 0.05) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <!-- 裝飾元素 -->
+    <div class="decoration"></div>
     
-    <script src="utils/themeManager.js"></script>
-    <script src="utils/simpleLanguage.js"></script>
-    <script type="text/babel" src="components/LanguageToggle.js"></script>
-    <script type="text/babel" src="components/ThemeToggle.js"></script>
-    <script type="text/babel" src="components/Header.js"></script>
-    <script type="text/babel" src="components/Hero.js"></script>
-    <script type="text/babel" src="components/About.js"></script>
-    <script type="text/babel" src="components/Featured.js"></script>
-    <script type="text/babel" src="components/Education.js"></script>
-    <script type="text/babel" src="components/Experience.js"></script>
-    <script type="text/babel" src="components/Skills.js"></script>
-    <script type="text/babel" src="components/Projects.js"></script>
-    <script type="text/babel" src="components/Contact.js"></script>
-    <script type="text/babel" src="utils/animations.js"></script>
-    <script type="text/babel" src="utils/charts.js"></script>
-    <script type="text/babel" src="app.js"></script>
+    <!-- 導航 -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">Vanessa Liu</a>
+            <ul class="nav-links">
+                <li><a href="https://vanessachuchu.github.io/mind-brain/">作品</a></li>
+                <li><a href="https://github.com/vanessachuchu">關於</a></li>
+                <li><a href="mailto:vanessachuliu@gmail.com">聯絡</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 主要內容 -->
+    <div class="container">
+        <!-- 問候語 -->
+        <div class="greeting fade-in">
+            Hello there.
+        </div>
+        
+        <!-- 主標題 -->
+        <h1 class="main-title fade-in fade-in-1">
+            我用<span class="accent">設計思維</span>與<span class="accent">溫暖初心</span><br>
+            創造有意義的數位體驗
+        </h1>
+        
+        <!-- 副標題 -->
+        <div class="subtitle fade-in fade-in-2">
+            產品經理<span class="dot">•</span>專案管理<span class="dot">•</span>前台接待專員
+        </div>
+        
+        <!-- 描述信件 -->
+        <div class="description fade-in fade-in-3">
+            <div class="quote">Dear 未來的夥伴，</div>
+            
+            每一個產品背後，都有一個想要解決真實問題的初心。
+            我是劉筑，專精於<strong>金融科技產品設計</strong>與<strong>跨團隊協作</strong>。
+            
+            <br><br>
+            
+            目前在澳洲<strong>THL (Tourism Holdings Limited)</strong>擔任前台接待專員，
+            在全球最大房車租賃公司服務國際客戶，運用英文溝通與跨部門協作技能。
+            同時持續開發<strong>「脈德小腦瓜」冥想思考專案</strong>，
+            幫助人們練習慢下來、感受當下。
+            
+            <div class="signature">With passion,<br>Vanessa</div>
+        </div>
+        
+        <!-- 按鈕 -->
+        <div class="cta-buttons fade-in fade-in-4">
+            <a href="https://vanessachuchu.github.io/mind-brain/" class="btn btn-primary">查看作品</a>
+            <a href="mailto:vanessachuliu@gmail.com" class="btn btn-secondary">聯絡我</a>
+        </div>
+        
+        <!-- 技能標籤 -->
+        <div class="skills fade-in fade-in-4">
+            <span class="skill-item">金融科技</span>
+            <span class="skill-item">國際客戶服務</span>
+            <span class="skill-item">系統整合</span>
+            <span class="skill-item">跨部門協作</span>
+            <span class="skill-item">AI 工具應用</span>
+            <span class="skill-item">英文溝通</span>
+        </div>
+        
+        <!-- 成就數據 -->
+        <div class="stats fade-in fade-in-5">
+            <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">年經驗</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">大平台</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">TOEIC</div>
+                <div class="stat-label">650分</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">使用者</div>
+            </div>
+        </div>
+        
+        <!-- 底部引言 -->
+        <div class="footer-quote fade-in fade-in-5">
+            "從內向外伸展的想法落地生根<br>
+            Mind-Brain: Ideas taking root from inside out"
+        </div>
+    </div>
+    
+    <script>
+        // 簡單的滾動效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(245, 243, 240, 0.98)';
+            } else {
+                nav.style.background = 'rgba(245, 243, 240, 0.95)';
+            }
+        });
+        
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

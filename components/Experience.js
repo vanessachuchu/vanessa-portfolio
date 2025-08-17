@@ -27,11 +27,26 @@ function Experience() {
         experiences: [
           {
             id: 1,
+            company: "THL (Tourism Holdings Limited)",
+            position: "前台接待專員",
+            location: "THL Australia, Queensland, Australia",
+            period: "2025.01 - Present",
+            type: "current",
+            highlights: [
+              "🌍 國際企業前台服務：在全球最大房車租賃公司擔任前台接待，使用流利英文服務來自各國的客戶",
+              "🚐 專業車輛租賃流程：熟練處理motorhome租賃的check-in/check-out流程，清楚說明車輛功能與租賃條款",
+              "🤝 跨部門協作溝通：與清潔、技術、維修等多個部門密切配合，確保車輛準時交付並符合品質標準",
+              "⚡ 即時問題解決：面對客戶突發狀況能當場快速找出解決方案，展現優秀的應變能力與客戶服務技巧",
+              "📈 提升客戶滿意度：透過親切專業的服務態度，增強THL品牌形象並獲得客戶正面回饋"
+            ]
+          },
+          {
+            id: 2,
             company: "澳洲打工度假",
             position: "咖啡師",
             location: "Chalet & Co., Noosa, Australia",
-            period: "2024.11 - Present",
-            type: "current",
+            period: "2024.11 - 2024.12",
+            type: "previous",
             highlights: [
               "🗣️ 跨文化溝通卓越表現：策略性選擇澳洲作為打工度假目的地，深度融入英語環境，提升溝通能力與跨文化協作技能",
               "🤖 產品創新與自動化策略：積極研究 AI 和自動化技術，識別並解決營運痛點，從概念化到市場驗證開發全面的 No-Code 解決方案",
@@ -119,11 +134,26 @@ function Experience() {
         experiences: [
           {
             id: 1,
+            company: "THL (Tourism Holdings Limited)",
+            position: "Front of House Specialist",
+            location: "THL Australia, Queensland, Australia",
+            period: "2025.01 - Present",
+            type: "current",
+            highlights: [
+              "🌍 International Enterprise Front Desk Service: Working as front desk specialist at world's largest motorhome rental company, using fluent English to serve customers from around the globe",
+              "🚐 Professional Vehicle Rental Process: Expertly handle motorhome rental check-in/check-out procedures, clearly explain vehicle features and rental terms to ensure customer confidence",
+              "🤝 Cross-Departmental Collaboration: Coordinate closely with cleaning, technical, and maintenance teams to ensure timely vehicle delivery meeting quality standards",
+              "⚡ Real-Time Problem Solving: Quickly identify solutions for customer issues on-the-spot, demonstrating excellent adaptability and customer service skills under pressure",
+              "📈 Enhanced Customer Satisfaction: Through professional and friendly service attitude, strengthen THL brand image and receive positive customer feedback"
+            ]
+          },
+          {
+            id: 2,
             company: "Australia Working Holiday",
             position: "Barista",
             location: "Chalet & Co., Noosa, Australia",
-            period: "2024.11 - Present",
-            type: "current",
+            period: "2024.11 - 2024.12",
+            type: "previous",
             highlights: [
               "🗣️ Cross-Cultural Communication Excellence: Strategically chose Australia as a working holiday destination to immerse in an English-speaking environment, enhancing communication proficiency and cross-cultural collaboration capabilities",
               "🤖 Product Innovation & Automation Strategy: Actively researching AI and automation technologies to identify and address operational pain points, developing comprehensive No-Code solutions from conceptualization through market validation",
