@@ -30,59 +30,59 @@
     <style type="text/tailwindcss">
     @layer theme {
         :root {
-            /* Sophisticated slate-based light theme */
-            --bg-primary: rgb(248, 250, 252);
-            --bg-secondary: rgb(241, 245, 249);
-            --bg-tertiary: rgb(226, 232, 240);
-            --card-bg: rgb(255, 255, 255);
-            --text-primary: rgb(30, 41, 59);
-            --text-secondary: rgb(100, 116, 139);
-            --text-light: rgb(148, 163, 184);
-            --primary-color: rgb(71, 85, 105);
-            --primary-dark: rgb(30, 41, 59);
-            --secondary-color: rgb(241, 245, 249);
-            --accent-color: rgb(226, 232, 240);
-            --accent-warm: rgb(241, 245, 249);
-            --border: rgb(226, 232, 240);
-            --ring: rgb(71, 85, 105);
-            --destructive: rgb(239, 68, 68);
-            --muted: rgb(241, 245, 249);
-            --muted-foreground: rgb(100, 116, 139);
+            /* Warm beige elegant theme */
+            --bg-primary: #f8f6f3;
+            --bg-secondary: #f4f2ef;
+            --bg-tertiary: #faf8f5;
+            --card-bg: #fdfcfa;
+            --text-primary: #4a4a4a;
+            --text-secondary: #7a7a7a;
+            --text-light: #8a8a8a;
+            --primary-color: #c4a484;
+            --primary-dark: #b8967a;
+            --secondary-color: #d4b896;
+            --accent-color: #f0ede8;
+            --accent-warm: #f9f7f4;
+            --border: #ebe7e2;
+            --ring: #c4a484;
+            --destructive: #d4756b;
+            --muted: #f4f2ef;
+            --muted-foreground: #7a7a7a;
             
             /* Derived colors */
-            --minimal-gradient: linear-gradient(135deg, rgb(71, 85, 105) 0%, rgb(100, 116, 139) 100%);
-            --subtle-gradient: linear-gradient(135deg, rgb(248, 250, 252) 0%, rgb(241, 245, 249) 100%);
-            --card-shadow: 0 1px 3px rgba(30, 41, 59, 0.08), 0 1px 2px rgba(30, 41, 59, 0.04);
-            --subtle-shadow: 0 1px 2px rgba(30, 41, 59, 0.03);
-            --hover-shadow: 0 4px 12px rgba(71, 85, 105, 0.12);
+            --minimal-gradient: linear-gradient(135deg, #c4a484 0%, #d4b896 100%);
+            --subtle-gradient: linear-gradient(135deg, #f8f6f3 0%, #f4f2ef 100%);
+            --card-shadow: 0 2px 8px rgba(74, 74, 74, 0.06), 0 1px 3px rgba(74, 74, 74, 0.04);
+            --subtle-shadow: 0 1px 3px rgba(74, 74, 74, 0.03);
+            --hover-shadow: 0 6px 20px rgba(196, 164, 132, 0.15);
         }
 
         .theme-dark {
-            /* Sophisticated slate-based dark theme */
-            --bg-primary: rgb(2, 6, 23);
-            --bg-secondary: rgb(15, 23, 42);
-            --bg-tertiary: rgb(30, 41, 59);
-            --card-bg: rgb(15, 23, 42);
-            --text-primary: rgb(248, 250, 252);
-            --text-secondary: rgb(148, 163, 184);
-            --text-light: rgb(100, 116, 139);
-            --primary-color: rgb(148, 163, 184);
-            --primary-dark: rgb(100, 116, 139);
-            --secondary-color: rgb(30, 41, 59);
-            --accent-color: rgb(51, 65, 85);
-            --accent-warm: rgb(64, 75, 96);
-            --border: rgb(51, 65, 85);
-            --ring: rgb(148, 163, 184);
-            --destructive: rgb(248, 113, 113);
-            --muted: rgb(30, 41, 59);
-            --muted-foreground: rgb(100, 116, 139);
+            /* Warm dark elegant theme */
+            --bg-primary: #2a251f;
+            --bg-secondary: #342e26;
+            --bg-tertiary: #3e362c;
+            --card-bg: #342e26;
+            --text-primary: #f8f6f3;
+            --text-secondary: #d0c8bb;
+            --text-light: #b8aea0;
+            --primary-color: #d4b896;
+            --primary-dark: #c4a484;
+            --secondary-color: #e6d3b8;
+            --accent-color: #4a453e;
+            --accent-warm: #55524b;
+            --border: #4a453e;
+            --ring: #d4b896;
+            --destructive: #e89085;
+            --muted: #342e26;
+            --muted-foreground: #b8aea0;
             
             /* Derived colors */
-            --minimal-gradient: linear-gradient(135deg, rgb(148, 163, 184) 0%, rgb(100, 116, 139) 100%);
-            --subtle-gradient: linear-gradient(135deg, rgb(2, 6, 23) 0%, rgb(15, 23, 42) 100%);
+            --minimal-gradient: linear-gradient(135deg, #d4b896 0%, #e6d3b8 100%);
+            --subtle-gradient: linear-gradient(135deg, #2a251f 0%, #342e26 100%);
             --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15);
             --subtle-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-            --hover-shadow: 0 8px 25px rgba(148, 163, 184, 0.20);
+            --hover-shadow: 0 8px 25px rgba(212, 184, 150, 0.20);
         }
     }
 
@@ -212,11 +212,11 @@
 
         @keyframes pulseGlow {
             0%, 100% { 
-                box-shadow: 0 0 20px rgba(71, 85, 105, 0.1), 0 0 40px rgba(71, 85, 105, 0.05);
+                box-shadow: 0 0 20px rgba(196, 164, 132, 0.12), 0 0 40px rgba(196, 164, 132, 0.06);
                 transform: scale(1);
             }
             50% { 
-                box-shadow: 0 0 40px rgba(71, 85, 105, 0.15), 0 0 60px rgba(71, 85, 105, 0.08);
+                box-shadow: 0 0 40px rgba(196, 164, 132, 0.18), 0 0 60px rgba(196, 164, 132, 0.10);
                 transform: scale(1.02);
             }
         }
@@ -256,27 +256,31 @@
 
     @layer components {
         .btn-primary {
-            @apply px-8 py-4 bg-[var(--primary-color)] text-white rounded-xl font-semibold transition-all duration-300;
+            @apply px-8 py-4 text-white rounded-xl font-semibold transition-all duration-300;
             background: var(--minimal-gradient);
             box-shadow: var(--card-shadow);
+            letter-spacing: 0.5px;
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(71, 85, 105, 0.15);
+            box-shadow: var(--hover-shadow);
+            background: linear-gradient(135deg, #b8967a 0%, #c4a484 100%);
         }
         
         .btn-secondary {
             @apply px-8 py-4 border-2 rounded-xl font-semibold transition-all duration-300;
             border-color: var(--primary-color);
             color: var(--primary-color);
-            background: transparent;
+            background: var(--card-bg);
+            letter-spacing: 0.5px;
         }
         
         .btn-secondary:hover {
             background: var(--primary-color);
-            color: white;
+            color: var(--card-bg);
             transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
         }
         
         .glass-card {

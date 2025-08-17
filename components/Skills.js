@@ -30,7 +30,7 @@ function Skills() {
           pm: {
             title: '產品管理',
             icon: 'target',
-            color: 'from-slate-400 to-slate-500',
+            color: 'from-amber-400 to-amber-500',
             skills: [
               { name: '產品策略規劃', level: 'expert', years: '2年以上', desc: '0-1 產品架構設計' },
               { name: '需求分析', level: 'expert', years: '2年以上', desc: '跨部門需求整合與優先級排序' },
@@ -42,7 +42,7 @@ function Skills() {
           tech: {
             title: '技術工具',
             icon: 'code',
-            color: 'from-stone-400 to-stone-500',
+            color: 'from-orange-400 to-orange-500',
             skills: [
               { name: 'Microsoft Office 365', level: 'expert', years: '5年以上', desc: 'Excel 進階函數、PowerBI 數據視覺化' },
               { name: 'Figma / Sketch', level: 'advanced', years: '2年', desc: 'UI/UX 設計、原型製作' },
@@ -55,7 +55,7 @@ function Skills() {
           analysis: {
             title: '數據分析',
             icon: 'bar-chart',
-            color: 'from-neutral-400 to-neutral-500',
+            color: 'from-yellow-600 to-yellow-700',
             skills: [
               { name: 'Google Analytics', level: 'advanced', years: '2年', desc: '用戶行為分析、轉換率優化' },
               { name: 'SQL 查詢', level: 'intermediate', years: '1年', desc: '資料庫查詢與報表生成' },
@@ -67,7 +67,7 @@ function Skills() {
           soft: {
             title: '軟實力',
             icon: 'users',
-            color: 'from-gray-400 to-gray-500',
+            color: 'from-amber-500 to-amber-600',
             skills: [
               { name: '跨部門協作', level: 'expert', years: '2年以上', desc: '協調 IT、業務、設計團隊' },
               { name: '專案管理', level: 'expert', years: '2年以上', desc: '214 天大型專案準時交付' },
@@ -79,7 +79,7 @@ function Skills() {
           lang: {
             title: '語言能力',
             icon: 'globe',
-            color: 'from-pink-500 to-pink-600',
+            color: 'from-rose-400 to-rose-500',
             skills: [
               { name: '中文（繁體）', level: 'native', years: '母語', desc: '母語、專業文件撰寫' },
               { name: '英語', level: 'advanced', years: '10年以上', desc: 'IELTS 6.5、商業溝通' },
@@ -102,7 +102,7 @@ function Skills() {
           pm: {
             title: 'Product Management',
             icon: 'target',
-            color: 'from-slate-400 to-slate-500',
+            color: 'from-amber-400 to-amber-500',
             skills: [
               { name: 'Product Strategy Planning', level: 'expert', years: '2+ years', desc: '0-to-1 product architecture design' },
               { name: 'Requirements Analysis', level: 'expert', years: '2+ years', desc: 'Cross-departmental requirement integration and prioritization' },
@@ -114,7 +114,7 @@ function Skills() {
           tech: {
             title: 'Technical Tools',
             icon: 'code',
-            color: 'from-stone-400 to-stone-500',
+            color: 'from-orange-400 to-orange-500',
             skills: [
               { name: 'Microsoft Office 365', level: 'expert', years: '5+ years', desc: 'Excel advanced formulas, PowerBI data visualization' },
               { name: 'Figma / Sketch', level: 'advanced', years: '2 years', desc: 'UI/UX design, prototyping' },
@@ -127,7 +127,7 @@ function Skills() {
           analysis: {
             title: 'Data Analysis',
             icon: 'bar-chart',
-            color: 'from-neutral-400 to-neutral-500',
+            color: 'from-yellow-600 to-yellow-700',
             skills: [
               { name: 'Google Analytics', level: 'advanced', years: '2 years', desc: 'User behavior analysis, conversion rate optimization' },
               { name: 'SQL Queries', level: 'intermediate', years: '1 year', desc: 'Database querying and report generation' },
@@ -139,7 +139,7 @@ function Skills() {
           soft: {
             title: 'Soft Skills',
             icon: 'users',
-            color: 'from-gray-400 to-gray-500',
+            color: 'from-amber-500 to-amber-600',
             skills: [
               { name: 'Cross-functional Collaboration', level: 'expert', years: '2+ years', desc: 'Coordinating IT, business, and design teams' },
               { name: 'Project Management', level: 'expert', years: '2+ years', desc: '214-day large-scale project delivered on time' },
@@ -151,7 +151,7 @@ function Skills() {
           lang: {
             title: 'Languages',
             icon: 'globe',
-            color: 'from-pink-500 to-pink-600',
+            color: 'from-rose-400 to-rose-500',
             skills: [
               { name: 'Chinese (Traditional)', level: 'native', years: 'Native', desc: 'Native language, professional document writing' },
               { name: 'English', level: 'advanced', years: '10+ years', desc: 'IELTS 6.5, business communication' },
@@ -172,10 +172,10 @@ function Skills() {
     const skillCategories = currentContent.skillCategories;
 
     const levelColors = {
-      expert: 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white',
-      advanced: 'bg-gradient-to-r from-blue-500 to-blue-600 text-white',
+      expert: 'bg-gradient-to-r from-amber-600 to-amber-700 text-white',
+      advanced: 'bg-gradient-to-r from-orange-500 to-orange-600 text-white',
       intermediate: 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-white',
-      native: 'bg-gradient-to-r from-purple-500 to-purple-600 text-white'
+      native: 'bg-gradient-to-r from-rose-500 to-rose-600 text-white'
     };
 
     const levelLabels = {
