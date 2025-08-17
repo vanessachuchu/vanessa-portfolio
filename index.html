@@ -3,262 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>劉筑 Vanessa Liu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    
+    <title>劉筑 Vanessa Liu｜產品經理・專案管理・AI 整合</title>
+    <meta name="description" content="產品經理 Vanessa Liu｜專案管理、AI 工具應用與系統整合，2年多大型專案準時交付，跨域經驗：金融/FinTech/數位轉型。">
+    <meta name="keywords" content="product manager, AI integration, project management, fintech, digital transformation, system architecture">
+    <meta property="og:title" content="Vanessa Liu | Product Manager ・ Project Management ・ AI Integration">
+    <meta property="og:description" content="Product Manager Vanessa Liu | Project management, AI tool application and system integration, 2+ years of large-scale projects delivered on time, cross-domain experience: Finance/FinTech/Digital Transformation.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vanessa Liu | Product Manager ・ Project Management ・ AI Integration">
+    <meta name="twitter:description" content="Product Manager Vanessa Liu | Project management, AI tool application and system integration, 2+ years of large-scale projects delivered on time, cross-domain experience: Finance/FinTech/Digital Transformation.">
+    <link rel="canonical" href="/">
+
+    <!-- Google Fonts - Updated to Noto fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            /* Enhanced warm beige elegant theme with new design elements */
+            --bg-primary: #f5f3f0;
+            --bg-secondary: #f4f2ef;
+            --bg-tertiary: #faf8f5;
+            --card-bg: #fdfcfa;
+            --text-primary: #3c3835;
+            --text-secondary: #6b6660;
+            --text-light: #8b8680;
+            --primary-color: #a0956b;
+            --primary-dark: #8a8054;
+            --secondary-color: #c4a484;
+            --accent-color: #f0ede8;
+            --accent-warm: #f9f7f4;
+            --border: #ebe7e2;
+            --ring: #a0956b;
+            --destructive: #d4756b;
+            --muted: #f4f2ef;
+            --muted-foreground: #8b8680;
+            
+            /* Derived colors */
+            --minimal-gradient: linear-gradient(135deg, #a0956b 0%, #c4a484 100%);
+            --subtle-gradient: linear-gradient(135deg, #f5f3f0 0%, #f4f2ef 100%);
+            --card-shadow: 0 2px 8px rgba(60, 56, 53, 0.06), 0 1px 3px rgba(60, 56, 53, 0.04);
+            --subtle-shadow: 0 1px 3px rgba(60, 56, 53, 0.03);
+            --hover-shadow: 0 6px 20px rgba(160, 149, 107, 0.15);
+        }
+
+        .theme-dark {
+            /* Enhanced warm dark elegant theme */
+            --bg-primary: #2a251f;
+            --bg-secondary: #342e26;
+            --bg-tertiary: #3e362c;
+            --card-bg: #342e26;
+            --text-primary: #f5f3f0;
+            --text-secondary: #d0c8bb;
+            --text-light: #b8aea0;
+            --primary-color: #c4a484;
+            --primary-dark: #a0956b;
+            --secondary-color: #d4b896;
+            --accent-color: #4a453e;
+            --accent-warm: #55524b;
+            --border: #4a453e;
+            --ring: #c4a484;
+            --destructive: #e89085;
+            --muted: #342e26;
+            --muted-foreground: #b8aea0;
+            
+            /* Derived colors */
+            --minimal-gradient: linear-gradient(135deg, #c4a484 0%, #d4b896 100%);
+            --subtle-gradient: linear-gradient(135deg, #2a251f 0%, #342e26 100%);
+            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15);
+            --subtle-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            --hover-shadow: 0 8px 25px rgba(196, 164, 132, 0.20);
+        }
+    }
+
+    @layer base {
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
-            font-family: 'Noto+Sans+TC', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #f5f3f0;
-            color: #3c3835;
+            @apply font-sans text-[var(--text-primary)] overflow-x-hidden;
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft YaHei", sans-serif;
             line-height: 1.7;
-            min-height: 100vh;
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
-        /* 導航列 */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(245, 243, 240, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(60, 56, 53, 0.1);
-            z-index: 100;
-            padding: 20px 0;
+        h1, h2, h3, h4, h5, h6 {
+            @apply font-bold;
         }
-        
-        .nav-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .serif-heading {
+            font-family: 'Noto Serif TC', 'Playfair Display', 'Times New Roman', serif;
         }
-        
-        .logo {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 18px;
-            font-weight: 400;
-            color: #3c3835;
-            text-decoration: none;
-            letter-spacing: 1px;
+
+        .inter-font {
+            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
+
+        .noto-font {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
-        .nav-links a {
-            color: #6b6660;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 400;
-            transition: color 0.3s ease;
+
+        /* Enhanced floating animations */
+        .floating-element {
+            animation: float 8s ease-in-out infinite;
         }
-        
-        .nav-links a:hover {
-            color: #3c3835;
+
+        .floating-delayed {
+            animation: float 8s ease-in-out infinite 2s;
         }
-        
-        /* 主要內容 */
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 120px 30px 80px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
+
+        .floating-slow {
+            animation: float 12s ease-in-out infinite 4s;
         }
-        
-        /* 問候語 */
-        .greeting {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 16px;
-            color: #8b8680;
-            margin-bottom: 40px;
-            letter-spacing: 0.5px;
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            25% { 
+                transform: translateY(-30px) rotate(5deg);
+                opacity: 0.8;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(-3deg);
+                opacity: 1;
+            }
+            75% { 
+                transform: translateY(-40px) rotate(2deg);
+                opacity: 0.7;
+            }
         }
-        
-        /* 主標題 */
-        .main-title {
-            font-family: 'Noto Serif TC', serif;
-            font-size: clamp(1.8rem, 4vw, 2.4rem);
-            font-weight: 400;
-            color: #3c3835;
-            line-height: 1.5;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-        
-        .main-title .accent {
-            color: #a0956b;
-            font-weight: 500;
-        }
-        
-        /* 副標題 */
-        .subtitle {
-            font-size: 15px;
-            color: #8b8680;
-            margin-bottom: 50px;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-        
-        .subtitle .dot {
-            margin: 0 8px;
-            color: #a0956b;
-        }
-        
-        /* 描述文字 */
-        .description {
-            font-size: 16px;
-            color: #6b6660;
-            line-height: 1.8;
-            margin-bottom: 60px;
-            text-align: left;
-            background: rgba(255, 255, 255, 0.6);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 3px solid #a0956b;
-        }
-        
-        .description .quote {
-            font-style: italic;
-            color: #8b8680;
-            margin-bottom: 15px;
-        }
-        
-        .description .signature {
-            text-align: right;
-            font-size: 14px;
-            color: #a0956b;
-            margin-top: 20px;
-            font-weight: 500;
-        }
-        
-        /* 按鈕 */
-        .cta-buttons {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            margin-bottom: 60px;
-        }
-        
-        .btn {
-            padding: 14px 28px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 400;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-            border: 1px solid transparent;
-        }
-        
-        .btn-primary {
-            background: #3c3835;
-            color: #f5f3f0;
-            border-color: #3c3835;
-        }
-        
-        .btn-primary:hover {
-            background: #2a2622;
-            border-color: #2a2622;
-            transform: translateY(-1px);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: #3c3835;
-            border-color: #3c3835;
-        }
-        
-        .btn-secondary:hover {
-            background: #3c3835;
-            color: #f5f3f0;
-            transform: translateY(-1px);
-        }
-        
-        /* 技能標籤 */
-        .skills {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-        
-        .skill-item {
-            background: rgba(255, 255, 255, 0.8);
-            color: #6b6660;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(160, 149, 107, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-item:hover {
-            background: rgba(160, 149, 107, 0.1);
-            border-color: #a0956b;
-            color: #3c3835;
-        }
-        
-        /* 成就數據 */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 400px;
-            margin: 0 auto 40px;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 15px 10px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 8px;
-            border: 1px solid rgba(160, 149, 107, 0.1);
-        }
-        
-        .stat-number {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 20px;
-            font-weight: 500;
-            color: #a0956b;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            font-size: 12px;
-            color: #8b8680;
-            letter-spacing: 0.5px;
-        }
-        
-        /* 底部引言 */
-        .footer-quote {
-            font-family: 'Noto Serif TC', serif;
-            font-size: 14px;
-            color: #8b8680;
-            font-style: italic;
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        /* 動畫效果 */
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -277,53 +164,68 @@
                 transform: translateY(0);
             }
         }
-        
-        /* 響應式設計 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 100px 20px 60px;
-                max-width: 100%;
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0; 
+                transform: translateX(-80px) scale(0.9);
             }
-            
-            .nav-content {
-                padding: 0 20px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 200px;
-            }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .skills {
-                gap: 10px;
-            }
-            
-            .skill-item {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-            
-            .description {
-                padding: 20px;
-                text-align: center;
+            to { 
+                opacity: 1; 
+                transform: translateX(0) scale(1);
             }
         }
-        
-        /* 裝飾元素 */
+
+        .slide-in-right {
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        @keyframes slideInRight {
+            from { 
+                opacity: 0; 
+                transform: translateX(80px) scale(0.9);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(60px) scale(0.95);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(160, 149, 107, 0.12), 0 0 40px rgba(160, 149, 107, 0.06);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(160, 149, 107, 0.18), 0 0 60px rgba(160, 149, 107, 0.10);
+                transform: scale(1.02);
+            }
+        }
+
+        /* Decorative elements */
         .decoration {
             position: fixed;
             top: 20%;
@@ -347,130 +249,116 @@
             background: radial-gradient(circle, rgba(160, 149, 107, 0.05) 0%, transparent 70%);
             animation: float 8s ease-in-out infinite reverse;
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply px-8 py-4 text-white rounded-xl font-semibold transition-all duration-300 noto-font;
+            background: var(--minimal-gradient);
+            box-shadow: var(--card-shadow);
+            letter-spacing: 0.5px;
         }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+            background: linear-gradient(135deg, #8a8054 0%, #a0956b 100%);
+        }
+        
+        .btn-secondary {
+            @apply px-8 py-4 border-2 rounded-xl font-semibold transition-all duration-300 noto-font;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: var(--card-bg);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--card-bg);
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .glass-card {
+            @apply rounded-xl border;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: var(--minimal-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-padding {
+            @apply py-20 px-6 lg:px-8;
+        }
+
+        .hover-lift {
+            @apply transition-all duration-300 cursor-pointer;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .interactive-card {
+            @apply glass-card p-8 hover-lift;
+        }
+
+        .minimal-card {
+            @apply glass-card p-8 hover-lift;
+        }
+
+        /* Enhanced skill items for new design */
+        .skill-item {
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(160, 149, 107, 0.2);
+            transition: all 0.3s ease;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        
+        .skill-item:hover {
+            background: rgba(160, 149, 107, 0.1);
+            border-color: var(--primary-color);
+            color: var(--text-primary);
+        }
+    }
     </style>
 </head>
 <body>
-    <!-- 裝飾元素 -->
+    <!-- Enhanced decorative elements -->
     <div class="decoration"></div>
     
-    <!-- 導航 -->
-    <nav>
-        <div class="nav-content">
-            <a href="#" class="logo">Vanessa Liu</a>
-            <ul class="nav-links">
-                <li><a href="https://vanessachuchu.github.io/mind-brain/">作品</a></li>
-                <li><a href="https://github.com/vanessachuchu">關於</a></li>
-                <li><a href="mailto:vanessachuliu@gmail.com">聯絡</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="root"></div>
     
-    <!-- 主要內容 -->
-    <div class="container">
-        <!-- 問候語 -->
-        <div class="greeting fade-in">
-            Hello there.
-        </div>
-        
-        <!-- 主標題 -->
-        <h1 class="main-title fade-in fade-in-1">
-            我用<span class="accent">設計思維</span>與<span class="accent">溫暖初心</span><br>
-            創造有意義的數位體驗
-        </h1>
-        
-        <!-- 副標題 -->
-        <div class="subtitle fade-in fade-in-2">
-            產品經理<span class="dot">•</span>專案管理<span class="dot">•</span>前台接待專員
-        </div>
-        
-        <!-- 描述信件 -->
-        <div class="description fade-in fade-in-3">
-            <div class="quote">Dear 未來的夥伴，</div>
-            
-            每一個產品背後，都有一個想要解決真實問題的初心。
-            我是劉筑，專精於<strong>金融科技產品設計</strong>與<strong>跨團隊協作</strong>。
-            
-            <br><br>
-            
-            目前在澳洲<strong>THL (Tourism Holdings Limited)</strong>擔任前台接待專員，
-            在全球最大房車租賃公司服務國際客戶，運用英文溝通與跨部門協作技能。
-            同時持續開發<strong>「脈德小腦瓜」冥想思考專案</strong>，
-            幫助人們練習慢下來、感受當下。
-            
-            <div class="signature">With passion,<br>Vanessa</div>
-        </div>
-        
-        <!-- 按鈕 -->
-        <div class="cta-buttons fade-in fade-in-4">
-            <a href="https://vanessachuchu.github.io/mind-brain/" class="btn btn-primary">查看作品</a>
-            <a href="mailto:vanessachuliu@gmail.com" class="btn btn-secondary">聯絡我</a>
-        </div>
-        
-        <!-- 技能標籤 -->
-        <div class="skills fade-in fade-in-4">
-            <span class="skill-item">金融科技</span>
-            <span class="skill-item">國際客戶服務</span>
-            <span class="skill-item">系統整合</span>
-            <span class="skill-item">跨部門協作</span>
-            <span class="skill-item">AI 工具應用</span>
-            <span class="skill-item">英文溝通</span>
-        </div>
-        
-        <!-- 成就數據 -->
-        <div class="stats fade-in fade-in-5">
-            <div class="stat-item">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">年經驗</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">6</div>
-                <div class="stat-label">大平台</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">TOEIC</div>
-                <div class="stat-label">650分</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">1000+</div>
-                <div class="stat-label">使用者</div>
-            </div>
-        </div>
-        
-        <!-- 底部引言 -->
-        <div class="footer-quote fade-in fade-in-5">
-            "從內向外伸展的想法落地生根<br>
-            Mind-Brain: Ideas taking root from inside out"
-        </div>
-    </div>
-    
-    <script>
-        // 簡單的滾動效果
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(245, 243, 240, 0.98)';
-            } else {
-                nav.style.background = 'rgba(245, 243, 240, 0.95)';
-            }
-        });
-        
-        // 平滑滾動
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="utils/themeManager.js"></script>
+    <script src="utils/simpleLanguage.js"></script>
+    <script type="text/babel" src="components/LanguageToggle.js"></script>
+    <script type="text/babel" src="components/ThemeToggle.js"></script>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/About.js"></script>
+    <script type="text/babel" src="components/Featured.js"></script>
+    <script type="text/babel" src="components/Education.js"></script>
+    <script type="text/babel" src="components/Experience.js"></script>
+    <script type="text/babel" src="components/Skills.js"></script>
+    <script type="text/babel" src="components/Projects.js"></script>
+    <script type="text/babel" src="components/Contact.js"></script>
+    <script type="text/babel" src="utils/animations.js"></script>
+    <script type="text/babel" src="utils/charts.js"></script>
+    <script type="text/babel" src="app.js"></script>
 </body>
 </html>

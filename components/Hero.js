@@ -78,7 +78,7 @@ function Hero() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button 
                 onClick={() => document.getElementById('featured').scrollIntoView({ behavior: 'smooth' })}
-                className="bg-[var(--accent-color)] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[var(--accent-warm)] transition-all duration-300 hover:-translate-y-1"
+                className="btn-primary noto-font"
               >
                 <span className="flex items-center gap-3">
                   <div className="icon-folder text-lg"></div>
@@ -87,7 +87,7 @@ function Hero() {
               </button>
               <button 
                 onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-[var(--primary-color)] text-[var(--primary-color)] px-8 py-4 rounded-xl font-semibold hover:bg-[var(--primary-color)] hover:text-white transition-all duration-300 inter-font"
+                className="btn-secondary noto-font"
               >
                 <span className="flex items-center gap-3">
                   <div className="icon-mail text-lg"></div>
