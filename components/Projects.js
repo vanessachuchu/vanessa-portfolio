@@ -41,12 +41,12 @@ function Projects() {
           },
           {
             id: 2,
-            title: 'Thought Spark Cards',
-            description: 'AI靈感管理與深度思考助手，完整的想法生命週期管理系統',
+            title: '脈德小腦瓜 Mind-Brain',
+            description: '互動式冥想思考專案，幫助人們練習慢下來、感受當下，將抽象想法具體化',
             image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            tags: ['React', 'AI整合', 'No-Code', 'Lovable'],
-            link: 'https://preview--thought-spark-cards.lovable.app/',
-            detailPage: 'project-thought-cards.html',
+            tags: ['JavaScript', '冥想思考', 'GitHub Pages', '開源專案'],
+            link: 'https://vanessachuchu.github.io/mind-brain/',
+            detailPage: 'https://github.com/vanessachuchu/mind-brain',
             featured: true
           },
           {
@@ -100,12 +100,12 @@ function Projects() {
           },
           {
             id: 2,
-            title: 'Thought Spark Cards',
-            description: 'AI inspiration management and deep thinking assistant, complete ideation lifecycle management system',
+            title: 'Mind-Brain Interactive Meditation',
+            description: 'Interactive meditation thinking project, helping people practice slowing down, feeling the present, and materializing abstract ideas',
             image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            tags: ['React', 'AI Integration', 'No-Code', 'Lovable'],
-            link: 'https://preview--thought-spark-cards.lovable.app/',
-            detailPage: 'project-thought-cards.html',
+            tags: ['JavaScript', 'Meditation Thinking', 'GitHub Pages', 'Open Source'],
+            link: 'https://vanessachuchu.github.io/mind-brain/',
+            detailPage: 'https://github.com/vanessachuchu/mind-brain',
             featured: true
           },
           {

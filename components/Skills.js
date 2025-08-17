@@ -49,7 +49,7 @@ function Skills() {
               { name: 'Adobe Illustrator', level: 'intermediate', years: '3年', desc: '基礎向量圖形設計、品牌視覺' },
               { name: 'Notion / Trello', level: 'expert', years: '3年', desc: '專案管理、文件協作' },
               { name: 'AI 工具應用', level: 'advanced', years: '1年', desc: 'ChatGPT、Claude、Midjourney' },
-              { name: 'No-code 平台', level: 'intermediate', years: '6個月', desc: 'Lovable、Bubble、Zapier' }
+              { name: 'No-code 平台', level: 'intermediate', years: '6個月', desc: 'Bubble、Zapier、GitHub Pages' }
             ]
           },
           analysis: {
@@ -121,7 +121,7 @@ function Skills() {
               { name: 'Adobe Illustrator', level: 'intermediate', years: '3 years', desc: 'Basic vector graphics design, brand visuals' },
               { name: 'Notion / Trello', level: 'expert', years: '3 years', desc: 'Project management, document collaboration' },
               { name: 'AI Tool Applications', level: 'advanced', years: '1 year', desc: 'ChatGPT, Claude, Midjourney' },
-              { name: 'No-code Platforms', level: 'intermediate', years: '6 months', desc: 'Lovable, Bubble, Zapier' }
+              { name: 'No-code Platforms', level: 'intermediate', years: '6 months', desc: 'Bubble, Zapier, GitHub Pages' }
             ]
           },
           analysis: {

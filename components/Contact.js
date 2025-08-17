@@ -59,8 +59,8 @@ function Contact() {
       {
         icon: 'smartphone',
         title: currentLang === 'zh' ? '台灣電話' : 'Taiwan Phone',
-        value: '(+886) 977-304-022',
-        link: 'tel:+886977304022'
+        value: '(+886) 909-327-022',
+        link: 'tel:+886909327022'
       },
       {
         icon: 'map-pin',
@@ -71,8 +71,8 @@ function Contact() {
       {
         icon: 'globe',
         title: 'Portfolio',
-        value: 'Lovable Project',
-        link: 'https://lovable.dev/projects/e8ac6ef0-dbe6-4c69-9c74-f110a616d3ec'
+        value: 'GitHub Projects',
+        link: 'https://github.com/vanessachuchu'
       }
     ];
 

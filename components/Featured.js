@@ -33,53 +33,53 @@ function Featured() {
         ],
         tabContent: {
           overview: {
-            title: '靈感管理與深度思考助手',
-            subtitle: 'AI 驅動的完整想法生命週期系統 | 2024.11 - Present',
-            description: '專為創意工作者與專業人士設計的靈感管理系統。提供日曆整合記錄、AI 智能對話引導、心智圖視覺化，以及自動行動計劃生成，打造從靈感捕捉到實際執行的完整閉環。',
-            targetUsers: '創意工作者、企劃人員、需要系統化思考的專業人士',
+            title: '脈德小腦瓜 - 互動式冥想思考專案',
+            subtitle: '從內向外伸展的想法落地生根系統 | 2024.11 - Present',
+            description: '過去在數位領域的專業累積，讓我開始思考是否能創造一個空間，幫助人們練習「慢下來、感受當下」。這個專案靈感來自我一路以來對「思考如何落地行動」的探索，透過互動式思緒卡片，讓使用者可以自我覺察、自我提問，並練習將思考具體化。名字「mind-brain」象徵著從內向外伸展出來的想法落地生根。',
+            targetUsers: '需要慢下來思考的現代人、追求自我覺察的個人、想要將想法具體化的創作者',
             demoBtn: '體驗 Live Demo',
-            detailBtn: '查看詳細介紹',
+            detailBtn: '查看專案源碼',
             items: [
-              { problem: '靈感易逝', solution: '語音快捕 + 日曆整合', icon: 'zap' },
-              { problem: '思路中斷', solution: 'AI 續接 + 對話保存', icon: 'refresh-cw' },
-              { problem: '缺乏引導', solution: '智能對話 + 深度提問', icon: 'brain' },
-              { problem: '行動落差', solution: '自動轉換 + Notion 同步', icon: 'target' }
+              { problem: '思緒混亂', solution: '互動式思緒卡片整理', icon: 'brain' },
+              { problem: '缺乏覺察', solution: '引導式自我提問系統', icon: 'eye' },
+              { problem: '想法抽象', solution: '視覺化思考具體化', icon: 'target' },
+              { problem: '生活急躁', solution: '冥想式慢思考練習', icon: 'heart' }
             ]
           },
           features: {
             title: '核心功能模組',
             items: [
-              { icon: 'calendar', title: '首頁日曆整合', desc: '月曆首頁顯示，點擊日期查看思緒，視覺化標示記錄日期' },
-              { icon: 'edit-3', title: '思緒探索編輯整合', desc: '合併編輯與探索，點擊思緒直接進入 AI 對話，自動更新記錄' },
-              { icon: 'git-branch', title: '一目瞭然心智圖', desc: '樹狀結構展現思考脈絡，不同顏色區分內容類型與進度狀態' },
-              { icon: 'mic', title: '語音輸入體驗', desc: '即時語音識別，麥克風狀態視覺回饋，與文字輸入無縫切換' },
-              { icon: 'message-circle', title: 'AI 對話引導', desc: '智能提問深化思考，自動滾動與清空，Enter 快速發送' },
-              { icon: 'external-link', title: 'Notion API 整合', desc: '行動計劃自動同步至 Notion，支援雙向數據流動' }
+              { icon: 'cards', title: '互動式思緒卡片', desc: '透過拖拽、點選等互動方式，讓抽象思考變得具體可見' },
+              { icon: 'compass', title: '引導式自我探索', desc: '設計不同主題的提問路徑，協助使用者深入自我覺察' },
+              { icon: 'tree-pine', title: '想法落地生根', desc: '將思考過程視覺化呈現，看見從mind到brain的思維擴展' },
+              { icon: 'clock', title: '慢思考練習', desc: '提供節奏引導，讓使用者練習放慢思考速度，感受當下' },
+              { icon: 'heart', title: '情緒覺察空間', desc: '結合冥想元素，幫助使用者覺察內在情緒與想法' },
+              { icon: 'github', title: '開源專案', desc: '完全開源的專案，透過GitHub分享創作過程與技術實現' }
             ]
           },
           tech: {
             title: '技術架構',
             stack: [
-              { category: '開發平台', tech: 'Lovable (No-code) + GitHub' },
-              { category: '前端框架', tech: 'React 18 + TypeScript + Vite' },
-              { category: 'UI 元件庫', tech: 'shadcn/ui + Radix UI + Tailwind CSS' },
-              { category: '後端服務', tech: 'Supabase (PostgreSQL + Auth + Functions)' },
-              { category: 'AI 整合', tech: 'OpenAI API + Custom AI Hooks' },
-              { category: '語音處理', tech: 'Web Speech API + 即時識別' },
-              { category: '狀態管理', tech: 'React Query + Context API' },
-              { category: '視覺化引擎', tech: 'Tree Layout + 自定義圖表' },
-              { category: '外部整合', tech: 'Notion API + .ics 日曆生成' }
+              { category: '開發平台', tech: 'GitHub Pages 靜態部署' },
+              { category: '前端框架', tech: 'Vanilla JavaScript + CSS3 + HTML5' },
+              { category: 'UI 設計', tech: '自定義CSS + 動畫效果 + 響應式設計' },
+              { category: '互動實現', tech: '原生 JavaScript 事件處理' },
+              { category: '視覺效果', tech: 'CSS Transform + Transition + Animation' },
+              { category: '資料存儲', tech: 'Local Storage + Session Storage' },
+              { category: '部署方式', tech: 'GitHub Actions + GitHub Pages' },
+              { category: '版本控制', tech: 'Git + GitHub Repository' },
+              { category: '設計理念', tech: '極簡主義 + 使用者體驗優先' }
             ]
           },
           results: {
             title: '成功指標與產品 KPI',
             metrics: [
-              { label: '思緒記錄完成率', target: '> 90%', desc: '用戶成功記錄並保存思緒的比例' },
-              { label: 'AI 對話平均輪數', target: '> 3 輪', desc: '用戶與 AI 深度互動的程度指標' },
-              { label: '心智圖查看率', target: '> 60%', desc: '用戶主動查看心智圖的使用比例' },
-              { label: '想法轉行動比率', target: '> 40%', desc: '想法成功轉化為行動計劃的轉換率' },
-              { label: '語音識別準確率', target: '> 85%', desc: '語音轉文字的準確性技術指標' },
-              { label: 'AI 回應時間', target: '< 5 秒', desc: 'AI 智能回應的平均響應時間' }
+              { label: '使用者覺察提升度', target: '> 80%', desc: '用戶反饋在自我覺察方面的提升程度' },
+              { label: '思考慢化成功率', target: '> 70%', desc: '用戶能夠放慢思考節奏，感受當下的比例' },
+              { label: '想法具體化完成度', target: '> 60%', desc: '抽象想法成功轉化為具體可見的比例' },
+              { label: '冥想練習持續性', target: '> 50%', desc: '用戶持續使用冥想思考功能的比例' },
+              { label: '情緒覺察敏感度', target: '> 65%', desc: '用戶對內在情緒變化的察覺能力提升' },
+              { label: '專案開源貢獻度', target: '持續更新', desc: 'GitHub專案的更新頻率與社群參與度' }
             ]
           }
         }
@@ -95,53 +95,53 @@ function Featured() {
         ],
         tabContent: {
           overview: {
-            title: 'Inspiration Management & Deep Thinking Assistant',
-            subtitle: 'AI-Driven Complete Ideation Lifecycle System | 2024.11 - Present',
-            description: 'A comprehensive inspiration management system designed for creative professionals and knowledge workers. Features calendar integration, AI-powered dialogue guidance, mind map visualization, and automated action plan generation, creating a complete loop from inspiration capture to actual implementation.',
-            targetUsers: 'Creative professionals, planners, and professionals requiring systematic thinking',
+            title: 'Mind-Brain - Interactive Meditation & Thinking Project',
+            subtitle: 'Ideas Rooting System from Inside Out | 2024.11 - Present',
+            description: 'My professional experience in the digital field has led me to think about creating a space to help people practice "slowing down and feeling the present moment." This project is inspired by my ongoing exploration of "how to turn thoughts into actions" through interactive thought cards, allowing users to practice self-awareness, self-questioning, and making thinking concrete. The name "mind-brain" symbolizes ideas extending from inside out, taking root and growing.',
+            targetUsers: 'Modern people who need to slow down, individuals pursuing self-awareness, creators wanting to materialize ideas',
             demoBtn: 'Experience Live Demo',
-            detailBtn: 'View Detailed Introduction',
+            detailBtn: 'View Project Source',
             items: [
-              { problem: 'Fleeting Ideas', solution: 'Voice Capture + Calendar Integration', icon: 'zap' },
-              { problem: 'Interrupted Thinking', solution: 'AI Continuation + Dialogue Preservation', icon: 'refresh-cw' },
-              { problem: 'Lack of Guidance', solution: 'Smart Dialogue + Deep Questioning', icon: 'brain' },
-              { problem: 'Action Gap', solution: 'Auto Conversion + Notion Sync', icon: 'target' }
+              { problem: 'Chaotic Thoughts', solution: 'Interactive Thought Card Organization', icon: 'brain' },
+              { problem: 'Lack of Awareness', solution: 'Guided Self-Inquiry System', icon: 'eye' },
+              { problem: 'Abstract Ideas', solution: 'Visualization of Concrete Thinking', icon: 'target' },
+              { problem: 'Rushed Living', solution: 'Meditative Slow Thinking Practice', icon: 'heart' }
             ]
           },
           features: {
             title: 'Core Feature Modules',
             items: [
-              { icon: 'calendar', title: 'Homepage Calendar Integration', desc: 'Monthly calendar homepage display, click dates to view thoughts, visual indication of recorded dates' },
-              { icon: 'edit-3', title: 'Thought Exploration & Editing Integration', desc: 'Merged editing and exploration, click thoughts to directly enter AI dialogue, automatic record updates' },
-              { icon: 'git-branch', title: 'Intuitive Mind Mapping', desc: 'Tree structure displays thinking patterns, different colors distinguish content types and progress status' },
-              { icon: 'mic', title: 'Voice Input Experience', desc: 'Real-time voice recognition, microphone status visual feedback, seamless switching with text input' },
-              { icon: 'message-circle', title: 'AI Dialogue Guidance', desc: 'Intelligent questioning deepens thinking, auto-scroll and clear functions, Enter for quick sending' },
-              { icon: 'external-link', title: 'Notion API Integration', desc: 'Action plans automatically sync to Notion, supports bidirectional data flow' }
+              { icon: 'cards', title: 'Interactive Thought Cards', desc: 'Through drag-and-drop, clicking and other interactions, make abstract thinking concrete and visible' },
+              { icon: 'compass', title: 'Guided Self-Exploration', desc: 'Design different themed inquiry paths to assist users in deep self-awareness' },
+              { icon: 'tree-pine', title: 'Ideas Taking Root', desc: 'Visualize the thinking process, see the expansion from mind to brain' },
+              { icon: 'clock', title: 'Slow Thinking Practice', desc: 'Provide rhythm guidance, let users practice slowing down thinking speed, feeling the present' },
+              { icon: 'heart', title: 'Emotional Awareness Space', desc: 'Combine meditation elements to help users become aware of inner emotions and thoughts' },
+              { icon: 'github', title: 'Open Source Project', desc: 'Completely open source project, sharing creative process and technical implementation through GitHub' }
             ]
           },
           tech: {
             title: 'Technical Architecture',
             stack: [
-              { category: 'Development Platform', tech: 'Lovable (No-code) + GitHub' },
-              { category: 'Frontend Framework', tech: 'React 18 + TypeScript + Vite' },
-              { category: 'UI Component Library', tech: 'shadcn/ui + Radix UI + Tailwind CSS' },
-              { category: 'Backend Services', tech: 'Supabase (PostgreSQL + Auth + Functions)' },
-              { category: 'AI Integration', tech: 'OpenAI API + Custom AI Hooks' },
-              { category: 'Voice Processing', tech: 'Web Speech API + Real-time Recognition' },
-              { category: 'State Management', tech: 'React Query + Context API' },
-              { category: 'Visualization Engine', tech: 'Tree Layout + Custom Charts' },
-              { category: 'External Integration', tech: 'Notion API + .ics Calendar Generation' }
+              { category: 'Development Platform', tech: 'GitHub Pages Static Deployment' },
+              { category: 'Frontend Framework', tech: 'Vanilla JavaScript + CSS3 + HTML5' },
+              { category: 'UI Design', tech: 'Custom CSS + Animation Effects + Responsive Design' },
+              { category: 'Interaction Implementation', tech: 'Native JavaScript Event Handling' },
+              { category: 'Visual Effects', tech: 'CSS Transform + Transition + Animation' },
+              { category: 'Data Storage', tech: 'Local Storage + Session Storage' },
+              { category: 'Deployment Method', tech: 'GitHub Actions + GitHub Pages' },
+              { category: 'Version Control', tech: 'Git + GitHub Repository' },
+              { category: 'Design Philosophy', tech: 'Minimalism + User Experience First' }
             ]
           },
           results: {
             title: 'Success Metrics & Product KPIs',
             metrics: [
-              { label: 'Thought Recording Completion Rate', target: '> 90%', desc: 'Percentage of users successfully recording and saving thoughts' },
-              { label: 'AI Dialogue Average Rounds', target: '> 3 rounds', desc: 'User-AI deep interaction engagement indicator' },
-              { label: 'Mind Map View Rate', target: '> 60%', desc: 'User active mind map viewing usage ratio' },
-              { label: 'Idea-to-Action Conversion Rate', target: '> 40%', desc: 'Conversion rate of ideas successfully transformed into action plans' },
-              { label: 'Voice Recognition Accuracy', target: '> 85%', desc: 'Speech-to-text accuracy technical indicator' },
-              { label: 'AI Response Time', target: '< 5 seconds', desc: 'AI intelligent response average response time' }
+              { label: 'User Awareness Enhancement', target: '> 80%', desc: 'User feedback on improvement in self-awareness levels' },
+              { label: 'Thinking Slowdown Success Rate', target: '> 70%', desc: 'Percentage of users able to slow down thinking pace and feel the present' },
+              { label: 'Idea Materialization Completion', target: '> 60%', desc: 'Percentage of abstract ideas successfully transformed into concrete forms' },
+              { label: 'Meditation Practice Continuity', target: '> 50%', desc: 'Percentage of users who continue using meditation thinking features' },
+              { label: 'Emotional Awareness Sensitivity', target: '> 65%', desc: 'Enhancement in users\' ability to perceive inner emotional changes' },
+              { label: 'Open Source Contribution', target: 'Continuous Updates', desc: 'GitHub project update frequency and community participation' }
             ]
           }
         }
@@ -204,7 +204,7 @@ function Featured() {
                     
                     <div className="flex justify-center gap-4 mb-8">
                       <a 
-                        href="https://preview--thought-spark-cards.lovable.app/"
+                        href="https://vanessachuchu.github.io/mind-brain/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary flex items-center gap-2 inter-font"
@@ -213,7 +213,9 @@ function Featured() {
                         <span>{currentTabContent.demoBtn}</span>
                       </a>
                       <a 
-                        href="project-thought-cards.html"
+                        href="https://github.com/vanessachuchu/mind-brain"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn-secondary flex items-center gap-2 inter-font"
                       >
                         <div className="icon-file-text text-lg"></div>
