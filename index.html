@@ -29,59 +29,59 @@
     <style type="text/tailwindcss">
     @layer theme {
         :root {
-            /* Enhanced warm beige elegant theme with new design elements */
-            --bg-primary: #f5f3f0;
-            --bg-secondary: #f4f2ef;
-            --bg-tertiary: #faf8f5;
-            --card-bg: #fdfcfa;
+            /* Soft warm beige elegant theme - inspired by gentle meditation aesthetics */
+            --bg-primary: #f8f6f3;
+            --bg-secondary: #f5f3f0;
+            --bg-tertiary: #faf9f7;
+            --card-bg: #ffffff;
             --text-primary: #3c3835;
             --text-secondary: #6b6660;
             --text-light: #8b8680;
             --primary-color: #a0956b;
-            --primary-dark: #8a8054;
+            --primary-dark: #8a7c57;
             --secondary-color: #c4a484;
             --accent-color: #f0ede8;
             --accent-warm: #f9f7f4;
-            --border: #ebe7e2;
+            --border: #ede9e4;
             --ring: #a0956b;
-            --destructive: #d4756b;
-            --muted: #f4f2ef;
+            --destructive: #c4756b;
+            --muted: #f5f3f0;
             --muted-foreground: #8b8680;
             
             /* Derived colors */
-            --minimal-gradient: linear-gradient(135deg, #a0956b 0%, #c4a484 100%);
-            --subtle-gradient: linear-gradient(135deg, #f5f3f0 0%, #f4f2ef 100%);
-            --card-shadow: 0 2px 8px rgba(60, 56, 53, 0.06), 0 1px 3px rgba(60, 56, 53, 0.04);
-            --subtle-shadow: 0 1px 3px rgba(60, 56, 53, 0.03);
-            --hover-shadow: 0 6px 20px rgba(160, 149, 107, 0.15);
+            --minimal-gradient: linear-gradient(135deg, #a0956b 0%, #b5a477 100%);
+            --subtle-gradient: linear-gradient(135deg, #f8f6f3 0%, #f5f3f0 100%);
+            --card-shadow: 0 2px 12px rgba(60, 56, 53, 0.08), 0 1px 4px rgba(60, 56, 53, 0.04);
+            --subtle-shadow: 0 1px 4px rgba(60, 56, 53, 0.06);
+            --hover-shadow: 0 8px 24px rgba(160, 149, 107, 0.12);
         }
 
         .theme-dark {
-            /* Enhanced warm dark elegant theme */
-            --bg-primary: #2a251f;
-            --bg-secondary: #342e26;
-            --bg-tertiary: #3e362c;
-            --card-bg: #342e26;
+            /* Soft warm dark elegant theme - inspired by gentle evening aesthetics */
+            --bg-primary: #2d2823;
+            --bg-secondary: #38342d;
+            --bg-tertiary: #403c34;
+            --card-bg: #38342d;
             --text-primary: #f5f3f0;
-            --text-secondary: #d0c8bb;
-            --text-light: #b8aea0;
+            --text-secondary: #d5cdc0;
+            --text-light: #b8b0a3;
             --primary-color: #c4a484;
             --primary-dark: #a0956b;
             --secondary-color: #d4b896;
-            --accent-color: #4a453e;
-            --accent-warm: #55524b;
-            --border: #4a453e;
+            --accent-color: #4f4a42;
+            --accent-warm: #5a554d;
+            --border: #4f4a42;
             --ring: #c4a484;
-            --destructive: #e89085;
-            --muted: #342e26;
-            --muted-foreground: #b8aea0;
+            --destructive: #d47c6b;
+            --muted: #38342d;
+            --muted-foreground: #b8b0a3;
             
             /* Derived colors */
             --minimal-gradient: linear-gradient(135deg, #c4a484 0%, #d4b896 100%);
-            --subtle-gradient: linear-gradient(135deg, #2a251f 0%, #342e26 100%);
-            --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15);
-            --subtle-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-            --hover-shadow: 0 8px 25px rgba(196, 164, 132, 0.20);
+            --subtle-gradient: linear-gradient(135deg, #2d2823 0%, #38342d 100%);
+            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+            --subtle-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+            --hover-shadow: 0 8px 24px rgba(196, 164, 132, 0.15);
         }
     }
 
@@ -254,7 +254,7 @@
     @layer components {
         .btn-primary {
             @apply px-8 py-4 text-white rounded-xl font-semibold transition-all duration-300 noto-font;
-            background: linear-gradient(135deg, #6b5f42 0%, #8a8054 100%);
+            background: linear-gradient(135deg, #3c3835 0%, #5a5248 100%);
             box-shadow: var(--card-shadow);
             letter-spacing: 0.5px;
         }
@@ -262,19 +262,19 @@
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: var(--hover-shadow);
-            background: linear-gradient(135deg, #5a4e36 0%, #6b5f42 100%);
+            background: linear-gradient(135deg, #2a2622 0%, #3c3835 100%);
         }
         
         .btn-secondary {
             @apply px-8 py-4 border-2 rounded-xl font-semibold transition-all duration-300 noto-font;
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+            border-color: var(--text-primary);
+            color: var(--text-primary);
             background: var(--card-bg);
             letter-spacing: 0.5px;
         }
         
         .btn-secondary:hover {
-            background: var(--primary-color);
+            background: var(--text-primary);
             color: var(--card-bg);
             transform: translateY(-2px);
             box-shadow: var(--hover-shadow);
