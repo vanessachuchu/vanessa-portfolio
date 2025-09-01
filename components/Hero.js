@@ -29,27 +29,31 @@ function Hero() {
     const content = {
       zh: {
         greeting: 'Hello there.',
-        title: '我用設計思維與溫暖初心\n打造有意義的數位產品',
-        subtitle: '產品經理 • 專案管理 • AI 整合',
+        title: '我相信每個產品\n都應該走進人們的心裡',
+        subtitle: '產品經理 • 工具探索者 • 體驗設計師',
         letterIntro: 'Dear 未來的夥伴，',
-        description: '每一個產品背後，都有一個想要解決真實問題的初心。我是劉筑，專精於金融科技產品設計與跨團隊協作。',
-        description2: '在過去的 2 年多時間裡，我主導了基金觀測站生態系統的重構專案，成功整合 6 大子平台，為超過 1000 位金融從業者創造了更好的使用體驗。我相信，最好的產品是能夠真正改善人們工作與生活的產品。',
-        signature: 'With passion,\nVanessa',
+        description: '我是劉筑，一個相信產品應該有溫度的人。對我來說，做產品不只是把功能做出來，而是真正去思考：這個產品如何貼近人心？如何讓使用者感到被理解？',
+        description2: '我很擅長用各種工具去探索和驗證想法，會把整個過程和可能的結果都嘗試過，然後找到最適合的方法。就像現在我在設計「脈德小腦瓜」一樣，從最初的靈感到每一個互動細節，都在思考如何讓使用者真正感受到內心的平靜。',
+        description3: '我不想受限於任何單一領域的機會。無論是數位產品、AI 工具整合、還是使用者體驗優化，我都希望能用心去創造真正有意義的東西。',
+        signature: 'With warm intentions,\nVanessa',
         portfolioBtn: '查看作品',
         contactBtn: '聯絡我',
-        quote: '"Growth isn\'t about becoming someone else;\nit\'s about evolving into your best self."'
+        quote: '"最好的產品，是那些能讓人感到被真正理解的產品。"',
+        skillsIntro: '我擅長的領域'
       },
       en: {
         greeting: 'Hello there.',
-        title: 'I use design thinking and warm intentions\nto create meaningful digital products',
-        subtitle: 'Product Manager • Project Management • AI Integration',
+        title: 'I believe every product\nshould touch people\'s hearts',
+        subtitle: 'Product Manager • Tool Explorer • Experience Designer',
         letterIntro: 'Dear future partners,',
-        description: 'Behind every product lies an intention to solve real problems. I\'m Vanessa, specialized in fintech product design and cross-team collaboration.',
-        description2: 'Over the past 2+ years, I led the reconstruction project of the Fund Observatory ecosystem, successfully integrating 6 major platforms and creating better user experiences for over 1000 financial professionals. I believe the best products are those that truly improve people\'s work and life.',
-        signature: 'With passion,\nVanessa',
+        description: 'I\'m Vanessa, someone who believes products should have warmth. For me, creating products isn\'t just about building features—it\'s about truly thinking: How can this product touch people\'s hearts? How can users feel understood?',
+        description2: 'I\'m skilled at using various tools to explore and validate ideas, trying out the entire process and possible outcomes, then finding the most suitable approach. Just like how I\'m currently designing "Mind-Brain"—from the initial inspiration to every interaction detail, I\'m thinking about how to let users truly feel inner peace.',
+        description3: 'I don\'t want to be limited by opportunities in any single field. Whether it\'s digital products, AI tool integration, or user experience optimization, I hope to create truly meaningful things with genuine care.',
+        signature: 'With warm intentions,\nVanessa',
         portfolioBtn: 'View Portfolio',
         contactBtn: 'Contact Me',
-        quote: '"Growth isn\'t about becoming someone else;\nit\'s about evolving into your best self."'
+        quote: '"The best products are those that make people feel truly understood."',
+        skillsIntro: 'What I\'m Good At'
       }
     };
 
@@ -98,8 +102,12 @@ function Hero() {
                   {currentContent.description}
                 </p>
                 
-                <p className="text-[var(--text-secondary)] mb-6 leading-relaxed noto-font">
+                <p className="text-[var(--text-secondary)] mb-4 leading-relaxed noto-font">
                   {currentContent.description2}
+                </p>
+                
+                <p className="text-[var(--text-secondary)] mb-6 leading-relaxed noto-font">
+                  {currentContent.description3}
                 </p>
                 
                 <div className="text-right text-sm text-[var(--primary-color)] font-medium noto-font">
@@ -130,12 +138,18 @@ function Hero() {
             </div>
             
             {/* 技能標籤 */}
-            <div className="flex justify-center gap-4 flex-wrap mb-12 fade-in fade-in-4">
-              <span className="skill-item">金融科技</span>
-              <span className="skill-item">B2B 產品設計</span>
-              <span className="skill-item">系統整合</span>
-              <span className="skill-item">敏捷專案管理</span>
-              <span className="skill-item">AI 工具應用</span>
+            <div className="mb-12 fade-in fade-in-4">
+              <div className="text-center text-sm text-[var(--text-light)] mb-6 noto-font">
+                {currentContent.skillsIntro}
+              </div>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <span className="skill-item">產品設計思維</span>
+                <span className="skill-item">使用者體驗優化</span>
+                <span className="skill-item">AI 工具整合</span>
+                <span className="skill-item">跨團隊協作</span>
+                <span className="skill-item">敏捷專案管理</span>
+                <span className="skill-item">工具探索應用</span>
+              </div>
             </div>
             
             {/* 成就數據 */}

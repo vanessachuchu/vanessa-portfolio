@@ -197,7 +197,7 @@ function Skills() {
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 serif-heading">
               {currentContent.title}
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto inter-font">
+            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto noto-font">
               {currentContent.subtitle}
             </p>
           </div>
@@ -208,7 +208,7 @@ function Skills() {
               <button
                 key={key}
                 onClick={() => setActiveCategory(key)}
-                className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-medium transition-all duration-300 inter-font ${
+                className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-medium transition-all duration-300 noto-font ${
                   activeCategory === key
                     ? `bg-gradient-to-r ${category.color} text-white shadow-lg transform scale-105`
                     : 'bg-[var(--card-bg)] text-[var(--text-secondary)] hover:text-[var(--primary-color)] hover:shadow-md border border-[var(--border)]'
@@ -223,7 +223,7 @@ function Skills() {
           {/* Skills Display Area */}
           <div className="minimal-card p-8 lg:p-12">
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold mb-4 inter-font">
+              <h3 className="text-3xl font-bold mb-4 serif-heading">
                 {skillCategories[activeCategory].title}
               </h3>
               <div className="w-20 h-1 bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent-color)] mx-auto rounded-full"></div>
@@ -236,19 +236,19 @@ function Skills() {
                   className="glass-card p-6 hover-lift transition-all duration-300"
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h4 className="font-semibold text-[var(--text-primary)] inter-font">{skill.name}</h4>
+                    <h4 className="font-semibold text-[var(--text-primary)] noto-font">{skill.name}</h4>
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${levelColors[skill.level]}`}>
                       {levelLabels[skill.level]}
                     </span>
                   </div>
                   
                   <div className="mb-3">
-                    <span className="text-sm font-medium text-[var(--primary-color)] inter-font">
+                    <span className="text-sm font-medium text-[var(--primary-color)] noto-font">
                       {currentContent.experienceLabel}: {skill.years}
                     </span>
                   </div>
                   
-                  <p className="text-sm text-[var(--text-secondary)] inter-font leading-relaxed">
+                  <p className="text-sm text-[var(--text-secondary)] noto-font leading-relaxed">
                     {skill.desc}
                   </p>
                 </div>
@@ -259,20 +259,20 @@ function Skills() {
           {/* Skills Statistics */}
           <div className="grid md:grid-cols-4 gap-6 mt-12">
             <div className="text-center glass-card p-6">
-              <div className="text-3xl font-bold gradient-text mb-2 inter-font">25+</div>
-              <div className="text-sm text-[var(--text-secondary)] inter-font">{currentContent.stats.professionalSkills}</div>
+              <div className="text-3xl font-bold gradient-text mb-2 noto-font">25+</div>
+              <div className="text-sm text-[var(--text-secondary)] noto-font">{currentContent.stats.professionalSkills}</div>
             </div>
             <div className="text-center glass-card p-6">
-              <div className="text-3xl font-bold gradient-text mb-2 inter-font">5</div>
-              <div className="text-sm text-[var(--text-secondary)] inter-font">{currentContent.stats.skillDomains}</div>
+              <div className="text-3xl font-bold gradient-text mb-2 noto-font">5</div>
+              <div className="text-sm text-[var(--text-secondary)] noto-font">{currentContent.stats.skillDomains}</div>
             </div>
             <div className="text-center glass-card p-6">
-              <div className="text-3xl font-bold gradient-text mb-2 inter-font">3</div>
-              <div className="text-sm text-[var(--text-secondary)] inter-font">{currentContent.stats.languages}</div>
+              <div className="text-3xl font-bold gradient-text mb-2 noto-font">3</div>
+              <div className="text-sm text-[var(--text-secondary)] noto-font">{currentContent.stats.languages}</div>
             </div>
             <div className="text-center glass-card p-6">
-              <div className="text-3xl font-bold gradient-text mb-2 inter-font">{currentLang === 'zh' ? '2年以上' : '2+ years'}</div>
-              <div className="text-sm text-[var(--text-secondary)] inter-font">{currentContent.stats.projectExperience}</div>
+              <div className="text-3xl font-bold gradient-text mb-2 noto-font">{currentLang === 'zh' ? '2年以上' : '2+ years'}</div>
+              <div className="text-sm text-[var(--text-secondary)] noto-font">{currentContent.stats.projectExperience}</div>
             </div>
           </div>
         </div>

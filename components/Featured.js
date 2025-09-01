@@ -28,58 +28,43 @@ function Featured() {
         tabs: [
           { id: 'overview', label: '專案概述', icon: 'lightbulb' },
           { id: 'features', label: '功能特色', icon: 'zap' },
-          { id: 'tech', label: '技術棧', icon: 'code' },
-          { id: 'results', label: '產品指標', icon: 'trending-up' }
+          { id: 'results', label: '使用體驗', icon: 'heart' }
         ],
         tabContent: {
           overview: {
             title: '脈德小腦瓜',
-            subtitle: '從內向外伸展的想法落地生根系統 | 2024.11 - Present',
-            description: '過去在數位領域的專業累積，讓我開始思考是否能創造一個空間，幫助人們練習「慢下來、感受當下」。這個專案靈感來自我一路以來對「思考如何落地行動」的探索，透過互動式思緒卡片，讓使用者可以自我覺察、自我提問，並練習將思考具體化。名字「mind-brain」象徵著從內向外伸展出來的想法落地生根。',
-            targetUsers: '需要慢下來思考的現代人、追求自我覺察的個人、想要將想法具體化的創作者',
+            subtitle: 'React + TypeScript 全端思考管理應用 | 2024.11 - Present',
+            description: '這不只是一個專案，而是我對「如何讓科技真正貼近人心」的實踐。從設計到開發，每一個功能都在思考：如何讓忙碌的現代人有一個溫暖的數位空間，可以慢下來、整理思緒、感受內心。我用 React + TypeScript 打造了完整的前後端系統，但技術只是手段，真正的目標是創造一個讓人感到被理解的產品。',
+            targetUsers: '忙碌卻渴望內心平靜的現代人、想要記錄思考歷程的創作者、追求自我覺察與成長的個人',
             demoBtn: '體驗 Live Demo',
             detailBtn: '查看專案源碼',
             items: [
-              { problem: '思緒混亂', solution: '互動式思緒卡片整理', icon: 'brain' },
-              { problem: '缺乏覺察', solution: '引導式自我提問系統', icon: 'eye' },
-              { problem: '想法抽象', solution: '視覺化思考具體化', icon: 'target' },
-              { problem: '生活急躁', solution: '冥想式慢思考練習', icon: 'heart' }
+              { problem: '思緒混亂無處安放', solution: '直覺式思緒卡片記錄', icon: 'brain' },
+              { problem: '時間管理總是焦慮', solution: '溫柔的日曆與待辦整合', icon: 'eye' },
+              { problem: '想法容易遺忘', solution: '智能搜索與分類系統', icon: 'target' },
+              { problem: '缺乏反思空間', solution: '個人化的成長記錄', icon: 'heart' }
             ]
           },
           features: {
-            title: '核心功能模組',
+            title: '核心功能設計',
             items: [
-              { icon: 'cards', title: '互動式思緒卡片', desc: '透過拖拽、點選等互動方式，讓抽象思考變得具體可見' },
-              { icon: 'compass', title: '引導式自我探索', desc: '設計不同主題的提問路徑，協助使用者深入自我覺察' },
-              { icon: 'tree-pine', title: '想法落地生根', desc: '將思考過程視覺化呈現，看見從mind到brain的思維擴展' },
-              { icon: 'clock', title: '慢思考練習', desc: '提供節奏引導，讓使用者練習放慢思考速度，感受當下' },
-              { icon: 'heart', title: '情緒覺察空間', desc: '結合冥想元素，幫助使用者覺察內在情緒與想法' },
-              { icon: 'github', title: '開源專案', desc: '完全開源的專案，透過GitHub分享創作過程與技術實現' }
-            ]
-          },
-          tech: {
-            title: '技術架構',
-            stack: [
-              { category: '開發平台', tech: 'GitHub Pages 靜態部署' },
-              { category: '前端框架', tech: 'Vanilla JavaScript + CSS3 + HTML5' },
-              { category: 'UI 設計', tech: '自定義CSS + 動畫效果 + 響應式設計' },
-              { category: '互動實現', tech: '原生 JavaScript 事件處理' },
-              { category: '視覺效果', tech: 'CSS Transform + Transition + Animation' },
-              { category: '資料存儲', tech: 'Local Storage + Session Storage' },
-              { category: '部署方式', tech: 'GitHub Actions + GitHub Pages' },
-              { category: '版本控制', tech: 'Git + GitHub Repository' },
-              { category: '設計理念', tech: '極簡主義 + 使用者體驗優先' }
+              { icon: 'cards', title: '思緒卡片系統', desc: '直覺的卡片式思考記錄，每一張卡片都承載著一段心路歷程，讓想法有溫度地被保存' },
+              { icon: 'calendar', title: '溫柔的時間管理', desc: '結合日曆與待辦事項，不是催促你快點完成，而是陪伴你慢慢實現目標' },
+              { icon: 'search', title: '智能內容搜索', desc: '當你想回顧某個想法時，能快速找到那些珍貴的思考片段，每一次搜索都是重新發現自己' },
+              { icon: 'user', title: '個人化成長空間', desc: '基於 Supabase 的使用者系統，創造專屬於你的心靈角落，安全且私密' },
+              { icon: 'settings', title: '貼心的個人設定', desc: '從主題到功能，都能依照個人喜好調整，讓工具真正為你服務，而不是你遷就工具' },
+              { icon: 'responsive', title: '隨時隨地的陪伴', desc: '響應式設計讓你在任何裝置上都能感受到一致的溫暖體驗，思考不受限於地點' }
             ]
           },
           results: {
-            title: '成功指標與產品 KPI',
-            metrics: [
-              { label: '使用者覺察提升度', target: '> 80%', desc: '用戶反饋在自我覺察方面的提升程度' },
-              { label: '思考慢化成功率', target: '> 70%', desc: '用戶能夠放慢思考節奏，感受當下的比例' },
-              { label: '想法具體化完成度', target: '> 60%', desc: '抽象想法成功轉化為具體可見的比例' },
-              { label: '冥想練習持續性', target: '> 50%', desc: '用戶持續使用冥想思考功能的比例' },
-              { label: '情緒覺察敏感度', target: '> 65%', desc: '用戶對內在情緒變化的察覺能力提升' },
-              { label: '專案開源貢獻度', target: '持續更新', desc: 'GitHub專案的更新頻率與社群參與度' }
+            title: '使用體驗與真實回饋',
+            experiences: [
+              { aspect: '技術實現的溫度', feeling: '驚喜、感動', desc: '即使是技術性較強的 React + TypeScript 專案，使用起來仍然感到溫暖，技術是有溫度的' },
+              { aspect: '思緒記錄的自然感', feeling: '流暢、直覺', desc: '卡片式的思考記錄讓人想到真實的筆記本，數位工具也能有手寫的親近感' },
+              { aspect: '時間管理不再焦慮', feeling: '從容、安心', desc: '日曆功能不是提醒你有多少事要做，而是讓你看見自己的成長軌跡' },
+              { aspect: '個人空間的安全感', feeling: '放心、信任', desc: '知道自己的想法被安全地保存，可以完全敞開心房記錄最真實的思考' },
+              { aspect: '跨裝置的一致體驗', feeling: '便利、貼心', desc: '無論在電腦或手機上使用，都能感受到同樣的溫暖和便利' },
+              { aspect: '開源精神的共鳴', feeling: '認同、參與', desc: '看到完整的技術實現過程，感受到創作者的用心和開放分享的精神' }
             ]
           }
         }
@@ -90,58 +75,43 @@ function Featured() {
         tabs: [
           { id: 'overview', label: 'Project Overview', icon: 'lightbulb' },
           { id: 'features', label: 'Key Features', icon: 'zap' },
-          { id: 'tech', label: 'Tech Stack', icon: 'code' },
-          { id: 'results', label: 'Product Metrics', icon: 'trending-up' }
+          { id: 'results', label: 'User Experience', icon: 'heart' }
         ],
         tabContent: {
           overview: {
-            title: 'Mind-Brain - Interactive Meditation & Thinking Project',
-            subtitle: 'Ideas Rooting System from Inside Out | 2024.11 - Present',
-            description: 'My professional experience in the digital field has led me to think about creating a space to help people practice "slowing down and feeling the present moment." This project is inspired by my ongoing exploration of "how to turn thoughts into actions" through interactive thought cards, allowing users to practice self-awareness, self-questioning, and making thinking concrete. The name "mind-brain" symbolizes ideas extending from inside out, taking root and growing.',
-            targetUsers: 'Modern people who need to slow down, individuals pursuing self-awareness, creators wanting to materialize ideas',
+            title: 'Mind-Brain',
+            subtitle: 'React + TypeScript Full-Stack Thinking Management App | 2024.11 - Present',
+            description: 'This is not just a project, but my practice of "how to make technology truly touch people\'s hearts." From design to development, every feature considers: how can we give busy modern people a warm digital space to slow down, organize thoughts, and feel inner peace? I built a complete front-end and back-end system with React + TypeScript, but technology is just the means—the real goal is to create a product that makes people feel understood.',
+            targetUsers: 'Busy people yearning for inner peace, creators wanting to record thought processes, individuals pursuing self-awareness and growth',
             demoBtn: 'Experience Live Demo',
             detailBtn: 'View Project Source',
             items: [
-              { problem: 'Chaotic Thoughts', solution: 'Interactive Thought Card Organization', icon: 'brain' },
-              { problem: 'Lack of Awareness', solution: 'Guided Self-Inquiry System', icon: 'eye' },
-              { problem: 'Abstract Ideas', solution: 'Visualization of Concrete Thinking', icon: 'target' },
-              { problem: 'Rushed Living', solution: 'Meditative Slow Thinking Practice', icon: 'heart' }
+              { problem: 'Chaotic thoughts nowhere to go', solution: 'Intuitive thought card recording', icon: 'brain' },
+              { problem: 'Time management anxiety', solution: 'Gentle calendar and todo integration', icon: 'eye' },
+              { problem: 'Easily forgotten ideas', solution: 'Smart search and categorization', icon: 'target' },
+              { problem: 'Lack of reflection space', solution: 'Personalized growth records', icon: 'heart' }
             ]
           },
           features: {
-            title: 'Core Feature Modules',
+            title: 'Core Feature Design',
             items: [
-              { icon: 'cards', title: 'Interactive Thought Cards', desc: 'Through drag-and-drop, clicking and other interactions, make abstract thinking concrete and visible' },
-              { icon: 'compass', title: 'Guided Self-Exploration', desc: 'Design different themed inquiry paths to assist users in deep self-awareness' },
-              { icon: 'tree-pine', title: 'Ideas Taking Root', desc: 'Visualize the thinking process, see the expansion from mind to brain' },
-              { icon: 'clock', title: 'Slow Thinking Practice', desc: 'Provide rhythm guidance, let users practice slowing down thinking speed, feeling the present' },
-              { icon: 'heart', title: 'Emotional Awareness Space', desc: 'Combine meditation elements to help users become aware of inner emotions and thoughts' },
-              { icon: 'github', title: 'Open Source Project', desc: 'Completely open source project, sharing creative process and technical implementation through GitHub' }
-            ]
-          },
-          tech: {
-            title: 'Technical Architecture',
-            stack: [
-              { category: 'Development Platform', tech: 'GitHub Pages Static Deployment' },
-              { category: 'Frontend Framework', tech: 'Vanilla JavaScript + CSS3 + HTML5' },
-              { category: 'UI Design', tech: 'Custom CSS + Animation Effects + Responsive Design' },
-              { category: 'Interaction Implementation', tech: 'Native JavaScript Event Handling' },
-              { category: 'Visual Effects', tech: 'CSS Transform + Transition + Animation' },
-              { category: 'Data Storage', tech: 'Local Storage + Session Storage' },
-              { category: 'Deployment Method', tech: 'GitHub Actions + GitHub Pages' },
-              { category: 'Version Control', tech: 'Git + GitHub Repository' },
-              { category: 'Design Philosophy', tech: 'Minimalism + User Experience First' }
+              { icon: 'cards', title: 'Thought Card System', desc: 'Intuitive card-based thought recording, each card carries a piece of your journey, preserving ideas with warmth' },
+              { icon: 'calendar', title: 'Gentle Time Management', desc: 'Combines calendar with todos—not rushing you to finish faster, but accompanying you to achieve goals slowly' },
+              { icon: 'search', title: 'Smart Content Search', desc: 'When you want to revisit an idea, quickly find those precious thinking moments—each search is rediscovering yourself' },
+              { icon: 'user', title: 'Personalized Growth Space', desc: 'Supabase-based user system creates your own soul corner, secure and private' },
+              { icon: 'settings', title: 'Thoughtful Personal Settings', desc: 'From themes to features, customize according to personal preferences—let tools serve you, not the other way around' },
+              { icon: 'responsive', title: 'Anytime, Anywhere Companionship', desc: 'Responsive design lets you feel consistent warmth on any device, thinking knows no boundaries' }
             ]
           },
           results: {
-            title: 'Success Metrics & Product KPIs',
-            metrics: [
-              { label: 'User Awareness Enhancement', target: '> 80%', desc: 'User feedback on improvement in self-awareness levels' },
-              { label: 'Thinking Slowdown Success Rate', target: '> 70%', desc: 'Percentage of users able to slow down thinking pace and feel the present' },
-              { label: 'Idea Materialization Completion', target: '> 60%', desc: 'Percentage of abstract ideas successfully transformed into concrete forms' },
-              { label: 'Meditation Practice Continuity', target: '> 50%', desc: 'Percentage of users who continue using meditation thinking features' },
-              { label: 'Emotional Awareness Sensitivity', target: '> 65%', desc: 'Enhancement in users\' ability to perceive inner emotional changes' },
-              { label: 'Open Source Contribution', target: 'Continuous Updates', desc: 'GitHub project update frequency and community participation' }
+            title: 'User Experience & Real Feedback',
+            experiences: [
+              { aspect: 'Technology with Warmth', feeling: 'Surprised & Touched', desc: 'Even with technical React + TypeScript implementation, users still feel warmth—technology can have heart' },
+              { aspect: 'Natural Thought Recording', feeling: 'Smooth & Intuitive', desc: 'Card-based thinking records feel like real notebooks—digital tools can have handwritten intimacy' },
+              { aspect: 'No More Time Anxiety', feeling: 'Calm & Peaceful', desc: 'Calendar function doesn\'t remind you how much to do, but shows your growth journey' },
+              { aspect: 'Personal Space Security', feeling: 'Safe & Trusted', desc: 'Knowing thoughts are safely stored, users can completely open up and record authentic thinking' },
+              { aspect: 'Consistent Cross-Device Experience', feeling: 'Convenient & Caring', desc: 'Whether on computer or phone, users feel the same warmth and convenience' },
+              { aspect: 'Open Source Spirit Resonance', feeling: 'Aligned & Engaged', desc: 'Seeing complete technical implementation, users feel the creator\'s care and open sharing spirit' }
             ]
           }
         }
@@ -163,7 +133,7 @@ function Featured() {
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 serif-heading">
               {currentContent.title}
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto inter-font">
+            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto noto-font">
               {currentContent.subtitle}
             </p>
           </div>
@@ -193,13 +163,13 @@ function Featured() {
               {activeTab === 'overview' && (
                 <div className="space-y-8">
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold mb-2 inter-font">{currentTabContent.title}</h3>
-                    <p className="text-lg text-[var(--secondary-color)] mb-4 inter-font">{currentTabContent.subtitle}</p>
-                    <p className="text-[var(--text-secondary)] max-w-4xl mx-auto mb-4 inter-font">{currentTabContent.description}</p>
+                    <h3 className="text-3xl font-bold mb-2 serif-heading">{currentTabContent.title}</h3>
+                    <p className="text-lg text-[var(--secondary-color)] mb-4 noto-font">{currentTabContent.subtitle}</p>
+                    <p className="text-[var(--text-secondary)] max-w-4xl mx-auto mb-4 noto-font">{currentTabContent.description}</p>
                     
                     <div className="bg-[var(--bg-tertiary)] rounded-lg p-4 max-w-2xl mx-auto mb-6">
-                      <p className="text-sm font-medium text-[var(--primary-color)] mb-1 inter-font">{currentLang === 'zh' ? '目標用戶' : 'Target Users'}</p>
-                      <p className="text-sm text-[var(--text-secondary)] inter-font">{currentTabContent.targetUsers}</p>
+                      <p className="text-sm font-medium text-[var(--primary-color)] mb-1 noto-font">{currentLang === 'zh' ? '目標用戶' : 'Target Users'}</p>
+                      <p className="text-sm text-[var(--text-secondary)] noto-font">{currentTabContent.targetUsers}</p>
                     </div>
                     
                     <div className="flex justify-center gap-4 mb-8">
@@ -207,7 +177,7 @@ function Featured() {
                         href="https://vanessachuchu.github.io/mind-brain/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-primary flex items-center gap-2 inter-font"
+                        className="btn-primary flex items-center gap-2 noto-font"
                       >
                         <div className="icon-external-link text-lg"></div>
                         <span>{currentTabContent.demoBtn}</span>
@@ -216,7 +186,7 @@ function Featured() {
                         href="https://github.com/vanessachuchu/mind-brain"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn-secondary flex items-center gap-2 inter-font"
+                        className="btn-secondary flex items-center gap-2 noto-font"
                       >
                         <div className="icon-file-text text-lg"></div>
                         <span>{currentTabContent.detailBtn}</span>
@@ -226,16 +196,27 @@ function Featured() {
                   
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {currentTabContent.items.map((item, index) => (
-                      <div key={index} className="minimal-card text-center hover-lift">
-                        <div className="w-12 h-12 bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent-color)] rounded-full flex items-center justify-center mx-auto mb-4">
-                          <div className={`icon-${item.icon} text-lg text-white`}></div>
+                      <div key={index} className="glass-card text-center hover-lift p-6">
+                        <div className="w-16 h-16 mx-auto mb-4 relative">
+                          <div className="w-full h-full rounded-2xl" style={{
+                            background: index % 4 === 0 ? 'linear-gradient(135deg, var(--secondary-color), var(--primary-color))' :
+                                       index % 4 === 1 ? 'linear-gradient(135deg, var(--accent-color), var(--primary-color))' :
+                                       index % 4 === 2 ? 'linear-gradient(135deg, var(--accent-warm), var(--primary-color))' :
+                                                        'linear-gradient(135deg, var(--primary-color), var(--secondary-color))'
+                          }}>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm"></div>
+                            </div>
+                            <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-white/40"></div>
+                            <div className="absolute bottom-3 left-3 w-2 h-2 rounded-full bg-white/30"></div>
+                          </div>
                         </div>
-                        <h4 className="font-semibold mb-2 text-[var(--text-primary)] inter-font">
-                          {currentLang === 'zh' ? '問題' : 'Problem'}：{item.problem}
+                        <h4 className="font-semibold mb-3 text-[var(--text-primary)] noto-font text-base">
+                          {item.problem}
                         </h4>
-                        <div className="w-8 h-0.5 bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent-color)] mx-auto mb-2"></div>
-                        <p className="text-sm text-[var(--primary-color)] font-medium inter-font">
-                          {currentLang === 'zh' ? '解決' : 'Solution'}：{item.solution}
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] mx-auto mb-3"></div>
+                        <p className="text-sm text-[var(--primary-color)] font-medium noto-font leading-relaxed">
+                          {item.solution}
                         </p>
                       </div>
                     ))}
@@ -245,33 +226,38 @@ function Featured() {
 
               {activeTab === 'features' && (
                 <div className="space-y-8">
-                  <h3 className="text-3xl font-bold text-center inter-font">{currentTabContent.title}</h3>
+                  <h3 className="text-3xl font-bold text-center serif-heading">{currentTabContent.title}</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {currentTabContent.items.map((item, index) => (
-                      <div key={index} className="minimal-card hover-lift">
+                      <div key={index} className="glass-card p-6 hover-lift">
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent-color)] rounded-lg flex items-center justify-center flex-shrink-0">
-                            <div className={`icon-${item.icon} text-lg text-white`}></div>
+                          <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 relative" style={{
+                            background: index % 6 === 0 ? 'linear-gradient(135deg, var(--secondary-color), var(--primary-color))' :
+                                       index % 6 === 1 ? 'linear-gradient(135deg, var(--accent-color), var(--secondary-color))' :
+                                       index % 6 === 2 ? 'linear-gradient(135deg, var(--accent-warm), var(--primary-color))' :
+                                       index % 6 === 3 ? 'linear-gradient(135deg, var(--primary-color), var(--accent-color))' :
+                                       index % 6 === 4 ? 'linear-gradient(135deg, var(--accent-warm), var(--secondary-color))' :
+                                                        'linear-gradient(135deg, var(--primary-color), var(--accent-warm))'
+                          }}>
+                            {/* 特殊標記 - 互動式思緒卡片 */}
+                            {item.title === '互動式思緒卡片' || item.title === 'Interactive Thought Cards' ? (
+                              <div className="relative">
+                                <div className="w-6 h-8 bg-white/90 rounded-sm transform -rotate-12 absolute -left-1"></div>
+                                <div className="w-6 h-8 bg-white/70 rounded-sm transform rotate-6"></div>
+                                <div className="w-6 h-8 bg-white/80 rounded-sm transform rotate-0 absolute top-0 left-0"></div>
+                              </div>
+                            ) : (
+                              <div className="relative">
+                                <div className="w-6 h-6 rounded-full bg-white/40 backdrop-blur-sm"></div>
+                                <div className="absolute top-1 right-1 w-2 h-2 rounded-full bg-white/60"></div>
+                              </div>
+                            )}
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-2 inter-font">{item.title}</h4>
-                            <p className="text-sm text-[var(--text-secondary)] inter-font">{item.desc}</p>
+                            <h4 className="font-semibold mb-2 noto-font text-[var(--text-primary)]">{item.title}</h4>
+                            <p className="text-sm text-[var(--text-secondary)] noto-font leading-relaxed">{item.desc}</p>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'tech' && (
-                <div className="space-y-8">
-                  <h3 className="text-3xl font-bold text-center inter-font">{currentTabContent.title}</h3>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {currentTabContent.stack.map((item, index) => (
-                      <div key={index} className="interactive-card">
-                        <h4 className="font-semibold text-[var(--primary-color)] mb-2 inter-font">{item.category}</h4>
-                        <p className="text-[var(--text-secondary)] inter-font text-sm">{item.tech}</p>
                       </div>
                     ))}
                   </div>
@@ -280,15 +266,30 @@ function Featured() {
 
               {activeTab === 'results' && (
                 <div className="space-y-8">
-                  <h3 className="text-3xl font-bold text-center inter-font">{currentTabContent.title}</h3>
+                  <h3 className="text-3xl font-bold text-center serif-heading">{currentTabContent.title}</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {currentTabContent.metrics.map((item, index) => (
-                      <div key={index} className="interactive-card">
-                        <div className="flex justify-between items-start mb-3">
-                          <h4 className="font-semibold inter-font text-sm">{item.label}</h4>
-                          <span className="text-xl font-bold gradient-text inter-font">{item.target}</span>
+                    {currentTabContent.experiences.map((item, index) => (
+                      <div key={index} className="glass-card p-6 hover-lift">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 rounded-full flex items-center justify-center relative" style={{
+                            background: index % 6 === 0 ? 'linear-gradient(135deg, var(--secondary-color), var(--primary-color))' :
+                                       index % 6 === 1 ? 'linear-gradient(135deg, var(--accent-color), var(--secondary-color))' :
+                                       index % 6 === 2 ? 'linear-gradient(135deg, var(--accent-warm), var(--primary-color))' :
+                                       index % 6 === 3 ? 'linear-gradient(135deg, var(--primary-color), var(--accent-color))' :
+                                       index % 6 === 4 ? 'linear-gradient(135deg, var(--accent-warm), var(--secondary-color))' :
+                                                        'linear-gradient(135deg, var(--primary-color), var(--accent-warm))'
+                          }}>
+                            <div className="relative">
+                              <div className="w-5 h-5 rounded-full bg-white/50 backdrop-blur-sm pulse"></div>
+                              <div className="absolute top-1 left-1 w-3 h-3 rounded-full bg-white/70"></div>
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold noto-font text-[var(--text-primary)]">{item.aspect}</h4>
+                            <span className="text-sm text-[var(--primary-color)] noto-font font-medium">{item.feeling}</span>
+                          </div>
                         </div>
-                        <p className="text-xs text-[var(--text-secondary)] inter-font">{item.desc}</p>
+                        <p className="text-sm text-[var(--text-secondary)] noto-font leading-relaxed">{item.desc}</p>
                       </div>
                     ))}
                   </div>

@@ -23,7 +23,7 @@ function Experience() {
     const content = {
       zh: {
         title: '工作經驗',
-        subtitle: '從台灣到澳洲的跨文化專案管理與產品開發經驗',
+        subtitle: '跨文化專案管理與產品開發的成長歷程',
         experiences: [
           {
             id: 1,
@@ -130,7 +130,7 @@ function Experience() {
       },
       en: {
         title: 'Work Experience',
-        subtitle: 'Cross-cultural project management and product development experience from Taiwan to Australia',
+        subtitle: 'Cross-cultural project management and product development journey',
         experiences: [
           {
             id: 1,
@@ -257,44 +257,29 @@ function Experience() {
             </p>
           </div>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={exp.id} className="relative">
-                <div className="minimal-card p-8 lg:p-12">
-                  <div className="flex flex-col lg:flex-row gap-8">
-                    <div className="lg:w-1/3">
-                      <div className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-4 ${
-                        exp.type === 'current' ? 'bg-green-100 text-green-700' :
-                        exp.type === 'featured' ? 'bg-blue-100 text-blue-700' :
-                        'bg-purple-100 text-purple-700'
-                      }`}>
-                        {exp.period}
-                      </div>
-                      <h3 className="text-2xl font-bold mb-2">{exp.position}</h3>
-                      <p className="text-lg text-[var(--primary-color)] font-semibold mb-2">{exp.company}</p>
-                      <p className="text-[var(--text-secondary)]">{exp.location}</p>
+          <div className="space-y-6">
+            {experiences.slice(0, 4).map((exp, index) => (
+              <div key={exp.id} className="glass-card p-6 hover-lift">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-4">
+                  <div className="lg:w-1/3">
+                    <div className="text-sm text-[var(--primary-color)] font-medium mb-2 noto-font">
+                      {exp.period}
                     </div>
-                    
-                    <div className="lg:w-2/3">
-                      <div className="space-y-4">
-                        {exp.highlights.map((highlight, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="w-6 h-6 bg-[var(--primary-color)] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                              <div className="w-2 h-2 bg-white rounded-full"></div>
-                            </div>
-                            <p className="text-[var(--text-secondary)]">{highlight}</p>
-                          </div>
-                        ))}
-                      </div>
+                    <h3 className="text-xl font-bold mb-1 noto-font">{exp.position}</h3>
+                    <p className="text-[var(--primary-color)] font-semibold mb-1 noto-font">{exp.company}</p>
+                    <p className="text-sm text-[var(--text-secondary)] noto-font">{exp.location}</p>
+                  </div>
+                  
+                  <div className="lg:w-2/3">
+                    <div className="space-y-3">
+                      {exp.highlights.slice(0, 3).map((highlight, idx) => (
+                        <p key={idx} className="text-sm text-[var(--text-secondary)] noto-font leading-relaxed">
+                          {highlight}
+                        </p>
+                      ))}
                     </div>
                   </div>
                 </div>
-                
-                {index < experiences.length - 1 && (
-                  <div className="flex justify-center py-6">
-                    <div className="w-px h-12 bg-gradient-to-b from-[var(--primary-color)] to-transparent"></div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
