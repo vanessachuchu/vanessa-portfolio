@@ -45,7 +45,6 @@ function Header({ activeSection }) {
       { id: 'home', label: currentLang === 'zh' ? '首頁' : 'Home' },
       { id: 'about', label: currentLang === 'zh' ? '關於我' : 'About' },
       { id: 'featured', label: currentLang === 'zh' ? '特色專案' : 'Featured' },
-      { id: 'education', label: currentLang === 'zh' ? '教育背景' : 'Education' },
       { id: 'experience', label: currentLang === 'zh' ? '工作經驗' : 'Experience' },
       { id: 'skills', label: currentLang === 'zh' ? '專業技能' : 'Skills' },
       { id: 'projects', label: currentLang === 'zh' ? '作品集' : 'Projects' },

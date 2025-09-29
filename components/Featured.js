@@ -194,32 +194,29 @@ function Featured() {
                     </div>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {currentTabContent.items.map((item, index) => (
-                      <div key={index} className="glass-card text-center hover-lift p-6">
-                        <div className="w-16 h-16 mx-auto mb-4 relative">
-                          <div className="w-full h-full rounded-2xl" style={{
+                  <div className="glass-card p-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      {currentTabContent.items.map((item, index) => (
+                        <div key={index} className="flex items-center gap-4 p-3 bg-white/40 rounded-lg">
+                          <div className="w-10 h-10 rounded-lg flex-shrink-0" style={{
                             background: index % 4 === 0 ? 'linear-gradient(135deg, var(--secondary-color), var(--primary-color))' :
                                        index % 4 === 1 ? 'linear-gradient(135deg, var(--accent-color), var(--primary-color))' :
                                        index % 4 === 2 ? 'linear-gradient(135deg, var(--accent-warm), var(--primary-color))' :
                                                         'linear-gradient(135deg, var(--primary-color), var(--secondary-color))'
                           }}>
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm"></div>
-                            </div>
-                            <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-white/40"></div>
-                            <div className="absolute bottom-3 left-3 w-2 h-2 rounded-full bg-white/30"></div>
+                            <div className="w-full h-full rounded-lg bg-white/20"></div>
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="font-medium text-[var(--text-primary)] noto-font text-sm mb-1">
+                              {item.problem}
+                            </h5>
+                            <p className="text-xs text-[var(--primary-color)] noto-font">
+                              {item.solution}
+                            </p>
                           </div>
                         </div>
-                        <h4 className="font-semibold mb-3 text-[var(--text-primary)] noto-font text-base">
-                          {item.problem}
-                        </h4>
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] mx-auto mb-3"></div>
-                        <p className="text-sm text-[var(--primary-color)] font-medium noto-font leading-relaxed">
-                          {item.solution}
-                        </p>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
