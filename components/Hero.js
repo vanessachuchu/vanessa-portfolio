@@ -67,50 +67,91 @@ function Hero() {
         data-file="components/Hero.js"
         style={{backgroundColor: 'var(--bg-primary)'}}
       >
-        <div className="relative z-10 text-center max-w-2xl mx-auto section-padding text-[var(--text-primary)]">
-          <div className={`transform transition-all duration-1000 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            {/* 問候語 */}
-            <div className="text-base text-[var(--text-light)] mb-10 noto-font fade-in">
-              {currentContent.greeting}
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen py-20">
+            
+            {/* 左側內容 */}
+            <div className={`space-y-8 ${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
+              {/* 問候語 */}
+              <div className="text-lg text-[var(--text-light)] noto-font">
+                {currentContent.greeting}
+              </div>
+              
+              {/* 主標題 */}
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-medium leading-tight noto-font">
+                {currentContent.title.split('\n').map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    {index === 0 && <br />}
+                  </React.Fragment>
+                ))}
+              </h1>
+              
+              {/* 副標題 */}
+              <div className="text-base text-[var(--text-secondary)] noto-font" style={{letterSpacing: '1px'}}>
+                {currentContent.subtitle}
+              </div>
+              
+              {/* 技能標籤 - 緊湊排列 */}
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 text-sm border border-[var(--border)] rounded-full text-[var(--text-secondary)] noto-font">
+                  產品設計思維
+                </span>
+                <span className="px-4 py-2 text-sm border border-[var(--border)] rounded-full text-[var(--text-secondary)] noto-font">
+                  AI 工具整合
+                </span>
+                <span className="px-4 py-2 text-sm border border-[var(--border)] rounded-full text-[var(--text-secondary)] noto-font">
+                  敏捷專案管理
+                </span>
+              </div>
+              
+              {/* 成就數據 - 橫向排列 */}
+              <div className="flex gap-8 lg:gap-12">
+                <div>
+                  <div className="text-2xl lg:text-3xl font-bold text-[var(--primary-color)] noto-font">2+</div>
+                  <div className="text-sm text-[var(--text-light)] noto-font">年經驗</div>
+                </div>
+                <div>
+                  <div className="text-2xl lg:text-3xl font-bold text-[var(--primary-color)] noto-font">214</div>
+                  <div className="text-sm text-[var(--text-light)] noto-font">天交付</div>
+                </div>
+                <div>
+                  <div className="text-2xl lg:text-3xl font-bold text-[var(--primary-color)] noto-font">1000+</div>
+                  <div className="text-sm text-[var(--text-light)] noto-font">使用者</div>
+                </div>
+              </div>
+              
+              {/* 按鈕 */}
+              <div className="flex gap-4">
+                <button 
+                  onClick={() => document.getElementById('featured').scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-primary noto-font"
+                >
+                  {currentContent.portfolioBtn}
+                </button>
+                <a 
+                  href="mailto:vanessachuliu@gmail.com"
+                  className="btn-secondary noto-font"
+                >
+                  {currentContent.contactBtn}
+                </a>
+              </div>
             </div>
             
-            {/* 主標題 */}
-            <h1 className="text-3xl lg:text-4xl font-medium mb-8 noto-font leading-relaxed fade-in fade-in-1">
-              {currentContent.title.split('\n').map((line, index) => (
-                <React.Fragment key={index}>
-                  {line}
-                  {index === 0 && <br />}
-                </React.Fragment>
-              ))}
-            </h1>
-            
-            {/* 副標題 */}
-            <div className="text-sm text-[var(--text-light)] mb-12 noto-font fade-in fade-in-2" style={{letterSpacing: '2px'}}>
-              {currentContent.subtitle}
-            </div>
-            
-            {/* 描述信件 */}
-            <div className="text-left mb-12 fade-in fade-in-3">
-              <div className="glass-card p-8 border-l-4 border-[var(--primary-color)]">
-                <div className="text-sm text-[var(--text-light)] italic mb-4 noto-font">
+            {/* 右側信件內容 */}
+            <div className={`${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
+              <div className="glass-card p-8 lg:p-10 border-l-4 border-[var(--primary-color)]">
+                <div className="text-sm text-[var(--text-light)] italic mb-6 noto-font">
                   {currentContent.letterIntro}
                 </div>
                 
-                <p className="text-[var(--text-secondary)] mb-4 leading-relaxed noto-font">
-                  {currentContent.description}
-                </p>
+                <div className="space-y-4 text-[var(--text-secondary)] leading-relaxed noto-font">
+                  <p>{currentContent.description}</p>
+                  <p>{currentContent.description2}</p>
+                  <p>{currentContent.description3}</p>
+                </div>
                 
-                <p className="text-[var(--text-secondary)] mb-4 leading-relaxed noto-font">
-                  {currentContent.description2}
-                </p>
-                
-                <p className="text-[var(--text-secondary)] mb-6 leading-relaxed noto-font">
-                  {currentContent.description3}
-                </p>
-                
-                <div className="text-right text-sm text-[var(--primary-color)] font-medium noto-font">
+                <div className="text-right mt-8 text-sm text-[var(--primary-color)] font-medium noto-font">
                   {currentContent.signature.split('\n').map((line, index) => (
                     <React.Fragment key={index}>
                       {line}
@@ -118,81 +159,16 @@ function Hero() {
                     </React.Fragment>
                   ))}
                 </div>
+                
+                {/* 底部引言 */}
+                <div className="text-center mt-8 pt-6 border-t border-[var(--border)]">
+                  <div className="text-sm text-[var(--text-light)] italic noto-font">
+                    {currentContent.quote.replace(/"/g, '')}
+                  </div>
+                </div>
               </div>
             </div>
             
-            {/* 按鈕 */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12 fade-in fade-in-4">
-              <button 
-                onClick={() => document.getElementById('featured').scrollIntoView({ behavior: 'smooth' })}
-                className="btn-primary btn-3d noto-font"
-              >
-                {currentContent.portfolioBtn}
-              </button>
-              <a 
-                href="mailto:vanessachuliu@gmail.com"
-                className="btn-secondary btn-3d noto-font text-center"
-              >
-                {currentContent.contactBtn}
-              </a>
-            </div>
-            
-            {/* 技能標籤 */}
-            <div className="mb-12 fade-in fade-in-4">
-              <div className="text-center text-sm text-[var(--text-light)] mb-6 noto-font">
-                {currentContent.skillsIntro}
-              </div>
-              <div className="flex justify-center gap-4 flex-wrap">
-                <span className="skill-item skill-3d">
-                  產品設計思維
-                </span>
-                <span className="skill-item skill-3d">
-                  使用者體驗優化
-                </span>
-                <span className="skill-item skill-3d">
-                  AI 工具整合
-                </span>
-                <span className="skill-item skill-3d">
-                  跨團隊協作
-                </span>
-                <span className="skill-item skill-3d">
-                  敏捷專案管理
-                </span>
-                <span className="skill-item skill-3d">
-                  工具探索應用
-                </span>
-              </div>
-            </div>
-            
-            {/* 成就數據 */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-lg mx-auto mb-10 fade-in fade-in-5">
-              <div className="glass-card card-3d p-4 text-center">
-                <div className="text-xl font-semibold text-[var(--primary-color)] noto-font mb-2">2+</div>
-                <div className="text-xs text-[var(--text-light)] noto-font">年經驗</div>
-              </div>
-              <div className="glass-card card-3d p-4 text-center">
-                <div className="text-xl font-semibold text-[var(--primary-color)] noto-font mb-2">6</div>
-                <div className="text-xs text-[var(--text-light)] noto-font">大平台</div>
-              </div>
-              <div className="glass-card card-3d p-4 text-center">
-                <div className="text-xl font-semibold text-[var(--primary-color)] noto-font mb-2">214</div>
-                <div className="text-xs text-[var(--text-light)] noto-font">天交付</div>
-              </div>
-              <div className="glass-card card-3d p-4 text-center">
-                <div className="text-xl font-semibold text-[var(--primary-color)] noto-font mb-2">1000+</div>
-                <div className="text-xs text-[var(--text-light)] noto-font">使用者</div>
-              </div>
-            </div>
-            
-            {/* 底部引言 */}
-            <div className="text-sm text-[var(--text-light)] italic serif-heading fade-in fade-in-5">
-              {currentContent.quote.split('\n').map((line, index) => (
-                <React.Fragment key={index}>
-                  {line}
-                  {index === 0 && <br />}
-                </React.Fragment>
-              ))}
-            </div>
           </div>
         </div>
       </section>
