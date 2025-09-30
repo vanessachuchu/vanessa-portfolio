@@ -228,21 +228,20 @@ function Projects() {
                     'linear-gradient(135deg, #A8EDEA 0%, #FED6E3 100%)'
                   ];
                   
-                  const icons = ['📊', '🧠', '🎓', '🏢', '📈'];
-                  
                   return (
                     <div key={project.id} className="flex-shrink-0 w-72 sm:w-80 glass-card card-3d overflow-hidden">
                       {project.featured && (
                         <div className="bg-[var(--primary-color)] text-white text-center py-2 text-sm font-medium noto-font">
-                          <span className="icon-3d inline-block mr-1">⭐</span>
                           {currentContent.featured}
                         </div>
                       )}
                       
-                      <div className="relative h-32 flex items-center justify-center text-4xl text-white font-bold"
-                           style={{background: gradients[index % gradients.length]}}>
-                        <span className="icon-3d">{icons[index % icons.length]}</span>
-                        <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="relative h-32 flex items-center justify-center text-white font-bold bg-[var(--primary-color)]">
+                        <div className="absolute inset-0 bg-black/10"></div>
+                        <div className="relative z-10 text-center">
+                          <div className="text-lg font-semibold">PROJECT</div>
+                          <div className="text-xs opacity-80">#{index + 1}</div>
+                        </div>
                       </div>
                       
                       <div className="p-6">
@@ -273,7 +272,6 @@ function Projects() {
                               href={project.detailPage}
                               className="flex-1 text-center py-2 px-3 bg-[var(--primary-color)] text-white rounded-lg btn-3d transition-colors text-xs font-medium noto-font"
                             >
-                              <span className="icon-3d inline-block mr-1 text-xs">📄</span>
                               {currentContent.viewDetails}
                             </a>
                           )}
@@ -283,7 +281,6 @@ function Projects() {
                             rel="noopener noreferrer"
                             className="flex-1 text-center py-2 px-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-lg btn-3d hover:bg-[var(--primary-color)] hover:text-white transition-colors text-xs font-medium noto-font"
                           >
-                            <span className="icon-3d inline-block mr-1 text-xs">🔗</span>
                             {currentLang === 'zh' ? '查看專案' : 'View Project'}
                           </a>
                         </div>
