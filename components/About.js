@@ -102,79 +102,115 @@ function About() {
     return (
       <section 
         id="about" 
-        className="section-padding bg-[var(--bg-secondary)]"
+        className="py-32 px-8"
         data-name="about-section" 
         data-file="components/About.js"
+        style={{backgroundColor: 'var(--bg-primary)'}}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 noto-font">
+          {/* 简洁标题设计 */}
+          <div className="mb-16">
+            <h2 className="text-6xl font-light mb-4 noto-font" style={{color: 'var(--text-primary)'}}>
               {currentContent.title}
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto noto-font">
-              {currentContent.subtitle}
-            </p>
+            <div className="w-20 h-0.5" style={{backgroundColor: 'var(--primary-color)'}}></div>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            <div className={`space-y-8 ${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
-              <div className="space-y-6">
-                <p className="text-lg text-[var(--text-secondary)] leading-relaxed noto-font">
-                  {currentContent.description1}
-                </p>
-                
-                <p className="text-lg text-[var(--text-secondary)] leading-relaxed noto-font">
-                  {currentContent.description2}
-                  <span className="text-[var(--primary-color)] font-semibold">{currentContent.highlight}</span>
-                  {currentContent.description3}
-                </p>
-                
-                <div className="flex flex-wrap gap-3 mt-8">
-                  {currentContent.skills.map((skill) => (
-                    <span 
-                      key={skill}
-                      className="px-4 py-2 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-sm font-medium noto-font"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+          {/* 12列网格布局 */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            {/* 左侧文字 - 5列 */}
+            <div className={`lg:col-span-5 ${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
+              <p className="text-lg leading-relaxed mb-8 noto-font" style={{color: 'var(--text-secondary)'}}>
+                {currentContent.description1}
+              </p>
+              
+              <p className="text-lg leading-relaxed mb-8 noto-font" style={{color: 'var(--text-secondary)'}}>
+                {currentContent.description2}
+                <span className="font-semibold" style={{color: 'var(--primary-color)'}}>{currentContent.highlight}</span>
+                {currentContent.description3}
+              </p>
+              
+              <div className="flex flex-wrap gap-3">
+                {currentContent.skills.map((skill) => (
+                  <span 
+                    key={skill}
+                    className="px-4 py-2 rounded-full text-sm font-medium noto-font border"
+                    style={{
+                      backgroundColor: 'var(--bg-secondary)',
+                      color: 'var(--text-secondary)',
+                      borderColor: 'var(--border)'
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
-            
-            <div className={`${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="minimal-card text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))'}}>
-                    <div className="icon-briefcase text-2xl text-white"></div>
-                  </div>
-                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.experience}+</div>
-                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.experience}</div>
+
+            {/* 右侧数据与重点 - 7列 */}
+            <div className={`lg:col-span-7 ${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
+              {/* 主要成就数据 */}
+              <div className="flex items-start gap-8 mb-12">
+                <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center flex-shrink-0" 
+                     style={{borderColor: 'var(--primary-color)'}}>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
                 </div>
-                <div className="minimal-card text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, var(--secondary-color), var(--accent-color))'}}>
-                    <div className="icon-folder text-2xl text-white"></div>
-                  </div>
-                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.projects}+</div>
-                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.projects}</div>
+                <div>
+                  <div className="text-7xl font-light mb-3 noto-font" style={{color: 'var(--primary-color)'}}>{stats.efficiency}%</div>
+                  <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                    {currentContent.stats.efficiency}
+                  </p>
                 </div>
-                <div className="minimal-card text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, var(--accent-color), var(--accent-warm))'}}>
-                    <div className="icon-trending-up text-2xl text-white"></div>
-                  </div>
-                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.efficiency}%</div>
-                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.efficiency}</div>
+              </div>
+
+              {/* 经验与专案数据 */}
+              <div className="flex items-start gap-8 mb-12">
+                <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center flex-shrink-0" 
+                     style={{borderColor: 'var(--primary-color)'}}>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6" />
+                  </svg>
                 </div>
-                <div className="minimal-card text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
-                       style={{background: 'linear-gradient(135deg, var(--accent-warm), var(--primary-color))'}}>
-                    <div className="icon-globe text-2xl text-white"></div>
+                <div>
+                  <div className="text-7xl font-light mb-3 noto-font" style={{color: 'var(--primary-color)'}}>{stats.experience}+</div>
+                  <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                    {currentContent.stats.experience} {currentLang === 'zh' ? '・' : '・'} {stats.projects}+ {currentContent.stats.projects}
+                  </p>
+                </div>
+              </div>
+
+              {/* 特色專案突出顯示 */}
+              <div className="flex items-start gap-8">
+                <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center flex-shrink-0" 
+                     style={{borderColor: 'var(--primary-color)'}}>
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-2xl font-semibold mb-3 noto-font" style={{color: 'var(--primary-color)'}}>
+                    {currentLang === 'zh' ? '脈德小腦瓜' : 'Mind-Brain'}
                   </div>
-                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.languages}</div>
-                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.languages}</div>
+                  <p className="leading-relaxed noto-font mb-4" style={{color: 'var(--text-secondary)'}}>
+                    {currentLang === 'zh' 
+                      ? '互動式冥想思考專案，將抽象想法具體化的創新工具'
+                      : 'Interactive meditation thinking project, innovative tool for materializing abstract ideas'
+                    }
+                  </p>
+                  <a 
+                    href="https://vanessachuchu.github.io/mind-brain/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium noto-font transition-all duration-200"
+                    style={{color: 'var(--primary-color)'}}
+                  >
+                    {currentLang === 'zh' ? '體驗專案' : 'Experience Project'}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
