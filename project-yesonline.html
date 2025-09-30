@@ -106,7 +106,7 @@
             <div class="badge mb-4">企業級教育科技平台</div>
             <h1 class="text-4xl lg:text-5xl font-bold mb-6 serif-heading">YesOnline 線上英語學習平台</h1>
             <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-3xl mx-auto">
-                複雜多角色教育科技平台的完整產品管理實務 - 從需求分析到測試驗證的214個工作項目統籌規劃
+                複雜教育科技平台的完整產品管理實務 - 展現業務邏輯設計深度、測試策略規劃廣度、系統架構統籌高度
             </p>
             <div class="flex flex-wrap justify-center gap-3">
                 <span class="badge">產品規劃</span>
@@ -128,16 +128,16 @@
                     <div class="text-sm text-[var(--text-secondary)]">工作項目</div>
                 </div>
                 <div class="metric-card">
-                    <div class="text-3xl font-bold text-[var(--primary-color)] mb-2">4</div>
-                    <div class="text-sm text-[var(--text-secondary)]">系統角色</div>
+                    <div class="text-3xl font-bold text-[var(--primary-color)] mb-2">3</div>
+                    <div class="text-sm text-[var(--text-secondary)]">核心系統角色</div>
                 </div>
                 <div class="metric-card">
-                    <div class="text-3xl font-bold text-[var(--primary-color)] mb-2">17</div>
-                    <div class="text-sm text-[var(--text-secondary)]">選課流程步驟</div>
+                    <div class="text-3xl font-bold text-[var(--primary-color)] mb-2">12+</div>
+                    <div class="text-sm text-[var(--text-secondary)]">完整測試腳本</div>
                 </div>
                 <div class="metric-card">
                     <div class="text-3xl font-bold text-[var(--primary-color)] mb-2">9</div>
-                    <div class="text-sm text-[var(--text-secondary)]">第三方API整合</div>
+                    <div class="text-sm text-[var(--text-secondary)]">ClassIn API端點</div>
                 </div>
             </div>
         </div>
@@ -181,27 +181,278 @@
 
             <!-- Student Journey -->
             <div class="mb-16">
-                <h3 class="text-2xl font-bold mb-8">學生選課完整流程</h3>
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <h3 class="text-2xl font-bold mb-8">學生選課完整流程 (基於實際測試腳本)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-3">
                     <div class="flow-step">
-                        <div class="font-bold text-sm mb-2">Step 1</div>
-                        <div class="text-sm">課程瀏覽</div>
+                        <div class="font-bold text-xs mb-2">Step 1</div>
+                        <div class="text-xs">進入選課</div>
                     </div>
                     <div class="flow-step">
-                        <div class="font-bold text-sm mb-2">Step 2</div>
-                        <div class="text-sm">課程選擇</div>
+                        <div class="font-bold text-xs mb-2">Step 2</div>
+                        <div class="text-xs">選擇課程種類</div>
                     </div>
                     <div class="flow-step">
-                        <div class="font-bold text-sm mb-2">Step 3</div>
-                        <div class="text-sm">時間區間</div>
+                        <div class="font-bold text-xs mb-2">Step 3</div>
+                        <div class="text-xs">設定時間區間</div>
                     </div>
                     <div class="flow-step">
-                        <div class="font-bold text-sm mb-2">Step 4</div>
-                        <div class="text-sm">教師確認</div>
+                        <div class="font-bold text-xs mb-2">Step 4</div>
+                        <div class="text-xs">選擇教師時段</div>
                     </div>
                     <div class="flow-step">
-                        <div class="font-bold text-sm mb-2">Step 5</div>
-                        <div class="text-sm">選課完成</div>
+                        <div class="font-bold text-xs mb-2">Step 5</div>
+                        <div class="text-xs">確認選課資訊</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="font-bold text-xs mb-2">Step 6</div>
+                        <div class="text-xs">選課成功</div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-lg text-sm text-green-700">
+                        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span>包含10種測試情境：正常流程 + 邊界條件 + 異常處理</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Features -->
+    <section class="py-16 px-6 bg-[var(--bg-secondary)]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">核心功能展示</h2>
+            
+            <!-- Student Functions -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">🎓 學生端功能模組</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Course Selection -->
+                    <div class="project-card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <div class="icon-calendar text-xl text-blue-600"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">智能選課系統</h4>
+                                <div class="text-sm text-[var(--text-secondary)]">5步驟完整流程</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>堂數效期自動驗證</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>時段衝突即時檢測</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>智能錯誤提示機制</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>流程可回退設計</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs text-[var(--primary-color)] font-medium">
+                            ✅ 已完成測試驗證 (10種情境)
+                        </div>
+                    </div>
+
+                    <!-- Course Management -->
+                    <div class="project-card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <div class="icon-list text-xl text-green-600"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">課程管理中心</h4>
+                                <div class="text-sm text-[var(--text-secondary)]">我的課程全覽</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>多維度篩選功能</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>課程狀態即時追蹤</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>5小時前彈性取消</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>課程詳情完整檢視</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs text-[var(--primary-color)] font-medium">
+                            ✅ 支援中英文介面
+                        </div>
+                    </div>
+
+                    <!-- Calendar View -->
+                    <div class="project-card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                <div class="icon-calendar-days text-xl text-purple-600"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">視覺化行事曆</h4>
+                                <div class="text-sm text-[var(--text-secondary)]">時間管理工具</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>週/月檢視模式</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>課程一鍵檢視</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>直觀課程排程顯示</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>響應式介面設計</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs text-[var(--primary-color)] font-medium">
+                            ✅ 1440px / 320px 全適配
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consultant Functions -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">💼 顧問端管理系統</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Hours Management -->
+                    <div class="project-card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <div class="icon-clock text-xl text-orange-600"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">堂數管理中心</h4>
+                                <div class="text-sm text-[var(--text-secondary)]">學生課程額度管理</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>學生堂數編輯功能</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>回補堂數流程管理</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>使用效期控制機制</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>完整訂單記錄檢視</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs text-[var(--primary-color)] font-medium">
+                            ✅ 業務邏輯安全控制
+                        </div>
+                    </div>
+
+                    <!-- Teacher Hours -->
+                    <div class="project-card p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                <div class="icon-user-check text-xl text-indigo-600"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">教師時數管理</h4>
+                                <div class="text-sm text-[var(--text-secondary)]">授課時數與薪資計算</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>時數細項編輯</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>出席狀況追蹤</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>薪資自動計算</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <span>事由填寫與狀態更新</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-xs text-[var(--primary-color)] font-medium">
+                            ✅ 完整權限控制設計
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Integration -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">🔗 ClassIn API深度整合</h3>
+                <div class="project-card p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold mb-4 text-[var(--primary-color)]">課程管理API</h4>
+                            <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                    <span>編輯課程資訊</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                    <span>課程下添加學生(單/多個)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                    <span>課程下刪除學生(單/多個)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-4 text-[var(--primary-color)]">課節管理API</h4>
+                            <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                    <span>修改課節資訊</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                    <span>課節下添加學生(單/多個)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                    <span>課節下刪除學生(單/多個)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                        <div class="flex items-center gap-2 text-sm">
+                            <div class="icon-info text-blue-600"></div>
+                            <span class="font-medium text-blue-800">API整合驗證</span>
+                        </div>
+                        <div class="text-sm text-blue-700 mt-2">
+                            透過系統性測試驗證API整合狀態，確保學生選課與教師管理功能與ClassIn平台無縫銜接，提供完整的線上教學體驗。
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,7 +460,7 @@
     </section>
 
     <!-- Key Features -->
-    <section class="py-16 px-6 bg-[var(--bg-secondary)]">
+    <section class="py-16 px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-12 text-center">核心功能亮點</h2>
             
@@ -341,8 +592,104 @@
         </div>
     </section>
 
-    <!-- Product Management Highlights -->
+    <!-- Core Highlights -->
     <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-center">三大核心亮點</h2>
+            <p class="text-center text-[var(--text-secondary)] mb-12 max-w-2xl mx-auto">
+                基於12+測試腳本分析，提煉出展現頂級產品管理能力的核心亮點
+            </p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Core Highlight 1 -->
+                <div class="project-card p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" 
+                         style="background: linear-gradient(135deg, #3B82F6, #1D4ED8);">
+                        <div class="icon-brain text-2xl text-white"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">業務邏輯設計深度</h3>
+                    <div class="space-y-3 text-sm text-[var(--text-secondary)] mb-6">
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                            <span>5小時取消限制的合理設計</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                            <span>堂數效期管理的風險控制</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                            <span>時段衝突檢測的系統思考</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                            <span>多層級驗證的安全架構</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-blue-600">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <!-- Core Highlight 2 -->
+                <div class="project-card p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" 
+                         style="background: linear-gradient(135deg, #10B981, #047857);">
+                        <div class="icon-check-circle text-2xl text-white"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-green-600">測試策略規劃廣度</h3>
+                    <div class="space-y-3 text-sm text-[var(--text-secondary)] mb-6">
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            <span>12+測試腳本系統性規劃</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            <span>50+測試情境全覆蓋策略</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            <span>中英文x桌面/手機矩陣測試</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            <span>邊界條件+異常處理驗證</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-green-600">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <!-- Core Highlight 3 -->
+                <div class="project-card p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" 
+                         style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);">
+                        <div class="icon-layers text-2xl text-white"></div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-600">系統架構統籌高度</h3>
+                    <div class="space-y-3 text-sm text-[var(--text-secondary)] mb-6">
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                            <span>214工作項目精密分解</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                            <span>學生-顧問-教師三角色設計</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                            <span>完整業務閉環系統思維</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                            <span>9個ClassIn API整合協調</span>
+                        </div>
+                    </div>
+                    <div class="text-2xl font-bold text-purple-600">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Management Highlights -->
+    <section class="py-16 px-6 bg-[var(--bg-secondary)]">
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold mb-12 text-center">產品經理能力展現</h2>
             
@@ -451,6 +798,173 @@
         </div>
     </section>
 
+    <!-- Testing Strategy -->
+    <section class="py-16 px-6 bg-[var(--bg-secondary)]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">完整測試策略展現</h2>
+            
+            <!-- Test Overview -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-12">
+                <div class="metric-card">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">12+</div>
+                    <div class="text-sm text-[var(--text-secondary)]">測試腳本</div>
+                </div>
+                <div class="metric-card">
+                    <div class="text-3xl font-bold text-green-600 mb-2">50+</div>
+                    <div class="text-sm text-[var(--text-secondary)]">測試情境</div>
+                </div>
+                <div class="metric-card">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">100%</div>
+                    <div class="text-sm text-[var(--text-secondary)]">功能覆蓋</div>
+                </div>
+                <div class="metric-card">
+                    <div class="text-3xl font-bold text-orange-600 mb-2">2語言</div>
+                    <div class="text-sm text-[var(--text-secondary)]">x2尺寸測試</div>
+                </div>
+            </div>
+
+            <!-- Student Test Cases -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-8">🎓 學生端測試覆蓋</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="project-card p-6">
+                        <h4 class="font-bold mb-3 text-blue-600">智能選課流程測試</h4>
+                        <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <div>✅ 有未使用堂數選課</div>
+                            <div>✅ 無未使用堂數限制</div>
+                            <div>✅ 超過使用效期檢查</div>
+                            <div>✅ 教師時段配對驗證</div>
+                            <div>✅ 時段衝突檢測</div>
+                            <div>✅ 超過可使用堂數警告</div>
+                            <div>✅ 選課成功確認</div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card p-6">
+                        <h4 class="font-bold mb-3 text-green-600">課程管理測試</h4>
+                        <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <div>✅ 課程列表顯示</div>
+                            <div>✅ 課程名稱篩選</div>
+                            <div>✅ 教師姓名篩選</div>
+                            <div>✅ 時間範圍篩選</div>
+                            <div>✅ 課程狀態篩選</div>
+                            <div>✅ 5小時前取消規則</div>
+                            <div>✅ 取消確認流程</div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card p-6">
+                        <h4 class="font-bold mb-3 text-purple-600">行事曆功能測試</h4>
+                        <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <div>✅ 預設週檢視顯示</div>
+                            <div>✅ 有排課程顯示</div>
+                            <div>✅ 無排課程狀態</div>
+                            <div>✅ 課程詳情檢視</div>
+                            <div>✅ 返回行事曆功能</div>
+                            <div>✅ 響應式適配</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consultant Test Cases -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-bold mb-8">💼 顧問端測試覆蓋</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="project-card p-6">
+                        <h4 class="font-bold mb-3 text-orange-600">堂數管理測試</h4>
+                        <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <div>✅ 學生堂數檢視</div>
+                            <div>✅ 堂數編輯功能</div>
+                            <div>✅ 必填欄位驗證</div>
+                            <div>✅ 課程方案變更限制</div>
+                            <div>✅ 使用效期檢查</div>
+                            <div>✅ 回補堂數流程</div>
+                            <div>✅ 訂單資訊完整性</div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card p-6">
+                        <h4 class="font-bold mb-3 text-indigo-600">教師時數管理測試</h4>
+                        <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <div>✅ 教師列表檢視</div>
+                            <div>✅ 時數詳情檢視</div>
+                            <div>✅ 時數細項編輯</div>
+                            <div>✅ 事由欄位填寫</div>
+                            <div>✅ 授課/缺席時數</div>
+                            <div>✅ 薪資狀態顯示</div>
+                            <div>✅ 更新確認機制</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test Environment Matrix -->
+            <div class="project-card p-8">
+                <h3 class="text-xl font-bold mb-6 text-center">測試環境矩陣</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-[var(--border)]">
+                                <th class="text-left py-3 px-4">功能模組</th>
+                                <th class="text-center py-3 px-4">中文-桌面</th>
+                                <th class="text-center py-3 px-4">中文-手機</th>
+                                <th class="text-center py-3 px-4">英文-桌面</th>
+                                <th class="text-center py-3 px-4">英文-手機</th>
+                                <th class="text-center py-3 px-4">API整合</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-[var(--text-secondary)]">
+                            <tr class="border-b border-[var(--border)]">
+                                <td class="py-3 px-4 font-medium">學生選課</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">🔄 部分</td>
+                            </tr>
+                            <tr class="border-b border-[var(--border)]">
+                                <td class="py-3 px-4 font-medium">課程管理</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                            </tr>
+                            <tr class="border-b border-[var(--border)]">
+                                <td class="py-3 px-4 font-medium">行事曆檢視</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">N/A</td>
+                            </tr>
+                            <tr class="border-b border-[var(--border)]">
+                                <td class="py-3 px-4 font-medium">堂數管理</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">教師時數</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                                <td class="text-center py-3 px-4">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 text-xs text-[var(--text-secondary)] text-center">
+                    *測試環境：桌面版(1440px) / 手機版(320px) / ClassIn API整合測試
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Documentation -->
     <section class="py-16 px-6">
         <div class="max-w-4xl mx-auto">
@@ -476,11 +990,19 @@
                         <h3 class="font-bold">測試文檔</h3>
                     </div>
                     <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
-                        <li>• 學生選課測試腳本（17步驟）</li>
-                        <li>• 10種測試情境完整覆蓋</li>
-                        <li>• 響應式設計測試規格</li>
-                        <li>• ClassIn API整合測試</li>
+                        <li>• 學生選課測試腳本（6步驟完整流程）</li>
+                        <li>• 課程管理測試腳本（篩選+取消功能）</li>
+                        <li>• 行事曆檢視測試腳本（週檢視）</li>
+                        <li>• 顧問堂數管理測試腳本</li>
+                        <li>• 教師時數管理測試腳本</li>
+                        <li>• 12+測試腳本，50+測試情境</li>
+                        <li>• 中英文x桌面/手機全覆蓋測試</li>
+                        <li>• ClassIn API整合測試（9個端點）</li>
                     </ul>
+                    <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                        <div class="text-xs text-blue-700 font-medium mb-1">測試腳本特色</div>
+                        <div class="text-xs text-blue-600">每個測試腳本包含前置條件、詳細步驟、預期結果、異常情境處理，確保功能完整性驗證</div>
+                    </div>
                 </div>
 
                 <div class="project-card p-6">

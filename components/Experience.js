@@ -257,31 +257,68 @@ function Experience() {
             </p>
           </div>
 
-          <div className="space-y-6">
-            {experiences.slice(0, 4).map((exp, index) => (
-              <div key={exp.id} className="glass-card p-6 hover-lift">
-                <div className="flex flex-col lg:flex-row lg:items-start gap-4">
-                  <div className="lg:w-1/3">
-                    <div className="text-sm text-[var(--primary-color)] font-medium mb-2 noto-font">
-                      {exp.period}
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-4 sm:left-6 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--primary-color)] via-[var(--secondary-color)] to-[var(--accent-color)]"></div>
+            
+            <div className="space-y-12">
+              {experiences.map((exp, index) => {
+                const isEven = index % 2 === 0;
+                const typeColors = {
+                  current: 'linear-gradient(135deg, var(--accent-color), var(--primary-color))',
+                  featured: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                  previous: 'linear-gradient(135deg, var(--accent-warm), var(--primary-color))',
+                  management: 'linear-gradient(135deg, var(--secondary-color), var(--accent-color))',
+                  marketing: 'linear-gradient(135deg, var(--accent-color), var(--accent-warm))',
+                  retail: 'linear-gradient(135deg, var(--primary-color), var(--accent-warm))'
+                };
+                
+                return (
+                  <div key={exp.id} className={`relative flex items-center ${!isEven && 'lg:flex-row-reverse'}`}>
+                    {/* Timeline node */}
+                    <div className="absolute left-4 sm:left-6 lg:left-1/2 w-4 h-4 sm:w-6 sm:h-6 rounded-full border-2 sm:border-4 border-white shadow-lg flex items-center justify-center z-10 transform -translate-x-1/2" 
+                         style={{background: typeColors[exp.type] || typeColors.management}}>
+                      <div className="w-1 h-1 sm:w-2 sm:h-2 bg-white rounded-full"></div>
                     </div>
-                    <h3 className="text-xl font-bold mb-1 noto-font">{exp.position}</h3>
-                    <p className="text-[var(--primary-color)] font-semibold mb-1 noto-font">{exp.company}</p>
-                    <p className="text-sm text-[var(--text-secondary)] noto-font">{exp.location}</p>
-                  </div>
-                  
-                  <div className="lg:w-2/3">
-                    <div className="space-y-3">
-                      {exp.highlights.slice(0, 3).map((highlight, idx) => (
-                        <p key={idx} className="text-sm text-[var(--text-secondary)] noto-font leading-relaxed">
-                          {highlight}
-                        </p>
-                      ))}
+                    
+                    {/* Content card */}
+                    <div className={`ml-12 sm:ml-16 lg:ml-0 ${isEven ? 'lg:mr-8 lg:pr-8' : 'lg:ml-8 lg:pl-8'} lg:w-1/2`}>
+                      <div className="glass-card p-6 hover-lift relative">
+                        {/* Arrow pointing to timeline */}
+                        <div className={`hidden lg:block absolute top-6 w-0 h-0 border-t-8 border-b-8 border-transparent ${
+                          isEven 
+                            ? 'right-0 border-r-8 border-r-white/80 transform translate-x-full' 
+                            : 'left-0 border-l-8 border-l-white/80 transform -translate-x-full'
+                        }`}></div>
+                        
+                        {/* Period badge */}
+                        <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white mb-3"
+                             style={{background: typeColors[exp.type] || typeColors.management}}>
+                          {exp.period}
+                        </div>
+                        
+                        <h3 className="text-lg font-bold mb-2 noto-font">{exp.position}</h3>
+                        <p className="text-[var(--primary-color)] font-semibold mb-1 noto-font">{exp.company}</p>
+                        <p className="text-sm text-[var(--text-secondary)] mb-4 noto-font">{exp.location}</p>
+                        
+                        <div className="space-y-2">
+                          {exp.highlights.slice(0, 2).map((highlight, idx) => (
+                            <p key={idx} className="text-sm text-[var(--text-secondary)] noto-font leading-relaxed">
+                              {highlight}
+                            </p>
+                          ))}
+                          {exp.highlights.length > 2 && (
+                            <p className="text-xs text-[var(--primary-color)] font-medium noto-font mt-2">
+                              +{exp.highlights.length - 2} {currentLang === 'zh' ? '項成就' : 'more achievements'}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

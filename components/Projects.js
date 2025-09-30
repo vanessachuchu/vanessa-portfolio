@@ -1,6 +1,8 @@
 function Projects() {
   try {
     const [currentLang, setCurrentLang] = React.useState('zh');
+    const carouselRef = React.useRef(null);
+    const [startX, setStartX] = React.useState(null);
 
     React.useEffect(() => {
       // Set initial language and listen for changes
@@ -18,6 +20,52 @@ function Projects() {
         };
       }
     }, []);
+
+    // Carousel navigation functions
+    const scrollToNext = () => {
+      if (carouselRef.current) {
+        const cardWidth = window.innerWidth < 640 ? 288 : 320; // 卡片宽度 + gap
+        carouselRef.current.scrollBy({
+          left: cardWidth + 24, // 加上gap
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    const scrollToPrev = () => {
+      if (carouselRef.current) {
+        const cardWidth = window.innerWidth < 640 ? 288 : 320;
+        carouselRef.current.scrollBy({
+          left: -(cardWidth + 24), // 加上gap
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // Enhanced touch handlers for better mobile experience
+    const handleTouchStart = (e) => {
+      setStartX(e.touches[0].clientX);
+      if (carouselRef.current) {
+        carouselRef.current.style.scrollBehavior = 'auto';
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      if (!startX || !carouselRef.current) return;
+      
+      e.preventDefault(); // 防止页面滚动
+      const currentX = e.touches[0].clientX;
+      const diffX = startX - currentX;
+      carouselRef.current.scrollLeft += diffX * 0.8; // 减少滑动敏感度
+      setStartX(currentX);
+    };
+
+    const handleTouchEnd = () => {
+      setStartX(null);
+      if (carouselRef.current) {
+        carouselRef.current.style.scrollBehavior = 'smooth';
+      }
+    };
 
     // Hardcoded content for both languages
     const content = {
@@ -160,82 +208,110 @@ function Projects() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {currentContent.projects.map((project) => (
-              <div key={project.id} className={`minimal-card overflow-hidden ${project.featured ? 'ring-2 ring-[var(--primary-color)]' : ''}`}>
-                {project.featured && (
-                  <div className="bg-[var(--primary-color)] text-white text-center py-2 text-sm font-medium">
-                    {currentContent.featured}
-                  </div>
-                )}
-                
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <div className="flex space-x-3">
-                        {project.detailPage && (
+          <div className="relative">
+            {/* Carousel container */}
+            <div className="overflow-hidden rounded-2xl">
+              <div 
+                ref={carouselRef}
+                className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+              >
+                {currentContent.projects.map((project, index) => {
+                  const gradients = [
+                    'linear-gradient(135deg, #FDB44B 0%, #FFAA00 100%)',
+                    'linear-gradient(135deg, #2F5D50 0%, #1a3a31 100%)',
+                    'linear-gradient(135deg, #89CFF0 0%, #5FA8D3 100%)',
+                    'linear-gradient(135deg, #F093FB 0%, #F5576C 100%)',
+                    'linear-gradient(135deg, #A8EDEA 0%, #FED6E3 100%)'
+                  ];
+                  
+                  const icons = ['📊', '🧠', '🎓', '🏢', '📈'];
+                  
+                  return (
+                    <div key={project.id} className="flex-shrink-0 w-72 sm:w-80 glass-card overflow-hidden hover-lift">
+                      {project.featured && (
+                        <div className="bg-[var(--primary-color)] text-white text-center py-2 text-sm font-medium noto-font">
+                          {currentContent.featured}
+                        </div>
+                      )}
+                      
+                      <div className="relative h-32 flex items-center justify-center text-4xl text-white font-bold"
+                           style={{background: gradients[index % gradients.length]}}>
+                        <span>{icons[index % icons.length]}</span>
+                        <div className="absolute inset-0 bg-black/20"></div>
+                      </div>
+                      
+                      <div className="p-6">
+                        <h3 className="text-lg font-bold mb-2 noto-font line-clamp-2">{project.title}</h3>
+                        <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed line-clamp-3 noto-font">
+                          {project.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.tags.slice(0, 3).map((tag) => (
+                            <span 
+                              key={tag}
+                              className="px-2 py-1 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-xs font-medium noto-font"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                          {project.tags.length > 3 && (
+                            <span className="px-2 py-1 bg-gray-100 text-gray-500 rounded-full text-xs font-medium noto-font">
+                              +{project.tags.length - 3}
+                            </span>
+                          )}
+                        </div>
+                        
+                        <div className="flex gap-2">
+                          {project.detailPage && (
+                            <a 
+                              href={project.detailPage}
+                              className="flex-1 text-center py-2 px-3 bg-[var(--primary-color)] text-white rounded-lg hover:bg-[var(--primary-color)]/90 transition-colors text-xs font-medium noto-font"
+                            >
+                              {currentContent.viewDetails}
+                            </a>
+                          )}
                           <a 
-                            href={project.detailPage}
-                            className="p-2 bg-white rounded-full text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-200"
-                          >
-                            <div className="icon-info text-sm"></div>
-                          </a>
-                        )}
-                        <a 
-                          href={project.link} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-white rounded-full text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-200"
-                        >
-                          <div className="icon-external-link text-sm"></div>
-                        </a>
-                        {project.github && project.github !== '#' && (
-                          <a 
-                            href={project.github}
+                            href={project.link} 
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 bg-white rounded-full text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-200"
+                            className="flex-1 text-center py-2 px-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-lg hover:bg-[var(--primary-color)] hover:text-white transition-colors text-xs font-medium noto-font"
                           >
-                            <div className="icon-github text-sm"></div>
+                            {currentLang === 'zh' ? '查看專案' : 'View Project'}
                           </a>
-                        )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-[var(--text-secondary)] mb-4 leading-relaxed">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="px-3 py-1 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-sm font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  {project.detailPage && (
-                    <a 
-                      href={project.detailPage}
-                      className="inline-flex items-center gap-2 text-[var(--primary-color)] hover:text-[var(--primary-dark)] font-medium text-sm"
-                    >
-                      <span>{currentContent.viewDetails}</span>
-                      <div className="icon-arrow-right text-xs"></div>
-                    </a>
-                  )}
-                </div>
+                  );
+                })}
               </div>
-            ))}
+            </div>
+            
+            {/* Navigation buttons */}
+            <button 
+              onClick={scrollToPrev}
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm shadow-lg rounded-full flex items-center justify-center text-[var(--primary-color)] hover:bg-white hover:scale-110 transition-all duration-200 z-10"
+            >
+              <span className="text-lg sm:text-xl font-bold">‹</span>
+            </button>
+            
+            <button 
+              onClick={scrollToNext}
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm shadow-lg rounded-full flex items-center justify-center text-[var(--primary-color)] hover:bg-white hover:scale-110 transition-all duration-200 z-10"
+            >
+              <span className="text-lg sm:text-xl font-bold">›</span>
+            </button>
+            
+            {/* Scroll indicator */}
+            <div className="text-center mt-6">
+              <p className="text-sm text-[var(--text-secondary)] noto-font">
+                ← {currentLang === 'zh' ? '左右滑動查看更多作品' : 'Swipe left or right to view more projects'} →
+              </p>
+            </div>
           </div>
           
           <div className="text-center mt-12">
