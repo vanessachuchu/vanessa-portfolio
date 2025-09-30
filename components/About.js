@@ -3,10 +3,8 @@ function About() {
     const [isVisible, setIsVisible] = React.useState(false);
     const [currentLang, setCurrentLang] = React.useState('zh');
     const [stats, setStats] = React.useState({
-      experience: 0,
-      projects: 0,
       efficiency: 0,
-      languages: 0
+      experience: 0
     });
 
     React.useEffect(() => {
@@ -43,7 +41,7 @@ function About() {
     }, []);
 
     const animateStats = () => {
-      const targets = { experience: 5, projects: 15, efficiency: 20, languages: 3 };
+      const targets = { efficiency: 120, experience: 2 };
       const duration = 2000;
       const steps = 60;
       const stepDuration = duration / steps;
@@ -63,160 +61,194 @@ function About() {
       });
     };
 
-    // Hardcoded text content for both languages
+    // Content for both languages
     const content = {
       zh: {
         title: '關於我',
-        subtitle: '擁有成長型思維，不斷尋求方式解決問題的產品經理',
-        description1: '目前在澳洲打工度假，持續探索 AI 與自動化的應用可能性。擁有豐富的專案管理經驗，擅長資訊整合分析及危機處理，特別專精於跨部門協作與流程優化。',
-        description2: '在多奇數位擔任專案經理期間，成功整合 AI 工具優化工作流程，',
-        highlight: ' 有效縮短 20% 的專案執行時程',
-        description3: '。目前正在開發「靈感管理與深度思考助手」，一個完整的想法生命週期管理系統。',
-        skills: ['專案管理', 'AI 整合', '跨文化溝通', '流程優化', 'No-Code 開發', '數據分析'],
-        stats: {
-          experience: '年工作經驗',
-          projects: '專案完成',
-          efficiency: '效率提升',
-          languages: '語言能力'
-        }
+        description1: '我擅長將複雜的業務需求轉化為優雅的產品方案。結合策略思維與創意執行，不只追求功能完整，更注重使用者體驗的細膩度。',
+        description2: '準備好開啟您的下一個專案了嗎？',
+        efficiencyDesc: '透過導入 AI 工具與優化產品流程，在前 6 個月內平均提升團隊協作效率',
+        point1: `擁有 ${stats.experience}+ 年的跨領域經驗，專注於創造直觀、以使用者為中心的設計，解決真實世界的問題，並提供無縫的數位體驗。`,
+        point2: '善於與客戶緊密合作，融合創意與策略思維，將他們的願景轉化為深思熟慮、具影響力的設計解決方案。',
+        strengthsTitle: '核心優勢',
+        strengths: [
+          {
+            title: '金融科技專案經驗',
+            description: '主導基金觀測站大型 B2B 平台，整合 6 大子平台系統，服務全台投信投顧業者。',
+            tags: 'B2B 平台 · 系統整合 · 金融科技 · 跨部門協作'
+          },
+          {
+            title: 'AI 工具深度應用',
+            description: '熟練運用 ChatGPT、Claude、Cursor 等工具，提升團隊協作效率與產品交付品質。',
+            tags: 'AI 整合 · 效率提升 · 工具應用 · 創新思維'
+          },
+          {
+            title: '跨領域整合能力',
+            description: '具備醫療科技、房地產、家具產業的跨領域經驗，能快速理解不同產業的需求痛點。',
+            tags: '跨領域經驗 · 市場調研 · 數據分析 · 快速學習'
+          },
+          {
+            title: '完整產品管理技能',
+            description: '熟悉產品全生命週期管理，善用 Figma、Notion、Miro 等工具進行產品規劃與團隊協作。',
+            tags: '產品規劃 · 原型設計 · 工具熟練 · 敏捷開發'
+          }
+        ]
       },
       en: {
         title: 'About Me',
-        subtitle: 'Product manager with growth mindset, constantly seeking innovative solutions to complex problems',
-        description1: 'Currently pursuing professional development through international experience in Australia, while actively researching AI and automation applications. Bringing extensive project management expertise with specialized competencies in information synthesis, crisis resolution, and cross-functional team leadership.',
-        description2: 'During my tenure as Project Manager at Duotify Digital, I successfully integrated AI technologies to optimize operational workflows,',
-        highlight: ' achieving a 20% reduction in project execution timelines',
-        description3: '. Currently developing an "Inspiration Management and Deep Thinking Assistant," a comprehensive ideation lifecycle management system.',
-        skills: ['Project Management', 'AI Integration', 'Cross-Cultural Communication', 'Process Optimization', 'No-Code Development', 'Data Analysis'],
-        stats: {
-          experience: 'Years Experience',
-          projects: 'Projects Completed',
-          efficiency: 'Efficiency Improvement',
-          languages: 'Languages'
-        }
+        description1: 'I specialize in turning complex business requirements into elegant product solutions. Combining strategic thinking with creative execution, I focus not only on functional completeness but also on the finesse of user experience.',
+        description2: 'Ready to start your next project?',
+        efficiencyDesc: 'Average improvement in team collaboration efficiency within the first 6 months through AI tools and process optimization',
+        point1: `With ${stats.experience}+ years of cross-domain experience, I focus on creating intuitive, user-centered designs that solve real-world problems and provide seamless digital experiences.`,
+        point2: 'I excel at working closely with clients, blending creativity with strategic thinking to transform their vision into thoughtful, impactful design solutions.',
+        strengthsTitle: 'Core Strengths',
+        strengths: [
+          {
+            title: 'FinTech Project Experience',
+            description: 'Led the Fund Observatory large-scale B2B platform, integrating 6 major sub-platform systems, serving investment trust and advisory firms across Taiwan.',
+            tags: 'B2B Platform · System Integration · FinTech · Cross-functional Collaboration'
+          },
+          {
+            title: 'Deep AI Tool Application',
+            description: 'Proficient in using ChatGPT, Claude, Cursor and other tools to enhance team collaboration efficiency and product delivery quality.',
+            tags: 'AI Integration · Efficiency Enhancement · Tool Application · Innovation'
+          },
+          {
+            title: 'Cross-domain Integration',
+            description: 'Experience in medical technology, real estate, and furniture industries, with ability to quickly understand different industry pain points.',
+            tags: 'Cross-domain Experience · Market Research · Data Analysis · Rapid Learning'
+          },
+          {
+            title: 'Complete Product Management',
+            description: 'Familiar with full product lifecycle management, skilled in using Figma, Notion, Miro for product planning and team collaboration.',
+            tags: 'Product Planning · Prototyping · Tool Proficiency · Agile Development'
+          }
+        ]
       }
     };
 
     const currentContent = content[currentLang] || content.zh;
 
     return (
-      <section 
-        id="about" 
-        className="py-32 px-8"
-        data-name="about-section" 
-        data-file="components/About.js"
-        style={{backgroundColor: 'var(--bg-primary)'}}
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* 简洁标题设计 */}
-          <div className="mb-16">
-            <h2 className="text-6xl font-light mb-4 noto-font" style={{color: 'var(--text-primary)'}}>
-              {currentContent.title}
-            </h2>
-            <div className="w-20 h-0.5" style={{backgroundColor: 'var(--primary-color)'}}></div>
-          </div>
-          
-          {/* 12列网格布局 */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            {/* 左侧文字 - 5列 */}
-            <div className={`lg:col-span-5 ${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
-              <p className="text-lg leading-relaxed mb-8 noto-font" style={{color: 'var(--text-secondary)'}}>
-                {currentContent.description1}
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-8 noto-font" style={{color: 'var(--text-secondary)'}}>
-                {currentContent.description2}
-                <span className="font-semibold" style={{color: 'var(--primary-color)'}}>{currentContent.highlight}</span>
-                {currentContent.description3}
-              </p>
-              
-              <div className="flex flex-wrap gap-3">
-                {currentContent.skills.map((skill) => (
-                  <span 
-                    key={skill}
-                    className="px-4 py-2 rounded-full text-sm font-medium noto-font border"
-                    style={{
-                      backgroundColor: 'var(--bg-secondary)',
-                      color: 'var(--text-secondary)',
-                      borderColor: 'var(--border)'
-                    }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+      <>
+        {/* About Me 區塊 */}
+        <section 
+          id="about" 
+          className="py-32 px-6"
+          data-name="about-section" 
+          data-file="components/About.js"
+          style={{backgroundColor: 'var(--bg-secondary)'}}
+        >
+          <div className="max-w-7xl mx-auto">
+            {/* About Me 標題 */}
+            <div className="mb-20">
+              <h2 className="text-6xl font-bold mb-6 noto-font" style={{color: 'var(--text-primary)'}}>
+                {currentContent.title}
+              </h2>
+              <div className="w-20 h-1" style={{backgroundColor: 'var(--primary-color)'}}></div>
             </div>
-
-            {/* 右侧数据与重点 - 7列 */}
-            <div className={`lg:col-span-7 ${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
-              {/* 主要成就数据 */}
-              <div className="flex items-start gap-8 mb-12">
-                <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center flex-shrink-0" 
-                     style={{borderColor: 'var(--primary-color)'}}>
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-7xl font-light mb-3 noto-font" style={{color: 'var(--primary-color)'}}>{stats.efficiency}%</div>
-                  <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
-                    {currentContent.stats.efficiency}
-                  </p>
-                </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+              {/* 左側:文字描述 */}
+              <div className={`lg:col-span-5 ${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
+                <p className="text-lg leading-relaxed mb-8 noto-font" style={{color: 'var(--text-secondary)'}}>
+                  {currentContent.description1}
+                </p>
+                <p className="leading-relaxed noto-font" style={{color: 'var(--text-light)'}}>
+                  {currentContent.description2}
+                </p>
               </div>
 
-              {/* 经验与专案数据 */}
-              <div className="flex items-start gap-8 mb-12">
-                <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center flex-shrink-0" 
-                     style={{borderColor: 'var(--primary-color)'}}>
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-7xl font-light mb-3 noto-font" style={{color: 'var(--primary-color)'}}>{stats.experience}+</div>
-                  <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
-                    {currentContent.stats.experience} {currentLang === 'zh' ? '・' : '・'} {stats.projects}+ {currentContent.stats.projects}
-                  </p>
-                </div>
-              </div>
-
-              {/* 特色專案突出顯示 */}
-              <div className="flex items-start gap-8">
-                <div className="w-16 h-16 rounded-full border-2 flex items-center justify-center flex-shrink-0" 
-                     style={{borderColor: 'var(--primary-color)'}}>
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-2xl font-semibold mb-3 noto-font" style={{color: 'var(--primary-color)'}}>
-                    {currentLang === 'zh' ? '脈德小腦瓜' : 'Mind-Brain'}
+              {/* 右側:數據與重點 */}
+              <div className={`lg:col-span-7 ${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
+                {/* 大數據展示 */}
+                <div className="mb-12 flex items-start gap-6">
+                  <div className="text-center">
+                    <div className="w-20 h-20 rounded-full border-2 flex items-center justify-center mb-4" 
+                         style={{borderColor: 'var(--primary-color)'}}>
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
                   </div>
-                  <p className="leading-relaxed noto-font mb-4" style={{color: 'var(--text-secondary)'}}>
-                    {currentLang === 'zh' 
-                      ? '互動式冥想思考專案，將抽象想法具體化的創新工具'
-                      : 'Interactive meditation thinking project, innovative tool for materializing abstract ideas'
-                    }
-                  </p>
-                  <a 
-                    href="https://vanessachuchu.github.io/mind-brain/" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium noto-font transition-all duration-200"
-                    style={{color: 'var(--primary-color)'}}
-                  >
-                    {currentLang === 'zh' ? '體驗專案' : 'Experience Project'}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                  <div>
+                    <div className="text-7xl font-bold mb-2 noto-font" style={{color: 'var(--primary-color)'}}>{stats.efficiency}%</div>
+                    <p className="leading-relaxed max-w-md noto-font" style={{color: 'var(--text-light)'}}>
+                      {currentContent.efficiencyDesc}
+                    </p>
+                  </div>
+                </div>
+
+                {/* 特色照片區域 - 佔位符 */}
+                <div className="grid grid-cols-2 gap-6 mb-12">
+                  <div className="aspect-square rounded-lg" style={{backgroundColor: 'var(--bg-tertiary)'}}></div>
+                  <div className="aspect-square rounded-lg" style={{backgroundColor: 'var(--muted)'}}></div>
+                </div>
+
+                {/* 兩個重點說明 */}
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full text-white flex items-center justify-center flex-shrink-0 text-sm font-bold noto-font" 
+                         style={{backgroundColor: 'var(--primary-color)'}}>
+                      1
+                    </div>
+                    <div>
+                      <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                        {currentContent.point1}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full text-white flex items-center justify-center flex-shrink-0 text-sm font-bold noto-font" 
+                         style={{backgroundColor: 'var(--primary-color)'}}>
+                      2
+                    </div>
+                    <div>
+                      <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                        {currentContent.point2}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* 核心優勢 - 極簡列表式 */}
+        <section className="py-32 px-6" style={{backgroundColor: 'var(--bg-primary)'}}>
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-5xl font-bold mb-20 noto-font" style={{color: 'var(--text-primary)'}}>
+              {currentContent.strengthsTitle}
+            </h2>
+            
+            <div className="space-y-16">
+              {currentContent.strengths.map((strength, index) => (
+                <div key={index} className={`grid grid-cols-1 lg:grid-cols-12 gap-8 border-t pt-8 ${isVisible ? 'fade-in-up' : 'opacity-0'}`} 
+                     style={{borderColor: 'var(--border)', animationDelay: `${index * 0.2}s`}}>
+                  <div className="lg:col-span-2">
+                    <div className="text-5xl font-bold noto-font" style={{color: 'var(--border)'}}>
+                      0{index + 1}
+                    </div>
+                  </div>
+                  <div className="lg:col-span-10">
+                    <h3 className="text-3xl font-bold mb-4 noto-font" style={{color: 'var(--text-primary)'}}>
+                      {strength.title}
+                    </h3>
+                    <p className="text-xl leading-relaxed mb-4 noto-font" style={{color: 'var(--text-light)'}}>
+                      {strength.description}
+                    </p>
+                    <div className="text-sm noto-font" style={{color: 'var(--text-light)'}}>
+                      {strength.tags}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
     );
   } catch (error) {
     console.error('About component error:', error);

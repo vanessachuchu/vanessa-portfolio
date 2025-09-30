@@ -94,7 +94,7 @@ function Projects() {
             image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['JavaScript', '冥想思考', 'GitHub Pages', '開源專案'],
             link: 'https://vanessachuchu.github.io/mind-brain/',
-            detailPage: 'https://github.com/vanessachuchu/mind-brain',
+            detailPage: 'project-mind-brain.html',
             featured: true
           },
           {
@@ -153,7 +153,7 @@ function Projects() {
             image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['JavaScript', 'Meditation Thinking', 'GitHub Pages', 'Open Source'],
             link: 'https://vanessachuchu.github.io/mind-brain/',
-            detailPage: 'https://github.com/vanessachuchu/mind-brain',
+            detailPage: 'project-mind-brain.html',
             featured: true
           },
           {
