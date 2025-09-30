@@ -231,16 +231,17 @@ function Projects() {
                   const icons = ['📊', '🧠', '🎓', '🏢', '📈'];
                   
                   return (
-                    <div key={project.id} className="flex-shrink-0 w-72 sm:w-80 glass-card overflow-hidden hover-lift">
+                    <div key={project.id} className="flex-shrink-0 w-72 sm:w-80 glass-card card-3d overflow-hidden">
                       {project.featured && (
                         <div className="bg-[var(--primary-color)] text-white text-center py-2 text-sm font-medium noto-font">
+                          <span className="icon-3d inline-block mr-1">⭐</span>
                           {currentContent.featured}
                         </div>
                       )}
                       
                       <div className="relative h-32 flex items-center justify-center text-4xl text-white font-bold"
                            style={{background: gradients[index % gradients.length]}}>
-                        <span>{icons[index % icons.length]}</span>
+                        <span className="icon-3d">{icons[index % icons.length]}</span>
                         <div className="absolute inset-0 bg-black/20"></div>
                       </div>
                       
@@ -270,8 +271,9 @@ function Projects() {
                           {project.detailPage && (
                             <a 
                               href={project.detailPage}
-                              className="flex-1 text-center py-2 px-3 bg-[var(--primary-color)] text-white rounded-lg hover:bg-[var(--primary-color)]/90 transition-colors text-xs font-medium noto-font"
+                              className="flex-1 text-center py-2 px-3 bg-[var(--primary-color)] text-white rounded-lg btn-3d transition-colors text-xs font-medium noto-font"
                             >
+                              <span className="icon-3d inline-block mr-1 text-xs">📄</span>
                               {currentContent.viewDetails}
                             </a>
                           )}
@@ -279,8 +281,9 @@ function Projects() {
                             href={project.link} 
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 text-center py-2 px-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-lg hover:bg-[var(--primary-color)] hover:text-white transition-colors text-xs font-medium noto-font"
+                            className="flex-1 text-center py-2 px-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-lg btn-3d hover:bg-[var(--primary-color)] hover:text-white transition-colors text-xs font-medium noto-font"
                           >
+                            <span className="icon-3d inline-block mr-1 text-xs">🔗</span>
                             {currentLang === 'zh' ? '查看專案' : 'View Project'}
                           </a>
                         </div>

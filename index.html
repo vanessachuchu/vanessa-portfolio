@@ -98,20 +98,65 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         
+        /* 統一字體層級系統 */
         h1, h2, h3, h4, h5, h6 {
-            @apply font-bold;
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.3;
         }
 
+        h1 { font-size: 2.5rem; font-weight: 700; }
+        h2 { font-size: 2rem; font-weight: 600; }
+        h3 { font-size: 1.5rem; font-weight: 600; }
+        h4 { font-size: 1.25rem; font-weight: 500; }
+        h5 { font-size: 1.125rem; font-weight: 500; }
+        h6 { font-size: 1rem; font-weight: 500; }
+
+        /* 字體類別 */
         .serif-heading {
             font-family: 'Noto Serif TC', 'Playfair Display', 'Times New Roman', serif;
+            font-weight: 400;
+            letter-spacing: -0.015em;
         }
 
         .inter-font {
             font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            letter-spacing: -0.01em;
         }
 
         .noto-font {
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+        }
+
+        /* 響應式字體大小 */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.25rem; }
+        }
+
+        /* 文本樣式統一 */
+        .text-body {
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .text-caption {
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .text-small {
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            line-height: 1.4;
         }
 
         /* Enhanced floating animations */
@@ -144,6 +189,179 @@
                 transform: translateY(-40px) rotate(2deg);
                 opacity: 0.7;
             }
+        }
+
+        /* 3D立體效果 */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-3d:hover {
+            transform: translateY(-12px) rotateX(15deg) rotateY(5deg);
+            box-shadow: 
+                0 20px 40px rgba(244, 162, 97, 0.3),
+                0 10px 20px rgba(244, 162, 97, 0.2),
+                0 0 0 1px rgba(244, 162, 97, 0.1);
+        }
+
+        /* 立體圖標效果 */
+        .icon-3d {
+            position: relative;
+            display: inline-block;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .icon-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            border-radius: inherit;
+            transform: translateZ(1px);
+        }
+
+        .icon-3d::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(225deg, rgba(0,0,0,0.1), transparent);
+            border-radius: inherit;
+            transform: translateZ(-1px);
+            z-index: -1;
+        }
+
+        .icon-3d:hover {
+            transform: translateY(-8px) rotateX(20deg) rotateY(10deg);
+            box-shadow: 
+                0 15px 30px rgba(244, 162, 97, 0.4),
+                0 5px 15px rgba(244, 162, 97, 0.2);
+        }
+
+        /* 浮動裝飾icon */
+        .floating-icon {
+            position: fixed;
+            font-size: 24px;
+            color: var(--primary-color);
+            opacity: 0.1;
+            z-index: 1;
+            pointer-events: none;
+            animation: floatRandom 15s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-icon:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
+        .floating-icon:nth-child(3) { top: 80%; left: 15%; animation-delay: 4s; }
+        .floating-icon:nth-child(4) { top: 30%; left: 80%; animation-delay: 6s; }
+        .floating-icon:nth-child(5) { top: 70%; left: 5%; animation-delay: 8s; }
+
+        @keyframes floatRandom {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.1;
+            }
+            25% { 
+                transform: translate(20px, -30px) rotate(90deg) scale(1.2);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translate(-15px, -20px) rotate(180deg) scale(0.8);
+                opacity: 0.2;
+            }
+            75% { 
+                transform: translate(30px, -40px) rotate(270deg) scale(1.1);
+                opacity: 0.25;
+            }
+        }
+
+        /* 技能標籤3D效果 */
+        .skill-3d {
+            position: relative;
+            background: linear-gradient(135deg, var(--card-bg), var(--bg-secondary));
+            border: 1px solid var(--border);
+            transform-style: preserve-3d;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .skill-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(244, 162, 97, 0.1), rgba(244, 162, 97, 0.05));
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-3d:hover {
+            transform: translateY(-6px) rotateX(10deg) rotateY(5deg);
+            box-shadow: 
+                0 10px 25px rgba(244, 162, 97, 0.25),
+                0 5px 10px rgba(244, 162, 97, 0.15);
+        }
+
+        .skill-3d:hover::before {
+            opacity: 1;
+        }
+
+        /* 按鈕3D效果 */
+        .btn-3d {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .btn-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-3d:hover {
+            transform: translateY(-4px) rotateX(8deg);
+            box-shadow: 
+                0 12px 25px rgba(60, 56, 53, 0.3),
+                0 6px 12px rgba(60, 56, 53, 0.2);
+        }
+
+        .btn-3d:hover::before {
+            left: 100%;
+        }
+
+        /* 視差效果 */
+        .parallax-bg {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle at 30% 20%, rgba(244, 162, 97, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(168, 230, 207, 0.05) 0%, transparent 50%);
+            animation: parallaxMove 20s ease-in-out infinite;
+        }
+
+        @keyframes parallaxMove {
+            0%, 100% { transform: translate(-10%, -10%) rotate(0deg); }
+            25% { transform: translate(-5%, -15%) rotate(1deg); }
+            50% { transform: translate(-15%, -5%) rotate(-1deg); }
+            75% { transform: translate(-8%, -12%) rotate(0.5deg); }
         }
 
         .fade-in {
@@ -366,6 +584,16 @@
 <body>
     <!-- Enhanced decorative elements -->
     <div class="decoration"></div>
+    
+    <!-- 浮動裝飾圖標 -->
+    <div class="floating-icon">💡</div>
+    <div class="floating-icon">🎨</div>
+    <div class="floating-icon">⚡</div>
+    <div class="floating-icon">🚀</div>
+    <div class="floating-icon">✨</div>
+    
+    <!-- 視差背景 -->
+    <div class="parallax-bg"></div>
     
     <div id="root"></div>
     

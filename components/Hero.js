@@ -125,14 +125,16 @@ function Hero() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12 fade-in fade-in-4">
               <button 
                 onClick={() => document.getElementById('featured').scrollIntoView({ behavior: 'smooth' })}
-                className="btn-primary noto-font"
+                className="btn-primary btn-3d noto-font"
               >
+                <span className="icon-3d inline-block mr-2">🎯</span>
                 {currentContent.portfolioBtn}
               </button>
               <a 
                 href="mailto:vanessachuliu@gmail.com"
-                className="btn-secondary noto-font text-center"
+                className="btn-secondary btn-3d noto-font text-center"
               >
+                <span className="icon-3d inline-block mr-2">💌</span>
                 {currentContent.contactBtn}
               </a>
             </div>
@@ -140,33 +142,56 @@ function Hero() {
             {/* 技能標籤 */}
             <div className="mb-12 fade-in fade-in-4">
               <div className="text-center text-sm text-[var(--text-light)] mb-6 noto-font">
+                <span className="icon-3d inline-block mr-2">⭐</span>
                 {currentContent.skillsIntro}
               </div>
               <div className="flex justify-center gap-4 flex-wrap">
-                <span className="skill-item">產品設計思維</span>
-                <span className="skill-item">使用者體驗優化</span>
-                <span className="skill-item">AI 工具整合</span>
-                <span className="skill-item">跨團隊協作</span>
-                <span className="skill-item">敏捷專案管理</span>
-                <span className="skill-item">工具探索應用</span>
+                <span className="skill-item skill-3d">
+                  <span className="icon-3d inline-block mr-1">🧠</span>
+                  產品設計思維
+                </span>
+                <span className="skill-item skill-3d">
+                  <span className="icon-3d inline-block mr-1">✨</span>
+                  使用者體驗優化
+                </span>
+                <span className="skill-item skill-3d">
+                  <span className="icon-3d inline-block mr-1">🤖</span>
+                  AI 工具整合
+                </span>
+                <span className="skill-item skill-3d">
+                  <span className="icon-3d inline-block mr-1">🤝</span>
+                  跨團隊協作
+                </span>
+                <span className="skill-item skill-3d">
+                  <span className="icon-3d inline-block mr-1">⚡</span>
+                  敏捷專案管理
+                </span>
+                <span className="skill-item skill-3d">
+                  <span className="icon-3d inline-block mr-1">🔧</span>
+                  工具探索應用
+                </span>
               </div>
             </div>
             
             {/* 成就數據 */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-lg mx-auto mb-10 fade-in fade-in-5">
-              <div className="glass-card p-4 text-center">
+              <div className="glass-card card-3d p-4 text-center">
+                <div className="icon-3d inline-block text-lg mb-2">📅</div>
                 <div className="text-xl font-semibold text-[var(--primary-color)] serif-heading">2+</div>
                 <div className="text-xs text-[var(--text-light)] noto-font">年經驗</div>
               </div>
-              <div className="glass-card p-4 text-center">
+              <div className="glass-card card-3d p-4 text-center">
+                <div className="icon-3d inline-block text-lg mb-2">🏢</div>
                 <div className="text-xl font-semibold text-[var(--primary-color)] serif-heading">6</div>
                 <div className="text-xs text-[var(--text-light)] noto-font">大平台</div>
               </div>
-              <div className="glass-card p-4 text-center">
+              <div className="glass-card card-3d p-4 text-center">
+                <div className="icon-3d inline-block text-lg mb-2">🚀</div>
                 <div className="text-xl font-semibold text-[var(--primary-color)] serif-heading">214</div>
                 <div className="text-xs text-[var(--text-light)] noto-font">天交付</div>
               </div>
-              <div className="glass-card p-4 text-center">
+              <div className="glass-card card-3d p-4 text-center">
+                <div className="icon-3d inline-block text-lg mb-2">👥</div>
                 <div className="text-xl font-semibold text-[var(--primary-color)] serif-heading">1000+</div>
                 <div className="text-xs text-[var(--text-light)] noto-font">使用者</div>
               </div>
