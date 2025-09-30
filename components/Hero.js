@@ -72,12 +72,12 @@ function Hero() {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             {/* 問候語 */}
-            <div className="text-base text-[var(--text-light)] mb-10 serif-heading fade-in">
+            <div className="text-base text-[var(--text-light)] mb-10 noto-font fade-in">
               {currentContent.greeting}
             </div>
             
             {/* 主標題 */}
-            <h1 className="text-3xl lg:text-4xl font-medium mb-8 serif-heading leading-relaxed fade-in fade-in-1">
+            <h1 className="text-3xl lg:text-4xl font-medium mb-8 noto-font leading-relaxed fade-in fade-in-1">
               {currentContent.title.split('\n').map((line, index) => (
                 <React.Fragment key={index}>
                   {line}

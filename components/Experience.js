@@ -249,10 +249,10 @@ function Experience() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6 noto-font">
               {currentContent.title}
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
+            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto noto-font">
               {currentContent.subtitle}
             </p>
           </div>

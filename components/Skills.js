@@ -223,7 +223,7 @@ function Skills() {
           {/* Skills Display Area */}
           <div className="minimal-card p-8 lg:p-12">
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold mb-4 serif-heading">
+              <h3 className="text-3xl font-bold mb-4 noto-font">
                 {skillCategories[activeCategory].title}
               </h3>
               <div className="w-20 h-1 bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent-color)] mx-auto rounded-full"></div>

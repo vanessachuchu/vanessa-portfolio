@@ -108,10 +108,10 @@ function About() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-6 noto-font">
               {currentContent.title}
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
+            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto noto-font">
               {currentContent.subtitle}
             </p>
           </div>
@@ -119,11 +119,11 @@ function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div className={`space-y-8 ${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
               <div className="space-y-6">
-                <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-lg text-[var(--text-secondary)] leading-relaxed noto-font">
                   {currentContent.description1}
                 </p>
                 
-                <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-lg text-[var(--text-secondary)] leading-relaxed noto-font">
                   {currentContent.description2}
                   <span className="text-[var(--primary-color)] font-semibold">{currentContent.highlight}</span>
                   {currentContent.description3}
@@ -133,7 +133,7 @@ function About() {
                   {currentContent.skills.map((skill) => (
                     <span 
                       key={skill}
-                      className="px-4 py-2 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-sm font-medium"
+                      className="px-4 py-2 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-sm font-medium noto-font"
                     >
                       {skill}
                     </span>
@@ -149,32 +149,32 @@ function About() {
                        style={{background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))'}}>
                     <div className="icon-briefcase text-2xl text-white"></div>
                   </div>
-                  <div className="text-4xl font-bold gradient-text mb-2">{stats.experience}+</div>
-                  <div className="text-[var(--text-secondary)]">{currentContent.stats.experience}</div>
+                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.experience}+</div>
+                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.experience}</div>
                 </div>
                 <div className="minimal-card text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
                        style={{background: 'linear-gradient(135deg, var(--secondary-color), var(--accent-color))'}}>
                     <div className="icon-folder text-2xl text-white"></div>
                   </div>
-                  <div className="text-4xl font-bold gradient-text mb-2">{stats.projects}+</div>
-                  <div className="text-[var(--text-secondary)]">{currentContent.stats.projects}</div>
+                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.projects}+</div>
+                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.projects}</div>
                 </div>
                 <div className="minimal-card text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
                        style={{background: 'linear-gradient(135deg, var(--accent-color), var(--accent-warm))'}}>
                     <div className="icon-trending-up text-2xl text-white"></div>
                   </div>
-                  <div className="text-4xl font-bold gradient-text mb-2">{stats.efficiency}%</div>
-                  <div className="text-[var(--text-secondary)]">{currentContent.stats.efficiency}</div>
+                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.efficiency}%</div>
+                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.efficiency}</div>
                 </div>
                 <div className="minimal-card text-center">
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" 
                        style={{background: 'linear-gradient(135deg, var(--accent-warm), var(--primary-color))'}}>
                     <div className="icon-globe text-2xl text-white"></div>
                   </div>
-                  <div className="text-4xl font-bold gradient-text mb-2">{stats.languages}</div>
-                  <div className="text-[var(--text-secondary)]">{currentContent.stats.languages}</div>
+                  <div className="text-4xl font-bold gradient-text mb-2 noto-font">{stats.languages}</div>
+                  <div className="text-[var(--text-secondary)] noto-font">{currentContent.stats.languages}</div>
                 </div>
               </div>
             </div>
