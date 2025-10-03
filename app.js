@@ -45,7 +45,7 @@ function App() {
       setIsLoaded(true);
 
       const handleScroll = () => {
-        const sections = ['home', 'featured', 'about', 'experience', 'skills', 'projects', 'contact'];
+        const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
         const scrollPosition = window.scrollY + 100;
 
         for (const section of sections) {
@@ -75,7 +75,6 @@ function App() {
         <Header activeSection={activeSection} />
         <main>
           <Hero />
-          <Featured />
           <About />
           <Experience />
           <Skills />
