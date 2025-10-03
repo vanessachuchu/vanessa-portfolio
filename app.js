@@ -43,9 +43,9 @@ function App() {
 
     React.useEffect(() => {
       setIsLoaded(true);
-      
+
       const handleScroll = () => {
-        const sections = ['home', 'featured', 'experience', 'skills', 'projects', 'contact'];
+        const sections = ['home', 'featured', 'about', 'experience', 'skills', 'projects', 'contact'];
         const scrollPosition = window.scrollY + 100;
 
         for (const section of sections) {
@@ -53,7 +53,7 @@ function App() {
           if (element) {
             const offsetTop = element.offsetTop;
             const offsetHeight = element.offsetHeight;
-            
+
             if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
               setActiveSection(section);
               break;
@@ -63,19 +63,20 @@ function App() {
       };
 
       window.addEventListener('scroll', handleScroll);
-      
+
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
 
     return (
-      <div className={`min-h-screen transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`} 
+      <div className={`min-h-screen transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
            data-name="portfolio-app" data-file="app.js">
         <Header activeSection={activeSection} />
         <main>
           <Hero />
           <Featured />
+          <About />
           <Experience />
           <Skills />
           <Projects />
