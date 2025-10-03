@@ -272,16 +272,13 @@ function About() {
           <div className="max-w-7xl mx-auto">
 
             {/* Strength 1: 專案管理 - Left with decorative elements on right */}
-            <div className={`mb-40 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className={`mb-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <div className="flex items-start gap-4 mb-6">
-                    <span className="text-6xl">{currentContent.strengths[0].emoji}</span>
-                    <h2 className="text-4xl font-bold noto-font mt-3" style={{color: 'var(--text-primary)'}}>
-                      {currentContent.strengths[0].title}
-                    </h2>
-                  </div>
-                  <p className="text-lg leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                  <h2 className="text-2xl font-bold noto-font mb-4" style={{color: 'var(--text-primary)'}}>
+                    {currentContent.strengths[0].title}
+                  </h2>
+                  <p className="text-base leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
                     {currentContent.strengths[0].description}
                     <span className="font-bold" style={{color: 'var(--text-primary)'}}>{currentContent.strengths[0].highlight}</span>
                     {currentContent.strengths[0].description2}
@@ -290,12 +287,12 @@ function About() {
 
                 {/* Grid + Orange Waves */}
                 <div className="relative h-80">
-                  <div className="absolute top-0 left-0 w-40 h-40 opacity-30"
+                  <div className="absolute top-0 left-0 w-40 h-40 opacity-50"
                        style={{transform: `rotate(${scrollY * -0.03}deg)`, transition: 'transform 0.1s ease-out'}}>
                     <svg viewBox="0 0 100 100" className="w-full h-full">
                       <defs>
                         <pattern id="grid1" width="10" height="10" patternUnits="userSpaceOnUse">
-                          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="var(--text-secondary)" strokeWidth="1"/>
+                          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#333" strokeWidth="1"/>
                         </pattern>
                       </defs>
                       <rect width="100" height="100" fill="url(#grid1)" />
@@ -307,8 +304,8 @@ function About() {
                     <svg viewBox="0 0 300 200" className="w-full h-full">
                       <defs>
                         <linearGradient id="orangeGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" style={{stopColor: '#FF8C8C', stopOpacity: 0.4}} />
-                          <stop offset="100%" style={{stopColor: '#FFB4A8', stopOpacity: 0.3}} />
+                          <stop offset="0%" style={{stopColor: '#FF8C8C', stopOpacity: 0.8}} />
+                          <stop offset="100%" style={{stopColor: '#FFB4A8', stopOpacity: 0.6}} />
                         </linearGradient>
                       </defs>
                       <path d="M0,50 Q75,30 150,50 T300,50 L300,200 L0,200 Z" fill="url(#orangeGrad1)">
@@ -322,29 +319,28 @@ function About() {
             </div>
 
             {/* Strength 2: 數據分析 - Right with blue circle */}
-            <div className={`mb-40 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className={`mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-80 order-2 md:order-1">
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72"
                        style={{transform: `translate(-50%, -50%) translateX(${Math.sin(scrollY * 0.01) * 15}px)`, transition: 'transform 0.1s ease-out'}}>
                     <svg viewBox="0 0 200 200" className="w-full h-full">
-                      <circle cx="100" cy="100" r="90" fill="var(--primary-color)" opacity="0.2" />
-                      <rect x="50" y="30" width="18" height="18" fill="var(--text-primary)" opacity="0.3" />
-                      <rect x="80" y="30" width="18" height="18" fill="var(--text-primary)" opacity="0.3" />
-                      <rect x="110" y="30" width="18" height="18" fill="var(--text-primary)" opacity="0.3" />
-                      <rect x="140" y="30" width="18" height="18" fill="var(--text-primary)" opacity="0.3" />
+                      <circle cx="100" cy="100" r="90" fill="#6366F1" opacity="0.7" />
+                      <rect x="50" y="30" width="18" height="18" fill="white" opacity="0.9" />
+                      <rect x="80" y="30" width="18" height="18" fill="white" opacity="0.9" />
+                      <rect x="110" y="30" width="18" height="18" fill="white" opacity="0.9" />
+                      <rect x="140" y="30" width="18" height="18" fill="white" opacity="0.9" />
+                      <rect x="65" y="55" width="15" height="15" fill="white" opacity="0.7" />
+                      <rect x="125" y="55" width="15" height="15" fill="white" opacity="0.7" />
                     </svg>
                   </div>
                 </div>
 
                 <div className="order-1 md:order-2">
-                  <div className="flex items-start gap-4 mb-6">
-                    <span className="text-6xl">{currentContent.strengths[1].emoji}</span>
-                    <h2 className="text-4xl font-bold noto-font mt-3" style={{color: 'var(--text-primary)'}}>
-                      {currentContent.strengths[1].title}
-                    </h2>
-                  </div>
-                  <p className="text-lg leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                  <h2 className="text-2xl font-bold noto-font mb-4" style={{color: 'var(--text-primary)'}}>
+                    {currentContent.strengths[1].title}
+                  </h2>
+                  <p className="text-base leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
                     {currentContent.strengths[1].description}
                     <span className="font-bold" style={{color: 'var(--text-primary)'}}>{currentContent.strengths[1].highlight}</span>
                     {currentContent.strengths[1].description2}
@@ -354,19 +350,16 @@ function About() {
             </div>
 
             {/* Strength 3: 跨部門溝通 - Center with yellow circle */}
-            <div className={`mb-40 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className={`mb-24 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="relative">
-                <div className="absolute top-0 right-20 w-52 h-52 rounded-full opacity-20 -z-10"
+                <div className="absolute top-0 right-20 w-52 h-52 rounded-full opacity-70 -z-10"
                      style={{backgroundColor: '#FBBF24', transform: `translateY(${Math.cos(scrollY * 0.01) * 25}px)`, transition: 'transform 0.1s ease-out'}}></div>
 
                 <div className="max-w-3xl mx-auto text-center">
-                  <div className="flex items-center justify-center gap-4 mb-6">
-                    <span className="text-6xl">{currentContent.strengths[2].emoji}</span>
-                  </div>
-                  <h2 className="text-4xl font-bold noto-font mb-6" style={{color: 'var(--text-primary)'}}>
+                  <h2 className="text-2xl font-bold noto-font mb-4" style={{color: 'var(--text-primary)'}}>
                     {currentContent.strengths[2].title}
                   </h2>
-                  <p className="text-lg leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                  <p className="text-base leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
                     {currentContent.strengths[2].description}
                     <span className="font-bold" style={{color: 'var(--text-primary)'}}>{currentContent.strengths[2].highlight}</span>
                     {currentContent.strengths[2].description2}
@@ -376,16 +369,13 @@ function About() {
             </div>
 
             {/* Strength 4: 產品開發 - Left with blue waves */}
-            <div className={`mb-40 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className={`mb-24 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                  <div className="flex items-start gap-4 mb-6">
-                    <span className="text-6xl">{currentContent.strengths[3].emoji}</span>
-                    <h2 className="text-4xl font-bold noto-font mt-3" style={{color: 'var(--text-primary)'}}>
-                      {currentContent.strengths[3].title}
-                    </h2>
-                  </div>
-                  <p className="text-lg leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                  <h2 className="text-2xl font-bold noto-font mb-4" style={{color: 'var(--text-primary)'}}>
+                    {currentContent.strengths[3].title}
+                  </h2>
+                  <p className="text-base leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
                     {currentContent.strengths[3].description}
                     <span className="font-bold" style={{color: 'var(--text-primary)'}}>{currentContent.strengths[3].highlight}</span>
                     {currentContent.strengths[3].description2}
@@ -396,10 +386,10 @@ function About() {
                   <div className="absolute top-0 right-0 w-full h-full"
                        style={{transform: `translateY(${scrollY * -0.05}px)`, transition: 'transform 0.1s ease-out'}}>
                     <svg viewBox="0 0 300 300" className="w-full h-full">
-                      <g opacity="0.3">
-                        {[0,1,2,3,4,5].map((i) => (
+                      <g opacity="0.6">
+                        {[0,1,2,3,4,5,6,7].map((i) => (
                           <path key={i} d={`M${200 + i * 15},0 Q${180 + i * 15},150 ${200 + i * 15},300`}
-                            fill="none" stroke="var(--primary-color)" strokeWidth="8" opacity={0.6 - i * 0.08}>
+                            fill="none" stroke="#6366F1" strokeWidth="10" opacity={0.8 - i * 0.08}>
                             <animate attributeName="d" dur={`${4 + i * 0.3}s`} repeatCount="indefinite"
                               values={`M${200 + i * 15},0 Q${180 + i * 15},150 ${200 + i * 15},300;M${200 + i * 15},0 Q${220 + i * 15},150 ${200 + i * 15},300;M${200 + i * 15},0 Q${180 + i * 15},150 ${200 + i * 15},300`} />
                           </path>
@@ -412,31 +402,28 @@ function About() {
             </div>
 
             {/* Strength 5: 成長思維 - Right with red/pink square */}
-            <div className={`mb-32 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-80 order-2 md:order-1">
-                  <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-tl from-red-400 to-pink-400 opacity-20"
+                  <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-tl from-red-400 to-pink-400 opacity-30"
                        style={{transform: `rotate(${scrollY * 0.03}deg)`, transition: 'transform 0.1s ease-out'}}></div>
 
                   <div className="absolute top-10 right-10 w-32 h-32"
                        style={{transform: `rotate(${scrollY * -0.05}deg) scale(${1 + Math.sin(scrollY * 0.01) * 0.05})`, transition: 'transform 0.1s ease-out'}}>
                     <svg viewBox="0 0 100 100" className="w-full h-full">
-                      <rect width="100" height="100" fill="var(--primary-color)" opacity="0.3" />
-                      <rect x="15" y="15" width="20" height="20" fill="white" opacity="0.4" />
-                      <rect x="45" y="15" width="20" height="20" fill="white" opacity="0.4" />
-                      <rect x="75" y="15" width="10" height="10" fill="white" opacity="0.4" />
+                      <rect width="100" height="100" fill="#EF4444" opacity="0.7" />
+                      <rect x="15" y="15" width="20" height="20" fill="white" opacity="0.8" />
+                      <rect x="45" y="15" width="20" height="20" fill="white" opacity="0.8" />
+                      <rect x="75" y="15" width="10" height="10" fill="white" opacity="0.8" />
                     </svg>
                   </div>
                 </div>
 
                 <div className="order-1 md:order-2">
-                  <div className="flex items-start gap-4 mb-6">
-                    <span className="text-6xl">{currentContent.strengths[4].emoji}</span>
-                    <h2 className="text-4xl font-bold noto-font mt-3" style={{color: 'var(--text-primary)'}}>
-                      {currentContent.strengths[4].title}
-                    </h2>
-                  </div>
-                  <p className="text-lg leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
+                  <h2 className="text-2xl font-bold noto-font mb-4" style={{color: 'var(--text-primary)'}}>
+                    {currentContent.strengths[4].title}
+                  </h2>
+                  <p className="text-base leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
                     {currentContent.strengths[4].description}
                     <span className="font-bold" style={{color: 'var(--text-primary)'}}>{currentContent.strengths[4].highlight}</span>
                     {currentContent.strengths[4].description2}
