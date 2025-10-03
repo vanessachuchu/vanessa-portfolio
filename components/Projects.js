@@ -230,18 +230,49 @@ function Projects() {
                         </div>
                       )}
 
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-48 overflow-hidden bg-[var(--bg-secondary)]">
+                        {/* 背景圖片 */}
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[2px]"
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[2px] opacity-20"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                        <div className="absolute bottom-4 left-4 text-white z-10">
+
+                        {/* 裝飾性幾何線條層 */}
+                        <div className="absolute inset-0 geometric-overlay">
+                          {/* 對角線條 */}
+                          <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-[var(--primary-color)] opacity-30"></div>
+                          <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-[var(--primary-color)] opacity-20"></div>
+
+                          {/* 水平線條 */}
+                          <div className="absolute top-1/3 left-0 w-full h-px bg-[var(--primary-color)] opacity-10"></div>
+                          <div className="absolute top-2/3 left-0 w-2/3 h-px bg-[var(--primary-color)] opacity-15"></div>
+
+                          {/* 垂直線條 */}
+                          <div className="absolute top-0 left-1/4 w-px h-full bg-[var(--primary-color)] opacity-10"></div>
+                          <div className="absolute top-0 right-1/3 w-px h-2/3 bg-[var(--primary-color)] opacity-15"></div>
+
+                          {/* 小方塊裝飾 */}
+                          <div className="absolute top-4 right-4 w-3 h-3 bg-[var(--primary-color)] opacity-40 rounded-sm transform rotate-45"></div>
+                          <div className="absolute bottom-6 right-12 w-2 h-2 bg-[var(--primary-color)] opacity-30 rounded-full"></div>
+                          <div className="absolute top-12 left-8 w-4 h-4 border border-[var(--primary-color)] opacity-25 rounded-sm"></div>
+
+                          {/* 大色塊 - hover 時移動 */}
+                          <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--primary-color)] opacity-5 transition-all duration-700 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                          <div className="absolute bottom-0 left-0 w-32 h-20 bg-[var(--primary-color)] opacity-8 rounded-tr-3xl transition-all duration-700 group-hover:translate-x-[-4px] group-hover:translate-y-[-4px]"></div>
+                        </div>
+
+                        {/* 漸層遮罩 */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[var(--primary-color)]/5 to-[var(--primary-color)]/10 transition-opacity duration-500 group-hover:opacity-70"></div>
+
+                        {/* 專案資訊 */}
+                        <div className="absolute bottom-4 left-4 text-[var(--primary-color)] z-20">
                           <div className="text-sm font-semibold opacity-70">PROJECT</div>
                           <div className="text-xs opacity-50">#{String(index + 1).padStart(2, '0')}</div>
                         </div>
-                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/30 transition-all duration-500"></div>
+
+                        {/* Hover 邊框 */}
+                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-[var(--primary-color)]/30 transition-all duration-500"></div>
                       </div>
 
                       <div className="p-6">

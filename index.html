@@ -360,6 +360,51 @@
             animation: tagFadeIn 0.5s ease-out forwards;
         }
 
+        /* Geometric Overlay Animations */
+        .geometric-overlay {
+            animation: geometricPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes geometricPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Line drawing animation for borders */
+        .geometric-overlay > div:nth-child(1),
+        .geometric-overlay > div:nth-child(2) {
+            animation: drawBorder 3s ease-in-out infinite;
+        }
+
+        @keyframes drawBorder {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        /* Floating shapes */
+        .geometric-overlay > div:nth-child(7),
+        .geometric-overlay > div:nth-child(8) {
+            animation: floatShape 6s ease-in-out infinite;
+        }
+
+        @keyframes floatShape {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(3px, -3px) rotate(5deg);
+            }
+            66% {
+                transform: translate(-2px, 2px) rotate(-3deg);
+            }
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
