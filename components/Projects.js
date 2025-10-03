@@ -230,40 +230,80 @@ function Projects() {
                         </div>
                       )}
 
-                      <div className="relative h-48 overflow-hidden bg-[var(--bg-secondary)]">
-                        {/* 背景圖片 */}
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[2px] opacity-20"
-                        />
+                      <div className="relative h-48 overflow-hidden" style={{ background: gradients[index % gradients.length] }}>
+                        {/* 幾何圖形 SVG */}
+                        <svg className="w-full h-full transition-transform duration-700 group-hover:scale-105" viewBox="0 0 320 192" preserveAspectRatio="xMidYMid meet">
+                          {/* Mind-Brain - 圓形與星形組合 */}
+                          {index === 0 && (
+                            <>
+                              <circle cx="100" cy="96" r="40" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" strokeWidth="2" className="transition-all duration-700 group-hover:r-45"/>
+                              <circle cx="220" cy="70" r="25" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+                              <polygon points="160,40 165,55 180,55 168,65 172,80 160,70 148,80 152,65 140,55 155,55" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5"/>
+                              <circle cx="180" cy="140" r="18" fill="rgba(255,255,255,0.1)"/>
+                              <path d="M 60 140 L 80 160 L 100 140 L 120 160" stroke="rgba(255,255,255,0.4)" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                              <rect x="240" y="120" width="30" height="30" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" transform="rotate(45 255 135)"/>
+                            </>
+                          )}
 
-                        {/* 裝飾性幾何線條層 */}
-                        <div className="absolute inset-0 geometric-overlay">
-                          {/* 對角線條 */}
-                          <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-[var(--primary-color)] opacity-30"></div>
-                          <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-[var(--primary-color)] opacity-20"></div>
+                          {/* FundClear - 矩形與三角形組合 */}
+                          {index === 1 && (
+                            <>
+                              <rect x="40" y="40" width="80" height="80" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" strokeWidth="2"/>
+                              <rect x="140" y="80" width="60" height="60" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" transform="rotate(45 170 110)"/>
+                              <polygon points="240,60 280,120 200,120" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.7)" strokeWidth="2"/>
+                              <circle cx="80" cy="150" r="15" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
+                              <line x1="150" y1="30" x2="150" y2="70" stroke="rgba(255,255,255,0.5)" strokeWidth="2"/>
+                              <line x1="270" y1="140" x2="300" y2="140" stroke="rgba(255,255,255,0.4)" strokeWidth="2"/>
+                            </>
+                          )}
 
-                          {/* 水平線條 */}
-                          <div className="absolute top-1/3 left-0 w-full h-px bg-[var(--primary-color)] opacity-10"></div>
-                          <div className="absolute top-2/3 left-0 w-2/3 h-px bg-[var(--primary-color)] opacity-15"></div>
+                          {/* YesOnline - 波浪與圓形組合 */}
+                          {index === 2 && (
+                            <>
+                              <path d="M 20 96 Q 70 60 120 96 T 220 96 T 320 96" stroke="rgba(255,255,255,0.6)" strokeWidth="3" fill="none"/>
+                              <circle cx="80" cy="50" r="30" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" strokeWidth="2"/>
+                              <circle cx="240" cy="140" r="35" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.6)" strokeWidth="2"/>
+                              <rect x="140" y="120" width="40" height="50" rx="20" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+                              <polygon points="180,40 190,50 180,60 170,50" fill="rgba(255,255,255,0.2)"/>
+                              <path d="M 30 140 Q 50 120 70 140" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" fill="none"/>
+                            </>
+                          )}
 
-                          {/* 垂直線條 */}
-                          <div className="absolute top-0 left-1/4 w-px h-full bg-[var(--primary-color)] opacity-10"></div>
-                          <div className="absolute top-0 right-1/3 w-px h-2/3 bg-[var(--primary-color)] opacity-15"></div>
+                          {/* TongYang EIP - Bauhaus 風格 */}
+                          {index === 3 && (
+                            <>
+                              <circle cx="100" cy="70" r="45" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.6)" strokeWidth="2"/>
+                              <rect x="160" y="90" width="70" height="70" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" strokeWidth="2"/>
+                              <polygon points="60,120 100,180 20,180" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.6)" strokeWidth="2"/>
+                              <circle cx="250" cy="50" r="20" fill="rgba(255,255,255,0.1)"/>
+                              <rect x="240" y="120" width="25" height="25" fill="rgba(255,255,255,0.2)" transform="rotate(45 252.5 132.5)"/>
+                              <line x1="20" y1="40" x2="140" y2="40" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+                            </>
+                          )}
 
-                          {/* 小方塊裝飾 */}
-                          <div className="absolute top-4 right-4 w-3 h-3 bg-[var(--primary-color)] opacity-40 rounded-sm transform rotate-45"></div>
-                          <div className="absolute bottom-6 right-12 w-2 h-2 bg-[var(--primary-color)] opacity-30 rounded-full"></div>
-                          <div className="absolute top-12 left-8 w-4 h-4 border border-[var(--primary-color)] opacity-25 rounded-sm"></div>
+                          {/* E-commerce - 錯綜複雜的幾何 */}
+                          {index === 4 && (
+                            <>
+                              <rect x="50" y="50" width="60" height="90" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.6)" strokeWidth="2"/>
+                              <circle cx="180" cy="80" r="35" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" strokeWidth="2"/>
+                              <path d="M 140 120 L 180 160 L 220 120 L 260 160" stroke="rgba(255,255,255,0.5)" strokeWidth="3" fill="none"/>
+                              <polygon points="240,40 260,30 280,40 280,60 260,70 240,60" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5"/>
+                              <circle cx="90" cy="150" r="12" fill="rgba(255,255,255,0.3)"/>
+                              <rect x="20" y="100" width="20" height="20" fill="rgba(255,255,255,0.2)" transform="rotate(45 30 110)"/>
+                            </>
+                          )}
+                        </svg>
 
-                          {/* 大色塊 - hover 時移動 */}
-                          <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--primary-color)] opacity-5 transition-all duration-700 group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                          <div className="absolute bottom-0 left-0 w-32 h-20 bg-[var(--primary-color)] opacity-8 rounded-tr-3xl transition-all duration-700 group-hover:translate-x-[-4px] group-hover:translate-y-[-4px]"></div>
+                        {/* 網格背景 */}
+                        <div className="absolute inset-0 opacity-10">
+                          <div className="absolute inset-0" style={{
+                            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                            backgroundSize: '20px 20px'
+                          }}></div>
                         </div>
 
-                        {/* 漸層遮罩 */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[var(--primary-color)]/5 to-[var(--primary-color)]/10 transition-opacity duration-500 group-hover:opacity-70"></div>
+                        {/* Hover 漸層遮罩 */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/10 transition-opacity duration-500 group-hover:opacity-70"></div>
 
                         {/* 專案資訊 */}
                         <div className="absolute bottom-4 left-4 text-[var(--primary-color)] z-20">
