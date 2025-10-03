@@ -27,103 +27,89 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "THL (Tourism Holdings Limited)",
-            position: "前台接待專員",
-            location: "THL Australia, Queensland, Australia",
-            period: "2025.01 - Present",
+            company: "澳洲打工度假中",
+            position: "Barista",
+            location: "澳洲",
+            period: "2024.11 - recent",
             type: "current",
             highlights: [
-              "🌍 國際企業前台服務：在全球最大房車租賃公司擔任前台接待，使用流利英文服務來自各國的客戶",
-              "🚐 專業車輛租賃流程：熟練處理motorhome租賃的check-in/check-out流程，清楚說明車輛功能與租賃條款",
-              "🤝 跨部門協作溝通：與清潔、技術、維修等多個部門密切配合，確保車輛準時交付並符合品質標準",
-              "⚡ 即時問題解決：面對客戶突發狀況能當場快速找出解決方案，展現優秀的應變能力與客戶服務技巧",
-              "📈 提升客戶滿意度：透過親切專業的服務態度，增強THL品牌形象並獲得客戶正面回饋"
-            ]
-          },
-          {
-            id: 2,
-            company: "澳洲打工度假",
-            position: "咖啡師",
-            location: "Chalet & Co., Noosa, Australia",
-            period: "2024.11 - 2024.12",
-            type: "previous",
-            highlights: [
-              "🗣️ 跨文化溝通卓越表現：策略性選擇澳洲作為打工度假目的地，深度融入英語環境，提升溝通能力與跨文化協作技能",
-              "🤖 產品創新與自動化策略：積極研究 AI 和自動化技術，識別並解決營運痛點，從概念化到市場驗證開發全面的 No-Code 解決方案",
-              "☕ 服務卓越與營運管理：在快節奏多元文化環境中擔任咖啡師，提供優質客戶服務，維持高品質標準與營運效率",
-              "🚀 策略性職涯發展：追求平衡的專業成長，同時探索新興產業和遠端工作機會，發展多元技能組合以影響未來職涯軌跡"
+              "🗣️ 語言與跨文化溝通｜選擇澳洲作為打工度假地點，透過全英文環境持續精進溝通與團隊協作能力，提升跨文化的互動技巧",
+              "🤖 產品開發及自動化應用｜持續鑽研AI與自動化工具，目標為找到並解決生活或工作中的痛點，規劃並開發一個可從頭設計到落地實施的 No-Code side project，利用無需程式設計的工具打造可行性產品，並驗證市場需求",
+              "☕ 咖啡製作與服務｜在高效且多元文化的咖啡廳環境中擔任Barista，精通咖啡製作與客戶服務，確保每杯飲品皆維持高品質標準",
+              "🚀 職涯探索與個人成長｜在工作與個人成長之間取得平衡，探索新興產業與遠端工作的可能性，同時持續發展各項興趣，透過體驗不同的生活方式來思考未來的職涯方向"
             ]
           },
           {
             id: 2,
             company: "多奇數位創意",
             position: "專案經理",
-            location: "多奇數位創意, 台灣",
+            location: "台灣",
             period: "2022.07 - 2024.11",
             type: "featured",
             highlights: [
-              "📊 策略專案管理：運用 Trello 和 Azure DevOps 編排複雜專案工作流程，優化資源配置和人員部署，達到最大營運效率",
-              "📈 數據驅動決策制定：系統性地將專案成本和績效指標轉化為可執行的洞察，通過全面的數據視覺化，使高層主管能夠維持即時專案監督",
-              "🤝 跨部門團隊領導：協調多個部門間的無縫協作，建立透明的溝通管道和回饋機制，確保組織一致性",
-              "🎨 用戶體驗策略：運用 Figma 設計和優化 UI/UX 框架，顯著提升數位產品可用性和市場定位",
-              "🏗️ 企業解決方案架構：領導基金觀測站和 YesOnline 平台的端到端開發，涵蓋多語言實施和複雜業務流程自動化，提供全面客戶解決方案",
-              "🤖 AI 整合與流程優化：策略性實施多種 AI 工具以簡化複雜工作流程，實現專案執行時程縮短 20%"
+              "📊 專案時程管理｜運用Trello與Azure DevOps進行專案管理，優化人力規劃與資源配置，確保專案進度與效率最大化",
+              "📈 數據量化與決策｜習慣將專案成本與績效數據圖表化與量化，提供清晰的決策依據，提升管理層對專案狀態的即時掌握度",
+              "🤝 跨部門合作｜協調跨部門團隊，促進溝通透明化與即時回饋，確保各部門合作的順暢",
+              "🎨 使用者體驗設計｜運用Figma優化UI/UX設計，提升數位產品的使用者體驗與市場競爭力",
+              "🏗️ 主導多項開發案｜主導基金觀測站及線上英文平台開發案，從雛形到前後台系統完整建置，包含多語系功能設計，積極提供客戶多元且有效的解決方案",
+              "🤖 學習並靈活運用多項AI工具｜優化繁雜且耗時的工作流程，有效縮短20%的專案執行時程"
             ]
           },
           {
             id: 3,
-            company: "立民生技股份有限公司",
-            position: "執行秘書",
-            location: "立民生技股份有限公司, 台灣",
+            company: "利民生技有限公司",
+            position: "董事長秘書",
+            location: "台灣",
             period: "2021.07 - 2022.04",
             type: "management",
             highlights: [
-              "📋 策略專案協調：協調自有產品研發和設施建立時程，實施整合資源管理解決方案，最小化溝通負擔並達成里程碑交付",
-              "💰 供應商關係與成本優化：管理設施開發的全面供應商採購，包括室內設計和包裝規格，協商合約實現 15% 成本節省",
-              "📅 高層營運管理：策略性管理 C 級主管排程和優先事項，協調跨部門工作流程，促進業務單位間的無縫資訊流動",
-              "🔍 策略採購監督：為國際供應商談判提供分析支援，進行市場研究和技術規格分析以支持採購決策"
+              "📋 專案時程推展｜控管及排定公司自有產品研發、廠房設立之專案時程進度，資源整合協助解決問題，減少溝通成本、有效落實階段目標",
+              "💰 目標廠商開發｜新廠房設立之相關廠商接洽及議價 (廠房裝潢、產品包裝規格設計...)，節省15%之專案成本",
+              "📅 主管日程管理｜安排主管日常行程，在不同的工作需求中排定優先順序，協調各部門工作追蹤及會議排程，及轉達部門相關需求",
+              "🔍 確保有效的採購決策｜協助採購部門處理國外廠商進價事宜，搜集及提供產品相關專業知識"
             ]
           },
           {
             id: 4,
-            company: "聖瑤開發股份有限公司",
-            position: "總經理執行助理",
-            location: "聖瑤開發股份有限公司, 台北, 台灣",
-            period: "2020.05 - 2021.07",
+            company: "聖耀土地開發",
+            position: "總經理特助",
+            location: "台灣",
+            period: "2020.05 - 2021.05",
             type: "management",
             highlights: [
-              "📋 高階主管支援：執行總經理交辦任務，協助重要決策流程與策略規劃",
-              "📅 行程管理優化：規劃並管理總經理行程安排，提高時間運用效率",
-              "🤝 跨部門協調：促進各部門間的溝通協調，確保資訊流通順暢",
-              "📊 流程標準化：建立並標準化工作流程，提升整體營運效率"
+              "📋 專案規劃｜協助太陽能業務的開發規劃，包含市場調研及策略規劃，支援業務拓展",
+              "📊 標準化工作流程｜協助公司內部整合規劃，推動各項管理規章及制度",
+              "🤝 跨部門溝通｜跨部門的溝通協調與會議召集，制定會議流程與紀錄"
             ]
           },
           {
             id: 5,
-            company: "SCAN-D Corporation",
-            position: "行銷助理",
-            location: "SCAN-D Corporation, 台灣",
+            company: "詩肯柚木",
+            position: "行銷企劃助理",
+            location: "台灣",
             period: "2018.11 - 2020.02",
             type: "marketing",
             highlights: [
-              "📈 客戶名單成長：每月有效客戶名單增長10倍，大幅提升潛在客群規模",
-              "📱 社群媒體優化：Facebook觸及率提升100%以上，顯著增加品牌曝光度",
-              "✍️ 內容創作產出：每月創作3篇行銷文案，建立品牌溝通語調與形象",
-              "🎯 活動參與提升：透過策略行銷活動，使活動參與率提升40%"
+              "📊 市場定位與採購分析｜進行商品市場定位與採購分析，提升談判策略，成功控制成本並提高營運效率",
+              "📧 電子報活動規劃與成效數據分析｜設定每月主題及內容文案撰寫，善用線下資源，增加10倍有效名單/月，有效更新主旨及內容，提高開信率5%",
+              "🎯 品牌檔期活動規劃｜依據每檔期的行銷主軸，以商品特性及預測銷量規劃活動內容",
+              "🤝 異業合作規劃｜與異業品牌合作策劃聯名活動，提升品牌市場滲透率與競爭力",
+              "📱 Facebook小編｜設定發文主題及撰寫文章內容，了解品牌客群年齡，並設計與粉絲互動抽獎等活動，觸及率達原先1倍以上",
+              "✍️ 文案撰寫｜雜誌、廣編及電子報等文案，平均產出3篇/月"
             ]
           },
           {
             id: 6,
-            company: "星巴克咖啡股份有限公司",
+            company: "Starbucks",
             position: "值班經理",
-            location: "星巴克咖啡, 台灣",
+            location: "台灣",
             period: "2015.06 - 2018.08",
             type: "retail",
             highlights: [
-              "📦 庫存成本管理：負責產品庫存管理與成本控制，確保營運效率",
-              "👥 員工培訓發展：執行員工教育訓練，提升服務品質與團隊能力",
-              "🎪 活動企劃執行：改善門市活動規劃與執行，增強顧客體驗",
-              "💰 業績成長達成：透過有效管理策略，實現門市業績成長10%"
+              "🏪 門市營運管理｜負責門市運營與團隊管理，確保每日營運效率與員工績效優化",
+              "👥 員工培訓與績效提升｜訓練與指導新進員工，提升整體團隊的專業能力與服務標準",
+              "📈 行銷推廣與業績成長｜規劃並執行行銷與促銷活動，成功提高10%營收與顧客回購率",
+              "📦 庫存管理與品質控管｜監控庫存管理與品質控管，降低損耗成本並維持產品品質標準"
             ]
           }
         ]
@@ -134,103 +120,89 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "THL (Tourism Holdings Limited)",
-            position: "Front of House Specialist",
-            location: "THL Australia, Queensland, Australia",
-            period: "2025.01 - Present",
-            type: "current",
-            highlights: [
-              "🌍 International Enterprise Front Desk Service: Working as front desk specialist at world's largest motorhome rental company, using fluent English to serve customers from around the globe",
-              "🚐 Professional Vehicle Rental Process: Expertly handle motorhome rental check-in/check-out procedures, clearly explain vehicle features and rental terms to ensure customer confidence",
-              "🤝 Cross-Departmental Collaboration: Coordinate closely with cleaning, technical, and maintenance teams to ensure timely vehicle delivery meeting quality standards",
-              "⚡ Real-Time Problem Solving: Quickly identify solutions for customer issues on-the-spot, demonstrating excellent adaptability and customer service skills under pressure",
-              "📈 Enhanced Customer Satisfaction: Through professional and friendly service attitude, strengthen THL brand image and receive positive customer feedback"
-            ]
-          },
-          {
-            id: 2,
             company: "Australia Working Holiday",
             position: "Barista",
-            location: "Chalet & Co., Noosa, Australia",
-            period: "2024.11 - 2024.12",
-            type: "previous",
+            location: "Australia",
+            period: "2024.11 - recent",
+            type: "current",
             highlights: [
-              "🗣️ Cross-Cultural Communication Excellence: Strategically chose Australia as a working holiday destination to immerse in an English-speaking environment, enhancing communication proficiency and cross-cultural collaboration capabilities",
-              "🤖 Product Innovation & Automation Strategy: Actively researching AI and automation technologies to identify and address operational pain points, developing comprehensive No-Code solutions from conceptualization through market validation",
-              "☕ Service Excellence & Operations Management: Delivering exceptional customer service as a Barista in a fast-paced multicultural environment, maintaining premium quality standards and operational efficiency",
-              "🚀 Strategic Career Development: Pursuing balanced professional growth while exploring emerging industries and remote work opportunities, developing diverse skill sets to inform future career trajectory"
+              "🗣️ Language & Cross-Cultural Communication | Chose Australia as working holiday destination to continuously improve communication and teamwork skills through full English environment, enhancing cross-cultural interaction capabilities",
+              "🤖 Product Development & Automation Application | Continuously researching AI and automation tools, aiming to identify and solve pain points in life or work, planning and developing a No-Code side project from design to implementation, using no-code tools to create viable products and validate market needs",
+              "☕ Coffee Making & Service | Working as Barista in efficient and multicultural café environment, proficient in coffee making and customer service, ensuring high quality standards for every beverage",
+              "🚀 Career Exploration & Personal Growth | Balancing work and personal growth, exploring emerging industries and remote work possibilities, continuing to develop various interests, thinking about future career direction through experiencing different lifestyles"
             ]
           },
           {
             id: 2,
             company: "Duotify Digital Creative",
             position: "Project Manager",
-            location: "Duotify Digital Creative, Taiwan",
+            location: "Taiwan",
             period: "2022.07 - 2024.11",
             type: "featured",
             highlights: [
-              "📊 Strategic Project Management: Leveraged Trello and Azure DevOps to orchestrate complex project workflows, optimizing resource allocation and personnel deployment to achieve maximum operational efficiency",
-              "📈 Data-Driven Decision Making: Systematically transformed project costs and performance metrics into actionable insights through comprehensive data visualization, enabling executive leadership to maintain real-time project oversight",
-              "🤝 Cross-Functional Team Leadership: Orchestrated seamless collaboration across multiple departments, establishing transparent communication channels and feedback mechanisms to ensure organizational alignment",
-              "🎨 User Experience Strategy: Utilized Figma to design and optimize UI/UX frameworks, significantly enhancing digital product usability and market positioning",
-              "🏗️ Enterprise Solution Architecture: Led end-to-end development of Fund Observatory and YesOnline platforms, encompassing multilingual implementation and complex business process automation, delivering comprehensive client solutions",
-              "🤖 AI Integration & Process Optimization: Strategically implemented multiple AI tools to streamline complex workflows, achieving a 20% reduction in project execution timelines"
+              "📊 Project Timeline Management | Utilized Trello and Azure DevOps for project management, optimizing manpower planning and resource allocation to ensure maximum project progress and efficiency",
+              "📈 Data Quantification & Decision-Making | Accustomed to visualizing and quantifying project costs and performance data into charts, providing clear decision-making basis and improving management's real-time grasp of project status",
+              "🤝 Cross-Department Collaboration | Coordinated cross-departmental teams, promoting communication transparency and instant feedback to ensure smooth collaboration between departments",
+              "🎨 User Experience Design | Utilized Figma to optimize UI/UX design, enhancing user experience and market competitiveness of digital products",
+              "🏗️ Leading Multiple Development Projects | Led Fund Observatory and online English platform development from prototype to complete front-end and back-end system construction, including multilingual function design, actively providing clients with diverse and effective solutions",
+              "🤖 Learning and Flexibly Using Multiple AI Tools | Optimizing complex and time-consuming workflows, effectively shortening project execution timeline by 20%"
             ]
           },
           {
             id: 3,
             company: "Limin Biotechnology Co., Ltd.",
-            position: "Executive Secretary",
-            location: "Limin Biotechnology Co., Ltd., Taiwan",
+            position: "Secretary to Chairman",
+            location: "Taiwan",
             period: "2021.07 - 2022.04",
             type: "management",
             highlights: [
-              "📋 Strategic Project Coordination: Orchestrated proprietary product R&D and facility establishment timelines, implementing integrated resource management solutions to minimize communication overhead and achieve milestone deliverables",
-              "💰 Vendor Relations & Cost Optimization: Managed comprehensive vendor procurement for facility development including interior design and packaging specifications, negotiating contracts that delivered 15% cost savings",
-              "📅 Executive Operations Management: Strategically managed C-level executive scheduling and priorities, coordinating cross-departmental workflows and facilitating seamless information flow between business units",
-              "🔍 Strategic Procurement Oversight: Provided analytical support for international vendor negotiations, conducting market research and technical specifications analysis to inform procurement decisions"
+              "📋 Project Timeline Advancement | Controlled and scheduled company's proprietary product R&D and factory establishment project timeline progress, integrated resources to assist problem-solving, reduced communication costs, effectively implemented milestone goals",
+              "💰 Target Vendor Development | Contacted and negotiated with vendors for new factory establishment (factory decoration, product packaging specification design...), saving 15% of project costs",
+              "📅 Executive Schedule Management | Arranged executive's daily schedule, prioritized different work requirements, coordinated departmental work tracking and meeting scheduling, and relayed departmental needs",
+              "🔍 Ensuring Effective Procurement Decisions | Assisted procurement department with foreign vendor pricing matters, collected and provided product-related professional knowledge"
             ]
           },
           {
             id: 4,
-            company: "Saintyao Land Development Corporation",
+            company: "Saintyao Land Development",
             position: "Executive Assistant to General Manager",
-            location: "Saintyao Land Development Corporation, Taipei, Taiwan",
-            period: "2020.05 - 2021.07",
+            location: "Taiwan",
+            period: "2020.05 - 2021.05",
             type: "management",
             highlights: [
-              "📋 Executive Support: Executed tasks assigned by General Manager, assisting with critical decision-making processes and strategic planning",
-              "📅 Schedule Optimization: Planned and managed General Manager's schedule and itinerary, improving time utilization efficiency",
-              "🤝 Interdepartmental Coordination: Facilitated communication and coordination across departments, ensuring smooth information flow",
-              "📊 Process Standardization: Established and standardized work processes, enhancing overall operational efficiency"
+              "📋 Project Planning | Assisted with solar energy business development planning, including market research and strategic planning, supporting business expansion",
+              "📊 Standardizing Work Processes | Assisted company's internal integration planning, promoting various management regulations and systems",
+              "🤝 Cross-Department Communication | Cross-departmental communication coordination and meeting convening, establishing meeting procedures and records"
             ]
           },
           {
             id: 5,
-            company: "SCAN-D Corporation",
-            position: "Marketing Assistant",
-            location: "SCAN-D Corporation, Taiwan",
+            company: "SCAN-D (Shih Kien Teak)",
+            position: "Marketing Planning Assistant",
+            location: "Taiwan",
             period: "2018.11 - 2020.02",
             type: "marketing",
             highlights: [
-              "📈 Customer List Growth: Achieved 10x monthly growth in effective customer lists, significantly expanding potential customer base",
-              "📱 Social Media Optimization: Increased Facebook reach by over 100%, significantly enhancing brand exposure",
-              "✍️ Content Creation Output: Produced 3 marketing copywriting pieces monthly, establishing brand communication tone and image",
-              "🎯 Event Participation Enhancement: Achieved 40% increase in event participation through strategic marketing activities"
+              "📊 Market Positioning & Procurement Analysis | Conducted product market positioning and procurement analysis, improved negotiation strategies, successfully controlled costs and improved operational efficiency",
+              "📧 Newsletter Activity Planning & Performance Analysis | Set monthly themes and content copywriting, leveraged offline resources, increased 10x effective subscribers/month, effectively updated subject lines and content, improved open rate by 5%",
+              "🎯 Brand Campaign Planning | Planned activity content based on each campaign's marketing theme, product characteristics and predicted sales volume",
+              "🤝 Cross-Industry Collaboration Planning | Collaborated with cross-industry brands to plan co-branded activities, improving brand market penetration and competitiveness",
+              "📱 Facebook Editor | Set post themes and wrote article content, understood brand customer demographics, designed fan interaction and lottery activities, reaching over 1x original reach",
+              "✍️ Copywriting | Magazine, advertorial and newsletter copywriting, averaging 3 articles/month"
             ]
           },
           {
             id: 6,
-            company: "Starbucks Corporation",
-            position: "Duty Manager",
-            location: "Starbucks Corporation, Taiwan",
+            company: "Starbucks",
+            position: "Shift Supervisor",
+            location: "Taiwan",
             period: "2015.06 - 2018.08",
             type: "retail",
             highlights: [
-              "📦 Inventory & Cost Management: Responsible for product inventory management and cost control, ensuring operational efficiency",
-              "👥 Employee Training & Development: Conducted employee education and training, improving service quality and team capabilities",
-              "🎪 Activity Planning & Execution: Improved store activity planning and execution, enhancing customer experience",
-              "💰 Sales Growth Achievement: Achieved 10% store sales growth through effective management strategies"
+              "🏪 Store Operations Management | Responsible for store operations and team management, ensuring daily operational efficiency and employee performance optimization",
+              "👥 Employee Training & Performance Enhancement | Trained and guided new employees, improving overall team professional capabilities and service standards",
+              "📈 Marketing Promotion & Sales Growth | Planned and executed marketing and promotional activities, successfully increasing revenue by 10% and customer repurchase rate",
+              "📦 Inventory Management & Quality Control | Monitored inventory management and quality control, reducing wastage costs while maintaining product quality standards"
             ]
           }
         ]

@@ -65,11 +65,11 @@ function About() {
     const content = {
       zh: {
         title: '關於我',
-        description1: '我擅長將複雜的業務需求轉化為優雅的產品方案。結合策略思維與創意執行，不只追求功能完整，更注重使用者體驗的細膩度。',
-        description2: '準備好開啟您的下一個專案了嗎？',
+        description1: '擁有專案規劃及執行經驗，擅於資訊整合分析及危機處理能力。',
+        description2: '對於生活充滿好奇心，擁有成長型思維，不斷尋求方式解決問題。喜愛與人溝通和團隊合作，並持續學習新知，成就更好的自己。',
         efficiencyDesc: '透過導入 AI 工具與優化產品流程，在前 6 個月內平均提升團隊協作效率',
-        point1: `擁有 ${stats.experience}+ 年的跨領域經驗，專注於創造直觀、以使用者為中心的設計，解決真實世界的問題，並提供無縫的數位體驗。`,
-        point2: '善於與客戶緊密合作，融合創意與策略思維，將他們的願景轉化為深思熟慮、具影響力的設計解決方案。',
+        point1: `擁有 ${stats.experience}+ 年的跨領域經驗，從餐旅管理到產品開發，深入理解使用者需求與商業邏輯。`,
+        point2: '善於與團隊緊密合作，將專案需求轉化為可執行的解決方案，確保專案準時交付。',
         strengthsTitle: '核心優勢',
         strengths: [
           {
@@ -96,11 +96,11 @@ function About() {
       },
       en: {
         title: 'About Me',
-        description1: 'I specialize in turning complex business requirements into elegant product solutions. Combining strategic thinking with creative execution, I focus not only on functional completeness but also on the finesse of user experience.',
-        description2: 'Ready to start your next project?',
+        description1: 'Experienced in project planning and execution, skilled in information integration analysis and crisis management.',
+        description2: 'Curious about life, possessing a growth mindset, constantly seeking ways to solve problems. Love communicating with people and teamwork, continuously learning new knowledge to become a better self.',
         efficiencyDesc: 'Average improvement in team collaboration efficiency within the first 6 months through AI tools and process optimization',
-        point1: `With ${stats.experience}+ years of cross-domain experience, I focus on creating intuitive, user-centered designs that solve real-world problems and provide seamless digital experiences.`,
-        point2: 'I excel at working closely with clients, blending creativity with strategic thinking to transform their vision into thoughtful, impactful design solutions.',
+        point1: `With ${stats.experience}+ years of cross-domain experience, from hospitality management to product development, deeply understanding user needs and business logic.`,
+        point2: 'Excel at working closely with teams, transforming project requirements into executable solutions, ensuring on-time project delivery.',
         strengthsTitle: 'Core Strengths',
         strengths: [
           {
