@@ -175,7 +175,7 @@
                     <div class="stat-label">工作項目</div>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">12+</span>
+                    <span class="stat-number">20+</span>
                     <div class="stat-label">測試腳本</div>
                 </div>
                 <div class="stat-item">
@@ -183,7 +183,7 @@
                     <div class="stat-label">核心角色</div>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">50+</span>
+                    <span class="stat-number">80+</span>
                     <div class="stat-label">測試情境</div>
                 </div>
             </div>
@@ -241,27 +241,210 @@
 
             <h2>測試策略：完整性思維的體現</h2>
             <p>
-                產品經理的價值不僅在於功能設計，更在於對品質的把控。YesOnline 專案中，我建立了<span class="metric-highlight">12+ 測試腳本</span>的完整測試體系，涵蓋正常流程、邊界條件、異常處理三個維度。
+                產品經理的價值不僅在於功能設計，更在於對品質的把控。YesOnline 專案中，我建立了<span class="metric-highlight">20+ 測試腳本</span>的完整測試體系，涵蓋<span class="metric-highlight">用戶管理、課程管理、堂數管理、時數管理、顧問端視圖</span>五大核心模塊，確保每個功能在各種場景下的穩定性。
             </p>
 
+            <h3>系統化測試架構：五大模塊全覆蓋</h3>
+
             <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">🎯 測試覆蓋矩陣</h3>
-                <div class="grid grid-cols-2 gap-4 text-sm">
-                    <div><strong>正常流程驗證：</strong><br>✅ 有效堂數選課<br>✅ 教師時段配對<br>✅ 選課成功確認</div>
-                    <div><strong>邊界條件測試：</strong><br>✅ 無未使用堂數<br>✅ 超過使用效期<br>✅ 選課數量上限</div>
-                    <div><strong>異常情況處理：</strong><br>✅ 時段衝突檢測<br>✅ 網路異常處理<br>✅ 權限驗證失敗</div>
-                    <div><strong>跨平台一致性：</strong><br>✅ 中英文雙語<br>✅ 桌面/手機版<br>✅ 響應式適配</div>
+                <h3 class="text-[var(--primary-color)] mb-4">👤 模塊一：用戶管理測試</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold mb-2">註冊流程驗證</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 必填欄位驗證（國碼、手機號碼）</li>
+                            <li>• 手機號碼格式檢驗（支援多國格式）</li>
+                            <li>• 簡訊驗證碼流程（60秒重發機制）</li>
+                            <li>• 帳號重複註冊防護</li>
+                            <li>• 密碼規則合規性檢查</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">登入與安全功能</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 忘記密碼重設流程（手機驗證 + 密碼規則）</li>
+                            <li>• 個人資料編輯驗證（頭像、姓名、手機）</li>
+                            <li>• 修改密碼功能（舊密碼驗證 + 新密碼確認）</li>
+                            <li>• Token 過期處理機制</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <h3>測試驗證的深度執行</h3>
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">📚 模塊二：課程管理測試</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold mb-2">課程創建功能（雙模式）</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• <strong>單次課程創建：</strong>課程類型選擇、教師篩選、時段選擇、必填欄位驗證</li>
+                            <li>• <strong>頻次課程創建：</strong>重複週期設定、批量時段生成、衝突檢測</li>
+                            <li>• 教師名稱/專長條件篩選功能</li>
+                            <li>• 已選時段去重機制</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">課程維護與查詢</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 課程列表篩選（課程名稱、教師名稱、課程類型、狀態）</li>
+                            <li>• 課程編輯功能（學生人數上限驗證、資料完整性檢查）</li>
+                            <li>• 課程刪除與啟用流程（學生退選處理、時段釋放機制）</li>
+                            <li>• 課程狀態管理（服務中/已刪除）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">📊 模塊三：堂數管理測試</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold mb-2">堂數查看與編輯</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 堂數詳情頁面完整性（訂單編號、學生資訊、訂單時間、金額、備註）</li>
+                            <li>• 課程詳情顯示（課程類型、課程方案、堂數、使用效期）</li>
+                            <li>• 堂數編輯功能（不可變更欄位鎖定、可編輯欄位驗證）</li>
+                            <li>• 課程方案切換邏輯（一般 ↔ 無限制）</li>
+                            <li>• 使用效期限制檢查</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">⏰ 模塊四：時數管理測試</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold mb-2">顧問時數追蹤</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 時數新增功能（教師選擇、授課時數、缺席時數、月薪、薪資狀態）</li>
+                            <li>• 重複時數防護（當月已存在教師自動隱藏）</li>
+                            <li>• 時數詳情查看（教師資料、頭像、統計資訊）</li>
+                            <li>• 必填欄位驗證與錯誤提示</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">時數列表與查詢</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 教師名稱篩選（存在/不存在教師）</li>
+                            <li>• 年份/月份選擇（有資料/無資料月份）</li>
+                            <li>• 預設顯示上月時數清單</li>
+                            <li>• 分頁與排序（最新至最舊）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">教師時數詳情</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 課程清單資訊（課程名稱、時間、類型、堂數、狀態、備註）</li>
+                            <li>• 課程名稱篩選功能</li>
+                            <li>• 日期/月份篩選</li>
+                            <li>• 課程狀態分頁（已授課/未出席）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">📅 模塊五：顧問端視圖管理測試</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold mb-2">教師日曆查看</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 教師名稱篩選（存在/不存在教師）</li>
+                            <li>• 教師專長篩選功能</li>
+                            <li>• 預設顯示 48 筆教師記錄</li>
+                            <li>• 依最近更新排序</li>
+                            <li>• 日曆狀態顯示（已排課/未排課/請假/關閉時段）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">課程詳情查看</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 課程完整資訊（課程 ID、教師、課程類型、封面圖）</li>
+                            <li>• 學生清單（含頭像）與人數統計</li>
+                            <li>• 扣除堂數、課程間隔、課程介紹</li>
+                            <li>• 建立時間與課程時間顯示</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">登入與權限管理</h4>
+                        <ul class="text-sm text-[var(--text-secondary)] space-y-1 ml-4">
+                            <li>• 必填欄位驗證（手機號碼、密碼）</li>
+                            <li>• 手機號碼格式驗證</li>
+                            <li>• 登入成功流程（機構選擇 → 首頁導向）</li>
+                            <li>• 登入失敗處理（錯誤訊息提示）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>測試執行的系統化方法</h3>
             <p>
-                每個測試腳本都包含了詳細的前置條件、執行步驟、預期結果和異常情境。這種完整性不僅確保了功能的正確性，更重要的是建立了可重複、可追蹤的質量保證體系。
+                每個測試腳本都遵循統一的結構化格式，確保測試的可重複性和可追蹤性：
             </p>
 
             <div class="success-factor">
+                <strong>標準測試腳本結構</strong><br>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 text-sm">
+                    <div>
+                        <strong>1. 前置條件明確：</strong><br>
+                        • 瀏覽器環境設定<br>
+                        • 登入角色確認<br>
+                        • 功能入口路徑
+                    </div>
+                    <div>
+                        <strong>2. 測試步驟詳細：</strong><br>
+                        • 操作流程逐步記錄<br>
+                        • 關鍵欄位填寫範例<br>
+                        • 預期結果明確定義
+                    </div>
+                    <div>
+                        <strong>3. 異常場景覆蓋：</strong><br>
+                        • 必填欄位缺失<br>
+                        • 格式驗證錯誤<br>
+                        • 業務規則衝突
+                    </div>
+                    <div>
+                        <strong>4. 跨平台驗證：</strong><br>
+                        • 多螢幕尺寸（1440px / 320px）<br>
+                        • 多語言介面（中文 / 英文）<br>
+                        • 響應式設計檢查
+                    </div>
+                </div>
+            </div>
+
+            <h3>測試策略的深度與廣度</h3>
+            <p>
+                這套測試體系不僅覆蓋了功能的正確性，更重要的是建立了<span class="metric-highlight">品質保證的思維框架</span>。通過系統化的測試流程設計，確保每個功能在上線前都經過嚴格的多維度驗證。
+            </p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">🎯 測試覆蓋維度統計</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm mb-4">
+                    <div><strong>功能完整性：</strong><br>✅ 20+ 核心功能測試<br>✅ 80+ 測試情境設計<br>✅ 多角色權限驗證</div>
+                    <div><strong>邊界條件：</strong><br>✅ 必填欄位驗證<br>✅ 格式規則檢查<br>✅ 業務邏輯限制</div>
+                    <div><strong>異常處理：</strong><br>✅ 網路異常處理<br>✅ Token 過期機制<br>✅ 防重複提交</div>
+                    <div><strong>用戶體驗：</strong><br>✅ 錯誤訊息友善度<br>✅ 操作流程順暢性<br>✅ 響應式適配</div>
+                </div>
+                <div class="grid grid-cols-3 gap-3 pt-4 border-t border-[var(--border)]">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[var(--primary-color)]">5</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">核心模塊</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[var(--primary-color)]">20+</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">測試腳本</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-[var(--primary-color)]">80+</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">測試情境</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-factor">
                 <strong>成功要素 #2：系統性測試思維</strong><br>
-                通過 50+ 測試情境的全覆蓋設計，確保產品在各種使用場景下的穩定性。這種測試先行的思維模式，是產品經理質量意識和風險控制能力的具體體現。
+                通過 80+ 測試情境的全覆蓋設計，建立起從用戶註冊、課程管理、堂數追蹤到顧問端視圖的完整品質保證體系。測試架構涵蓋五大核心模塊，每個模塊都包含正常流程、邊界條件、異常處理的完整驗證。這種測試先行的思維模式，不僅確保了產品的穩定性，更展現了產品經理對質量控制和風險管理的深度理解。每個測試腳本都是產品思維的具體體現，將抽象的需求轉化為可驗證、可追蹤、可重複的測試標準。
             </div>
 
             <h2>技術整合：ClassIn API 的統籌管理</h2>
