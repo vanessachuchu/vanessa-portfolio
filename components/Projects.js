@@ -72,30 +72,29 @@ function Projects() {
       zh: {
         title: '作品集',
         subtitle: '從概念到實現，展示完整的產品開發與專案管理能力',
-        featured: '⭐ 特色專案',
-        viewDetails: '查看專案詳情',
+        sideProject: '💡 個人 Side Project',
+        checkItOut: 'Check it out',
         moreInfo: '想了解更多專案細節？',
         contactCollaboration: '聯絡討論合作',
         projects: [
           {
             id: 1,
-            title: '基金觀測站金融資訊生態系統',
-            description: 'B2B 金融科技平台產品架構設計，整合6大子平台，服務全台投信投顧業者',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            tags: ['產品管理', '系統架構', '金融科技', 'B2B平台'],
-            link: 'https://www.fundclear.com.tw/home',
-            detailPage: 'project-fundclear.html',
-            featured: true
-          },
-          {
-            id: 2,
             title: '脈德小腦瓜 Mind-Brain',
             description: '互動式冥想思考專案，幫助人們練習慢下來、感受當下，將抽象想法具體化',
             image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['JavaScript', '冥想思考', 'GitHub Pages', '開源專案'],
             link: 'https://vanessachuchu.github.io/mind-brain/',
             detailPage: 'project-mind-brain.html',
-            featured: true
+            sideProject: true
+          },
+          {
+            id: 2,
+            title: '基金觀測站金融資訊生態系統',
+            description: 'B2B 金融科技平台產品架構設計，整合6大子平台，服務全台投信投顧業者',
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            tags: ['產品管理', '系統架構', '金融科技', 'B2B平台'],
+            link: 'https://www.fundclear.com.tw/home',
+            detailPage: 'project-fundclear.html'
           },
           {
             id: 3,
@@ -104,8 +103,7 @@ function Projects() {
             image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['產品管理', '系統整合', '教育科技', 'API整合', '測試策略'],
             link: '#',
-            detailPage: 'project-yesonline.html',
-            featured: true
+            detailPage: 'project-yesonline.html'
           },
           {
             id: 4,
@@ -114,8 +112,7 @@ function Projects() {
             image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['企業系統', 'SSO整合', '專案管理', '國際化'],
             link: '#',
-            detailPage: 'project-tongyang-eip.html',
-            featured: true
+            detailPage: 'project-tongyang-eip.html'
           },
           {
             id: 5,
@@ -131,30 +128,29 @@ function Projects() {
       en: {
         title: 'Portfolio',
         subtitle: 'From concept to implementation, showcasing complete product development and project management capabilities',
-        featured: '⭐ Featured Project',
-        viewDetails: 'View Project Details',
+        sideProject: '💡 Personal Side Project',
+        checkItOut: 'Check it out',
         moreInfo: 'Want to learn more about project details?',
         contactCollaboration: 'Contact for Collaboration',
         projects: [
           {
             id: 1,
-            title: 'Fund Observatory Financial Information Ecosystem',
-            description: 'B2B fintech platform product architecture design, integrating 6 major sub-platforms, serving investment trust and advisory firms across Taiwan',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            tags: ['Product Management', 'System Architecture', 'FinTech', 'B2B Platform'],
-            link: 'https://www.fundclear.com.tw/home',
-            detailPage: 'project-fundclear.html',
-            featured: true
-          },
-          {
-            id: 2,
             title: 'Mind-Brain Interactive Meditation',
             description: 'Interactive meditation thinking project, helping people practice slowing down, feeling the present, and materializing abstract ideas',
             image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['JavaScript', 'Meditation Thinking', 'GitHub Pages', 'Open Source'],
             link: 'https://vanessachuchu.github.io/mind-brain/',
             detailPage: 'project-mind-brain.html',
-            featured: true
+            sideProject: true
+          },
+          {
+            id: 2,
+            title: 'Fund Observatory Financial Information Ecosystem',
+            description: 'B2B fintech platform product architecture design, integrating 6 major sub-platforms, serving investment trust and advisory firms across Taiwan',
+            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            tags: ['Product Management', 'System Architecture', 'FinTech', 'B2B Platform'],
+            link: 'https://www.fundclear.com.tw/home',
+            detailPage: 'project-fundclear.html'
           },
           {
             id: 3,
@@ -163,8 +159,7 @@ function Projects() {
             image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['Product Management', 'System Integration', 'EdTech', 'API Integration', 'Testing Strategy'],
             link: '#',
-            detailPage: 'project-yesonline.html',
-            featured: true
+            detailPage: 'project-yesonline.html'
           },
           {
             id: 4,
@@ -173,8 +168,7 @@ function Projects() {
             image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['Enterprise System', 'SSO Integration', 'Project Management', 'Internationalization'],
             link: '#',
-            detailPage: 'project-tongyang-eip.html',
-            featured: true
+            detailPage: 'project-tongyang-eip.html'
           },
           {
             id: 5,
@@ -230,12 +224,12 @@ function Projects() {
                   
                   return (
                     <div key={project.id} className="flex-shrink-0 w-72 sm:w-80 glass-card card-3d overflow-hidden">
-                      {project.featured && (
+                      {project.sideProject && (
                         <div className="bg-[var(--primary-color)] text-white text-center py-2 text-sm font-medium noto-font">
-                          {currentContent.featured}
+                          {currentContent.sideProject}
                         </div>
                       )}
-                      
+
                       <div className="relative h-32 flex items-center justify-center text-white font-bold bg-[var(--primary-color)]">
                         <div className="absolute inset-0 bg-black/10"></div>
                         <div className="relative z-10 text-center">
@@ -243,16 +237,16 @@ function Projects() {
                           <div className="text-xs opacity-80">#{index + 1}</div>
                         </div>
                       </div>
-                      
+
                       <div className="p-6">
                         <h3 className="text-lg font-bold mb-2 noto-font line-clamp-2">{project.title}</h3>
                         <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed line-clamp-3 noto-font">
                           {project.description}
                         </p>
-                        
+
                         <div className="flex flex-wrap gap-2 mb-4">
                           {project.tags.slice(0, 3).map((tag) => (
-                            <span 
+                            <span
                               key={tag}
                               className="px-2 py-1 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-xs font-medium noto-font"
                             >
@@ -265,25 +259,15 @@ function Projects() {
                             </span>
                           )}
                         </div>
-                        
-                        <div className="flex gap-2">
-                          {project.detailPage && (
-                            <a 
-                              href={project.detailPage}
-                              className="flex-1 text-center py-2 px-3 bg-[var(--primary-color)] text-white rounded-lg btn-3d transition-colors text-xs font-medium noto-font"
-                            >
-                              {currentContent.viewDetails}
-                            </a>
-                          )}
-                          <a 
-                            href={project.link} 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 text-center py-2 px-3 border border-[var(--primary-color)] text-[var(--primary-color)] rounded-lg btn-3d hover:bg-[var(--primary-color)] hover:text-white transition-colors text-xs font-medium noto-font"
+
+                        {project.detailPage && (
+                          <a
+                            href={project.detailPage}
+                            className="block w-full text-center py-2 px-3 bg-[var(--primary-color)] text-white rounded-lg btn-3d transition-colors text-xs font-medium noto-font"
                           >
-                            {currentLang === 'zh' ? '查看專案' : 'View Project'}
+                            {currentContent.checkItOut}
                           </a>
-                        </div>
+                        )}
                       </div>
                     </div>
                   );
