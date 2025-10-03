@@ -312,6 +312,53 @@
             left: 100%;
         }
 
+        /* Project Card Hover Animation */
+        .project-card-hover {
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .project-card-hover::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg,
+                transparent 0%,
+                rgba(34, 34, 34, 0.1) 25%,
+                rgba(34, 34, 34, 0.2) 50%,
+                rgba(34, 34, 34, 0.1) 75%,
+                transparent 100%);
+            border-radius: 14px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+            animation: borderFlow 3s linear infinite;
+        }
+
+        .project-card-hover:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes borderFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 200%; }
+        }
+
+        /* Tag Fade In Animation */
+        @keyframes tagFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .tag-animate {
+            animation: tagFadeIn 0.5s ease-out forwards;
+        }
 
         .fade-in {
             opacity: 0;

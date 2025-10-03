@@ -223,19 +223,25 @@ function Projects() {
                   ];
                   
                   return (
-                    <div key={project.id} className="flex-shrink-0 w-72 sm:w-80 glass-card card-3d overflow-hidden">
+                    <div key={project.id} className="flex-shrink-0 w-72 sm:w-80 glass-card card-3d overflow-hidden project-card-hover group">
                       {project.sideProject && (
                         <div className="bg-[var(--primary-color)] text-white text-center py-2 text-sm font-medium noto-font">
                           {currentContent.sideProject}
                         </div>
                       )}
 
-                      <div className="relative h-32 flex items-center justify-center text-white font-bold bg-[var(--primary-color)]">
-                        <div className="absolute inset-0 bg-black/10"></div>
-                        <div className="relative z-10 text-center">
-                          <div className="text-lg font-semibold">PROJECT</div>
-                          <div className="text-xs opacity-80">#{index + 1}</div>
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[2px]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                        <div className="absolute bottom-4 left-4 text-white z-10">
+                          <div className="text-sm font-semibold opacity-70">PROJECT</div>
+                          <div className="text-xs opacity-50">#{String(index + 1).padStart(2, '0')}</div>
                         </div>
+                        <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/30 transition-all duration-500"></div>
                       </div>
 
                       <div className="p-6">
@@ -245,16 +251,28 @@ function Projects() {
                         </p>
 
                         <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tags.slice(0, 3).map((tag) => (
+                          {project.tags.slice(0, 3).map((tag, tagIndex) => (
                             <span
                               key={tag}
-                              className="px-2 py-1 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-xs font-medium noto-font"
+                              className="px-2 py-1 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-full text-xs font-medium noto-font tag-animate"
+                              style={{
+                                animationDelay: `${tagIndex * 100}ms`,
+                                opacity: 0,
+                                animation: 'tagFadeIn 0.5s ease-out forwards'
+                              }}
                             >
                               {tag}
                             </span>
                           ))}
                           {project.tags.length > 3 && (
-                            <span className="px-2 py-1 bg-gray-100 text-gray-500 rounded-full text-xs font-medium noto-font">
+                            <span
+                              className="px-2 py-1 bg-gray-100 text-gray-500 rounded-full text-xs font-medium noto-font tag-animate"
+                              style={{
+                                animationDelay: '300ms',
+                                opacity: 0,
+                                animation: 'tagFadeIn 0.5s ease-out forwards'
+                              }}
+                            >
                               +{project.tags.length - 3}
                             </span>
                           )}

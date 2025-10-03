@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>脈德小腦瓜 Mind-Brain | 互動式冥想思考專案</title>
+    <meta name="description" content="脈德小腦瓜 - 將抽象想法具體化的創新冥想思考工具，幫助人們練習慢下來、感受當下">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Modern minimalist grayscale theme matching homepage */
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --bg-tertiary: #F8F8F8;
+            --card-bg: #FFFFFF;
+            --text-primary: #222222;
+            --text-secondary: #7B7B7B;
+            --text-light: #7B7B7B;
+            --primary-color: #222222;
+            --primary-dark: #000000;
+            --secondary-color: #7B7B7B;
+            --accent-color: #F8F8F8;
+            --accent-warm: #F8F8F8;
+            --border: #E0E0E0;
+            --ring: #222222;
+            --subtle-shadow: 0 2px 12px rgba(34, 34, 34, 0.1);
+            --card-shadow: 0 2px 12px rgba(34, 34, 34, 0.1), 0 1px 4px rgba(34, 34, 34, 0.05);
+            --hover-shadow: 0 8px 24px rgba(34, 34, 34, 0.15);
+        }
+        
+        body {
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        .noto-font {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            border-radius: 12px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 12px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: var(--card-bg);
+            padding: 10px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--card-bg);
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .fade-in-1 { animation-delay: 0.2s; }
+        .fade-in-2 { animation-delay: 0.4s; }
+        .fade-in-3 { animation-delay: 0.6s; }
+        .fade-in-4 { animation-delay: 0.8s; }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回首頁按鈕 -->
+    <div class="fixed top-6 left-6 z-50">
+        <a href="index.html" class="btn-secondary noto-font" id="backBtn">
+            ← 返回首頁
+        </a>
+    </div>
+
+    <!-- 語言切換按鈕 -->
+    <div class="fixed top-6 right-6 z-50">
+        <button id="langToggle" class="btn-secondary noto-font">
+            EN
+        </button>
+    </div>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+    function MindBrainProject() {
+        const [lang, setLang] = React.useState('zh');
+
+        const content = {
+            zh: {
+                backBtn: '← 返回首頁',
+                title: '脈德小腦瓜',
+                subtitle: 'Mind-Brain',
+                timeline: 'React + TypeScript 全端思考管理應用 | 2024.11 - 持續開發中',
+                description: '這不只是一個專案，而是我對「如何讓科技真正觸動人心」的實踐。從設計到開發，每一個功能都在思考：如何能給忙碌的現代人一個溫暖的數位空間，讓他們慢下來、整理思緒、感受內在的平靜？我用 React + TypeScript 建構了完整的前後端系統，但技術只是手段——真正的目標是創造一個讓人感到被理解的產品。',
+                targetUserLabel: '目標使用者',
+                targetUser: '渴望內心平靜的忙碌者、想記錄思考過程的創作者、追求自我覺察與成長的個人',
+                demoBtn: '體驗即時 Demo →',
+                sourceBtn: '查看專案原始碼',
+                painPointsTitle: '我們理解你的困擾',
+                painPointsSubtitle: '在快節奏的現代生活中，這些是我們都曾面對的挑戰',
+                painPoints: [
+                    { title: '雜亂的想法無處安放', desc: '腦中充滿各種想法，卻不知道如何整理', solution: '→ 直覺式思考卡片記錄' },
+                    { title: '時間管理焦慮', desc: '總覺得時間不夠用，待辦事項堆積如山', solution: '→ 溫柔的行事曆與待辦整合' },
+                    { title: '容易遺忘的靈感', desc: '好的想法轉瞬即逝，事後想不起來', solution: '→ 智慧搜尋與分類' },
+                    { title: '缺乏反思空間', desc: '忙碌的生活中，很難靜下心來自我覺察', solution: '→ 個人化成長記錄' }
+                ],
+                backgroundTitle: '專案背景',
+                backgroundText1: '在快節奏的現代生活中，人們常常被各種資訊和壓力包圍，很難有機會停下來思考和反省。脈德小腦瓜誕生於對內心平靜的渴望，以及對深度思考價值的重新認識。',
+                backgroundText2: '這個專案結合了冥想的理念與互動式設計，提供一個安全、溫暖的數位空間，讓使用者能夠慢下來，與自己的內心對話。',
+                featuresTitle: '核心特色',
+                features: [
+                    '互動式思考引導，幫助用戶深入探索內心想法',
+                    '溫暖的視覺設計，營造安全舒適的思考環境',
+                    '簡潔的操作流程，降低使用門檻',
+                    '開源設計，促進社群參與和改進'
+                ],
+                techTitle: '技術實現',
+                techSubtitle: '採用現代前端技術，打造流暢且具有意義的使用者體驗',
+                techStack: [
+                    { name: 'JavaScript', desc: '核心互動邏輯實現' },
+                    { name: 'CSS3', desc: '溫暖舒適的視覺體驗' },
+                    { name: 'GitHub Pages', desc: '免費可靠的部署平台' }
+                ],
+                designTitle: '設計理念',
+                designSubtitle: '「在這個快速變化的世界裡，我們都需要一個安靜的角落，來傾聽自己內心的聲音。」',
+                designPoints: [
+                    { title: '慢下來的勇氣', desc: '在追求效率的時代，我們提倡慢思考的價值。給自己時間去感受、去思考、去理解，這並不是浪費時間，而是對自己最好的投資。' },
+                    { title: '具體化抽象', desc: '透過互動式的引導，幫助用戶將模糊的感受和想法轉化為清晰的認知，讓內心的聲音變得可見、可感、可理解。' }
+                ],
+                impactTitle: '專案影響',
+                impactSubtitle: '小而美的專案，卻帶來了深遠的思考和溫暖的回響',
+                impacts: [
+                    { value: '開源', desc: '促進社群參與與改進' },
+                    { value: '療癒', desc: '為忙碌的人們提供安靜角落' },
+                    { value: '創新', desc: '將冥想與科技結合的探索' }
+                ],
+                ctaTitle: '準備開始你的內心探索之旅嗎？',
+                ctaSubtitle: '給自己幾分鐘的時間，感受慢下來的美好',
+                ctaExperience: '立即體驗 →',
+                ctaMoreProjects: '查看更多專案',
+                footerText: '© 2024 Vanessa Liu. 用心創造有溫度的產品。'
+            },
+            en: {
+                backBtn: '← Back to Home',
+                title: 'Mind-Brain',
+                subtitle: '脈德小腦瓜',
+                timeline: 'React + TypeScript Full-Stack Thinking Management App | Nov 2024 - Ongoing',
+                description: 'This is not just a project, but my practice of "how to make technology truly touch people\'s hearts." From design to development, every feature considers: how can we give busy modern people a warm digital space to slow down, organize thoughts, and feel inner peace? I built a complete front-end and back-end system with React + TypeScript, but technology is just the means—the real goal is to create a product that makes people feel understood.',
+                targetUserLabel: 'Target Users',
+                targetUser: 'Busy people yearning for inner peace, creators wanting to record thought processes, individuals pursuing self-awareness and growth',
+                demoBtn: 'Experience Live Demo →',
+                sourceBtn: 'View Source Code',
+                painPointsTitle: 'We Understand Your Challenges',
+                painPointsSubtitle: 'In the fast-paced modern life, these are challenges we\'ve all faced',
+                painPoints: [
+                    { title: 'Chaotic thoughts nowhere to go', desc: 'Mind full of ideas but don\'t know how to organize', solution: '→ Intuitive thought card recording' },
+                    { title: 'Time management anxiety', desc: 'Always feeling not enough time, to-do piling up', solution: '→ Gentle calendar and todo integration' },
+                    { title: 'Easily forgotten ideas', desc: 'Great ideas fleeting, hard to recall later', solution: '→ Smart search and categorization' },
+                    { title: 'Lack of reflection space', desc: 'Difficult to find quiet time for self-awareness in busy life', solution: '→ Personalized growth records' }
+                ],
+                backgroundTitle: 'Project Background',
+                backgroundText1: 'In the fast-paced modern life, people are often surrounded by information and pressure, with few chances to stop and reflect. Mind-Brain was born from a desire for inner peace and a renewed appreciation for the value of deep thinking.',
+                backgroundText2: 'This project combines meditation philosophy with interactive design, providing a safe, warm digital space where users can slow down and dialogue with their inner selves.',
+                featuresTitle: 'Core Features',
+                features: [
+                    'Interactive thinking guidance to help users explore inner thoughts deeply',
+                    'Warm visual design creating a safe and comfortable thinking environment',
+                    'Simple operation process lowering the barrier to use',
+                    'Open source design promoting community participation and improvement'
+                ],
+                techTitle: 'Technical Implementation',
+                techSubtitle: 'Using modern frontend technologies to create smooth and meaningful user experiences',
+                techStack: [
+                    { name: 'JavaScript', desc: 'Core interactive logic implementation' },
+                    { name: 'CSS3', desc: 'Warm and comfortable visual experience' },
+                    { name: 'GitHub Pages', desc: 'Free and reliable deployment platform' }
+                ],
+                designTitle: 'Design Philosophy',
+                designSubtitle: '"In this rapidly changing world, we all need a quiet corner to listen to our inner voice."',
+                designPoints: [
+                    { title: 'The Courage to Slow Down', desc: 'In an era pursuing efficiency, we advocate for the value of slow thinking. Giving yourself time to feel, think, and understand is not a waste of time, but the best investment in yourself.' },
+                    { title: 'Materializing the Abstract', desc: 'Through interactive guidance, help users transform vague feelings and thoughts into clear cognition, making inner voices visible, tangible, and understandable.' }
+                ],
+                impactTitle: 'Project Impact',
+                impactSubtitle: 'A small but beautiful project bringing profound thinking and warm resonance',
+                impacts: [
+                    { value: 'Open Source', desc: 'Promoting community participation and improvement' },
+                    { value: 'Healing', desc: 'Providing quiet corners for busy people' },
+                    { value: 'Innovation', desc: 'Exploring the combination of meditation and technology' }
+                ],
+                ctaTitle: 'Ready to Start Your Inner Exploration Journey?',
+                ctaSubtitle: 'Give yourself a few minutes to feel the beauty of slowing down',
+                ctaExperience: 'Experience Now →',
+                ctaMoreProjects: 'View More Projects',
+                footerText: '© 2024 Vanessa Liu. Creating products with care and warmth.'
+            }
+        };
+
+        const currentContent = content[lang];
+
+        return (
+            <>
+                <section className="py-32 px-6 min-h-screen flex items-center" style={{backgroundColor: 'var(--bg-primary)'}}>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="fade-in">
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6 noto-font" style="color: var(--text-primary)">
+                    脈德小腦瓜
+                </h1>
+                <div class="text-2xl lg:text-3xl mb-8 noto-font" style="color: var(--text-secondary)">
+                    Mind-Brain
+                </div>
+                <p class="text-lg mb-4 noto-font" style="color: var(--text-secondary)">
+                    React + TypeScript 全端思考管理應用 | 2024.11 - 持續開發中
+                </p>
+                <p class="text-xl mb-8 max-w-3xl mx-auto leading-relaxed noto-font" style="color: var(--text-light)">
+                    這不只是一個專案，而是我對「如何讓科技真正觸動人心」的實踐。從設計到開發，每一個功能都在思考：如何能給忙碌的現代人一個溫暖的數位空間，讓他們慢下來、整理思緒、感受內在的平靜？我用 React + TypeScript 建構了完整的前後端系統，但技術只是手段——真正的目標是創造一個讓人感到被理解的產品。
+                </p>
+
+                <div class="glass-card p-6 max-w-2xl mx-auto mb-8">
+                    <p class="text-sm font-medium mb-2 noto-font" style="color: var(--primary-color)">目標使用者</p>
+                    <p class="text-sm noto-font" style="color: var(--text-secondary)">渴望內心平靜的忙碌者、想記錄思考過程的創作者、追求自我覺察與成長的個人</p>
+                </div>
+
+                <div class="flex gap-6 justify-center flex-wrap">
+                    <a href="https://vanessachuchu.github.io/mind-brain/" target="_blank" class="btn-primary noto-font">
+                        體驗即時 Demo →
+                    </a>
+                    <a href="https://github.com/vanessachuchu/mind-brain" target="_blank" class="btn-secondary noto-font">
+                        查看專案原始碼
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用者痛點與解決方案 -->
+    <section class="py-20 px-6" style="background-color: var(--bg-secondary)">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-1">
+                <h2 class="text-4xl font-bold mb-6 noto-font" style="color: var(--text-primary)">
+                    我們理解你的困擾
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto leading-relaxed noto-font" style="color: var(--text-secondary)">
+                    在快節奏的現代生活中，這些是我們都曾面對的挑戰
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-16">
+                <div class="glass-card p-6 fade-in-2">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));">
+                            <span class="text-2xl">💭</span>
+                        </div>
+                        <div class="flex-1">
+                            <h5 class="font-semibold mb-2 noto-font" style="color: var(--text-primary)">雜亂的想法無處安放</h5>
+                            <p class="text-sm mb-2 noto-font" style="color: var(--text-light)">腦中充滿各種想法，卻不知道如何整理</p>
+                            <p class="text-sm font-medium noto-font" style="color: var(--primary-color)">→ 直覺式思考卡片記錄</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 fade-in-2">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent-color), var(--primary-color));">
+                            <span class="text-2xl">⏰</span>
+                        </div>
+                        <div class="flex-1">
+                            <h5 class="font-semibold mb-2 noto-font" style="color: var(--text-primary)">時間管理焦慮</h5>
+                            <p class="text-sm mb-2 noto-font" style="color: var(--text-light)">總覺得時間不夠用，待辦事項堆積如山</p>
+                            <p class="text-sm font-medium noto-font" style="color: var(--primary-color)">→ 溫柔的行事曆與待辦整合</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 fade-in-3">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent-warm), var(--primary-color));">
+                            <span class="text-2xl">💡</span>
+                        </div>
+                        <div class="flex-1">
+                            <h5 class="font-semibold mb-2 noto-font" style="color: var(--text-primary)">容易遺忘的靈感</h5>
+                            <p class="text-sm mb-2 noto-font" style="color: var(--text-light)">好的想法轉瞬即逝，事後想不起來</p>
+                            <p class="text-sm font-medium noto-font" style="color: var(--primary-color)">→ 智慧搜尋與分類</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 fade-in-3">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+                            <span class="text-2xl">🌱</span>
+                        </div>
+                        <div class="flex-1">
+                            <h5 class="font-semibold mb-2 noto-font" style="color: var(--text-primary)">缺乏反思空間</h5>
+                            <p class="text-sm mb-2 noto-font" style="color: var(--text-light)">忙碌的生活中，很難靜下心來自我覺察</p>
+                            <p class="text-sm font-medium noto-font" style="color: var(--primary-color)">→ 個人化成長記錄</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案背景 -->
+    <section class="py-20 px-6" style="background-color: var(--bg-primary)">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-1">
+                    <h2 class="text-4xl font-bold mb-8 noto-font" style="color: var(--text-primary)">
+                        專案背景
+                    </h2>
+                    <p class="text-lg mb-6 leading-relaxed noto-font" style="color: var(--text-secondary)">
+                        在快節奏的現代生活中，人們常常被各種資訊和壓力包圍，很難有機會停下來思考和反省。脈德小腦瓜誕生於對內心平靜的渴望，以及對深度思考價值的重新認識。
+                    </p>
+                    <p class="text-lg leading-relaxed noto-font" style="color: var(--text-secondary)">
+                        這個專案結合了冥想的理念與互動式設計，提供一個安全、溫暖的數位空間，讓使用者能夠慢下來，與自己的內心對話。
+                    </p>
+                </div>
+
+                <div class="fade-in-2">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-6 noto-font" style="color: var(--text-primary)">
+                            核心特色
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full mt-3 flex-shrink-0" style="background-color: var(--primary-color)"></div>
+                                <span class="noto-font" style="color: var(--text-secondary)">互動式思考引導，幫助用戶深入探索內心想法</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full mt-3 flex-shrink-0" style="background-color: var(--primary-color)"></div>
+                                <span class="noto-font" style="color: var(--text-secondary)">溫暖的視覺設計，營造安全舒適的思考環境</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full mt-3 flex-shrink-0" style="background-color: var(--primary-color)"></div>
+                                <span class="noto-font" style="color: var(--text-secondary)">簡潔的操作流程，降低使用門檻</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 rounded-full mt-3 flex-shrink-0" style="background-color: var(--primary-color)"></div>
+                                <span class="noto-font" style="color: var(--text-secondary)">開源設計，促進社群參與和改進</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技術實現 -->
+    <section class="py-20 px-6" style="background-color: var(--bg-primary)">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-1">
+                <h2 class="text-4xl font-bold mb-6 noto-font" style="color: var(--text-primary)">
+                    技術實現
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto leading-relaxed noto-font" style="color: var(--text-secondary)">
+                    採用現代前端技術，打造流暢且具有意義的使用者體驗
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="glass-card p-6 text-center fade-in-2">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--accent-color)">
+                        <span class="text-xl">💻</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 noto-font" style="color: var(--text-primary)">JavaScript</h3>
+                    <p class="text-sm noto-font" style="color: var(--text-secondary)">核心互動邏輯實現</p>
+                </div>
+                
+                <div class="glass-card p-6 text-center fade-in-3">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--accent-color)">
+                        <span class="text-xl">🎨</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 noto-font" style="color: var(--text-primary)">CSS3</h3>
+                    <p class="text-sm noto-font" style="color: var(--text-secondary)">溫暖舒適的視覺體驗</p>
+                </div>
+                
+                <div class="glass-card p-6 text-center fade-in-4">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background-color: var(--accent-color)">
+                        <span class="text-xl">🌐</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 noto-font" style="color: var(--text-primary)">GitHub Pages</h3>
+                    <p class="text-sm noto-font" style="color: var(--text-secondary)">免費可靠的部署平台</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 設計理念 -->
+    <section class="py-20 px-6" style="background-color: var(--bg-secondary)">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="fade-in-1">
+                <h2 class="text-4xl font-bold mb-8 noto-font" style="color: var(--text-primary)">
+                    設計理念
+                </h2>
+                <p class="text-xl mb-12 leading-relaxed noto-font" style="color: var(--text-secondary)">
+                    「在這個快速變化的世界裡，我們都需要一個安靜的角落，來傾聽自己內心的聲音。」
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-12 text-left">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-4 noto-font" style="color: var(--text-primary)">
+                            慢下來的勇氣
+                        </h3>
+                        <p class="leading-relaxed noto-font" style="color: var(--text-secondary)">
+                            在追求效率的時代，我們提倡慢思考的價值。給自己時間去感受、去思考、去理解，這並不是浪費時間，而是對自己最好的投資。
+                        </p>
+                    </div>
+                    
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-4 noto-font" style="color: var(--text-primary)">
+                            具體化抽象
+                        </h3>
+                        <p class="leading-relaxed noto-font" style="color: var(--text-secondary)">
+                            透過互動式的引導，幫助用戶將模糊的感受和想法轉化為清晰的認知，讓內心的聲音變得可見、可感、可理解。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 影響與回響 -->
+    <section class="py-20 px-6" style="background-color: var(--bg-primary)">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-1">
+                <h2 class="text-4xl font-bold mb-6 noto-font" style="color: var(--text-primary)">
+                    專案影響
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto leading-relaxed noto-font" style="color: var(--text-secondary)">
+                    小而美的專案，卻帶來了深遠的思考和溫暖的回響
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center fade-in-2">
+                    <div class="text-4xl font-bold mb-2 noto-font" style="color: var(--primary-color)">開源</div>
+                    <div class="noto-font" style="color: var(--text-secondary)">促進社群參與與改進</div>
+                </div>
+                <div class="text-center fade-in-3">
+                    <div class="text-4xl font-bold mb-2 noto-font" style="color: var(--primary-color)">療癒</div>
+                    <div class="noto-font" style="color: var(--text-secondary)">為忙碌的人們提供安靜角落</div>
+                </div>
+                <div class="text-center fade-in-4">
+                    <div class="text-4xl font-bold mb-2 noto-font" style="color: var(--primary-color)">創新</div>
+                    <div class="noto-font" style="color: var(--text-secondary)">將冥想與科技結合的探索</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 區塊 -->
+    <section class="py-20 px-6" style="background-color: var(--bg-secondary)">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="fade-in-1">
+                <h2 class="text-3xl font-bold mb-6 noto-font" style="color: var(--text-primary)">
+                    準備開始你的内心探索之旅嗎？
+                </h2>
+                <p class="text-lg mb-8 noto-font" style="color: var(--text-secondary)">
+                    給自己幾分鐘的時間，感受慢下來的美好
+                </p>
+                
+                <div class="flex gap-6 justify-center flex-wrap">
+                    <a href="https://vanessachuchu.github.io/mind-brain/" target="_blank" class="btn-primary noto-font">
+                        立即體驗 →
+                    </a>
+                    <a href="index.html" class="btn-secondary noto-font">
+                        查看更多專案
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center" style="background-color: var(--bg-primary); border-top: 1px solid var(--border)">
+        <p class="noto-font" style="color: var(--text-light)">
+            © 2024 Vanessa Liu. 用心創造有溫度的產品。
+        </p>
+    </footer>
+</body>
+</html>
