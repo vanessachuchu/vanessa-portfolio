@@ -3,10 +3,6 @@ function About() {
     const [isVisible, setIsVisible] = React.useState(false);
     const [currentLang, setCurrentLang] = React.useState('zh');
     const [scrollY, setScrollY] = React.useState(0);
-    const [stats, setStats] = React.useState({
-      efficiency: 0,
-      experience: 0
-    });
 
     React.useEffect(() => {
       const handleScroll = () => {
@@ -17,7 +13,6 @@ function About() {
         ([entry]) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            animateStats();
           }
         },
         { threshold: 0.1 }
@@ -51,37 +46,12 @@ function About() {
       };
     }, []);
 
-    const animateStats = () => {
-      const targets = { efficiency: 120, experience: 2 };
-      const duration = 2000;
-      const steps = 60;
-      const stepDuration = duration / steps;
-
-      Object.keys(targets).forEach(key => {
-        let current = 0;
-        const increment = targets[key] / steps;
-        
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= targets[key]) {
-            current = targets[key];
-            clearInterval(timer);
-          }
-          setStats(prev => ({ ...prev, [key]: Math.floor(current) }));
-        }, stepDuration);
-      });
-    };
-
     // Content for both languages
     const content = {
       zh: {
         title: '關於我',
         description1: '擁有專案規劃及執行經驗，擅於資訊整合分析及危機處理能力。',
         description2: '對於生活充滿好奇心，擁有成長型思維，不斷尋求方式解決問題。喜愛與人溝通和團隊合作，並持續學習新知，成就更好的自己。',
-        efficiencyDesc: '透過導入 AI 工具與優化產品流程，在前 6 個月內平均提升團隊協作效率',
-        point1: `擁有 ${stats.experience}+ 年的跨領域經驗，從餐旅管理到產品開發，深入理解使用者需求與商業邏輯。`,
-        point2: '善於與團隊緊密合作，將專案需求轉化為可執行的解決方案，確保專案準時交付。',
-        strengthsTitle: '核心優勢',
         strengths: [
           {
             emoji: '🎯',
@@ -129,10 +99,6 @@ function About() {
         title: 'About Me',
         description1: 'Experienced in project planning and execution, skilled in information integration analysis and crisis management.',
         description2: 'Curious about life, possessing a growth mindset, constantly seeking ways to solve problems. Love communicating with people and teamwork, continuously learning new knowledge to become a better self.',
-        efficiencyDesc: 'Average improvement in team collaboration efficiency within the first 6 months through AI tools and process optimization',
-        point1: `With ${stats.experience}+ years of cross-domain experience, from hospitality management to product development, deeply understanding user needs and business logic.`,
-        point2: 'Excel at working closely with teams, transforming project requirements into executable solutions, ensuring on-time project delivery.',
-        strengthsTitle: 'Core Strengths',
         strengths: [
           {
             emoji: '🎯',
@@ -199,69 +165,14 @@ function About() {
               <div className="w-20 h-1" style={{backgroundColor: 'var(--primary-color)'}}></div>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-              {/* 左側:文字描述 */}
-              <div className={`lg:col-span-5 ${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
+            <div className="max-w-3xl">
+              <div className={`${isVisible ? 'slide-in-left' : 'opacity-0'}`}>
                 <p className="text-lg leading-relaxed mb-8 noto-font" style={{color: 'var(--text-secondary)'}}>
                   {currentContent.description1}
                 </p>
                 <p className="leading-relaxed noto-font" style={{color: 'var(--text-light)'}}>
                   {currentContent.description2}
                 </p>
-              </div>
-
-              {/* 右側:數據與重點 */}
-              <div className={`lg:col-span-7 ${isVisible ? 'slide-in-right' : 'opacity-0'}`}>
-                {/* 大數據展示 */}
-                <div className="mb-12 flex items-start gap-6">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full border-2 flex items-center justify-center mb-4" 
-                         style={{borderColor: 'var(--primary-color)'}}>
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: 'var(--primary-color)'}}>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-7xl font-bold mb-2 noto-font" style={{color: 'var(--primary-color)'}}>{stats.efficiency}%</div>
-                    <p className="leading-relaxed max-w-md noto-font" style={{color: 'var(--text-light)'}}>
-                      {currentContent.efficiencyDesc}
-                    </p>
-                  </div>
-                </div>
-
-                {/* 特色照片區域 - 佔位符 */}
-                <div className="grid grid-cols-2 gap-6 mb-12">
-                  <div className="aspect-square rounded-lg" style={{backgroundColor: 'var(--bg-tertiary)'}}></div>
-                  <div className="aspect-square rounded-lg" style={{backgroundColor: 'var(--muted)'}}></div>
-                </div>
-
-                {/* 兩個重點說明 */}
-                <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full text-white flex items-center justify-center flex-shrink-0 text-sm font-bold noto-font" 
-                         style={{backgroundColor: 'var(--primary-color)'}}>
-                      1
-                    </div>
-                    <div>
-                      <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
-                        {currentContent.point1}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full text-white flex items-center justify-center flex-shrink-0 text-sm font-bold noto-font" 
-                         style={{backgroundColor: 'var(--primary-color)'}}>
-                      2
-                    </div>
-                    <div>
-                      <p className="leading-relaxed noto-font" style={{color: 'var(--text-secondary)'}}>
-                        {currentContent.point2}
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
