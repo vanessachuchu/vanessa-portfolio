@@ -21,7 +21,7 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
       primary: '#222222',
       secondary: '#7B7B7B',
       tertiary: '#E0E0E0',
-      accent: '#222222'
+      accent: '#FF6B6B'  // 使用更明顯的顏色測試
     };
 
     // 計算視差效果
@@ -55,7 +55,7 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
             <>
               {/* 左上角 - 網格背景 */}
               <g style={{ transform: `translate(${parallax(-0.1)}px, ${parallax(-0.05)}px)` }}>
-                <rect x="-100" y="-100" width="600" height="600" fill={`url(#grid-pattern-${variant})`} opacity="0.4">
+                <rect x="-100" y="-100" width="600" height="600" fill={`url(#grid-pattern-${variant})`} opacity="0.8">
                   <animateTransform
                     attributeName="transform"
                     type="rotate"
@@ -71,9 +71,9 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
               <g style={{ transform: `translate(${parallax(0.15)}px, ${parallax(0.08)}px)` }}>
                 <path d="M -50,400 Q 100,350 150,450 T 350,500 T 550,450"
                       fill="none"
-                      stroke={colors.primary}
-                      strokeWidth="60"
-                      opacity="0.15"
+                      stroke="#FF6B6B"
+                      strokeWidth="80"
+                      opacity="0.6"
                       strokeLinecap="round">
                   <animate
                     attributeName="d"
@@ -90,9 +90,9 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
               <g style={{ transform: `translate(${parallax(-0.12)}px, ${parallax(-0.06)}px)` }}>
                 <path d="M 1400,100 Q 1550,80 1600,150 T 1800,200 T 2000,150"
                       fill="none"
-                      stroke={colors.secondary}
-                      strokeWidth="50"
-                      opacity="0.2"
+                      stroke="#6366F1"
+                      strokeWidth="70"
+                      opacity="0.5"
                       strokeLinecap="round">
                   <animate
                     attributeName="d"
@@ -107,24 +107,24 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
 
               {/* 圓形元素 - 左下角 */}
               <g style={{ transform: `translate(${parallax(0.1)}px, ${parallax(0.2)}px)` }}>
-                <circle cx="200" cy="900" r="120" fill={`url(#gradient1-${variant})`} opacity="0.4">
+                <circle cx="200" cy="900" r="150" fill="#FF8C8C" opacity="0.7">
                   <animate attributeName="r" values="120;140;120" dur="6s" repeatCount="indefinite" />
                 </circle>
               </g>
 
               {/* 黃色圓形 - 中央偏右下 */}
               <g style={{ transform: `translate(${parallax(-0.08)}px, ${parallax(0.12)}px)` }}>
-                <circle cx="1400" cy="850" r="100" fill={colors.tertiary} opacity="0.5">
+                <circle cx="1400" cy="850" r="120" fill="#FBBF24" opacity="0.7">
                   <animate attributeName="cy" values="850;830;850" dur="7s" repeatCount="indefinite" />
                 </circle>
               </g>
 
               {/* 裝飾小圓 */}
-              <circle cx="1600" cy="300" r="30" fill={colors.accent} opacity="0.2">
-                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite" />
+              <circle cx="1600" cy="300" r="40" fill="#EF4444" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite" />
               </circle>
-              <circle cx="400" cy="200" r="20" fill={colors.secondary} opacity="0.3">
-                <animate attributeName="opacity" values="0.3;0.5;0.3" dur="5s" repeatCount="indefinite" />
+              <circle cx="400" cy="200" r="35" fill="#8B5CF6" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite" />
               </circle>
             </>
           )}
@@ -133,14 +133,14 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
           {variant === 'about' && (
             <>
               {/* 左側 - 藍色圓形 */}
-              <circle cx="300" cy="500" r="200" fill={colors.secondary} opacity="0.15">
+              <circle cx="300" cy="500" r="250" fill="#6366F1" opacity="0.4">
                 <animate attributeName="r" values="200;220;200" dur="8s" repeatCount="indefinite" />
                 <animate attributeName="cx" values="300;320;300" dur="6s" repeatCount="indefinite" />
               </circle>
 
               {/* 右側 - 紅粉色方形 */}
-              <g opacity="0.12">
-                <rect x="1400" y="200" width="300" height="300" fill={`url(#gradient2-${variant})`}>
+              <g opacity="0.4">
+                <rect x="1400" y="200" width="350" height="350" fill="#FF6B9D">
                   <animateTransform
                     attributeName="transform"
                     type="rotate"
@@ -155,9 +155,9 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
               {/* 頂部波浪 */}
               <path d="M 0,100 Q 480,80 960,100 T 1920,100"
                     fill="none"
-                    stroke={colors.primary}
-                    strokeWidth="40"
-                    opacity="0.1"
+                    stroke="#10B981"
+                    strokeWidth="60"
+                    opacity="0.5"
                     strokeLinecap="round">
                 <animate
                   attributeName="d"
