@@ -60,14 +60,17 @@ function Hero() {
     const currentContent = content[currentLang] || content.zh;
 
     return (
-      <section 
-        id="home" 
+      <section
+        id="home"
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
-        data-name="hero-section" 
+        data-name="hero-section"
         data-file="components/Hero.js"
         style={{backgroundColor: 'var(--bg-primary)'}}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        {/* 幾何背景動畫 */}
+        {window.GeometricBackground && React.createElement(window.GeometricBackground, { variant: 'hero' })}
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen py-20">
             
             {/* 左側內容 */}

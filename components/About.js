@@ -149,14 +149,17 @@ function About() {
     return (
       <>
         {/* About Me 區塊 */}
-        <section 
-          id="about" 
-          className="py-32 px-6"
-          data-name="about-section" 
+        <section
+          id="about"
+          className="py-32 px-6 relative overflow-hidden"
+          data-name="about-section"
           data-file="components/About.js"
           style={{backgroundColor: 'var(--bg-secondary)'}}
         >
-          <div className="max-w-7xl mx-auto">
+          {/* 幾何背景動畫 */}
+          {window.GeometricBackground && React.createElement(window.GeometricBackground, { variant: 'about' })}
+
+          <div className="max-w-7xl mx-auto relative z-10">
             {/* About Me 標題 */}
             <div className="mb-20">
               <h2 className="text-6xl font-bold mb-6 noto-font" style={{color: 'var(--text-primary)'}}>
