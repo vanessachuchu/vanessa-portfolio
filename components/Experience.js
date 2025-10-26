@@ -274,16 +274,11 @@ function Experience() {
                         <p className="text-sm text-[var(--text-secondary)] mb-4 noto-font">{exp.location}</p>
                         
                         <div className="space-y-2">
-                          {exp.highlights.slice(0, 2).map((highlight, idx) => (
+                          {exp.highlights.map((highlight, idx) => (
                             <p key={idx} className="text-sm text-[var(--text-secondary)] noto-font leading-relaxed">
                               {highlight}
                             </p>
                           ))}
-                          {exp.highlights.length > 2 && (
-                            <p className="text-xs text-[var(--primary-color)] font-medium noto-font mt-2">
-                              +{exp.highlights.length - 2} {currentLang === 'zh' ? '項成就' : 'more achievements'}
-                            </p>
-                          )}
                         </div>
                       </div>
                     </div>
