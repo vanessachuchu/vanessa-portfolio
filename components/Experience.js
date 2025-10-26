@@ -27,20 +27,37 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "澳洲打工度假中",
-            position: "Barista",
-            location: "澳洲",
-            period: "2024.11 - recent",
+            company: "THL",
+            position: "Front of House",
+            location: "Darwin, Australia",
+            period: "2025.06 - 2025.09",
             type: "current",
             highlights: [
-              "🗣️ 語言與跨文化溝通｜選擇澳洲作為打工度假地點，透過全英文環境持續精進溝通與團隊協作能力，提升跨文化的互動技巧",
-              "🤖 產品開發及自動化應用｜持續鑽研AI與自動化工具，目標為找到並解決生活或工作中的痛點，規劃並開發一個可從頭設計到落地實施的 No-Code side project，利用無需程式設計的工具打造可行性產品，並驗證市場需求",
-              "☕ 咖啡製作與服務｜在高效且多元文化的咖啡廳環境中擔任Barista，精通咖啡製作與客戶服務，確保每杯飲品皆維持高品質標準",
-              "🚀 職涯探索與個人成長｜在工作與個人成長之間取得平衡，探索新興產業與遠端工作的可能性，同時持續發展各項興趣，透過體驗不同的生活方式來思考未來的職涯方向"
+              "🚐 車輛交付管理｜執行露營車交車前完整檢查流程，確保車輛運作正常及車內設施（廚房、廁所、床鋪等）清潔達標，帶領客戶完成租賃合約簽署並詳細說明車輛操作方式",
+              "🔍 車況檢驗與記錄｜負責還車時的車輛狀況檢驗，完整記錄並確認車輛及設施狀態，與 Back of House 團隊協調溝通，確保維護與服務流程順暢",
+              "📚 快速學習專業知識｜自學車輛專業術語，從完全不熟悉到精通露營車相關專業知識，展現快速學習與知識建構能力",
+              "⚡ 流程優化｜主動優化車輛準備流程，將交車準備時間提前至2天前完成，有效降低因維修延遲導致的客戶等待時間",
+              "🎯 危機處理｜成功處理因車輛維修延遲導致客戶行程損失的重大客訴案件，主動承擔責任並協調主管核准賠償方案，將潛在的嚴重投訴轉化為客戶滿意的服務體驗",
+              "⭐ 客戶服務卓越｜在 Google 評論中多次獲得客戶點名表揚服務品質，獲得主管高度認可，離職時主動提出回聘邀請，並承諾提供 THL 全澳分店工作推薦"
             ]
           },
           {
             id: 2,
+            company: "Chalet & Co.",
+            position: "Team Member (Barista)",
+            location: "Queensland, Australia",
+            period: "2024.11 - 2025.06",
+            type: "current",
+            highlights: [
+              "☕ 全方位技能掌握｜快速掌握咖啡廳全工作站流程，包含咖啡製作、外場服務、收銀結帳，成為可支援全工作站的 backup 人員",
+              "🗣️ 跨文化適應｜短期內完全適應英語工作環境，克服澳洲口音和語速障礙，展現快速語言適應能力",
+              "👀 預判式服務｜即時觀察並預判顧客及團隊成員需求，提前做出相應準備，在快節奏環境下維持高效服務流程",
+              "🤝 團隊協作｜支援團隊成員跨工作站作業，協調多工作站間的溝通與協作，確保營運順暢",
+              "🚀 多工處理｜建立預判式服務思維，展現快速學習與多工處理能力，維持團隊協作效率"
+            ]
+          },
+          {
+            id: 3,
             company: "多奇數位創意",
             position: "專案經理",
             location: "台灣",
@@ -56,7 +73,7 @@ function Experience() {
             ]
           },
           {
-            id: 3,
+            id: 4,
             company: "利民生技有限公司",
             position: "董事長秘書",
             location: "台灣",
@@ -70,7 +87,7 @@ function Experience() {
             ]
           },
           {
-            id: 4,
+            id: 5,
             company: "聖耀土地開發",
             position: "總經理特助",
             location: "台灣",
@@ -83,7 +100,7 @@ function Experience() {
             ]
           },
           {
-            id: 5,
+            id: 6,
             company: "詩肯柚木",
             position: "行銷企劃助理",
             location: "台灣",
@@ -99,7 +116,7 @@ function Experience() {
             ]
           },
           {
-            id: 6,
+            id: 7,
             company: "Starbucks",
             position: "值班經理",
             location: "台灣",
@@ -120,20 +137,37 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "Australia Working Holiday",
-            position: "Barista",
-            location: "Australia",
-            period: "2024.11 - recent",
+            company: "THL",
+            position: "Front of House",
+            location: "Darwin, Australia",
+            period: "2025.06 - 2025.09",
             type: "current",
             highlights: [
-              "🗣️ Language & Cross-Cultural Communication | Chose Australia as working holiday destination to continuously improve communication and teamwork skills through full English environment, enhancing cross-cultural interaction capabilities",
-              "🤖 Product Development & Automation Application | Continuously researching AI and automation tools, aiming to identify and solve pain points in life or work, planning and developing a No-Code side project from design to implementation, using no-code tools to create viable products and validate market needs",
-              "☕ Coffee Making & Service | Working as Barista in efficient and multicultural café environment, proficient in coffee making and customer service, ensuring high quality standards for every beverage",
-              "🚀 Career Exploration & Personal Growth | Balancing work and personal growth, exploring emerging industries and remote work possibilities, continuing to develop various interests, thinking about future career direction through experiencing different lifestyles"
+              "🚐 Vehicle Delivery Management | Conducted comprehensive pre-delivery campervan inspections, ensuring proper vehicle functionality and cleanliness of onboard facilities (kitchen, bathroom, bedding), leading customer contract signing and providing detailed vehicle operation instructions",
+              "🔍 Vehicle Condition Assessment | Performed vehicle condition inspections during returns, documenting and verifying vehicle and facility status, coordinating with Back of House team to ensure seamless maintenance and service workflows",
+              "📚 Rapid Professional Knowledge Acquisition | Self-taught vehicle terminology from scratch, mastering campervan-related professional knowledge, demonstrating rapid learning and knowledge construction capabilities",
+              "⚡ Process Optimization | Proactively optimized vehicle preparation workflow by advancing preparation timeline to 2 days ahead, effectively reducing customer wait times caused by maintenance delays",
+              "🎯 Crisis Management | Successfully managed critical customer complaint involving tour booking losses due to delayed vehicle delivery; proactively assumed responsibility and coordinated manager approval for compensation, transforming potential escalation into positive customer experience",
+              "⭐ Service Excellence | Received multiple name mentions in Google reviews for service quality, earned strong management recognition with proactive job offer upon departure and commitment to provide recommendations across all THL Australia branches"
             ]
           },
           {
             id: 2,
+            company: "Chalet & Co.",
+            position: "Team Member (Barista)",
+            location: "Queensland, Australia",
+            period: "2024.11 - 2025.06",
+            type: "current",
+            highlights: [
+              "☕ Comprehensive Skills Mastery | Rapidly mastered all café station operations including coffee preparation, front-of-house service, and POS transactions, becoming versatile backup personnel for all stations",
+              "🗣️ Cross-Cultural Adaptation | Quickly adapted to English-speaking work environment, overcoming Australian accent and pace barriers, demonstrating rapid language adaptation capabilities",
+              "👀 Anticipatory Service | Proactively observed and anticipated customer and team member needs, preparing responses in advance, maintaining efficient service workflow in fast-paced environment",
+              "🤝 Team Collaboration | Provided cross-station support to team members, coordinating communication and collaboration across multiple stations to ensure operational continuity",
+              "🚀 Multitasking | Developed anticipatory service mindset, demonstrating rapid learning and multitasking capabilities, maintaining team collaboration efficiency"
+            ]
+          },
+          {
+            id: 3,
             company: "Duotify Digital Creative",
             position: "Project Manager",
             location: "Taiwan",
@@ -149,7 +183,7 @@ function Experience() {
             ]
           },
           {
-            id: 3,
+            id: 4,
             company: "Limin Biotechnology Co., Ltd.",
             position: "Secretary to Chairman",
             location: "Taiwan",
@@ -163,7 +197,7 @@ function Experience() {
             ]
           },
           {
-            id: 4,
+            id: 5,
             company: "Saintyao Land Development",
             position: "Executive Assistant to General Manager",
             location: "Taiwan",
@@ -176,7 +210,7 @@ function Experience() {
             ]
           },
           {
-            id: 5,
+            id: 6,
             company: "SCAN-D (Shih Kien Teak)",
             position: "Marketing Planning Assistant",
             location: "Taiwan",
@@ -192,7 +226,7 @@ function Experience() {
             ]
           },
           {
-            id: 6,
+            id: 7,
             company: "Starbucks",
             position: "Shift Supervisor",
             location: "Taiwan",
