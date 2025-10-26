@@ -129,68 +129,35 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
             </>
           )}
 
-          {/* About 變體 - 對稱設計 */}
+          {/* About 變體 - 簡化對稱設計 */}
           {variant === 'about' && (
             <>
               {/* 左側 - 藍色圓形 */}
-              <circle cx="300" cy="500" r="250" fill="#6366F1" opacity="0.08">
-                <animate attributeName="r" values="200;220;200" dur="8s" repeatCount="indefinite" />
-                <animate attributeName="cx" values="300;320;300" dur="6s" repeatCount="indefinite" />
+              <circle cx="300" cy="500" r="220" fill="#6366F1" opacity="0.08">
+                <animate attributeName="r" values="220;240;220" dur="8s" repeatCount="indefinite" />
               </circle>
 
-              {/* 右側 - 紅粉色方形 */}
-              <g opacity="0.08">
-                <rect x="1400" y="200" width="350" height="350" fill="#FF6B9D">
-                  <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="0 1550 350"
-                    to="10 1550 350"
-                    dur="15s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-              </g>
-
-              {/* 頂部波浪 */}
-              <path d="M 0,100 Q 480,80 960,100 T 1920,100"
-                    fill="none"
-                    stroke="#10B981"
-                    strokeWidth="60"
-                    opacity="0.5"
-                    strokeLinecap="round">
-                <animate
-                  attributeName="d"
-                  dur="12s"
+              {/* 右側 - 灰色方形 */}
+              <rect x="1450" y="250" width="300" height="300" fill={colors.tertiary} opacity="0.08">
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 1600 400"
+                  to="5 1600 400"
+                  dur="20s"
                   repeatCount="indefinite"
-                  values="M 0,100 Q 480,80 960,100 T 1920,100;
-                          M 0,120 Q 480,100 960,120 T 1920,120;
-                          M 0,100 Q 480,80 960,100 T 1920,100"
                 />
-              </path>
+              </rect>
 
-              {/* 底部裝飾線 */}
-              <g opacity="0.2">
-                {[0, 1, 2, 3, 4, 5].map((i) => (
-                  <line
-                    key={i}
-                    x1={1200 + i * 40}
-                    y1="800"
-                    x2={1200 + i * 40}
-                    y2="1000"
-                    stroke={colors.secondary}
-                    strokeWidth="8"
-                    opacity={0.6 - i * 0.08}
-                  >
-                    <animate
-                      attributeName="y1"
-                      values="800;780;800"
-                      dur={`${5 + i * 0.5}s`}
-                      repeatCount="indefinite"
-                    />
-                  </line>
-                ))}
-              </g>
+              {/* 頂部圓形 */}
+              <circle cx="960" cy="150" r="100" fill={colors.secondary} opacity="0.06">
+                <animate attributeName="cy" values="150;170;150" dur="10s" repeatCount="indefinite" />
+              </circle>
+
+              {/* 底部圓形 */}
+              <circle cx="800" cy="950" r="120" fill={colors.tertiary} opacity="0.06">
+                <animate attributeName="opacity" values="0.06;0.1;0.06" dur="8s" repeatCount="indefinite" />
+              </circle>
             </>
           )}
 
