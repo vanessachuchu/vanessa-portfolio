@@ -90,11 +90,6 @@ function Hero() {
                 ))}
               </h1>
               
-              {/* 副標題 */}
-              <div className="text-base text-[var(--text-secondary)] noto-font" style={{letterSpacing: '1px'}}>
-                {currentContent.subtitle}
-              </div>
-              
               {/* 技能標籤 - 緊湊排列 */}
               <div className="flex flex-wrap gap-3">
                 <span className="px-4 py-2 text-sm border border-[var(--border)] rounded-full text-[var(--text-secondary)] noto-font">
@@ -106,22 +101,6 @@ function Hero() {
                 <span className="px-4 py-2 text-sm border border-[var(--border)] rounded-full text-[var(--text-secondary)] noto-font">
                   敏捷專案管理
                 </span>
-              </div>
-              
-              {/* 成就數據 - 橫向排列 */}
-              <div className="flex gap-8 lg:gap-12">
-                <div>
-                  <div className="text-2xl lg:text-3xl font-bold text-[var(--primary-color)] noto-font">2+</div>
-                  <div className="text-sm text-[var(--text-light)] noto-font">年經驗</div>
-                </div>
-                <div>
-                  <div className="text-2xl lg:text-3xl font-bold text-[var(--primary-color)] noto-font">214</div>
-                  <div className="text-sm text-[var(--text-light)] noto-font">天交付</div>
-                </div>
-                <div>
-                  <div className="text-2xl lg:text-3xl font-bold text-[var(--primary-color)] noto-font">1000+</div>
-                  <div className="text-sm text-[var(--text-light)] noto-font">使用者</div>
-                </div>
               </div>
               
               {/* 按鈕 */}
