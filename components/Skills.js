@@ -186,13 +186,17 @@ function Skills() {
     };
 
     return (
-      <section 
-        id="skills" 
-        className="section-padding"
-        data-name="skills-section" 
+      <section
+        id="skills"
+        className="section-padding relative overflow-hidden"
+        data-name="skills-section"
         data-file="components/Skills.js"
+        style={{backgroundColor: 'var(--bg-primary)'}}
       >
-        <div className="max-w-7xl mx-auto">
+        {/* 幾何背景動畫 */}
+        {window.GeometricBackground && React.createElement(window.GeometricBackground, { variant: 'skills' })}
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl lg:text-6xl font-bold mb-6 serif-heading">
               {currentContent.title}

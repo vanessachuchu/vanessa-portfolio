@@ -232,6 +232,101 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
               })}
             </>
           )}
+
+          {/* Skills 變體 - 技能主題設計 */}
+          {variant === 'skills' && (
+            <>
+              {/* 左上 - 橙黃色漸層圓 (產品管理色系) */}
+              <circle cx="200" cy="200" r="180" fill="#FBBF24" opacity="0.4">
+                <animate attributeName="r" values="180;200;180" dur="7s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.4;0.6;0.4" dur="5s" repeatCount="indefinite" />
+              </circle>
+
+              {/* 右上 - 橙色圓 (技術工具色系) */}
+              <circle cx="1650" cy="180" r="150" fill="#FB923C" opacity="0.5">
+                <animate attributeName="r" values="150;170;150" dur="8s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="180;160;180" dur="6s" repeatCount="indefinite" />
+              </circle>
+
+              {/* 中央偏左 - 黃色方形 (數據分析) */}
+              <g opacity="0.35">
+                <rect x="350" y="400" width="200" height="200" fill="#EAB308">
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 450 500"
+                    to="15 450 500"
+                    dur="20s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+              </g>
+
+              {/* 右下 - 琥珀色圓形 (軟實力) */}
+              <circle cx="1500" cy="900" r="160" fill="#F59E0B" opacity="0.45">
+                <animate attributeName="r" values="160;180;160" dur="9s" repeatCount="indefinite" />
+              </circle>
+
+              {/* 波浪線條 - 頂部 */}
+              <path d="M 0,150 Q 480,120 960,150 T 1920,150"
+                    fill="none"
+                    stroke="#FBBF24"
+                    strokeWidth="50"
+                    opacity="0.4"
+                    strokeLinecap="round">
+                <animate
+                  attributeName="d"
+                  dur="10s"
+                  repeatCount="indefinite"
+                  values="M 0,150 Q 480,120 960,150 T 1920,150;
+                          M 0,170 Q 480,140 960,170 T 1920,170;
+                          M 0,150 Q 480,120 960,150 T 1920,150"
+                />
+              </path>
+
+              {/* 波浪線條 - 底部 */}
+              <path d="M 0,950 Q 480,920 960,950 T 1920,950"
+                    fill="none"
+                    stroke="#FB923C"
+                    strokeWidth="60"
+                    opacity="0.35"
+                    strokeLinecap="round">
+                <animate
+                  attributeName="d"
+                  dur="12s"
+                  repeatCount="indefinite"
+                  values="M 0,950 Q 480,920 960,950 T 1920,950;
+                          M 0,930 Q 480,960 960,930 T 1920,930;
+                          M 0,950 Q 480,920 960,950 T 1920,950"
+                />
+              </path>
+
+              {/* 裝飾小圓 - 點綴效果 */}
+              <circle cx="800" cy="300" r="30" fill="#FBBF24" opacity="0.5">
+                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="1200" cy="700" r="35" fill="#F59E0B" opacity="0.5">
+                <animate attributeName="opacity" values="0.5;0.8;0.5" dur="5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="600" cy="850" r="25" fill="#EAB308" opacity="0.6">
+                <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3.5s" repeatCount="indefinite" />
+              </circle>
+
+              {/* 網格裝飾 - 右下角 */}
+              <g opacity="0.3">
+                <rect x="1400" y="700" width="400" height="300" fill={`url(#grid-pattern-${variant})`}>
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 1600 850"
+                    to="-5 1600 850"
+                    dur="18s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+              </g>
+            </>
+          )}
         </svg>
       </div>
     );
