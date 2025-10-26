@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幾何動畫測試</title>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .section h1 {
+            position: relative;
+            z-index: 10;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #222222;
+        }
+
+        .section:nth-child(1) {
+            background-color: #FFFFFF;
+        }
+
+        .section:nth-child(2) {
+            background-color: #F8F8F8;
+        }
+
+        .section:nth-child(3) {
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" src="components/GeometricBackground.js"></script>
+    <script type="text/babel">
+        const { createElement } = React;
+
+        function TestApp() {
+            return (
+                <>
+                    <div className="section">
+                        {createElement(window.GeometricBackground, { variant: 'hero', theme: 'light' })}
+                        <h1>Hero 幾何動畫</h1>
+                    </div>
+
+                    <div className="section">
+                        {createElement(window.GeometricBackground, { variant: 'about', theme: 'light' })}
+                        <h1>About 幾何動畫</h1>
+                    </div>
+
+                    <div className="section">
+                        {createElement(window.GeometricBackground, { variant: 'featured', theme: 'light' })}
+                        <h1>Featured 幾何動畫</h1>
+                    </div>
+                </>
+            );
+        }
+
+        ReactDOM.render(createElement(TestApp), document.getElementById('root'));
+    </script>
+</body>
+</html>

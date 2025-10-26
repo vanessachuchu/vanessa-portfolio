@@ -73,7 +73,7 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
                       fill="none"
                       stroke="#FF6B6B"
                       strokeWidth="80"
-                      opacity="0.6"
+                      opacity="0.15"
                       strokeLinecap="round">
                   <animate
                     attributeName="d"
@@ -92,7 +92,7 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
                       fill="none"
                       stroke="#6366F1"
                       strokeWidth="70"
-                      opacity="0.5"
+                      opacity="0.12"
                       strokeLinecap="round">
                   <animate
                     attributeName="d"
@@ -107,23 +107,23 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
 
               {/* 圓形元素 - 左下角 */}
               <g style={{ transform: `translate(${parallax(0.1)}px, ${parallax(0.2)}px)` }}>
-                <circle cx="200" cy="900" r="150" fill="#FF8C8C" opacity="0.7">
+                <circle cx="200" cy="900" r="150" fill="#FF8C8C" opacity="0.1">
                   <animate attributeName="r" values="120;140;120" dur="6s" repeatCount="indefinite" />
                 </circle>
               </g>
 
               {/* 黃色圓形 - 中央偏右下 */}
               <g style={{ transform: `translate(${parallax(-0.08)}px, ${parallax(0.12)}px)` }}>
-                <circle cx="1400" cy="850" r="120" fill="#FBBF24" opacity="0.7">
+                <circle cx="1400" cy="850" r="120" fill="#FBBF24" opacity="0.1">
                   <animate attributeName="cy" values="850;830;850" dur="7s" repeatCount="indefinite" />
                 </circle>
               </g>
 
               {/* 裝飾小圓 */}
-              <circle cx="1600" cy="300" r="40" fill="#EF4444" opacity="0.6">
+              <circle cx="1600" cy="300" r="40" fill="#EF4444" opacity="0.15">
                 <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite" />
               </circle>
-              <circle cx="400" cy="200" r="35" fill="#8B5CF6" opacity="0.6">
+              <circle cx="400" cy="200" r="35" fill="#8B5CF6" opacity="0.15">
                 <animate attributeName="opacity" values="0.6;0.9;0.6" dur="5s" repeatCount="indefinite" />
               </circle>
             </>
@@ -133,13 +133,13 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
           {variant === 'about' && (
             <>
               {/* 左側 - 藍色圓形 */}
-              <circle cx="300" cy="500" r="250" fill="#6366F1" opacity="0.4">
+              <circle cx="300" cy="500" r="250" fill="#6366F1" opacity="0.08">
                 <animate attributeName="r" values="200;220;200" dur="8s" repeatCount="indefinite" />
                 <animate attributeName="cx" values="300;320;300" dur="6s" repeatCount="indefinite" />
               </circle>
 
               {/* 右側 - 紅粉色方形 */}
-              <g opacity="0.4">
+              <g opacity="0.08">
                 <rect x="1400" y="200" width="350" height="350" fill="#FF6B9D">
                   <animateTransform
                     attributeName="transform"
@@ -249,7 +249,7 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
               </circle>
 
               {/* 中央偏左 - 黃色方形 (數據分析) */}
-              <g opacity="0.35">
+              <g opacity="0.08">
                 <rect x="350" y="400" width="200" height="200" fill="#EAB308">
                   <animateTransform
                     attributeName="transform"
@@ -263,7 +263,7 @@ window.GeometricBackground = function GeometricBackground({ variant = 'hero', th
               </g>
 
               {/* 右下 - 琥珀色圓形 (軟實力) */}
-              <circle cx="1500" cy="900" r="160" fill="#F59E0B" opacity="0.45">
+              <circle cx="1500" cy="900" r="160" fill="#F59E0B" opacity="0.08">
                 <animate attributeName="r" values="160;180;160" dur="9s" repeatCount="indefinite" />
               </circle>
 
