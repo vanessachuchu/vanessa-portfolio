@@ -3,62 +3,561 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東陽實業 EIP 入口網站開發案 | Vanessa Liu Portfolio</title>
-    <meta name="description" content="東陽實業跨國企業級EIP入口網站系統專案詳情，214工作天準時交付">
-    
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <title>東陽實業 EIP 入口網站開發案 | 企業級系統整合與權限管理實踐</title>
+    <meta name="description" content="東陽實業 EIP - 從零開始建構跨國企業級入口網站系統，整合 AD 單一登入、39 個角色權限管理、多語系支援的完整產品管理實踐">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js" rel="preload" as="script">
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
 
-    <style type="text/tailwindcss">
-    @layer theme {
+    <style>
         :root {
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary-color: #8b5cf6;
-            --accent-color: #06b6d4;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-        }
-    }
-
-    @layer components {
-        .glass-card {
-            @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .section-padding {
-            @apply py-16 px-6 lg:px-8;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --card-bg: #FFFFFF;
+            --text-primary: #222222;
+            --text-secondary: #7B7B7B;
+            --primary-color: #222222;
+            --primary-dark: #000000;
+            --border: #E0E0E0;
+            --subtle-shadow: 0 2px 12px rgba(34, 34, 34, 0.1);
+            --card-shadow: 0 2px 12px rgba(34, 34, 34, 0.1), 0 1px 4px rgba(34, 34, 34, 0.05);
         }
 
-        .timeline-item {
-            @apply flex items-start gap-6 mb-8;
+        body {
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
         }
-        
-        .timeline-dot {
-            @apply w-4 h-4 bg-slate-600 rounded-full mt-2 flex-shrink-0;
+
+        .case-study-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.8;
         }
-        
-        .timeline-line {
-            @apply absolute left-2 top-6 w-0.5 h-full bg-slate-300;
+
+        .case-study-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
         }
-    }
+
+        .case-study-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 36px 0 18px 0;
+            color: var(--text-primary);
+        }
+
+        .case-study-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: var(--text-primary);
+        }
+
+        .case-study-content p {
+            margin-bottom: 18px;
+            color: var(--text-secondary);
+        }
+
+        .case-study-content ul {
+            margin-bottom: 18px;
+            padding-left: 24px;
+        }
+
+        .case-study-content ul li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .highlight-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            box-shadow: var(--subtle-shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .metric-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 0 4px;
+        }
+
+        .success-factor {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--subtle-shadow);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel" src="project-pages/TongYangEIPProject.js"></script>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-[var(--border)]">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-[var(--primary-color)] hover:text-[var(--primary-dark)] transition-colors">
+                <div class="icon-arrow-left text-lg"></div>
+                <span class="font-medium">返回作品集</span>
+            </a>
+            <div class="text-sm text-[var(--text-secondary)]">東陽實業 EIP Case Study</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block px-4 py-2 bg-[var(--bg-secondary)] text-[var(--primary-color)] rounded-full text-sm font-medium mb-6">
+                企業級系統整合與權限管理實踐
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6">東陽實業 EIP 入口網站開發案</h1>
+            <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-3xl mx-auto">
+                從系統分散到統一整合，從手動管理到自動化登入，為跨國企業打造一個整合 39 個角色、15 個功能模組、支援多語系的企業級入口網站系統。
+            </p>
+
+            <!-- Key Stats -->
+            <div class="stats-grid max-w-2xl mx-auto">
+                <div class="stat-item">
+                    <span class="stat-number">9</span>
+                    <div class="stat-label">個月開發期</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">39</span>
+                    <div class="stat-label">使用者角色</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <div class="stat-label">功能模組</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">32</span>
+                    <div class="stat-label">頁操作手冊</div>
+                </div>
+            </div>
+
+            <!-- Project Overview -->
+            <div class="mt-12 text-left max-w-3xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">專案類型</div>
+                        <div class="font-semibold">企業級 EIP 系統</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">我的角色</div>
+                        <div class="font-semibold">專案經理</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">專案期間</div>
+                        <div class="font-semibold">2023/3 - 2023/12</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">客戶</div>
+                        <div class="font-semibold">東陽實業集團</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="py-16 px-6 bg-[var(--bg-secondary)]">
+        <div class="case-study-content">
+            <h2>🎯 專案背景：跨國企業的系統整合挑戰</h2>
+
+            <h3>東陽實業的困境</h3>
+            <p>
+                東陽實業作為跨國汽車零配件集團，業務遍布北美、南美、歐洲多國，擁有<span class="metric-highlight">數千名員工</span>和<span class="metric-highlight">39 個不同職級與部門角色</span>。然而，企業內部卻面臨著嚴重的系統分散化問題。
+            </p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">企業面臨的三大痛點</h3>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <strong>痛點 1：系統分散，缺乏統一入口</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 員工需要使用多個獨立系統：Notes、智庫、訊息平台、業績系統等</li>
+                            <li>• 每個系統都有獨立的帳號密碼，記憶負擔大</li>
+                            <li>• 系統間資訊無法整合，需要重複查詢</li>
+                            <li>• 新進員工需要學習多個系統的操作方式</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>痛點 2：國際化營運的複雜性</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 北美、南美、歐洲多個地區，員工使用不同語言</li>
+                            <li>• 各地區有不同的系統需求和功能權限</li>
+                            <li>• 缺乏統一的多語系支援機制</li>
+                            <li>• 地區化配置管理困難</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>痛點 3：權限管理複雜且容易出錯</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 39 個不同角色，涵蓋高階主管到基層員工</li>
+                            <li>• 每個角色對不同系統有不同的存取權限</li>
+                            <li>• 手動管理權限容易遺漏或設定錯誤</li>
+                            <li>• 權限變更缺乏完整的追蹤機制</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>專案的核心目標</h3>
+            <p>
+                建立一個<strong>統一的企業入口網站（EIP）</strong>，整合所有既有系統，實現單一登入（SSO）、精細化權限管理、多語系支援，提升員工工作效率並強化資訊安全管控。
+            </p>
+
+            <h2>💡 解決方案：系統化的整合設計方法</h2>
+
+            <h3>第一步：統一身份認證與單一登入</h3>
+            <h4>挑戰：如何讓員工只登入一次就能使用所有系統？</h4>
+            <p>
+                東陽實業內部有多個獨立開發的系統，每個系統都有自己的認證機制。要實現真正的單一登入，需要整合這些異質系統的認證方式。
+            </p>
+
+            <div class="success-factor">
+                <strong>設計決策 #1：AD 域整合 + 多重登入機制</strong><br>
+                <p class="mt-2 text-sm">我設計了三層式的認證架構：</p>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li><strong>第一層：OS 層自動代登入</strong> - 當員工在公司電腦登入 Windows AD 帳號後，開啟 EIP 系統會自動完成認證，無需再次輸入帳號密碼</li>
+                    <li><strong>第二層：手動登入機制</strong> - 提供標準的帳號密碼登入方式，支援非 AD 環境的使用者</li>
+                    <li><strong>第三層：系統間代登入</strong> - EIP 作為中介平台，透過 TYGOTP 和 WebTicket 機制，實現對其他系統的自動登入</li>
+                </ul>
+            </div>
+
+            <h4>技術亮點：角色登入 vs. 使用者帳號登入</h4>
+            <p>在設計系統連結機制時，我發現了一個關鍵問題：<strong>不同系統有不同的登入方式需求</strong>。</p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">🔍 登入方式設計的思考過程</h3>
+                <div class="space-y-3 text-sm">
+                    <div>
+                        <strong>情境 1：角色登入系統</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">某些系統需要根據使用者的「角色」來決定登入後看到的內容和權限。例如：主管角色和員工角色登入同一個系統後，看到的功能選單完全不同。</p>
+                    </div>
+                    <div>
+                        <strong>情境 2：使用者帳號登入系統</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">另一些系統則是根據「個人帳號」來識別使用者，不需要選擇角色。例如：個人郵件系統、個人行事曆等。</p>
+                    </div>
+                    <div>
+                        <strong>我發現的設計盲點：</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 如果系統從「角色登入」改為「使用者帳號登入」，原先已綁定該系統的使用者會無法登入</li>
+                            <li>• 如果系統從「使用者帳號登入」改為「角色登入」，但沒有設定任何角色，系統連結會變成無效狀態</li>
+                            <li>• 如果某個「角色登入」系統的所有角色都被刪除了，已經加入系統連結的使用者該怎麼辦？</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-factor">
+                <strong>設計決策 #2：登入方式切換的保護機制</strong><br>
+                <p class="mt-2 text-sm">我設計了一套完整的保護邏輯：</p>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li><strong>規則 1：</strong>已經綁定角色的系統，不可將最後一組角色刪除（避免系統連結失效）</li>
+                    <li><strong>規則 2：</strong>系統選單不可顯示尚未綁定角色的「角色登入」系統（避免使用者選擇後無法進入）</li>
+                    <li><strong>規則 3：</strong>登入方式變更時，系統會即時檢查並提示可能受影響的使用者數量</li>
+                    <li><strong>規則 4：</strong>所有登入方式的變更都記錄在系統日誌中，可追溯查詢</li>
+                </ul>
+                <p class="mt-3 text-sm"><strong>業主的反應：</strong>業主原本沒有想到這些邊緣情境，在我提出這些問題並展示解決方案後，非常認同這套保護機制的必要性，避免了未來可能發生的系統混亂。</p>
+            </div>
+
+            <h3>第二步：39 個角色的權限管理設計</h3>
+            <h4>挑戰：如何設計一套既精細又易於管理的權限系統？</h4>
+            <p>
+                東陽實業有 39 個不同的使用者角色，從董事長、總經理、各部門主管到基層員工，每個角色對系統的存取需求都不同。
+            </p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">📋 權限設計的核心思維</h3>
+                <div class="space-y-3 text-sm">
+                    <div>
+                        <strong>思考點 1：權限的顆粒度</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">權限應該細到什麼程度？如果太細，管理成本很高；如果太粗，無法滿足精細化需求。我採用的策略是：<strong>系統層級 + 功能模組層級</strong>的兩層式權限控制。</p>
+                    </div>
+                    <div>
+                        <strong>思考點 2：權限的繼承與覆蓋</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">某些角色之間有階層關係，例如部門主管應該擁有部門員工的所有權限，再加上管理權限。我設計了權限繼承機制，避免重複設定。</p>
+                    </div>
+                    <div>
+                        <strong>思考點 3：權限變更的即時性</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">當角色權限被修改時，已登入的使用者是否需要重新登入？我設計了權限快取機制，並提供「強制重新載入」選項。</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4>實作策略：角色-系統對應表</h4>
+            <p>我建立了一個完整的「角色-系統權限對應表」，清楚記錄每個角色可以存取哪些系統和功能。這個對應表不僅是技術文件，更成為業主管理權限的重要參考依據。</p>
+
+            <div class="success-factor">
+                <strong>設計亮點：批量權限操作</strong><br>
+                考慮到實際管理需求，我設計了批量權限操作功能：可以一次性為多個角色設定相同的系統權限，或是一次性為某個角色設定多個系統的權限。這大幅降低了管理者的操作負擔。
+            </div>
+
+            <h3>第三步：多語系與國際化支援</h3>
+            <h4>挑戰：如何支援全球不同地區的使用需求？</h4>
+            <p>
+                東陽實業的員工分布在不同國家，使用不同語言。系統需要支援<span class="metric-highlight">繁體中文</span>、<span class="metric-highlight">英文</span>、<span class="metric-highlight">印尼文</span>、<span class="metric-highlight">越南文</span>。
+            </p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">🌍 國際化設計的考量點</h3>
+                <div class="space-y-3 text-sm">
+                    <div>
+                        <strong>語系切換邏輯</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• <strong>自動偵測：</strong>系統會根據瀏覽器的語系設定自動顯示對應語言</li>
+                            <li>• <strong>手動切換：</strong>使用者可以隨時切換語系，選擇會儲存在個人偏好設定中</li>
+                            <li>• <strong>多語系內容管理：</strong>後台提供獨立的多語系內容編輯介面</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>地區化配置</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 不同地區可以有不同的系統連結顯示</li>
+                            <li>• 時區、日期格式、數字格式的地區化處理</li>
+                            <li>• 地區專屬的公告訊息管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>第四步：15 個功能模組的整合設計</h3>
+            <p>EIP 系統整合了 15 個核心功能模組，每個模組都需要仔細設計使用者體驗和系統整合方式。</p>
+
+            <div class="success-factor">
+                <strong>模組設計策略：統一框架 + 獨立內容</strong><br>
+                <p class="mt-2 text-sm">我設計了一個統一的版面框架，所有模組都遵循相同的視覺風格和互動邏輯。但每個模組的內容來源不同：</p>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li>• <strong>原生開發模組：</strong>訊息公告、我的最愛、系統地圖等，完全由 EIP 系統自行管理</li>
+                    <li>• <strong>Iframe 嵌入模組：</strong>訊息平台、AM 行銷物流公告等，透過 iframe 嵌入既有系統</li>
+                    <li>• <strong>API 整合模組：</strong>個人郵件、行事曆、待辦事項等，透過 Notes AP 的 API 整合</li>
+                    <li>• <strong>混合模式模組：</strong>智庫搜尋、產業新聞等，結合 API 和頁面跳轉</li>
+                </ul>
+            </div>
+
+            <h2>📊 專案執行：9 個月的開發歷程</h2>
+
+            <h3>第一階段：需求分析（3-4月，73天）</h3>
+            <p>這個階段的重點是<strong>深度理解企業需求</strong>和<strong>盤點既有系統</strong>。</p>
+
+            <div class="highlight-card">
+                <h4 class="font-semibold mb-3">需求盤點的關鍵工作</h4>
+                <div class="space-y-2 text-sm text-[var(--text-secondary)]">
+                    <div>• 訪談各部門主管和關鍵使用者，了解實際工作流程</div>
+                    <div>• 盤點所有需要整合的既有系統，評估整合難度</div>
+                    <div>• 整理 39 個使用者角色的定義和權限需求</div>
+                    <div>• 確認 AD 域認證的技術細節和整合方式</div>
+                </div>
+            </div>
+
+            <h3>第二階段：系統開發（4-8月，243天）</h3>
+            <p>這是整個專案最長的階段，包含基礎建置、前台開發、系統整合三大部分。</p>
+
+            <div class="success-factor">
+                <strong>開發策略：漸進式整合</strong><br>
+                我採用漸進式整合的開發策略，不是等所有功能都開發完才開始整合，而是每完成一個模組就立即整合測試。這樣可以更早發現整合問題，避免最後階段出現大量整合問題。
+            </div>
+
+            <h3>第三階段：整合測試（8-11月，83天）</h3>
+            <p>63 天的整合測試和 20 天的 UAT 驗收測試，確保系統品質。</p>
+
+            <div class="highlight-card">
+                <h4 class="font-semibold mb-3">測試重點項目</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div>
+                        <strong>功能完整性測試</strong>
+                        <ul class="mt-1 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 15 個功能模組的完整測試</li>
+                            <li>• 39 個角色的權限驗證</li>
+                            <li>• 多語系切換測試</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>跨系統整合測試</strong>
+                        <ul class="mt-1 space-y-1 text-[var(--text-secondary)]">
+                            <li>• AD 域登入驗證</li>
+                            <li>• Notes AP 整合測試</li>
+                            <li>• Iframe 嵌入系統測試</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>第四階段：交付文檔（11-12月，31天）</h3>
+            <p>我花了 20 天撰寫<span class="metric-highlight">32 頁完整的前台操作手冊</span>，涵蓋所有功能的詳細操作說明。</p>
+
+            <h2>📦 專案成果與價值</h2>
+
+            <h3>交付成果</h3>
+            <div class="highlight-card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">系統成果</h4>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 完整的 EIP 入口網站系統</li>
+                            <li>✓ 15 個整合功能模組</li>
+                            <li>✓ 39 個角色權限管理</li>
+                            <li>✓ 四層導航架構</li>
+                            <li>✓ 多語系支援（4 種語言）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">文件成果</h4>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 32 頁前台操作手冊</li>
+                            <li>✓ 使用者角色權限對應表</li>
+                            <li>✓ 系統架構設計文件</li>
+                            <li>✓ 多語系功能設定文檔</li>
+                            <li>✓ 專案時程甘特圖</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>業務價值</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                <div class="success-factor">
+                    <strong>提升工作效率</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">統一入口減少系統切換時間，單一登入提升使用便利性，個人化工作區提高生產力</span>
+                </div>
+                <div class="success-factor">
+                    <strong>強化安全管控</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">集中式權限管理，完整的登入行為追蹤，企業級安全認證機制</span>
+                </div>
+                <div class="success-factor">
+                    <strong>支援國際化營運</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">多語系支援提升使用體驗，地區化配置滿足各國需求，統一管理降低維運成本</span>
+                </div>
+            </div>
+
+            <h2>💼 專案經理核心能力展現</h2>
+
+            <div class="success-factor">
+                <strong>能力一：複雜需求的梳理與轉化</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">面對 39 個角色、15 個功能模組、多個既有系統整合的複雜需求，我能夠系統性地梳理、分類、優先排序，並轉化為可執行的開發規格。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力二：主動發現問題與設計解決方案</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">在登入方式切換、角色權限管理等議題上，主動發現業主沒有想到的邊緣情境和潛在問題，並設計完整的保護機制和解決方案。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力三：大型專案的時程管理</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">9 個月、214 個工作天的專案，涉及多個團隊的協作，我能夠規劃合理的時程、追蹤進度、協調資源，確保專案準時交付。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力四：完整的文件撰寫能力</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">撰寫 32 頁前台操作手冊、系統架構文件、權限對應表等完整文件，確保系統交付後能夠順利移交和維護。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力五：跨系統整合的技術理解</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">深度理解 AD 域認證、SSO 單一登入、API 整合、Iframe 嵌入等技術，能夠與技術團隊有效溝通，並做出正確的技術決策。</p>
+            </div>
+
+            <h2>🎓 核心學習與反思</h2>
+
+            <div class="highlight-card">
+                <div class="space-y-4">
+                    <div>
+                        <strong>1. 企業級專案的複雜度遠超想像</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">39 個角色、15 個功能模組、多個既有系統整合，每個細節都需要仔細思考。專案經理需要有能力將複雜問題拆解成可管理的小問題，逐一解決。</p>
+                    </div>
+                    <div>
+                        <strong>2. 主動發現問題比被動回應問題更有價值</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">在登入方式切換、權限管理等議題上，主動思考可能的邊緣情境和問題，提前設計保護機制，避免了未來可能發生的系統混亂。</p>
+                    </div>
+                    <div>
+                        <strong>3. 使用者體驗與安全性需要平衡</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">單一登入提升了便利性，但也需要考慮安全性。需要在兩者之間找到平衡點，既方便使用又不損害安全。</p>
+                    </div>
+                    <div>
+                        <strong>4. 完整的文件是專案成功的關鍵</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">32 頁的操作手冊不僅是交付物，更是使用者培訓、系統維護、未來擴充的重要依據。投入時間撰寫完整文件，長期來看是值得的。</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>結語</h2>
+            <p>
+                東陽實業 EIP 專案展現了專案經理在<strong>大型企業級系統整合專案</strong>中的完整能力：從需求分析、系統設計、開發管理、整合測試到文件撰寫，每個階段都需要專業的專案管理能力和深度的技術理解。
+            </p>
+            <p>
+                214 個工作天的投入，不僅交付了一個功能完整的 EIP 系統，更重要的是為東陽實業建立了一套可持續發展的企業數位基礎建設，支援未來的業務成長和國際化擴展。
+            </p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6">想了解更多專案細節？</h2>
+            <p class="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
+                東陽實業 EIP 專案展現了從需求分析到系統交付的完整專案管理能力，從系統整合到權限設計的每個環節都體現了專業的產品思維。
+            </p>
+            <a href="index.html#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-[var(--primary-color)] text-white rounded-xl hover:bg-[var(--primary-dark)] transition-colors font-semibold">
+                聯絡討論合作機會
+                <div class="icon-arrow-right"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-[var(--bg-secondary)] text-center border-t border-[var(--border)]">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-[var(--text-secondary)] mb-4">
+                透過系統性專案管理和完整文件化能力，將複雜的企業需求轉化為可執行的系統解決方案
+            </p>
+            <a href="index.html" class="inline-flex items-center gap-2 text-[var(--primary-color)] hover:text-[var(--primary-dark)] font-medium transition-colors">
+                <div class="icon-arrow-left"></div>
+                返回作品集主頁
+            </a>
+        </div>
+    </footer>
 </body>
 </html>
