@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YesOnline 線上英語學習平台 | 從零到一的產品設計實踐</title>
-    <meta name="description" content="YesOnline 教育科技平台的完整產品管理案例 - 214個工作項目背後的業務邏輯設計與跨團隊溝通實務">
+    <title>YesOnline 線上英語學習平台 | 從視覺設計到完整產品的系統化實踐</title>
+    <meta name="description" content="YesOnline - 從零開始設計完整業務邏輯、系統架構和產品規格的完整產品管理實踐">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,8 +54,25 @@
             color: var(--text-primary);
         }
 
+        .case-study-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: var(--text-primary);
+        }
+
         .case-study-content p {
             margin-bottom: 18px;
+            color: var(--text-secondary);
+        }
+
+        .case-study-content ul {
+            margin-bottom: 18px;
+            padding-left: 24px;
+        }
+
+        .case-study-content ul li {
+            margin-bottom: 8px;
             color: var(--text-secondary);
         }
 
@@ -115,6 +132,17 @@
             color: var(--text-secondary);
             margin-top: 4px;
         }
+
+        .info-badge {
+            display: inline-block;
+            background: var(--bg-secondary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 8px 8px 0;
+            color: var(--text-primary);
+        }
     </style>
 </head>
 <body>
@@ -125,7 +153,7 @@
                 <div class="icon-arrow-left text-lg"></div>
                 <span class="font-medium">返回作品集</span>
             </a>
-            <div class="text-sm text-[var(--text-secondary)]">YesOnline 專案案例研究</div>
+            <div class="text-sm text-[var(--text-secondary)]">YesOnline Case Study</div>
         </div>
     </nav>
 
@@ -133,11 +161,11 @@
     <section class="pt-24 pb-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
             <div class="inline-block px-4 py-2 bg-[var(--bg-secondary)] text-[var(--primary-color)] rounded-full text-sm font-medium mb-6">
-                從零到一的產品設計實踐
+                從視覺設計到完整產品的系統化實踐
             </div>
             <h1 class="text-4xl lg:text-5xl font-bold mb-6">YesOnline 線上英語學習平台</h1>
             <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-3xl mx-auto">
-                當設計稿只給了畫面，產品經理如何填補業務邏輯的空白？214 個工作項目背後，是對每個細節的深度思考與跨團隊溝通的完整實踐。
+                接手一個只有視覺設計稿的專案，從零開始設計完整的業務邏輯、系統架構和產品規格，協調業主、設計師、工程團隊完成產品落地。
             </p>
 
             <!-- Key Stats -->
@@ -147,16 +175,38 @@
                     <div class="stat-label">工作項目</div>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">43</span>
-                    <div class="stat-label">系統模組</div>
-                </div>
-                <div class="stat-item">
                     <span class="stat-number">3</span>
                     <div class="stat-label">核心角色</div>
                 </div>
                 <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <div class="stat-label">獨立機構</div>
+                </div>
+                <div class="stat-item">
                     <span class="stat-number">20+</span>
                     <div class="stat-label">測試腳本</div>
+                </div>
+            </div>
+
+            <!-- Project Overview -->
+            <div class="mt-12 text-left max-w-3xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">專案類型</div>
+                        <div class="font-semibold">B2C 教育科技平台</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">我的角色</div>
+                        <div class="font-semibold">產品經理</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">專案規模</div>
+                        <div class="font-semibold">雙機構架構</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">核心整合</div>
+                        <div class="font-semibold">ClassIn API</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,380 +215,408 @@
     <!-- Case Study Content -->
     <section class="py-16 px-6 bg-[var(--bg-secondary)]">
         <div class="case-study-content">
-            <h2>專案起源：複雜度超乎想像的挑戰</h2>
+            <h2>🎯 專案背景與挑戰</h2>
+
+            <h3>系統的複雜性</h3>
             <p>
-                YesOnline 不是一個簡單的線上學習平台。當我接手這個專案時，面對的是一個需要整合<span class="metric-highlight">學生、顧問、教師</span>三個核心角色的複雜生態系統，還要串接第三方教學平台 ClassIn 的 API，支援兩個不同機構的多租戶架構。
+                YesOnline 的複雜度體現在兩個維度：<strong>機構隔離</strong>與<strong>角色權限</strong>。
             </p>
 
+            <h4>維度一：雙機構獨立架構</h4>
             <p>
-                更大的挑戰在於：設計師交付的 Figma 檔案只有視覺呈現，沒有任何業務邏輯說明。每個按鈕點擊後會發生什麼？資料如何驗證？異常狀況如何處理？這些都需要產品經理自行推敲、設計、並文件化。
+                <strong>業務需求</strong><br>
+                系統需同時服務兩個獨立機構（Yesonline 和 HsinFei），每個機構擁有各自的教師資源、學生名單、課程設定，且資料必須完全隔離。
             </p>
 
             <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">💡 產品經理的核心挑戰</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <strong>視覺與邏輯的鴻溝：</strong>Figma 只有畫面，業務流程需自行設計
-                    </div>
-                    <div>
-                        <strong>跨團隊溝通：</strong>向上確認需求，向下釐清邏輯，橫向協調設計
-                    </div>
-                    <div>
-                        <strong>業務複雜度：</strong>堂數管理、時段排程、衝突檢測、多機構隔離
-                    </div>
-                    <div>
-                        <strong>品質保證：</strong>20+ 測試腳本，涵蓋每個操作路徑
-                    </div>
-                </div>
+                <h3 class="text-[var(--primary-color)] mb-4">設計挑戰</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>• 如何確保機構 A 的顧問無法看到機構 B 的資料？</li>
+                    <li>• 如何設計資料結構讓兩個機構共用同一套系統，又能保持資料獨立？</li>
+                    <li>• 如何在未來擴充更多機構時，架構依然穩定？</li>
+                </ul>
             </div>
-
-            <h2>從零開始：系統架構的思考與設計</h2>
-            <p>
-                在進入開發前，我花了三週時間進行系統分析與架構設計。這不僅是技術架構的規劃，更是對整個業務模式的深度理解。
-            </p>
-
-            <h3>多租戶架構：機構資料的完全隔離</h3>
-            <p>
-                YesOnline 需要同時服務 Yesonline 和 HsinFei 兩個機構，每個機構都有各自的教師、學生、課程資料。這看似簡單的需求，背後隱藏著複雜的資料隔離設計。
-            </p>
 
             <div class="success-factor">
-                <strong>設計決策 #1：課程 ID 編碼規則</strong><br>
-                我設計了一套 17 碼的課程 ID 編碼系統，包含：機構簡稱（3碼）+ 課程模式（1碼）+ 建立時間（8碼）+ 流水號（5碼）。這不僅解決了資料隔離問題，更讓每個課程都能追溯其完整資訊，為後續的資料分析奠定基礎。
+                <strong>我的解決方案</strong><br>
+                設計了一套完整的資料隔離機制，從資料庫結構、API 設計到前端權限控制，都納入機構識別邏輯。這不僅解決了當前需求，也為未來擴充更多機構建立了可擴展的架構基礎。
             </div>
 
-            <h3>三角色權限體系：從業務邏輯到技術實現</h3>
-            <p>
-                學生、顧問、教師三個角色，各自有不同的功能權限和資料存取範圍。在設計階段，我就必須思考清楚：
-            </p>
+            <h4>維度二：三角色權限體系</h4>
+            <p><strong>角色定義與權限設計</strong></p>
+            <p>系統包含三個核心角色，各有不同的功能權限：</p>
 
             <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">🎯 角色權限設計思考</h3>
-                <div class="space-y-3 text-sm">
-                    <div><strong>學生端：</strong>只能看到自己的課程、堂數、行事曆，選課時只能看到有空缺的課程</div>
-                    <div><strong>顧問端：</strong>可以管理所有課程、教師時數、學生堂數，但不能看到其他機構的資料</div>
-                    <div><strong>教師端：</strong>只能查看自己被排定的課程，無法存取其他教師的資料</div>
-                </div>
-            </div>
-
-            <h2>業務邏輯設計：補足設計稿的空白</h2>
-            <p>
-                產品經理最大的價值，在於能夠從視覺設計中推敲出完整的業務邏輯。以學生選課流程為例，Figma 只有五個畫面，但我需要思考的是：
-            </p>
-
-            <h3>選課流程：六個步驟背後的細節設計</h3>
-
-            <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">📋 選課流程的業務邏輯設計</h3>
                 <div class="space-y-4 text-sm">
                     <div>
-                        <strong>步驟 1：選擇課程種類</strong><br>
-                        <span class="text-[var(--text-secondary)]">
-                        • 學生只能看到已購買的課程種類<br>
-                        • 需即時顯示剩餘可選課堂數<br>
-                        • 若剩餘0堂，該課程種類應如何呈現？（設計稿沒說明）
-                        </span>
+                        <strong>學生 (Student)</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 查看自己的課程、堂數餘額、上課行事曆</li>
+                            <li>• 選擇課程、預約時段</li>
+                            <li>• 僅能存取自己的學習資料</li>
+                        </ul>
                     </div>
                     <div>
-                        <strong>步驟 2：選擇時間區間</strong><br>
-                        <span class="text-[var(--text-secondary)]">
-                        • 開始日期與結束日期可以是同一天嗎？（可以）<br>
-                        • 時間區間的最小單位是什麼？（30分鐘）<br>
-                        • 結束時間必須晚於開始時間，如何驗證？
-                        </span>
+                        <strong>顧問 (Consultant)</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 管理所屬機構的所有課程設定</li>
+                            <li>• 為學生建立和管理堂數訂單</li>
+                            <li>• 追蹤教師授課時數</li>
+                            <li>• 無法存取其他機構的資料</li>
+                        </ul>
                     </div>
                     <div>
-                        <strong>步驟 3：選擇教師與時段</strong><br>
-                        <span class="text-[var(--text-secondary)]">
-                        • 教師列表需依照什麼規則排序？（最近更新）<br>
-                        • 若某教師該時段所有課程都滿了，是否顯示？（不顯示）<br>
-                        • 若某教師部分時段已滿，如何標示？（已滿時段不顯示在行事曆）<br>
-                        • 學生一次可以選擇幾堂課？（依剩餘堂數）
-                        </span>
-                    </div>
-                    <div>
-                        <strong>步驟 4：時段衝突檢測</strong><br>
-                        <span class="text-[var(--text-secondary)]">
-                        • 學生不能選擇自己已有課程的時段（即時檢測）<br>
-                        • 若選擇重複時段，如何提示？（彈窗警示）<br>
-                        • 已選課的時段在行事曆上如何標示？（disabled 狀態）
-                        </span>
-                    </div>
-                    <div>
-                        <strong>步驟 5：確認資訊</strong><br>
-                        <span class="text-[var(--text-secondary)]">
-                        • 顯示所有已選課程明細，確保學生清楚知道選了什麼<br>
-                        • 提供取消單筆選課的功能，但不影響其他已選課程<br>
-                        • 確定後才扣除堂數，避免中途取消造成堂數異常
-                        </span>
-                    </div>
-                    <div>
-                        <strong>步驟 6：選課成功</strong><br>
-                        <span class="text-[var(--text-secondary)]">
-                        • 顯示成功訊息，5秒後自動跳轉<br>
-                        • 提供「繼續選課」按鈕，方便學生一次選多堂<br>
-                        • 更新學生端課程列表與行事曆
-                        </span>
+                        <strong>教師 (Teacher)</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 查看自己被排定的課程時間表</li>
+                            <li>• 管理自己的課程內容</li>
+                            <li>• 無法存取其他教師的資料或學生的個人資訊</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
+            <p>
+                <strong>設計思維</strong><br>
+                我需要思考的不只是「誰能看到什麼」，更重要的是「在什麼情境下能做什麼操作」。例如：學生選課時只能看到有空缺的課程；顧問編輯課程時需要即時檢查是否有學生已預約；教師查看課表時只顯示確認的課程，而非所有開放時段。
+            </p>
+
+            <h3>產品經理面臨的核心挑戰</h3>
+
+            <h4>挑戰 1：從視覺到邏輯的轉化</h4>
+            <p>
+                <strong>情境</strong><br>
+                設計師交付的 Figma 檔案只有畫面，沒有任何業務邏輯說明。
+            </p>
+
             <div class="success-factor">
-                <strong>與業主的溝通實例</strong><br>
-                在選課時段衝突的處理上，我主動詢問業主：「如果學生選擇的時段與已有課程重疊，系統應該即時阻擋，還是在最後確認時才提示？」業主原本沒想過這個問題，經過討論後決定採用「即時檢測」方案，避免學生選到最後才發現無法提交的挫折感。這種主動發現盲點的能力，正是產品經理的核心價值。
+                <strong>實際案例：學生選課功能</strong><br>
+                <p class="mt-2 text-sm">Figma 上只有五個畫面：選擇課程 → 選擇時間 → 選擇教師 → 確認資訊 → 完成。但我需要思考：</p>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li>• 每個步驟的資料從哪裡來？</li>
+                    <li>• 什麼情況下按鈕是 disabled 狀態？</li>
+                    <li>• 如果學生選擇的時段已經被其他人選走了怎麼辦？</li>
+                    <li>• 如果學生的堂數不夠了要如何提示？</li>
+                    <li>• 選到一半離開頁面，已選的資料要保留嗎？</li>
+                </ul>
             </div>
 
-            <h2>堂數管理：複雜業務邏輯的系統化設計</h2>
             <p>
-                堂數管理是整個平台最複雜的模組之一。顧問需要為學生建立堂數訂單，每個訂單包含課程種類、課程方案（一般/吃到飽）、購買堂數、使用效期等資訊。看似簡單的 CRUD 操作，背後需要考慮的邏輯卻異常複雜。
+                <strong>產品經理的價值</strong><br>
+                將這些設計稿中的「空白」轉化為完整的業務流程，確保每個細節都有明確的規則和處理方式。
             </p>
 
-            <h3>訂單編號的唯一性驗證</h3>
-            <p>
-                當顧問新增堂數時，我發現設計稿沒有說明訂單編號的規則。這引發了一連串的思考：
-            </p>
-
-            <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">🔍 訂單編號設計的思考過程</h3>
-                <div class="space-y-2 text-sm text-[var(--text-secondary)]">
-                    <div>• 訂單編號是顧問手動輸入，還是系統自動產生？（與業主確認：手動輸入）</div>
-                    <div>• 如果手動輸入，如何確保不會重複？（新增前需檢查唯一性）</div>
-                    <div>• 重複時應該如何提示？（紅字錯誤訊息，阻擋提交）</div>
-                    <div>• Excel 匯入時，若有重複編號應如何處理？（匯入失敗，顯示錯誤明細）</div>
+            <h4>挑戰 2：跨團隊溝通與決策</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                <div class="success-factor">
+                    <strong>向上溝通</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">主動發現業主沒想到的問題，提供解決方案選項</span>
+                </div>
+                <div class="success-factor">
+                    <strong>向下溝通</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">提供完整的開發規格，讓工程師不需要猜測需求</span>
+                </div>
+                <div class="success-factor">
+                    <strong>橫向溝通</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">補足視覺設計中缺少的互動狀態</span>
                 </div>
             </div>
 
-            <h3>堂數回補機制：業主沒想到的細節</h3>
-            <p>
-                在堂數管理中，有一個「回補堂數」功能。當學生因故無法上課時，顧問可以將該堂課的堂數回補給學生。這個功能在設計稿中只有一個「回補」按鈕，但我需要設計完整的業務邏輯：
-            </p>
+            <h4>挑戰 3：複雜業務邏輯的梳理</h4>
+            <p>每個功能模組背後都有複雜的業務邏輯：</p>
+            <ul>
+                <li><strong>課程管理：</strong>單次課程 vs. 頻次課程，不同模式有不同的排程規則</li>
+                <li><strong>堂數系統：</strong>購買、使用、過期、回補，每個狀態的轉換都需要嚴謹的邏輯</li>
+                <li><strong>時段排程：</strong>需考慮教師可用時間、學生已選課程、機構時段規則</li>
+                <li><strong>衝突檢測：</strong>即時驗證時段是否重疊，避免重複預約</li>
+            </ul>
 
-            <div class="success-factor">
-                <strong>設計決策 #2：回補堂數的完整流程</strong><br>
-                我設計了一套「回補-收回」的雙向機制。回補後，若發現誤操作，顧問可以執行「收回」動作。但這引發了新問題：如果學生已經用回補的堂數選了新課程，還能收回嗎？經過與業主討論，我們決定：收回時需先檢查學生是否已使用該堂數，若已使用則不允許收回，避免資料異常。這種細節設計，都需要產品經理主動思考並提出解決方案。
-            </div>
+            <h2>💡 解決方案：系統化的產品設計方法</h2>
 
-            <h2>跨團隊溝通：文件化的重要性</h2>
+            <h3>第一步：建立系統架構思維</h3>
+            <h4>機構隔離的設計邏輯</h4>
             <p>
-                當業務邏輯越來越複雜，口頭溝通已經無法確保資訊的準確傳遞。我建立了一套完整的文件體系，包含：
+                <strong>設計原則</strong><br>
+                所有資料和操作都必須帶有「機構識別」，從系統最上層就確立這個請求屬於哪個機構，確保資料不會跨機構存取。
             </p>
 
             <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">📚 文件產出與溝通策略</h3>
+                <strong>實施策略</strong>
+                <ul class="mt-2 space-y-2 text-sm">
+                    <li>• 設計唯一識別碼系統，讓每筆資料都能追溯所屬機構</li>
+                    <li>• 建立權限檢查機制，在 API 層就阻擋跨機構存取</li>
+                    <li>• 規劃資料庫結構，支援未來更多機構的擴充</li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>為什麼重要？</strong><br>
+                這不只是技術架構問題，更是資訊安全和客戶信任的基礎。任何一個資料外洩的漏洞，都可能造成嚴重的商業損失。
+            </p>
+
+            <h3>第二步：業務邏輯的完整設計</h3>
+            <h4>以使用者旅程為核心的設計方法</h4>
+            <p><strong>實例：學生選課流程</strong></p>
+            <p>設計師的 Figma 只有五個畫面，但我設計了完整的六步驟流程：</p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">學生選課完整流程設計</h3>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <strong>步驟 1：選擇課程種類</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 學生只能看到已購買的課程種類</li>
+                            <li>• 即時顯示每個課程種類的剩餘堂數</li>
+                            <li>• 若剩餘 0 堂則無法選擇</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>步驟 2：設定時間範圍</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 設定想要選課的日期區間</li>
+                            <li>• 系統驗證時間邏輯（結束時間需晚於開始時間）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>步驟 3：選擇教師與時段</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 顯示該時段有開課的教師列表</li>
+                            <li>• 以行事曆方式呈現教師的可預約時段</li>
+                            <li>• 已滿額的時段自動隱藏或標示為不可選</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>步驟 4：即時衝突檢測</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 學生選擇時段時，系統即時檢查是否與已選課程重疊</li>
+                            <li>• 若有衝突立即提示，無法勾選該時段</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>步驟 5：確認選課資訊</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 顯示所有已選課程的完整資訊</li>
+                            <li>• 提供取消單筆選課的功能</li>
+                            <li>• 確認後才扣除堂數，確保資料正確性</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>步驟 6：完成並更新</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 顯示成功訊息</li>
+                            <li>• 自動更新學生的課程列表和行事曆</li>
+                            <li>• 提供「繼續選課」選項</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <strong>設計價值</strong><br>
+                這不只是畫面的排列，而是完整考慮使用者體驗、資料驗證、異常處理的系統化流程設計。
+            </p>
+
+            <h4>主動發現問題並提出解決方案</h4>
+            <div class="success-factor">
+                <strong>實例：堂數回補機制的設計</strong><br>
+                <p class="mt-2 text-sm"><strong>原始需求：</strong>當學生因故無法上課時，顧問可以回補堂數。</p>
+                <p class="mt-2 text-sm"><strong>我發現的問題：</strong></p>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li>• 回補後，如果發現是誤操作怎麼辦？</li>
+                    <li>• 如果回補的堂數已經被學生用來選新課程了，還能收回嗎？</li>
+                    <li>• 回補和收回的操作需要記錄嗎？</li>
+                </ul>
+                <p class="mt-3 text-sm"><strong>我提出的解決方案：</strong></p>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">設計「回補-收回」雙向機制：顧問可以回補堂數給學生；若誤操作，可以執行「收回」；收回前系統會檢查該堂數是否已被使用；若已使用則不允許收回，避免資料異常；所有操作都記錄操作者和時間，建立稽核軌跡。</p>
+                <p class="mt-3 text-sm"><strong>業主的反應：</strong>業主原本沒想過這些細節，經過討論後認同這套機制的必要性，並納入正式規格。</p>
+            </div>
+
+            <p class="font-semibold">這展現了產品經理的核心價值：<span class="metric-highlight">主動發現盲點，提出解決方案，協助決策</span></p>
+
+            <h3>第三步：文件化與溝通策略</h3>
+            <h4>為什麼需要完整的文件？</h4>
+            <p>當業務邏輯變得複雜，口頭溝通已經無法確保資訊準確傳遞。我建立了完整的文件體系，讓所有團隊成員對需求理解一致。</p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">文件產出體系</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <h4 class="font-semibold mb-3">給業主的文件</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>✅ 功能規格說明書（每個頁面的完整流程）</li>
-                            <li>✅ 業務邏輯確認文件（需決策的細節）</li>
-                            <li>✅ 異常情境處理方案</li>
-                            <li>✅ Excel 匯入範本與規則</li>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 功能規格說明書（每個頁面的完整流程）</li>
+                            <li>✓ 業務邏輯確認文件（需決策的細節）</li>
+                            <li>✓ 異常情境處理方案</li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-semibold mb-3">給工程師的文件</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>✅ 欄位驗證規則（必填/選填/格式/長度）</li>
-                            <li>✅ API 規格與參數說明</li>
-                            <li>✅ 資料庫欄位設計</li>
-                            <li>✅ 錯誤訊息文字內容</li>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 欄位驗證規則（必填/選填/格式/長度）</li>
+                            <li>✓ API 規格與參數說明</li>
+                            <li>✓ 資料庫欄位設計</li>
+                            <li>✓ 錯誤訊息文字內容</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <h3>工作功能說明書：細節的極致呈現</h3>
-            <p>
-                我撰寫的工作功能說明書，針對每個頁面都包含：頁面名稱、功能說明、欄位列表、欄位說明、預設值、驗證規則、彈窗內容、按鈕行為、異常處理。以「新建堂數」頁面為例：
-            </p>
-
-            <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">📄 功能說明書範例：新建堂數</h3>
-                <table class="w-full text-sm">
-                    <tr class="border-b">
-                        <td class="py-2 font-semibold">欄位名稱</td>
-                        <td class="py-2 font-semibold">資料型態</td>
-                        <td class="py-2 font-semibold">驗證規則</td>
-                        <td class="py-2 font-semibold">說明</td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="py-2">訂單編號</td>
-                        <td class="py-2">文字</td>
-                        <td class="py-2">必填，唯一性檢查</td>
-                        <td class="py-2">送出前需檢查是否重複</td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="py-2">學生</td>
-                        <td class="py-2">下拉選單</td>
-                        <td class="py-2">必填</td>
-                        <td class="py-2">姓名模糊查詢，僅顯示本機構學生</td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="py-2">課程種類</td>
-                        <td class="py-2">下拉選單</td>
-                        <td class="py-2">必填</td>
-                        <td class="py-2">中英文並列，如：生活英語 General English</td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="py-2">課程方案</td>
-                        <td class="py-2">下拉選單</td>
-                        <td class="py-2">必填</td>
-                        <td class="py-2">一般方案 / 吃到飽</td>
-                    </tr>
-                    <tr>
-                        <td class="py-2">使用效期</td>
-                        <td class="py-2">日期</td>
-                        <td class="py-2">必填，需晚於訂單時間</td>
-                        <td class="py-2">格式：YYYY-MM-DD</td>
-                    </tr>
-                </table>
-            </div>
-
-            <h2>測試策略：品質保證的完整思維</h2>
-            <p>
-                為了確保產品品質，我規劃了<span class="metric-highlight">20+ 測試腳本</span>，涵蓋<span class="metric-highlight">80+ 測試情境</span>。每個測試腳本都遵循統一的結構：前置條件、測試步驟、預期結果、異常情境、跨平台驗證。
-            </p>
-
-            <h3>測試腳本的系統化設計</h3>
-
-            <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">🧪 測試架構：五大核心模組</h3>
-                <div class="grid grid-cols-1 gap-4 text-sm">
-                    <div>
-                        <strong>模組一：使用者管理</strong><br>
-                        <span class="text-[var(--text-secondary)]">註冊流程、登入驗證、忘記密碼、個人資料編輯、密碼規則檢查</span>
-                    </div>
-                    <div>
-                        <strong>模組二：課程管理</strong><br>
-                        <span class="text-[var(--text-secondary)]">單次課程建立、頻次課程建立、課程編輯、課程刪除/啟用、列表篩選</span>
-                    </div>
-                    <div>
-                        <strong>模組三：堂數管理</strong><br>
-                        <span class="text-[var(--text-secondary)]">堂數新增、編輯、查看、回補機制、Excel 匯入驗證</span>
-                    </div>
-                    <div>
-                        <strong>模組四：時數管理</strong><br>
-                        <span class="text-[var(--text-secondary)]">教師時數追蹤、列表查詢、詳情查看、重複防護</span>
-                    </div>
-                    <div>
-                        <strong>模組五：顧問端視圖</strong><br>
-                        <span class="text-[var(--text-secondary)]">教師日曆、課程詳情、權限管理、資料隔離驗證</span>
-                    </div>
-                </div>
-            </div>
+            <h4>工作功能說明書：細節的極致呈現</h4>
+            <p>我撰寫的工作功能說明書，針對每個頁面都包含：頁面名稱、功能說明、欄位列表、欄位說明、預設值、驗證規則、彈窗內容、按鈕行為、異常處理。</p>
 
             <div class="success-factor">
-                <strong>測試腳本實例：學生選課時段衝突檢測</strong><br>
-                <div class="mt-2 text-sm space-y-2">
-                    <div><strong>前置條件：</strong>學生已登入，已有一堂 2023-05-10 14:00-15:00 的課程</div>
-                    <div><strong>測試步驟：</strong>選擇同一天 14:30-15:30 的課程</div>
-                    <div><strong>預期結果：</strong>系統即時顯示「此時段與已選課程重疊」錯誤訊息，無法勾選該時段</div>
-                    <div><strong>異常情境：</strong>若學生在另一台裝置同時選課，後端需再次驗證時段衝突</div>
-                    <div><strong>跨平台驗證：</strong>在 1440px 桌面版和 320px 手機版分別測試，確保錯誤訊息正確顯示</div>
-                </div>
+                <strong>為什麼重要？</strong><br>
+                清晰的文件讓工程師不需要猜測需求，大幅降低溝通成本和開發時的來回修改。
             </div>
 
-            <h2>資訊安全：合規性的系統化設計</h2>
-            <p>
-                除了功能開發，資訊安全也是產品經理必須關注的重點。我在系統設計階段就規劃了完整的資訊安全架構：
-            </p>
+            <h3>第四步：品質保證的系統化思維</h3>
+            <h4>測試策略的規劃</h4>
+            <p>規劃了<span class="metric-highlight">20+ 測試腳本</span>，將整個系統拆解為五大模組進行測試：</p>
 
             <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">🔒 資訊安全設計要點</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <h3 class="text-[var(--primary-color)] mb-4">五大核心測試模組</h3>
+                <div class="grid grid-cols-1 gap-3 text-sm">
                     <div>
-                        <strong>密碼安全規範：</strong><br>
-                        • 長度至少 8 位<br>
-                        • 需包含大寫、小寫、數字、特殊符號四類中的三類<br>
-                        • 不得重複使用前一次密碼<br>
-                        • 密碼需加密儲存，不得明碼
+                        <strong>1. 使用者管理模組</strong><br>
+                        <span class="text-[var(--text-secondary)]">註冊、登入、權限驗證</span>
                     </div>
                     <div>
-                        <strong>帳號鎖定機制：</strong><br>
-                        • 登入失敗 3 次後鎖定帳號<br>
-                        • 至少 1 小時後才能重試<br>
-                        • 或由管理員重置後解鎖
+                        <strong>2. 課程管理模組</strong><br>
+                        <span class="text-[var(--text-secondary)]">課程建立、編輯、機構隔離驗證</span>
                     </div>
                     <div>
-                        <strong>Token 管理：</strong><br>
-                        • Access Token 有效期 1 小時<br>
-                        • Refresh Token 有效期 96 小時<br>
-                        • 過期後自動登出
+                        <strong>3. 堂數管理模組</strong><br>
+                        <span class="text-[var(--text-secondary)]">訂單建立、堂數使用、回補機制</span>
                     </div>
                     <div>
-                        <strong>稽核軌跡：</strong><br>
-                        • 記錄登入時間、IP、錯誤訊息<br>
-                        • 身分驗證失敗事件追蹤<br>
-                        • 資料操作軌跡記錄
+                        <strong>4. 時段排程模組</strong><br>
+                        <span class="text-[var(--text-secondary)]">教師時間管理、學生選課、衝突檢測</span>
+                    </div>
+                    <div>
+                        <strong>5. 角色權限模組</strong><br>
+                        <span class="text-[var(--text-secondary)]">三個角色的功能權限和資料存取驗證</span>
                     </div>
                 </div>
             </div>
 
-            <h2>成果交付：完整的產品文件體系</h2>
-            <p>
-                專案最終準時交付，除了可運行的系統外，更重要的是建立了一套完整的產品文件體系，確保未來的維護與擴充都有清楚的依據。
-            </p>
+            <p><strong>測試腳本結構</strong><br>每個測試都包含：前置條件、測試步驟、預期結果、異常情境、跨裝置驗證</p>
 
+            <h4>資訊安全的前置規劃</h4>
+            <p>在系統設計階段就規劃完整的資訊安全機制：</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                <div class="success-factor">
+                    <strong>密碼安全規範</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">長度、複雜度要求、不得重複使用舊密碼、加密儲存</span>
+                </div>
+                <div class="success-factor">
+                    <strong>帳號安全機制</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">登入失敗鎖定機制、Token 管理和過期處理</span>
+                </div>
+            </div>
+
+            <h2>📊 專案成果</h2>
+
+            <h3>交付成果</h3>
             <div class="highlight-card">
-                <h3 class="text-[var(--primary-color)] mb-4">📦 交付成果清單</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <h4 class="font-semibold mb-3">產品文件</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>✅ 系統設計規格書</li>
-                            <li>✅ 工作功能說明書（214 項）</li>
-                            <li>✅ 使用者操作手冊</li>
-                            <li>✅ 系統管理手冊</li>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 系統設計規格書</li>
+                            <li>✓ 工作功能說明書（214 項工作項目）</li>
+                            <li>✓ 使用者操作手冊</li>
+                            <li>✓ 系統管理手冊</li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-semibold mb-3">品質文件</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>✅ 功能與整合測試報告</li>
-                            <li>✅ 20+ 測試腳本</li>
-                            <li>✅ 弱點掃描報告</li>
-                            <li>✅ 源碼檢測報告</li>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 功能與整合測試報告</li>
+                            <li>✓ 20+ 測試腳本，涵蓋 80+ 測試情境</li>
+                            <li>✓ 資訊安全檢測報告</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <h2>產品經理的核心能力展現</h2>
+            <h3>專案亮點</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                <div class="success-factor">
+                    <strong>完整的架構設計</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">建立可擴展的雙機構架構，為未來支援更多機構奠定基礎</span>
+                </div>
+                <div class="success-factor">
+                    <strong>嚴謹的權限管理</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">三角色權限體系，確保資料安全和操作合規</span>
+                </div>
+                <div class="success-factor">
+                    <strong>主動發現問題</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">在開發前就發現並解決業主沒想到的業務邏輯盲點</span>
+                </div>
+                <div class="success-factor">
+                    <strong>系統化的文件</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">完整的產品文件體系，降低團隊溝通成本</span>
+                </div>
+            </div>
+
+            <h2>💼 產品經理核心能力展現</h2>
+
+            <div class="success-factor">
+                <strong>能力一：業務邏輯設計</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">從只有視覺的 Figma 檔案中，推敲出完整的業務流程，補足所有邏輯細節，將抽象需求轉化為可執行規格。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力二：系統架構思維</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">從整體架構到細節實現，建立起完整的產品思維框架。考慮現在需求的同時，也為未來擴充預留空間。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力三：跨團隊溝通與協調</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">向上主動發現業主沒想到的問題，提供解決方案協助決策；向下為工程師提供清晰完整的開發規格；橫向與設計師協調補足互動細節。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力四：問題發現與解決</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">主動發現設計稿和需求中的盲點，提出問題並設計解決方案，而非被動等待指示。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力五：文件化與知識管理</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">將所有業務邏輯、驗證規則、異常處理轉化為清晰的文件，確保團隊理解一致，降低溝通成本。</p>
+            </div>
+
+            <h2>🎓 核心學習與反思</h2>
+
+            <h3>從這個專案學到什麼？</h3>
+
+            <div class="highlight-card">
+                <div class="space-y-4">
+                    <div>
+                        <strong>1. 產品經理不只是需求傳達者，更是業務邏輯的設計者</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">當設計稿只有視覺時，產品經理需要有能力推敲出完整的業務流程，這需要對業務本質的深度理解和系統性思考。</p>
+                    </div>
+                    <div>
+                        <strong>2. 主動發現問題的價值遠大於被動執行</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">最有價值的產品經理，是能在業主、設計師、工程師都沒想到的地方，主動發現盲點並提出解決方案。</p>
+                    </div>
+                    <div>
+                        <strong>3. 文件化是大型專案成功的關鍵</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">越複雜的專案，越需要清晰的文件。文件不只是給別人看，更是強迫自己把邏輯想清楚的過程。</p>
+                    </div>
+                    <div>
+                        <strong>4. 權限設計是系統安全的基礎</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">機構隔離和角色權限的設計，不只是功能需求，更是資訊安全和客戶信任的基石。</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>結語</h2>
             <p>
-                YesOnline 專案完整展現了產品經理在複雜專案中的核心能力：
+                YesOnline 專案展現了產品經理在複雜系統中的完整價值：<strong>將抽象的業務需求轉化為具體的產品規格，將零散的視覺設計轉化為完整的系統邏輯，將複雜的多角色生態轉化為清晰的權限架構</strong>。
             </p>
-
-            <div class="success-factor">
-                <strong>能力一：業務邏輯設計能力</strong><br>
-                從 Figma 視覺稿中推敲出完整的業務流程，補足設計師沒有說明的邏輯細節，將抽象的需求轉化為可執行的規格。
-            </div>
-
-            <div class="success-factor">
-                <strong>能力二：跨團隊溝通能力</strong><br>
-                向上與業主確認需求細節，主動發現業主沒想到的問題；向下為工程師釐清開發邏輯，提供完整的文件支援；橫向與設計師討論互動細節，確保使用者體驗的一致性。
-            </div>
-
-            <div class="success-factor">
-                <strong>能力三：系統性思維能力</strong><br>
-                從整體架構到細節實現，從正常流程到異常處理，從單一功能到模組整合，建立起完整的產品思維框架。
-            </div>
-
-            <div class="success-factor">
-                <strong>能力四：文件化能力</strong><br>
-                將所有業務邏輯、驗證規則、異常處理都轉化為清晰的文件，確保團隊成員對需求的理解一致，降低溝通成本。
-            </div>
-
-            <h2>結語：從零到一的產品思維</h2>
             <p>
-                YesOnline 專案的價值不僅在於交付了一個功能完整的平台，更在於展現了產品經理如何從零開始建構一個複雜系統的完整過程。當面對只有視覺設計的 Figma 檔案時，產品經理的責任就是填補所有業務邏輯的空白，確保每個細節都經過深思熟慮。
-            </p>
-
-            <p>
-                <span class="metric-highlight">214 個工作項目</span>背後，是對每個功能模組的深度思考、對每個使用場景的完整規劃、對每個異常情境的妥善處理。這不是單純的需求整理，而是將業務需求轉化為技術規格、將使用者期待轉化為產品體驗的完整實踐。
-            </p>
-
-            <p>
-                <strong>這就是產品經理的核心價值：讓複雜變得清晰，讓抽象變得具體，讓想像變成現實。</strong>
+                214 個工作項目背後，是對每個功能模組的深度思考、對每個使用場景的完整規劃、對每個異常情境的妥善處理。這不是單純的需求整理，而是完整的產品設計實踐。
             </p>
         </div>
     </section>
