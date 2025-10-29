@@ -107,18 +107,9 @@ function Hero() {
               <div className="flex gap-4">
                 <button
                   onClick={() => {
-                    const element = document.getElementById('featured');
+                    const element = document.getElementById('projects');
                     if (element) {
                       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    } else {
-                      console.error('Featured section not found');
-                      // Fallback: try to scroll after a delay
-                      setTimeout(() => {
-                        const retryElement = document.getElementById('featured');
-                        if (retryElement) {
-                          retryElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                      }, 100);
                     }
                   }}
                   className="btn-primary noto-font"
