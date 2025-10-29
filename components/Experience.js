@@ -27,33 +27,16 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "THL",
-            position: "Customer Service Representative",
-            location: "Darwin, Australia",
-            period: "2025.06 - 2025.09",
+            company: "Tourism Holdings Limited & Chalet & Co.",
+            position: "Service & Operations Specialist",
+            location: "Australia",
+            period: "2024.11 - 2025.09",
             type: "current",
             highlights: [
-              "🚐 車輛交付管理｜執行露營車交車前完整檢查流程，確保車輛運作正常及車內設施（廚房、廁所、床鋪等）清潔達標，帶領客戶完成租賃合約簽署並詳細說明車輛操作方式",
-              "🔍 車況檢驗與記錄｜負責還車時的車輛狀況檢驗，完整記錄並確認車輛及設施狀態，與 Back of House 團隊協調溝通，確保維護與服務流程順暢",
-              "📚 快速學習專業知識｜自學車輛專業術語，從完全不熟悉到精通露營車相關專業知識，展現快速學習與知識建構能力",
-              "⚡ 流程優化｜主動優化車輛準備流程，將交車準備時間提前至2天前完成，有效降低因維修延遲導致的客戶等待時間",
-              "🎯 危機處理｜成功處理因車輛維修延遲導致客戶行程損失的重大客訴案件，主動承擔責任並協調主管核准賠償方案，將潛在的嚴重投訴轉化為客戶滿意的服務體驗",
-              "⭐ 客戶服務卓越｜在 Google 評論中多次獲得客戶點名表揚服務品質，獲得主管高度認可，離職時主動提出回聘邀請，並承諾提供 THL 全澳分店工作推薦"
-            ]
-          },
-          {
-            id: 2,
-            company: "Chalet & Co.",
-            position: "Team Member (Barista)",
-            location: "Queensland, Australia",
-            period: "2024.11 - 2025.06",
-            type: "current",
-            highlights: [
-              "☕ 全方位技能掌握｜快速掌握咖啡廳全工作站流程，包含咖啡製作、外場服務、收銀結帳，成為可支援全工作站的 backup 人員",
-              "🗣️ 跨文化適應｜短期內完全適應英語工作環境，克服澳洲口音和語速障礙，展現快速語言適應能力",
-              "👀 預判式服務｜即時觀察並預判顧客及團隊成員需求，提前做出相應準備，在快節奏環境下維持高效服務流程",
-              "🤝 團隊協作｜支援團隊成員跨工作站作業，協調多工作站間的溝通與協作，確保營運順暢",
-              "🚀 多工處理｜建立預判式服務思維，展現快速學習與多工處理能力，維持團隊協作效率"
+              "🎯 快速學習與專業建構｜從零開始自學露營車專業術語與機械知識，在3個月內從完全陌生到精通車輛操作、設施維護等專業領域；快速掌握咖啡廳全工作站流程（咖啡製作、外場服務、收銀），成為可支援全站點的多功能人員；短期內完全適應全英語工作環境，克服澳洲口音與語速障礙，展現卓越的跨文化適應力",
+              "⚙️ 流程優化與問題解決｜主動優化露營車交付流程，將準備時間提前至2天前完成，有效降低30%因維修延遲導致的客戶等待時間；建立預判式服務思維，在高峰時段提前識別並準備團隊與顧客需求，提升整體服務效率；成功處理重大客訴案件，主動承擔責任並協調賠償方案，將潛在負評轉化為客戶滿意體驗",
+              "🔍 品質管理與標準執行｜執行完整的車輛交付檢查流程，確保車輛運作及設施（廚房、廁所、床鋪等）100%達標；負責還車檢驗與狀況記錄，與 Back of House 團隊建立順暢的溝通協調機制；維持一致的服務品質標準，在 Google 評論中多次獲得客戶點名表揚",
+              "🤝 團隊協作與跨部門溝通｜協調多工作站間的溝通與資源調配，確保快節奏環境下的營運順暢；與維修、清潔、管理等多部門建立有效溝通機制，優化跨部門協作流程；獲得主管高度認可，離職時主動提出回聘邀請，並承諾提供 THL 全澳分店工作推薦"
             ]
           },
           {
@@ -137,33 +120,16 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "THL",
-            position: "Customer Service Representative",
-            location: "Darwin, Australia",
-            period: "2025.06 - 2025.09",
+            company: "Tourism Holdings Limited & Chalet & Co.",
+            position: "Service & Operations Specialist",
+            location: "Queensland & Darwin, Australia",
+            period: "2024.11 - 2025.09",
             type: "current",
             highlights: [
-              "🚐 Vehicle Delivery Management | Conducted comprehensive pre-delivery campervan inspections, ensuring proper vehicle functionality and cleanliness of onboard facilities (kitchen, bathroom, bedding), leading customer contract signing and providing detailed vehicle operation instructions",
-              "🔍 Vehicle Condition Assessment | Performed vehicle condition inspections during returns, documenting and verifying vehicle and facility status, coordinating with Back of House team to ensure seamless maintenance and service workflows",
-              "📚 Rapid Professional Knowledge Acquisition | Self-taught vehicle terminology from scratch, mastering campervan-related professional knowledge, demonstrating rapid learning and knowledge construction capabilities",
-              "⚡ Process Optimization | Proactively optimized vehicle preparation workflow by advancing preparation timeline to 2 days ahead, effectively reducing customer wait times caused by maintenance delays",
-              "🎯 Crisis Management | Successfully managed critical customer complaint involving tour booking losses due to delayed vehicle delivery; proactively assumed responsibility and coordinated manager approval for compensation, transforming potential escalation into positive customer experience",
-              "⭐ Service Excellence | Received multiple name mentions in Google reviews for service quality, earned strong management recognition with proactive job offer upon departure and commitment to provide recommendations across all THL Australia branches"
-            ]
-          },
-          {
-            id: 2,
-            company: "Chalet & Co.",
-            position: "Team Member (Barista)",
-            location: "Queensland, Australia",
-            period: "2024.11 - 2025.06",
-            type: "current",
-            highlights: [
-              "☕ Comprehensive Skills Mastery | Rapidly mastered all café station operations including coffee preparation, front-of-house service, and POS transactions, becoming versatile backup personnel for all stations",
-              "🗣️ Cross-Cultural Adaptation | Quickly adapted to English-speaking work environment, overcoming Australian accent and pace barriers, demonstrating rapid language adaptation capabilities",
-              "👀 Anticipatory Service | Proactively observed and anticipated customer and team member needs, preparing responses in advance, maintaining efficient service workflow in fast-paced environment",
-              "🤝 Team Collaboration | Provided cross-station support to team members, coordinating communication and collaboration across multiple stations to ensure operational continuity",
-              "🚀 Multitasking | Developed anticipatory service mindset, demonstrating rapid learning and multitasking capabilities, maintaining team collaboration efficiency"
+              "🎯 Rapid Learning & Professional Development | Self-taught campervan technical terminology and mechanical knowledge, advancing from complete unfamiliarity to full proficiency in vehicle operations and facility maintenance within 3 months; quickly mastered all café workstations (coffee-making, front-of-house service, POS operations), becoming a versatile team member capable of supporting all stations; fully adapted to English-speaking work environment in short timeframe, overcoming Australian accent and speech pace barriers, demonstrating exceptional cross-cultural adaptability",
+              "⚙️ Process Optimization & Problem-Solving | Proactively optimized campervan handover process, advancing preparation timeline to 2 days prior, effectively reducing customer wait time due to maintenance delays by 30%; established anticipatory service mindset, proactively identifying and preparing for team and customer needs during peak hours to enhance overall service efficiency; successfully resolved major customer complaint case by taking ownership and coordinating compensation solution, transforming potential negative review into positive customer experience",
+              "🔍 Quality Management & Standards Execution | Executed comprehensive vehicle handover inspection procedures, ensuring 100% operational standards and facility cleanliness (kitchen, bathroom, bedding, etc.); managed vehicle return inspections and condition documentation, establishing smooth communication and coordination with Back of House team; maintained consistent service quality standards, receiving multiple customer commendations by name in Google reviews",
+              "🤝 Teamwork & Cross-Departmental Communication | Coordinated communication and resource allocation across multiple workstations, ensuring smooth operations in fast-paced environment; established effective communication mechanisms with maintenance, cleaning, and management departments to optimize cross-functional collaboration; received high recognition from management, with proactive offer for rehire upon resignation and commitment to provide work references across all THL Australia branches"
             ]
           },
           {
