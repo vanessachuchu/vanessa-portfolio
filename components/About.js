@@ -199,35 +199,11 @@ function About() {
                   </p>
                 </div>
 
-                {/* Grid + Orange Waves */}
+                {/* Simple geometric shapes */}
                 <div className="relative h-80">
-                  <div className="absolute top-0 left-0 w-40 h-40 opacity-50"
-                       style={{transform: `rotate(${scrollY * -0.03}deg)`, transition: 'transform 0.1s ease-out'}}>
-                    <svg viewBox="0 0 100 100" className="w-full h-full">
-                      <defs>
-                        <pattern id="grid1" width="10" height="10" patternUnits="userSpaceOnUse">
-                          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#333" strokeWidth="1"/>
-                        </pattern>
-                      </defs>
-                      <rect width="100" height="100" fill="url(#grid1)" />
-                    </svg>
-                  </div>
-
-                  <div className="absolute bottom-0 right-0 w-96 h-64"
-                       style={{transform: `translateY(${Math.sin(scrollY * 0.01) * 20}px)`, transition: 'transform 0.1s ease-out'}}>
-                    <svg viewBox="0 0 300 200" className="w-full h-full">
-                      <defs>
-                        <linearGradient id="orangeGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" style={{stopColor: '#FF8C8C', stopOpacity: 0.8}} />
-                          <stop offset="100%" style={{stopColor: '#FFB4A8', stopOpacity: 0.6}} />
-                        </linearGradient>
-                      </defs>
-                      <path d="M0,50 Q75,30 150,50 T300,50 L300,200 L0,200 Z" fill="url(#orangeGrad1)">
-                        <animate attributeName="d" dur="5s" repeatCount="indefinite"
-                          values="M0,50 Q75,30 150,50 T300,50 L300,200 L0,200 Z;M0,50 Q75,70 150,50 T300,50 L300,200 L0,200 Z;M0,50 Q75,30 150,50 T300,50 L300,200 L0,200 Z" />
-                      </path>
-                    </svg>
-                  </div>
+                  <div className="absolute top-0 left-0 w-40 h-40 bg-gray-200 opacity-30 rounded-lg"></div>
+                  <div className="absolute bottom-10 right-20 w-32 h-32 bg-gray-300 opacity-25 rounded-full"></div>
+                  <div className="absolute top-20 right-10 w-24 h-24 border-4 border-gray-200 opacity-30"></div>
                 </div>
               </div>
             </div>
@@ -236,18 +212,9 @@ function About() {
             <div className={`mb-24 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-80 order-2 md:order-1">
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72"
-                       style={{transform: `translate(-50%, -50%) translateX(${Math.sin(scrollY * 0.01) * 15}px)`, transition: 'transform 0.1s ease-out'}}>
-                    <svg viewBox="0 0 200 200" className="w-full h-full">
-                      <circle cx="100" cy="100" r="90" fill="#6366F1" opacity="0.7" />
-                      <rect x="50" y="30" width="18" height="18" fill="white" opacity="0.9" />
-                      <rect x="80" y="30" width="18" height="18" fill="white" opacity="0.9" />
-                      <rect x="110" y="30" width="18" height="18" fill="white" opacity="0.9" />
-                      <rect x="140" y="30" width="18" height="18" fill="white" opacity="0.9" />
-                      <rect x="65" y="55" width="15" height="15" fill="white" opacity="0.7" />
-                      <rect x="125" y="55" width="15" height="15" fill="white" opacity="0.7" />
-                    </svg>
-                  </div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-indigo-500 opacity-20 rounded-full"></div>
+                  <div className="absolute top-10 left-10 w-20 h-20 border-4 border-indigo-300 opacity-30 rounded"></div>
+                  <div className="absolute bottom-10 right-10 w-16 h-16 bg-indigo-300 opacity-25 rounded-lg"></div>
                 </div>
 
                 <div className="order-1 md:order-2">
@@ -266,8 +233,7 @@ function About() {
             {/* Strength 3: 跨部門溝通 - Center with yellow circle */}
             <div className={`mb-24 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="relative">
-                <div className="absolute top-0 right-20 w-52 h-52 rounded-full opacity-70 -z-10"
-                     style={{backgroundColor: '#FBBF24', transform: `translateY(${Math.cos(scrollY * 0.01) * 25}px)`, transition: 'transform 0.1s ease-out'}}></div>
+                <div className="absolute top-0 right-20 w-52 h-52 rounded-full bg-yellow-400 opacity-20 -z-10"></div>
 
                 <div className="max-w-3xl mx-auto text-center">
                   <h2 className="text-2xl font-bold noto-font mb-4" style={{color: 'var(--text-primary)'}}>
@@ -297,20 +263,8 @@ function About() {
                 </div>
 
                 <div className="relative h-80">
-                  <div className="absolute top-0 right-0 w-full h-full"
-                       style={{transform: `translateY(${scrollY * -0.05}px)`, transition: 'transform 0.1s ease-out'}}>
-                    <svg viewBox="0 0 300 300" className="w-full h-full">
-                      <g opacity="0.6">
-                        {[0,1,2,3,4,5,6,7].map((i) => (
-                          <path key={i} d={`M${200 + i * 15},0 Q${180 + i * 15},150 ${200 + i * 15},300`}
-                            fill="none" stroke="#6366F1" strokeWidth="10" opacity={0.8 - i * 0.08}>
-                            <animate attributeName="d" dur={`${4 + i * 0.3}s`} repeatCount="indefinite"
-                              values={`M${200 + i * 15},0 Q${180 + i * 15},150 ${200 + i * 15},300;M${200 + i * 15},0 Q${220 + i * 15},150 ${200 + i * 15},300;M${200 + i * 15},0 Q${180 + i * 15},150 ${200 + i * 15},300`} />
-                          </path>
-                        ))}
-                      </g>
-                    </svg>
-                  </div>
+                  <div className="absolute top-10 right-10 w-48 h-48 bg-indigo-500 opacity-20 rounded-full"></div>
+                  <div className="absolute bottom-10 left-10 w-32 h-32 border-4 border-indigo-300 opacity-30 rounded-lg"></div>
                 </div>
               </div>
             </div>
@@ -319,18 +273,9 @@ function About() {
             <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-80 order-2 md:order-1">
-                  <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-tl from-red-400 to-pink-400 opacity-30"
-                       style={{transform: `rotate(${scrollY * 0.03}deg)`, transition: 'transform 0.1s ease-out'}}></div>
-
-                  <div className="absolute top-10 right-10 w-32 h-32"
-                       style={{transform: `rotate(${scrollY * -0.05}deg) scale(${1 + Math.sin(scrollY * 0.01) * 0.05})`, transition: 'transform 0.1s ease-out'}}>
-                    <svg viewBox="0 0 100 100" className="w-full h-full">
-                      <rect width="100" height="100" fill="#EF4444" opacity="0.7" />
-                      <rect x="15" y="15" width="20" height="20" fill="white" opacity="0.8" />
-                      <rect x="45" y="15" width="20" height="20" fill="white" opacity="0.8" />
-                      <rect x="75" y="15" width="10" height="10" fill="white" opacity="0.8" />
-                    </svg>
-                  </div>
+                  <div className="absolute bottom-10 left-10 w-56 h-40 bg-gradient-to-tl from-red-400 to-pink-400 opacity-20 rounded-lg"></div>
+                  <div className="absolute top-10 right-10 w-32 h-32 bg-red-500 opacity-20 rounded"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 border-4 border-pink-300 opacity-25 rounded-full"></div>
                 </div>
 
                 <div className="order-1 md:order-2">
