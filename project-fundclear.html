@@ -3,49 +3,588 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>基金觀測站 - 金融資訊生態系統 | Vanessa Liu Portfolio</title>
-    <meta name="description" content="基金觀測站金融資訊生態系統產品架構設計專案詳情">
-    
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <title>基金資訊觀測站 2.0 | 從三階段交付策略到完整專案管理的實踐</title>
+    <meta name="description" content="基金觀測站 - 管理90個功能模組、協調25人開發團隊、完成台灣金融業核心基礎設施的重構專案">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
 
-    <style type="text/tailwindcss">
-    @layer theme {
+    <style>
         :root {
-            --primary-color: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary-color: #8b5cf6;
-            --accent-color: #06b6d4;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F8F8F8;
+            --card-bg: #FFFFFF;
+            --text-primary: #222222;
+            --text-secondary: #7B7B7B;
+            --primary-color: #222222;
+            --primary-dark: #000000;
+            --border: #E0E0E0;
+            --subtle-shadow: 0 2px 12px rgba(34, 34, 34, 0.1);
+            --card-shadow: 0 2px 12px rgba(34, 34, 34, 0.1), 0 1px 4px rgba(34, 34, 34, 0.05);
         }
-    }
 
-    @layer components {
-        .glass-card {
-            @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20;
+        body {
+            font-family: 'Noto Sans TC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
         }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+
+        .case-study-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.8;
         }
-        
-        .section-padding {
-            @apply py-16 px-6 lg:px-8;
+
+        .case-study-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
         }
-    }
+
+        .case-study-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 36px 0 18px 0;
+            color: var(--text-primary);
+        }
+
+        .case-study-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: var(--text-primary);
+        }
+
+        .case-study-content p {
+            margin-bottom: 18px;
+            color: var(--text-secondary);
+        }
+
+        .case-study-content ul {
+            margin-bottom: 18px;
+            padding-left: 24px;
+        }
+
+        .case-study-content ul li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        .highlight-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+            box-shadow: var(--subtle-shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .metric-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 0 4px;
+        }
+
+        .success-factor {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--subtle-shadow);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .info-badge {
+            display: inline-block;
+            background: var(--bg-secondary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 8px 8px 0;
+            color: var(--text-primary);
+        }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel" src="project-pages/FundClearProject.js"></script>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-[var(--border)]">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-[var(--primary-color)] hover:text-[var(--primary-dark)] transition-colors">
+                <div class="icon-arrow-left text-lg"></div>
+                <span class="font-medium">返回作品集</span>
+            </a>
+            <div class="text-sm text-[var(--text-secondary)]">Fund Observatory Case Study</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block px-4 py-2 bg-[var(--bg-secondary)] text-[var(--primary-color)] rounded-full text-sm font-medium mb-6">
+                從三階段交付策略到完整專案管理的實踐
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-6">基金資訊觀測站 2.0</h1>
+            <p class="text-xl text-[var(--text-secondary)] mb-8 max-w-3xl mx-auto">
+                管理台灣金融業核心基礎設施的重構專案，協調25人開發團隊與集保4大部門，完成90個功能模組的三階段交付，並通過嚴格的資安檢測與驗收測試。
+            </p>
+
+            <!-- Key Stats -->
+            <div class="stats-grid max-w-2xl mx-auto">
+                <div class="stat-item">
+                    <span class="stat-number">90</span>
+                    <div class="stat-label">功能模組</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <div class="stat-label">階段交付</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <div class="stat-label">平台整合</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25</span>
+                    <div class="stat-label">開發團隊</div>
+                </div>
+            </div>
+
+            <!-- Project Overview -->
+            <div class="mt-12 text-left max-w-3xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">專案類型</div>
+                        <div class="font-semibold">金融科技平台</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">我的角色</div>
+                        <div class="font-semibold">專案經理 PM</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">專案時間</div>
+                        <div class="font-semibold">2023.06 - 2025.06</div>
+                    </div>
+                    <div>
+                        <div class="text-sm text-[var(--text-secondary)] mb-2">客戶</div>
+                        <div class="font-semibold">集保結算所</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="py-16 px-6 bg-[var(--bg-secondary)]">
+        <div class="case-study-content">
+            <h2>🎯 專案背景與挑戰</h2>
+
+            <h3>專案的複雜性</h3>
+            <p>
+                基金資訊觀測站是台灣金融業的核心基礎設施，服務<strong>超過1,000檔基金</strong>的資訊揭露與申報需求。2.0專案的複雜度體現在三個維度：<strong>系統整合</strong>、<strong>階段交付</strong>與<strong>多方協調</strong>。
+            </p>
+
+            <h4>維度一：6大平台整合架構</h4>
+            <p>
+                <strong>業務需求</strong><br>
+                需將舊有獨立運作的多個子系統整合為統一生態系統，建立標準化的前後台架構。
+            </p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">6大平台架構</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <strong>主平台 (www.fundclear.com.tw)</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">統一入口、基金搜尋、ESG基金、數據統計、投資教育</p>
+                    </div>
+                    <div>
+                        <strong>境外基金公告平台</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">海外基金資訊揭露與查詢</p>
+                    </div>
+                    <div>
+                        <strong>境內基金公告平台</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">國內基金數據與公告</p>
+                    </div>
+                    <div>
+                        <strong>期信公告平台</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">期貨信託基金公告系統</p>
+                    </div>
+                    <div>
+                        <strong>報告中心</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">分析報告平台</p>
+                    </div>
+                    <div>
+                        <strong>資訊申報系統</strong>
+                        <p class="text-[var(--text-secondary)] mt-1">法規申報功能</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-factor">
+                <strong>設計挑戰</strong>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li>• 如何在不中斷現有服務的情況下，逐步整合6大平台？</li>
+                    <li>• 如何建立統一的技術架構，同時保持各平台的獨立性？</li>
+                    <li>• 如何確保資料同步與系統穩定性？</li>
+                </ul>
+            </div>
+
+            <h4>維度二：三階段交付策略</h4>
+            <p><strong>專案時程規劃</strong></p>
+            <p>採用敏捷開發方法，將兩年的專案拆分為三個獨立階段，每階段經過<strong>功能開發 → 集保測試 → 資安檢測 → 驗收上線</strong>的完整流程。</p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">三階段交付計畫</h3>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <strong>第一階段（2023.06 - 2023.11）</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 前台：首頁（14功能）、基金搜尋（12功能）</li>
+                            <li>• 後台：首頁內容管理、權限管理、投資教育管理、參數管理</li>
+                            <li>• 關鍵里程碑：8/4首批交付 → 10/31資安完成 → 11/30驗收上線</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>第二階段（2024.05 - 2024.10）</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 前台：ESG基金、數據與統計、投資教育</li>
+                            <li>• 後台管理系統擴充</li>
+                            <li>• 關鍵里程碑：9/20測試完成 → 10/31功能上線</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>第三階段（2024.08 - 2025.06）</strong>
+                        <ul class="mt-2 space-y-1 text-[var(--text-secondary)]">
+                            <li>• 期信申報平台翻新、期信公告平台</li>
+                            <li>• 境外公告平台、境內公告平台</li>
+                            <li>• 關鍵里程碑：5/28整合測試 → 6/30最終上線</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h4>維度三：多方利害關係人協調</h4>
+            <p><strong>團隊結構</strong></p>
+
+            <div class="highlight-card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-semibold mb-3">多奇數位團隊（25人）</h4>
+                        <ul class="space-y-1 text-[var(--text-secondary)]">
+                            <li>• 專案主持人：陳柔尹（10年經驗）</li>
+                            <li>• 專案經理：劉筑 Vanessa（1年經驗）</li>
+                            <li>• 資安稽核組（黃保翁，25年經驗）</li>
+                            <li>• 程式碼審核組（徐儀翔，4年經驗）</li>
+                            <li>• 系統工程組、網路工程組</li>
+                            <li>• 數據科技組、基金業務組</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">集保結算所（4大部門）</h4>
+                        <ul class="space-y-1 text-[var(--text-secondary)]">
+                            <li>• 金融資訊部：業務需求確認與驗收測試</li>
+                            <li>• 資訊作業部：系統架構與技術支援</li>
+                            <li>• 數位暨資安部：資安檢測與安全控管</li>
+                            <li>• 基金暨國際部：基金業務與法規遵循</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>專案經理面臨的核心挑戰</h3>
+
+            <h4>挑戰 1：複雜的時程管理</h4>
+            <p>
+                <strong>情境</strong><br>
+                90個功能模組需在三階段中精準交付，每階段涉及開發、測試、資安檢測等多個環節，任何一個環節延遲都會影響整體時程。
+            </p>
+
+            <div class="success-factor">
+                <strong>我的應對方式</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">建立<span class="metric-highlight">每週更新</span>的Azure DevOps Dashboard，追蹤所有功能的開發狀態（To Do / In Progress / In Review / QA / Done）。每月召開專案會議，向集保報告進度與風險，確保所有利害關係人對齊。</p>
+            </div>
+
+            <h4>挑戰 2：跨部門溝通與決策</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                <div class="success-factor">
+                    <strong>向上溝通</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">協調集保4大部門的需求，確保業務需求與技術實現的可行性</span>
+                </div>
+                <div class="success-factor">
+                    <strong>向下溝通</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">管理25人開發團隊，協調6大技術組別的分工與整合</span>
+                </div>
+                <div class="success-factor">
+                    <strong>橫向溝通</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">與資安檢測單位協調測試時程，確保符合金融業資安規範</span>
+                </div>
+            </div>
+
+            <h4>挑戰 3：品質控管與測試</h4>
+            <p>金融業對系統穩定性與資安的要求極高，每個階段都需經過完整的測試流程。</p>
+            <ul>
+                <li><strong>功能測試：</strong>確保所有功能符合需求規格</li>
+                <li><strong>集保測試：</strong>客戶方進行UAT測試，提交Bug單</li>
+                <li><strong>資安檢測：</strong>第三方資安單位進行漏洞掃描與滲透測試</li>
+                <li><strong>整合測試：</strong>確保6大平台整合後的系統穩定性</li>
+            </ul>
+
+            <h2>💡 解決方案：系統化的專案管理方法</h2>
+
+            <h3>第一步：建立透明的進度追蹤機制</h3>
+            <h4>Azure DevOps Dashboard 管理</h4>
+            <p>
+                <strong>設計邏輯</strong><br>
+                將90個功能模組拆分為具體的工作項目，建立5個狀態分類（To Do / In Progress / In Review / QA / Done），每週五更新一次進度。
+            </p>
+
+            <div class="highlight-card">
+                <strong>實際數據（第一階段8月月會）</strong>
+                <div class="grid grid-cols-5 gap-3 mt-4 text-center">
+                    <div>
+                        <div class="stat-number text-2xl">90</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">總功能數</div>
+                    </div>
+                    <div>
+                        <div class="stat-number text-2xl">35</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">To Do</div>
+                    </div>
+                    <div>
+                        <div class="stat-number text-2xl">28</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">In Progress</div>
+                    </div>
+                    <div>
+                        <div class="stat-number text-2xl">14</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">QA</div>
+                    </div>
+                    <div>
+                        <div class="stat-number text-2xl">13</div>
+                        <div class="text-xs text-[var(--text-secondary)] mt-1">In Review</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <strong>為什麼重要？</strong><br>
+                透明的進度追蹤讓所有團隊成員清楚了解專案狀態，提早識別瓶頸，及時調整資源分配。
+            </p>
+
+            <h3>第二步：完整的測試與品質管理</h3>
+            <h4>以風險管理為核心的測試策略</h4>
+
+            <div class="success-factor">
+                <strong>實際案例：Bug 追蹤管理</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">第一階段交付後，集保測試階段提交了多筆Bug單。我建立了完整的Bug追蹤機制：</p>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li>• 每個Bug都標記優先級（Critical / High / Medium / Low）</li>
+                    <li>• Critical與High優先級的Bug必須在下個Sprint前修正</li>
+                    <li>• 所有Bug修正後需再次回歸測試，確保沒有引入新問題</li>
+                    <li>• 建立Bug修正記錄，作為後續階段的參考</li>
+                </ul>
+            </div>
+
+            <h4>撰寫測試腳本與測試計畫</h4>
+            <p>針對每個功能模組撰寫詳細的測試腳本，定義測試情境與驗收標準。</p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">測試計畫結構</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>• <strong>前置條件：</strong>測試前需準備的資料與環境</li>
+                    <li>• <strong>測試步驟：</strong>詳細的操作流程</li>
+                    <li>• <strong>預期結果：</strong>每個步驟應該看到的結果</li>
+                    <li>• <strong>異常情境：</strong>錯誤處理與邊界條件測試</li>
+                    <li>• <strong>跨平台驗證：</strong>不同瀏覽器與裝置的測試</li>
+                </ul>
+            </div>
+
+            <h3>第三步：主動發現問題並提出解決方案</h3>
+
+            <div class="success-factor">
+                <strong>實例：UI/UX 配色調整需求</strong><br>
+                <p class="mt-2 text-sm"><strong>原始需求：</strong>設計師提供的視覺稿需要調整配色以符合集保的企業識別。</p>
+                <p class="mt-2 text-sm"><strong>我發現的問題：</strong></p>
+                <ul class="mt-2 space-y-1 text-sm text-[var(--text-secondary)]">
+                    <li>• 6大功能模組（首頁、基金搜尋、ESG基金、數據統計、投資教育、公告資訊）各自的配色需求沒有明確定義</li>
+                    <li>• 缺少完整的頁面盤點清單，無法確保所有頁面都符合UI/UX標準</li>
+                </ul>
+                <p class="mt-3 text-sm"><strong>我提出的解決方案：</strong></p>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">建立完整的頁面盤點清單，逐頁確認UI/UX配色調整需求；與設計師和集保確認每個模組的主色調、輔助色、文字顏色等細節；建立設計規範文件，確保所有頁面風格一致。</p>
+                <p class="mt-3 text-sm"><strong>成果：</strong>確保所有頁面符合集保的企業識別，提升整體視覺一致性。</p>
+            </div>
+
+            <h3>第四步：文件化與知識管理</h3>
+            <h4>為什麼需要完整的文件？</h4>
+            <p>當專案涉及25人開發團隊與集保4大部門，口頭溝通已經無法確保資訊準確傳遞。完整的文件體系是專案成功的關鍵。</p>
+
+            <div class="highlight-card">
+                <h3 class="text-[var(--primary-color)] mb-4">文件產出體系</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">專案管理文件</h4>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 專案時程甘特圖</li>
+                            <li>✓ 每週進度報告</li>
+                            <li>✓ 每月專案會議簡報</li>
+                            <li>✓ 風險管理清單</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">測試與品質文件</h4>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 測試腳本與測試計畫</li>
+                            <li>✓ Bug追蹤清單</li>
+                            <li>✓ 資安檢測報告</li>
+                            <li>✓ UAT驗收測試記錄</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>📊 專案成果</h2>
+
+            <h3>交付成果</h3>
+            <div class="highlight-card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">系統成果</h4>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 7大功能模組（首頁、基金搜尋、ESG基金、數據統計、投資教育、公告資訊、業者專區）</li>
+                            <li>✓ 6大平台整合（主站、境外/境內公告、期信公告/申報、報告中心）</li>
+                            <li>✓ 完整的後台管理系統（4大功能區域）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">專案管理成果</h4>
+                        <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                            <li>✓ 三階段共90個功能全數如期交付</li>
+                            <li>✓ 通過金融業資安檢測</li>
+                            <li>✓ 提供16小時教育訓練</li>
+                            <li>✓ 1年保固服務（2小時回應、4小時故障排除、7天錯誤修復）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>專案亮點</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                <div class="success-factor">
+                    <strong>成功的時程管理</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">三階段交付全數準時，每週更新進度，每月召開會議確保利害關係人對齊</span>
+                </div>
+                <div class="success-factor">
+                    <strong>高品質的測試與交付</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">建立完整測試計畫，追蹤Bug修復進度，通過資安檢測</span>
+                </div>
+                <div class="success-factor">
+                    <strong>有效的團隊協作</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">管理25人開發團隊，協調集保4大部門，建立標準化流程</span>
+                </div>
+                <div class="success-factor">
+                    <strong>完善的保固與維護</strong><br>
+                    <span class="text-sm text-[var(--text-secondary)]">提供16小時教育訓練，建立完整的保固服務機制</span>
+                </div>
+            </div>
+
+            <h2>💼 我能帶給產品管理的價值</h2>
+
+            <div class="success-factor">
+                <strong>能力一：專案時程掌控</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">規劃三階段交付時程，建立透明的進度追蹤機制，提早識別風險並調整資源，確保90個功能模組全數準時交付。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力二：跨部門溝通協調</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">擔任多奇與集保的溝通橋樑，協調金融資訊部、IT部門、資安部門等多方需求，管理25人開發團隊，確保所有團隊成員理解一致。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力三：測試與品質控管</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">撰寫測試腳本與測試計畫，建立Bug追蹤機制，協調資安檢測時程，確保系統品質符合金融業標準。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力四：問題發現與解決</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">主動發現需求中的盲點（如UI/UX配色調整需求），建立頁面盤點清單，提出解決方案，創造超越預期的價值。</p>
+            </div>
+
+            <div class="success-factor">
+                <strong>能力五：文件化與知識管理</strong><br>
+                <p class="mt-2 text-sm text-[var(--text-secondary)]">建立完整的專案管理文件體系（時程甘特圖、進度報告、測試計畫、Bug清單），降低團隊溝通成本，確保知識傳承。</p>
+            </div>
+
+            <h2>🎓 核心學習與反思</h2>
+
+            <h3>從這個專案學到什麼？</h3>
+
+            <div class="highlight-card">
+                <div class="space-y-4">
+                    <div>
+                        <strong>1. 階段性交付的重要性</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">透過三階段交付，能讓利害關係人提早看到成果，及時調整需求，降低專案風險。每個階段都是一個完整的「開發→測試→資安→上線」循環，確保品質。</p>
+                    </div>
+                    <div>
+                        <strong>2. 溝通透明化是關鍵</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">每週更新Dashboard與每月進度會議，讓所有人掌握專案狀態，減少誤解與重工。透明的溝通建立信任，讓團隊更有向心力。</p>
+                    </div>
+                    <div>
+                        <strong>3. 測試腳本的價值</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">事先定義測試腳本與驗收標準，能大幅縮短測試時間，確保雙方對交付品質的共識。測試不是開發完成後的附加工作，而是專案規劃時就應納入的核心環節。</p>
+                    </div>
+                    <div>
+                        <strong>4. 跨部門協作的挑戰</strong>
+                        <p class="text-sm text-[var(--text-secondary)] mt-1">金融業專案涉及多個部門（業務、IT、資安、法規），PM需具備高度的溝通與協調能力，理解各部門的需求與限制，找到平衡點。</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>給自己的話</h3>
+            <p class="font-semibold">
+                專案管理不只是時程管理，更是<span class="metric-highlight">人的管理</span>。成功的專案來自於清晰的溝通、透明的進度、主動的問題發現，以及對品質的堅持。
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center bg-white border-t border-[var(--border)]">
+        <p class="text-[var(--text-secondary)]">© 2024 Vanessa Liu. 專注於企業級系統開發與專案管理。</p>
+    </footer>
 </body>
 </html>
