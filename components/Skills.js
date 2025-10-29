@@ -44,11 +44,10 @@ function Skills() {
             icon: 'code',
             color: 'from-gray-700 to-gray-800',
             skills: [
-              { name: 'Microsoft Office 365', level: 'expert', years: '5年以上', desc: 'Excel 進階函數、PowerBI 數據視覺化' },
+              { name: 'Microsoft Office 365', level: 'expert', years: '5年以上', desc: 'Excel 進階函數、數據視覺化' },
               { name: 'Figma / Sketch', level: 'advanced', years: '2年', desc: 'UI/UX 設計、原型製作' },
-              { name: 'Adobe Illustrator', level: 'intermediate', years: '3年', desc: '基礎向量圖形設計、品牌視覺' },
               { name: 'Notion / Trello', level: 'expert', years: '3年', desc: '專案管理、文件協作' },
-              { name: 'AI 工具應用', level: 'advanced', years: '1年', desc: 'ChatGPT、Claude、Midjourney' },
+              { name: 'AI 工具應用', level: 'advanced', years: '1年', desc: 'ChatGPT、Claude、Claude Code' },
               { name: 'No-code 平台', level: 'intermediate', years: '6個月', desc: 'Bubble、Zapier、GitHub Pages' }
             ]
           },
@@ -69,7 +68,7 @@ function Skills() {
             icon: 'users',
             color: 'from-gray-700 to-gray-800',
             skills: [
-              { name: '跨部門協作', level: 'expert', years: '2年以上', desc: '協調 IT、業務、設計、清潔、技術等多部門團隊，國際企業溝通經驗' },
+              { name: '跨部門協作', level: 'expert', years: '2年以上', desc: '協調 IT、業務、設計、技術等多部門團隊，國際企業溝通經驗' },
               { name: '專案管理', level: 'expert', years: '2年以上', desc: '214 天大型專案準時交付' },
               { name: '溝通協調', level: 'expert', years: '3年', desc: '向上管理、橫向協作' },
               { name: '問題解決', level: 'advanced', years: '2年', desc: '系統化思考、創新解決方案' },
@@ -82,7 +81,7 @@ function Skills() {
             color: 'from-gray-800 to-gray-900',
             skills: [
               { name: '中文（繁體）', level: 'native', years: '母語', desc: '母語、專業文件撰寫' },
-              { name: '英語', level: 'advanced', years: '10年以上', desc: 'TOEIC 650分、IELTS 6.5、商業溝通、國際客戶服務' },
+              { name: '英語', level: 'intermediate', years: '10年以上', desc: 'TOEIC 750 分、商業書信、技術文件閱讀' },
               { name: '台語', level: 'advanced', years: '母語', desc: '流利對話、在地化溝通' }
             ]
           }
@@ -116,11 +115,10 @@ function Skills() {
             icon: 'code',
             color: 'from-gray-700 to-gray-800',
             skills: [
-              { name: 'Microsoft Office 365', level: 'expert', years: '5+ years', desc: 'Excel advanced formulas, PowerBI data visualization' },
+              { name: 'Microsoft Office 365', level: 'expert', years: '5+ years', desc: 'Excel advanced formulas, data visualization' },
               { name: 'Figma / Sketch', level: 'advanced', years: '2 years', desc: 'UI/UX design, prototyping' },
-              { name: 'Adobe Illustrator', level: 'intermediate', years: '3 years', desc: 'Basic vector graphics design, brand visuals' },
               { name: 'Notion / Trello', level: 'expert', years: '3 years', desc: 'Project management, document collaboration' },
-              { name: 'AI Tool Applications', level: 'advanced', years: '1 year', desc: 'ChatGPT, Claude, Midjourney' },
+              { name: 'AI Tool Applications', level: 'advanced', years: '1 year', desc: 'ChatGPT, Claude, Claude Code' },
               { name: 'No-code Platforms', level: 'intermediate', years: '6 months', desc: 'Bubble, Zapier, GitHub Pages' }
             ]
           },
@@ -141,7 +139,7 @@ function Skills() {
             icon: 'users',
             color: 'from-gray-700 to-gray-800',
             skills: [
-              { name: 'Cross-functional Collaboration', level: 'expert', years: '2+ years', desc: 'Coordinating IT, business, design, cleaning, technical teams, international enterprise communication experience' },
+              { name: 'Cross-functional Collaboration', level: 'expert', years: '2+ years', desc: 'Coordinating IT, business, design, technical teams, international enterprise communication experience' },
               { name: 'Project Management', level: 'expert', years: '2+ years', desc: '214-day large-scale project delivered on time' },
               { name: 'Communication & Coordination', level: 'expert', years: '3 years', desc: 'Upward management, lateral collaboration' },
               { name: 'Problem Solving', level: 'advanced', years: '2 years', desc: 'Systematic thinking, innovative solutions' },
@@ -154,7 +152,7 @@ function Skills() {
             color: 'from-gray-800 to-gray-900',
             skills: [
               { name: 'Chinese (Traditional)', level: 'native', years: 'Native', desc: 'Native language, professional document writing' },
-              { name: 'English', level: 'advanced', years: '10+ years', desc: 'TOEIC 650, IELTS 6.5, business communication, international customer service' },
+              { name: 'English', level: 'intermediate', years: '10+ years', desc: 'TOEIC 750, business correspondence, technical documentation' },
               { name: 'Taiwanese', level: 'advanced', years: 'Native', desc: 'Fluent conversation, localized communication' }
             ]
           }

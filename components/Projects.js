@@ -81,7 +81,7 @@ function Projects() {
             id: 1,
             title: '脈德小腦瓜 Mind-Brain',
             description: '互動式冥想思考專案，幫助人們練習慢下來、感受當下，將抽象想法具體化',
-            image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['JavaScript', '冥想思考', 'GitHub Pages', '開源專案'],
             link: 'https://vanessachuchu.github.io/mind-brain/',
             detailPage: 'project-mind-brain.html',
@@ -113,15 +113,6 @@ function Projects() {
             tags: ['企業系統', 'SSO整合', '專案管理', '國際化'],
             link: '#',
             detailPage: 'project-tongyang-eip.html'
-          },
-          {
-            id: 5,
-            title: '電商行銷自動化系統',
-            description: '電子報活動規劃與成效分析，提升 10 倍有效名單與 5% 開信率',
-            image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            tags: ['Marketing', 'Analytics', 'Automation', 'CRM'],
-            link: '#',
-            github: '#'
           }
         ]
       },
@@ -137,7 +128,7 @@ function Projects() {
             id: 1,
             title: 'Mind-Brain Interactive Meditation',
             description: 'Interactive meditation thinking project, helping people practice slowing down, feeling the present, and materializing abstract ideas',
-            image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             tags: ['JavaScript', 'Meditation Thinking', 'GitHub Pages', 'Open Source'],
             link: 'https://vanessachuchu.github.io/mind-brain/',
             detailPage: 'project-mind-brain.html',
@@ -169,15 +160,6 @@ function Projects() {
             tags: ['Enterprise System', 'SSO Integration', 'Project Management', 'Internationalization'],
             link: '#',
             detailPage: 'project-tongyang-eip.html'
-          },
-          {
-            id: 5,
-            title: 'E-commerce Marketing Automation System',
-            description: 'Newsletter campaign planning and performance analysis, achieving 10x improvement in effective leads and 5% open rate increase',
-            image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            tags: ['Marketing', 'Analytics', 'Automation', 'CRM'],
-            link: '#',
-            github: '#'
           }
         ]
       }

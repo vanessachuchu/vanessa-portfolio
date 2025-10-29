@@ -105,13 +105,27 @@ function Hero() {
               
               {/* 按鈕 */}
               <div className="flex gap-4">
-                <button 
-                  onClick={() => document.getElementById('featured').scrollIntoView({ behavior: 'smooth' })}
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('featured');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                      console.error('Featured section not found');
+                      // Fallback: try to scroll after a delay
+                      setTimeout(() => {
+                        const retryElement = document.getElementById('featured');
+                        if (retryElement) {
+                          retryElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }, 100);
+                    }
+                  }}
                   className="btn-primary noto-font"
                 >
                   {currentContent.portfolioBtn}
                 </button>
-                <a 
+                <a
                   href="mailto:vanessachuliu@gmail.com"
                   className="btn-secondary noto-font"
                 >

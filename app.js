@@ -75,6 +75,7 @@ function App() {
         <Header activeSection={activeSection} />
         <main>
           <Hero />
+          <Featured />
           <About />
           <Experience />
           <Skills />

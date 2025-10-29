@@ -28,7 +28,7 @@ function Experience() {
           {
             id: 1,
             company: "THL",
-            position: "Front of House",
+            position: "Customer Service Representative",
             location: "Darwin, Australia",
             period: "2025.06 - 2025.09",
             type: "current",
@@ -138,7 +138,7 @@ function Experience() {
           {
             id: 1,
             company: "THL",
-            position: "Front of House",
+            position: "Customer Service Representative",
             location: "Darwin, Australia",
             period: "2025.06 - 2025.09",
             type: "current",
