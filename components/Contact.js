@@ -32,15 +32,45 @@ function Contact() {
       }));
     };
 
-    const handleSubmit = (e) => {
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [submitStatus, setSubmitStatus] = React.useState(null); // 'success' or 'error'
+
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log('Form submitted:', formData);
-      const content = {
-        zh: '感謝您的訊息！我會盡快回覆您。',
-        en: 'Thank you for your message! I will get back to you as soon as possible.'
-      };
-      alert(content[currentLang] || content.zh);
-      setFormData({ name: '', email: '', message: '' });
+      setIsSubmitting(true);
+      setSubmitStatus(null);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: 'bef699a0-ccfb-4da5-a6a0-8459f83c1726',
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            from_name: formData.name,
+            subject: `Portfolio Contact from ${formData.name}`
+          })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setSubmitStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          setSubmitStatus('error');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        setSubmitStatus('error');
+      } finally {
+        setIsSubmitting(false);
+      }
     };
 
     const contactInfo = [
@@ -71,7 +101,10 @@ function Contact() {
           email: 'Email',
           message: '想和我分享什麼？',
           messagePlaceholder: '告訴我您的想法、專案構想，或任何想聊的話題...',
-          submit: '發送訊息'
+          submit: '發送訊息',
+          sending: '發送中...',
+          success: '感謝您的訊息！我會盡快回覆您。',
+          error: '糟糕！發送失敗了。請再試一次或直接寄信給我。'
         }
       },
       en: {
@@ -85,7 +118,10 @@ function Contact() {
           email: 'Email',
           message: 'What would you like to share?',
           messagePlaceholder: 'Tell me your thoughts, project ideas, or anything you\'d like to chat about...',
-          submit: 'Send Message'
+          submit: 'Send Message',
+          sending: 'Sending...',
+          success: 'Thank you for your message! I will get back to you as soon as possible.',
+          error: 'Oops! Something went wrong. Please try again or email me directly.'
         }
       }
     };
@@ -140,6 +176,18 @@ function Contact() {
             
             <div className="minimal-card p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                    {currentContent.form.success}
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+                    {currentContent.form.error}
+                  </div>
+                )}
+
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2">{currentContent.form.name}</label>
                   <input
@@ -149,11 +197,12 @@ function Contact() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent outline-none transition-all duration-200"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent outline-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder={currentContent.form.namePlaceholder}
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold mb-2">{currentContent.form.email}</label>
                   <input
@@ -163,11 +212,12 @@ function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent outline-none transition-all duration-200"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent outline-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="your.email@example.com"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold mb-2">{currentContent.form.message}</label>
                   <textarea
@@ -176,14 +226,19 @@ function Contact() {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
+                    disabled={isSubmitting}
                     rows="5"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent outline-none transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent outline-none transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder={currentContent.form.messagePlaceholder}
                   ></textarea>
                 </div>
-                
-                <button type="submit" className="w-full btn-primary">
-                  {currentContent.form.submit}
+
+                <button
+                  type="submit"
+                  className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? currentContent.form.sending : currentContent.form.submit}
                 </button>
               </form>
             </div>

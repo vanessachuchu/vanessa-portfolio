@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanessa Liu - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #fff;
+            font-size: 9pt;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 12mm;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .header .title {
+            font-size: 10pt;
+            color: #7f8c8d;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 8pt;
+            color: #555;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Section Titles */
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            padding-bottom: 3px;
+            border-bottom: 1.5px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* About/Summary */
+        .summary {
+            font-size: 9pt;
+            color: #555;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        /* Core Strengths */
+        .strengths {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .strength-item {
+            background: #f8f9fa;
+            padding: 6px;
+            border-radius: 3px;
+            border-left: 2px solid #3498db;
+        }
+
+        .strength-item h3 {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+
+        .strength-item p {
+            font-size: 8pt;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 8px;
+            page-break-inside: avoid;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .experience-header h3 {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .experience-period {
+            font-size: 8pt;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .experience-company {
+            font-size: 8.5pt;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .experience-highlights {
+            margin-left: 12px;
+        }
+
+        .experience-highlights li {
+            font-size: 8pt;
+            color: #555;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+
+        /* Education */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            padding: 6px;
+            background: #f8f9fa;
+            border-radius: 3px;
+        }
+
+        .education-info h3 {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 2px;
+        }
+
+        .education-info p {
+            font-size: 8pt;
+            color: #666;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .skill-category h3 {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            padding-bottom: 2px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .skill-list {
+            display: grid;
+            gap: 2px;
+        }
+
+        .skill-item {
+            font-size: 8pt;
+            color: #555;
+            padding: 1px 0;
+            line-height: 1.4;
+        }
+
+        .skill-item::before {
+            content: "• ";
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Page break */
+        .page-break {
+            page-break-after: always;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Vanessa Liu</h1>
+            <div class="title">Product Manager • Project Manager • Tool Explorer</div>
+            <div class="contact-info">
+                <span>📧 vanessachuliu@gmail.com</span>
+                <span>📱 (+886) 909-327-022</span>
+                <span>📍 Taiwan</span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Experienced in project planning and execution, skilled in information integration analysis and crisis management. Curious about life, possessing a growth mindset, constantly seeking ways to solve problems. Love communicating with people and teamwork, continuously learning new knowledge to become a better self.
+            </p>
+        </div>
+
+        <!-- Core Strengths -->
+        <div class="section">
+            <h2 class="section-title">Core Strengths</h2>
+            <div class="strengths">
+                <div class="strength-item">
+                    <h3>🎯 Project Management & Process Optimization</h3>
+                    <p>Proficient in project management tools like Trello, Azure DevOps, and Figma, skilled in resource integration and timeline control. Optimizing workflows with AI tools, <span class="highlight">effectively reducing project execution time by 20%</span>, ensuring efficient project delivery.</p>
+                </div>
+                <div class="strength-item">
+                    <h3>💡 Data Analysis & Strategic Planning</h3>
+                    <p>Accustomed to visualizing and quantifying project costs and performance data for clear decision-making. Through data insights and strategy repackaging, <span class="highlight">successfully increased sales by 15% and expanded newsletter subscribers by 10x</span>.</p>
+                </div>
+                <div class="strength-item">
+                    <h3>🤝 Cross-Department Communication & Coordination</h3>
+                    <p>Excel at cross-departmental collaboration, promoting communication transparency and instant feedback. Precisely grasping internal and external needs, observing personnel details to find optimal solutions, ensuring consensus among parties and <span class="highlight">effectively reducing communication costs</span>.</p>
+                </div>
+                <div class="strength-item">
+                    <h3>🚀 Product Development & UX Design Thinking</h3>
+                    <p>Led multiple development projects including Fund Observatory and online English platform, from prototype to complete construction. Using Figma to optimize UI/UX design, quickly analyzing business logic across industries, <span class="highlight">gaining insights and driving product innovation</span>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Service & Operations Specialist</h3>
+                    <span class="experience-period">Nov 2024 - Sep 2025</span>
+                </div>
+                <div class="experience-company">Tourism Holdings Limited & Chalet & Co. | Queensland & Darwin, Australia</div>
+                <ul class="experience-highlights">
+                    <li>Rapid Learning & Professional Development: Self-taught campervan technical terminology and mechanical knowledge, advancing from complete unfamiliarity to full proficiency in vehicle operations and facility maintenance within 3 months</li>
+                    <li>Process Optimization & Problem-Solving: Proactively optimized campervan handover process, advancing preparation timeline to 2 days prior, <strong>effectively reducing customer wait time due to maintenance delays by 30%</strong></li>
+                    <li>Quality Management & Standards Execution: Executed comprehensive vehicle handover inspection procedures, ensuring 100% operational standards; received multiple customer commendations by name in Google reviews</li>
+                    <li>Teamwork & Cross-Departmental Communication: Coordinated communication and resource allocation across multiple workstations; received high recognition from management with proactive offer for rehire upon resignation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Project Manager</h3>
+                    <span class="experience-period">Jul 2022 - Nov 2024</span>
+                </div>
+                <div class="experience-company">Duotify Digital Creative | Taiwan</div>
+                <ul class="experience-highlights">
+                    <li>Project Timeline Management: Utilized Trello and Azure DevOps for project management, optimizing manpower planning and resource allocation to ensure maximum project progress and efficiency</li>
+                    <li>Data Quantification & Decision-Making: Accustomed to visualizing and quantifying project costs and performance data into charts, providing clear decision-making basis and improving management's real-time grasp of project status</li>
+                    <li>Leading Multiple Development Projects: Led Fund Observatory and online English platform development from prototype to complete front-end and back-end system construction, including multilingual function design</li>
+                    <li>AI Tools Application: Learning and flexibly using multiple AI tools, optimizing complex and time-consuming workflows, <strong>effectively shortening project execution timeline by 20%</strong></li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Secretary to Chairman</h3>
+                    <span class="experience-period">Jul 2021 - Apr 2022</span>
+                </div>
+                <div class="experience-company">Limin Biotechnology Co., Ltd. | Taiwan</div>
+                <ul class="experience-highlights">
+                    <li>Project Timeline Advancement: Controlled and scheduled company's proprietary product R&D and factory establishment project timeline progress, integrated resources to assist problem-solving</li>
+                    <li>Target Vendor Development: Contacted and negotiated with vendors for new factory establishment, <strong>saving 15% of project costs</strong></li>
+                    <li>Executive Schedule Management: Arranged executive's daily schedule, prioritized different work requirements, coordinated departmental work tracking and meeting scheduling</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Executive Assistant to General Manager</h3>
+                    <span class="experience-period">May 2020 - May 2021</span>
+                </div>
+                <div class="experience-company">Saintyao Land Development | Taiwan</div>
+                <ul class="experience-highlights">
+                    <li>Project Planning: Assisted with solar energy business development planning, including market research and strategic planning, supporting business expansion</li>
+                    <li>Standardizing Work Processes: Assisted company's internal integration planning, promoting various management regulations and systems</li>
+                    <li>Cross-Department Communication: Cross-departmental communication coordination and meeting convening, establishing meeting procedures and records</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Marketing Planning Assistant</h3>
+                    <span class="experience-period">Nov 2018 - Feb 2020</span>
+                </div>
+                <div class="experience-company">SCAN-D (Shih Kien Teak) | Taiwan</div>
+                <ul class="experience-highlights">
+                    <li>Newsletter Activity Planning: Set monthly themes and content copywriting, <strong>increased 10x effective subscribers/month, improved open rate by 5%</strong></li>
+                    <li>Market Positioning & Procurement Analysis: Conducted product market positioning and procurement analysis, improved negotiation strategies, successfully controlled costs and improved operational efficiency</li>
+                    <li>Brand Campaign Planning: Planned activity content based on each campaign's marketing theme, product characteristics and predicted sales volume</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Shift Supervisor</h3>
+                    <span class="experience-period">Jun 2015 - Aug 2018</span>
+                </div>
+                <div class="experience-company">Starbucks | Taiwan</div>
+                <ul class="experience-highlights">
+                    <li>Store Operations Management: Responsible for store operations and team management, ensuring daily operational efficiency and employee performance optimization</li>
+                    <li>Marketing Promotion & Sales Growth: Planned and executed marketing and promotional activities, <strong>successfully increasing revenue by 10%</strong> and customer repurchase rate</li>
+                    <li>Inventory Management & Quality Control: Monitored inventory management and quality control, reducing wastage costs while maintaining product quality standards</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="education-info">
+                    <h3>Ming Chuan University</h3>
+                    <p>Bachelor's Degree, Department of Hospitality Management</p>
+                    <p style="margin-top: 5px;">🎓 Hospitality Management Expertise | 🌐 International Perspective | 📊 Management Foundation | 🤝 Service-Oriented Mindset</p>
+                </div>
+                <div style="text-align: right;">
+                    <p style="font-weight: 600; color: #3498db;">2014 - 2018</p>
+                    <p style="font-size: 9pt; color: #7f8c8d;">Taipei, Taiwan</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Skills -->
+        <div class="section">
+            <h2 class="section-title">Professional Skills</h2>
+            <div class="skills-grid">
+                <!-- Product Management -->
+                <div class="skill-category">
+                    <h3>🎯 Product Management</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Product Strategy Planning</div>
+                        <div class="skill-item">Requirements Analysis</div>
+                        <div class="skill-item">Agile Development Management</div>
+                        <div class="skill-item">User Research</div>
+                        <div class="skill-item">A/B Testing</div>
+                    </div>
+                </div>
+
+                <!-- Technical Tools -->
+                <div class="skill-category">
+                    <h3>💻 Technical Tools</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Microsoft Office 365</div>
+                        <div class="skill-item">Figma / Sketch</div>
+                        <div class="skill-item">Notion / Trello</div>
+                        <div class="skill-item">AI Tool Applications (ChatGPT, Claude)</div>
+                        <div class="skill-item">No-code Platforms (Bubble, Zapier)</div>
+                    </div>
+                </div>
+
+                <!-- Data Analysis -->
+                <div class="skill-category">
+                    <h3>📊 Data Analysis</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Google Analytics</div>
+                        <div class="skill-item">SQL Queries</div>
+                        <div class="skill-item">Excel Data Analysis (Pivot Tables, Advanced Functions)</div>
+                        <div class="skill-item">Statistical Analysis</div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <h3>🤝 Soft Skills</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Cross-functional Collaboration</div>
+                        <div class="skill-item">Project Management</div>
+                        <div class="skill-item">Communication & Coordination</div>
+                        <div class="skill-item">Problem Solving</div>
+                        <div class="skill-item">Crisis Management</div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="skill-category">
+                    <h3>🌐 Languages</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">Chinese (Traditional) - Native</div>
+                        <div class="skill-item">English - Intermediate (TOEIC 750)</div>
+                        <div class="skill-item">Taiwanese - Advanced</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="section">
+            <h2 class="section-title">Key Achievements</h2>
+            <div class="strengths">
+                <div class="strength-item">
+                    <h3>📈 Project Execution Efficiency</h3>
+                    <p>Optimized workflows using AI tools, <span class="highlight">reducing project execution time by 20%</span></p>
+                </div>
+                <div class="strength-item">
+                    <h3>💰 Cost Control</h3>
+                    <p>Through vendor development and negotiation, <span class="highlight">saved 15% of project costs</span></p>
+                </div>
+                <div class="strength-item">
+                    <h3>📊 Sales Growth</h3>
+                    <p>Through data analysis and strategy optimization, <span class="highlight">increased sales by 15%, revenue growth by 10%</span></p>
+                </div>
+                <div class="strength-item">
+                    <h3>📧 Marketing Effectiveness</h3>
+                    <p>Newsletter strategy planning, <span class="highlight">expanded subscriber list by 10x, increased open rate by 5%</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
