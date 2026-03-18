@@ -27,16 +27,17 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "Tourism Holdings Limited & Chalet & Co.",
-            position: "Service & Operations Specialist",
-            location: "Australia",
-            period: "2024.11 - 2025.09",
+            company: "Konsttech 康斯特科技",
+            position: "執行長專案特助",
+            location: "台灣",
+            period: "2025.12 - 目前",
             type: "current",
             highlights: [
-              "🎯 快速學習與專業建構｜從零開始自學露營車專業術語與機械知識，在3個月內從完全陌生到精通車輛操作、設施維護等專業領域；快速掌握咖啡廳全工作站流程（咖啡製作、外場服務、收銀），成為可支援全站點的多功能人員；短期內完全適應全英語工作環境，克服澳洲口音與語速障礙，展現卓越的跨文化適應力",
-              "⚙️ 流程優化與問題解決｜主動優化露營車交付流程，將準備時間提前至2天前完成，有效降低30%因維修延遲導致的客戶等待時間；建立預判式服務思維，在高峰時段提前識別並準備團隊與顧客需求，提升整體服務效率；成功處理重大客訴案件，主動承擔責任並協調賠償方案，將潛在負評轉化為客戶滿意體驗",
-              "🔍 品質管理與標準執行｜執行完整的車輛交付檢查流程，確保車輛運作及設施（廚房、廁所、床鋪等）100%達標；負責還車檢驗與狀況記錄，與 Back of House 團隊建立順暢的溝通協調機制；維持一致的服務品質標準，在 Google 評論中多次獲得客戶點名表揚",
-              "🤝 團隊協作與跨部門溝通｜協調多工作站間的溝通與資源調配，確保快節奏環境下的營運順暢；與維修、清潔、管理等多部門建立有效溝通機制，優化跨部門協作流程；獲得主管高度認可，離職時主動提出回聘邀請，並承諾提供 THL 全澳分店工作推薦"
+              "🔹 直屬執行長，跨部門統籌多項策略性專案，涵蓋辦公室建置、系統導入、品牌行銷及 IPO 內控建置",
+              "🏢 主導南港新辦公室 IT 基礎建設，2 個月內完成網路架構、門禁、AV 系統規劃與採購，並建置 AI 智慧會議室自動化流程（語音轉錄 → GPT 摘要 → 自動寄送會議紀錄）",
+              "📊 主責 ERP 系統導入（頂薪 WorkFlow AiGP），協調各部門需求訪談、舊系統資料遷移與欄位對應，目標 2026/06 上線",
+              "📄 配合 IPO 籌備，與外部顧問協作建立薪資、採購付款、固定資產等內部控制循環文件",
+              "🌐 統籌品牌官網 2.0 改版及 COMPUTEX 2026 展覽 Landing Page 開發，規劃 SEO 架構與 GA4/GTM 追蹤設定；制定 LinkedIn / Facebook 社群 KPI 框架"
             ]
           },
           {
@@ -120,16 +121,17 @@ function Experience() {
         experiences: [
           {
             id: 1,
-            company: "Tourism Holdings Limited & Chalet & Co.",
-            position: "Service & Operations Specialist",
-            location: "Queensland & Darwin, Australia",
-            period: "2024.11 - 2025.09",
+            company: "Konsttech",
+            position: "Executive Assistant to CEO",
+            location: "Taiwan",
+            period: "Dec 2025 - Present",
             type: "current",
             highlights: [
-              "🎯 Rapid Learning & Professional Development | Self-taught campervan technical terminology and mechanical knowledge, advancing from complete unfamiliarity to full proficiency in vehicle operations and facility maintenance within 3 months; quickly mastered all café workstations (coffee-making, front-of-house service, POS operations), becoming a versatile team member capable of supporting all stations; fully adapted to English-speaking work environment in short timeframe, overcoming Australian accent and speech pace barriers, demonstrating exceptional cross-cultural adaptability",
-              "⚙️ Process Optimization & Problem-Solving | Proactively optimized campervan handover process, advancing preparation timeline to 2 days prior, effectively reducing customer wait time due to maintenance delays by 30%; established anticipatory service mindset, proactively identifying and preparing for team and customer needs during peak hours to enhance overall service efficiency; successfully resolved major customer complaint case by taking ownership and coordinating compensation solution, transforming potential negative review into positive customer experience",
-              "🔍 Quality Management & Standards Execution | Executed comprehensive vehicle handover inspection procedures, ensuring 100% operational standards and facility cleanliness (kitchen, bathroom, bedding, etc.); managed vehicle return inspections and condition documentation, establishing smooth communication and coordination with Back of House team; maintained consistent service quality standards, receiving multiple customer commendations by name in Google reviews",
-              "🤝 Teamwork & Cross-Departmental Communication | Coordinated communication and resource allocation across multiple workstations, ensuring smooth operations in fast-paced environment; established effective communication mechanisms with maintenance, cleaning, and management departments to optimize cross-functional collaboration; received high recognition from management, with proactive offer for rehire upon resignation and commitment to provide work references across all THL Australia branches"
+              "Report directly to CEO; coordinate cross-functional strategic initiatives spanning office buildout, ERP implementation, brand marketing, and IPO-readiness internal controls",
+              "Led full IT infrastructure setup for new Nangang office — completed network architecture, access control, and AV systems within 2 months; built AI-powered smart meeting room automation (speech-to-text → GPT summary → auto email)",
+              "Driving ERP system implementation (Ding Xin WorkFlow AiGP), managing requirements gathering, legacy data migration, and field mapping across departments; targeting June 2026 go-live",
+              "Collaborating with external consultants to develop internal control documentation across payroll, procurement-to-payment, and fixed asset cycles in preparation for IPO",
+              "Overseeing company website redesign (v2.0) and COMPUTEX 2026 landing page development; established SEO architecture, GA4/GTM tracking setup, and social media KPI framework for LinkedIn and Facebook"
             ]
           },
           {
